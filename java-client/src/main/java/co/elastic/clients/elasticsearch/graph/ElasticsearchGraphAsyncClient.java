@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.graph;
 
 import co.elastic.clients.ApiClient;
@@ -34,6 +30,21 @@ import co.elastic.clients.util.ObjectBuilder;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 /**
  * Client for the graph namespace.
@@ -57,11 +68,11 @@ public class ElasticsearchGraphAsyncClient extends ApiClient<ElasticsearchTransp
 	// ----- Endpoint: graph.explore
 
 	/**
-	 * Explore extracted and summarized information about the documents and terms in
-	 * an index.
+	 * Extracts and summarizes information about the documents and terms in an
+	 * Elasticsearch data stream or index.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/current/graph-explore-api.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/graph-explore-api.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -73,14 +84,14 @@ public class ElasticsearchGraphAsyncClient extends ApiClient<ElasticsearchTransp
 	}
 
 	/**
-	 * Explore extracted and summarized information about the documents and terms in
-	 * an index.
+	 * Extracts and summarizes information about the documents and terms in an
+	 * Elasticsearch data stream or index.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link ExploreRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/current/graph-explore-api.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/graph-explore-api.html">Documentation
 	 *      on elastic.co</a>
 	 */
 

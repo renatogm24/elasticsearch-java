@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.rollup;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -41,6 +37,7 @@ import jakarta.json.stream.JsonGenerator;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -48,10 +45,25 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: rollup.rollup_search.Request
 
 /**
- * Enables searching rolled-up data using the standard query DSL.
+ * Enables searching rolled-up data using the standard Query DSL.
  * 
  * @see <a href="../doc-files/api-spec.html#rollup.rollup_search.Request">API
  *      specification</a>
@@ -84,6 +96,8 @@ public class RollupSearchRequest extends RequestBase implements JsonpSerializabl
 	}
 
 	/**
+	 * Specifies aggregations.
+	 * <p>
 	 * API name: {@code aggregations}
 	 */
 	public final Map<String, Aggregation> aggregations() {
@@ -91,8 +105,7 @@ public class RollupSearchRequest extends RequestBase implements JsonpSerializabl
 	}
 
 	/**
-	 * Required - The indices or index-pattern(s) (containing rollup or regular
-	 * data) that should be searched
+	 * Required - Enables searching rolled-up data using the standard Query DSL.
 	 * <p>
 	 * API name: {@code index}
 	 */
@@ -101,6 +114,8 @@ public class RollupSearchRequest extends RequestBase implements JsonpSerializabl
 	}
 
 	/**
+	 * Specifies a DSL query.
+	 * <p>
 	 * API name: {@code query}
 	 */
 	@Nullable
@@ -109,7 +124,7 @@ public class RollupSearchRequest extends RequestBase implements JsonpSerializabl
 	}
 
 	/**
-	 * Must be zero if set, as rollups work on pre-aggregated data
+	 * Must be zero if set, as rollups work on pre-aggregated data.
 	 * <p>
 	 * API name: {@code size}
 	 */
@@ -174,6 +189,8 @@ public class RollupSearchRequest extends RequestBase implements JsonpSerializabl
 		private Integer size;
 
 		/**
+		 * Specifies aggregations.
+		 * <p>
 		 * API name: {@code aggregations}
 		 * <p>
 		 * Adds all entries of <code>map</code> to <code>aggregations</code>.
@@ -184,6 +201,8 @@ public class RollupSearchRequest extends RequestBase implements JsonpSerializabl
 		}
 
 		/**
+		 * Specifies aggregations.
+		 * <p>
 		 * API name: {@code aggregations}
 		 * <p>
 		 * Adds an entry to <code>aggregations</code>.
@@ -194,6 +213,8 @@ public class RollupSearchRequest extends RequestBase implements JsonpSerializabl
 		}
 
 		/**
+		 * Specifies aggregations.
+		 * <p>
 		 * API name: {@code aggregations}
 		 * <p>
 		 * Adds an entry to <code>aggregations</code> using a builder lambda.
@@ -203,8 +224,7 @@ public class RollupSearchRequest extends RequestBase implements JsonpSerializabl
 		}
 
 		/**
-		 * Required - The indices or index-pattern(s) (containing rollup or regular
-		 * data) that should be searched
+		 * Required - Enables searching rolled-up data using the standard Query DSL.
 		 * <p>
 		 * API name: {@code index}
 		 * <p>
@@ -216,8 +236,7 @@ public class RollupSearchRequest extends RequestBase implements JsonpSerializabl
 		}
 
 		/**
-		 * Required - The indices or index-pattern(s) (containing rollup or regular
-		 * data) that should be searched
+		 * Required - Enables searching rolled-up data using the standard Query DSL.
 		 * <p>
 		 * API name: {@code index}
 		 * <p>
@@ -229,6 +248,8 @@ public class RollupSearchRequest extends RequestBase implements JsonpSerializabl
 		}
 
 		/**
+		 * Specifies a DSL query.
+		 * <p>
 		 * API name: {@code query}
 		 */
 		public final Builder query(@Nullable Query value) {
@@ -237,6 +258,8 @@ public class RollupSearchRequest extends RequestBase implements JsonpSerializabl
 		}
 
 		/**
+		 * Specifies a DSL query.
+		 * <p>
 		 * API name: {@code query}
 		 */
 		public final Builder query(Function<Query.Builder, ObjectBuilder<Query>> fn) {
@@ -244,7 +267,7 @@ public class RollupSearchRequest extends RequestBase implements JsonpSerializabl
 		}
 
 		/**
-		 * Must be zero if set, as rollups work on pre-aggregated data
+		 * Must be zero if set, as rollups work on pre-aggregated data.
 		 * <p>
 		 * API name: {@code size}
 		 */
@@ -319,6 +342,21 @@ public class RollupSearchRequest extends RequestBase implements JsonpSerializabl
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _index = 1 << 0;
+
+				int propsSet = 0;
+
+				propsSet |= _index;
+
+				if (propsSet == (_index)) {
+					params.put("index", request.index.stream().map(v -> v).collect(Collectors.joining(",")));
+				}
+				return params;
 			},
 
 			// Request parameters

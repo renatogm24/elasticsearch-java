@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -37,6 +33,21 @@ import java.lang.Long;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.Pool
 
@@ -75,6 +86,8 @@ public class Pool implements JsonpSerializable {
 	}
 
 	/**
+	 * Memory, in bytes, used by the heap.
+	 * <p>
 	 * API name: {@code used_in_bytes}
 	 */
 	@Nullable
@@ -83,6 +96,8 @@ public class Pool implements JsonpSerializable {
 	}
 
 	/**
+	 * Maximum amount of memory, in bytes, available for use by the heap.
+	 * <p>
 	 * API name: {@code max_in_bytes}
 	 */
 	@Nullable
@@ -91,6 +106,8 @@ public class Pool implements JsonpSerializable {
 	}
 
 	/**
+	 * Largest amount of memory, in bytes, historically used by the heap.
+	 * <p>
 	 * API name: {@code peak_used_in_bytes}
 	 */
 	@Nullable
@@ -99,6 +116,8 @@ public class Pool implements JsonpSerializable {
 	}
 
 	/**
+	 * Largest amount of memory, in bytes, historically used by the heap.
+	 * <p>
 	 * API name: {@code peak_max_in_bytes}
 	 */
 	@Nullable
@@ -165,6 +184,8 @@ public class Pool implements JsonpSerializable {
 		private Long peakMaxInBytes;
 
 		/**
+		 * Memory, in bytes, used by the heap.
+		 * <p>
 		 * API name: {@code used_in_bytes}
 		 */
 		public final Builder usedInBytes(@Nullable Long value) {
@@ -173,6 +194,8 @@ public class Pool implements JsonpSerializable {
 		}
 
 		/**
+		 * Maximum amount of memory, in bytes, available for use by the heap.
+		 * <p>
 		 * API name: {@code max_in_bytes}
 		 */
 		public final Builder maxInBytes(@Nullable Long value) {
@@ -181,6 +204,8 @@ public class Pool implements JsonpSerializable {
 		}
 
 		/**
+		 * Largest amount of memory, in bytes, historically used by the heap.
+		 * <p>
 		 * API name: {@code peak_used_in_bytes}
 		 */
 		public final Builder peakUsedInBytes(@Nullable Long value) {
@@ -189,6 +214,8 @@ public class Pool implements JsonpSerializable {
 		}
 
 		/**
+		 * Largest amount of memory, in bytes, historically used by the heap.
+		 * <p>
 		 * API name: {@code peak_max_in_bytes}
 		 */
 		public final Builder peakMaxInBytes(@Nullable Long value) {

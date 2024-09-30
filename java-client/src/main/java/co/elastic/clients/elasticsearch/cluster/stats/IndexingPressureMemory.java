@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cluster.stats;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -39,6 +35,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: cluster.stats.IndexingPressureMemory
 
 /**
@@ -49,9 +60,9 @@ import javax.annotation.Nullable;
  */
 @JsonpDeserializable
 public class IndexingPressureMemory implements JsonpSerializable {
-	private final long limitInBytes;
-
 	private final IndexingPressureMemorySummary current;
+
+	private final long limitInBytes;
 
 	private final IndexingPressureMemorySummary total;
 
@@ -59,8 +70,8 @@ public class IndexingPressureMemory implements JsonpSerializable {
 
 	private IndexingPressureMemory(Builder builder) {
 
-		this.limitInBytes = ApiTypeHelper.requireNonNull(builder.limitInBytes, this, "limitInBytes");
 		this.current = ApiTypeHelper.requireNonNull(builder.current, this, "current");
+		this.limitInBytes = ApiTypeHelper.requireNonNull(builder.limitInBytes, this, "limitInBytes");
 		this.total = ApiTypeHelper.requireNonNull(builder.total, this, "total");
 
 	}
@@ -70,17 +81,17 @@ public class IndexingPressureMemory implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code limit_in_bytes}
-	 */
-	public final long limitInBytes() {
-		return this.limitInBytes;
-	}
-
-	/**
 	 * Required - API name: {@code current}
 	 */
 	public final IndexingPressureMemorySummary current() {
 		return this.current;
+	}
+
+	/**
+	 * Required - API name: {@code limit_in_bytes}
+	 */
+	public final long limitInBytes() {
+		return this.limitInBytes;
 	}
 
 	/**
@@ -101,11 +112,11 @@ public class IndexingPressureMemory implements JsonpSerializable {
 
 	protected void serializeInternal(JsonGenerator generator, JsonpMapper mapper) {
 
-		generator.writeKey("limit_in_bytes");
-		generator.write(this.limitInBytes);
-
 		generator.writeKey("current");
 		this.current.serialize(generator, mapper);
+
+		generator.writeKey("limit_in_bytes");
+		generator.write(this.limitInBytes);
 
 		generator.writeKey("total");
 		this.total.serialize(generator, mapper);
@@ -126,19 +137,11 @@ public class IndexingPressureMemory implements JsonpSerializable {
 	public static class Builder extends WithJsonObjectBuilderBase<Builder>
 			implements
 				ObjectBuilder<IndexingPressureMemory> {
-		private Long limitInBytes;
-
 		private IndexingPressureMemorySummary current;
 
-		private IndexingPressureMemorySummary total;
+		private Long limitInBytes;
 
-		/**
-		 * Required - API name: {@code limit_in_bytes}
-		 */
-		public final Builder limitInBytes(long value) {
-			this.limitInBytes = value;
-			return this;
-		}
+		private IndexingPressureMemorySummary total;
 
 		/**
 		 * Required - API name: {@code current}
@@ -154,6 +157,14 @@ public class IndexingPressureMemory implements JsonpSerializable {
 		public final Builder current(
 				Function<IndexingPressureMemorySummary.Builder, ObjectBuilder<IndexingPressureMemorySummary>> fn) {
 			return this.current(fn.apply(new IndexingPressureMemorySummary.Builder()).build());
+		}
+
+		/**
+		 * Required - API name: {@code limit_in_bytes}
+		 */
+		public final Builder limitInBytes(long value) {
+			this.limitInBytes = value;
+			return this;
 		}
 
 		/**
@@ -201,8 +212,8 @@ public class IndexingPressureMemory implements JsonpSerializable {
 	protected static void setupIndexingPressureMemoryDeserializer(
 			ObjectDeserializer<IndexingPressureMemory.Builder> op) {
 
-		op.add(Builder::limitInBytes, JsonpDeserializer.longDeserializer(), "limit_in_bytes");
 		op.add(Builder::current, IndexingPressureMemorySummary._DESERIALIZER, "current");
+		op.add(Builder::limitInBytes, JsonpDeserializer.longDeserializer(), "limit_in_bytes");
 		op.add(Builder::total, IndexingPressureMemorySummary._DESERIALIZER, "total");
 
 	}

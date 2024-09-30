@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.snapshot;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -44,6 +40,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: snapshot.status.Request
 
@@ -277,6 +288,31 @@ public class SnapshotStatusRequest extends RequestBase {
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _repository = 1 << 0;
+				final int _snapshot = 1 << 1;
+
+				int propsSet = 0;
+
+				if (request.repository() != null)
+					propsSet |= _repository;
+				if (ApiTypeHelper.isDefined(request.snapshot()))
+					propsSet |= _snapshot;
+
+				if (propsSet == 0) {
+				}
+				if (propsSet == (_repository)) {
+					params.put("repository", request.repository);
+				}
+				if (propsSet == (_repository | _snapshot)) {
+					params.put("repository", request.repository);
+					params.put("snapshot", request.snapshot.stream().map(v -> v).collect(Collectors.joining(",")));
+				}
+				return params;
 			},
 
 			// Request parameters

@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -38,6 +34,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.DataPathStats
 
@@ -124,6 +135,9 @@ public class DataPathStats implements JsonpSerializable {
 	}
 
 	/**
+	 * Total amount of disk space available to this Java virtual machine on this
+	 * file store.
+	 * <p>
 	 * API name: {@code available}
 	 */
 	@Nullable
@@ -132,6 +146,9 @@ public class DataPathStats implements JsonpSerializable {
 	}
 
 	/**
+	 * Total number of bytes available to this Java virtual machine on this file
+	 * store.
+	 * <p>
 	 * API name: {@code available_in_bytes}
 	 */
 	@Nullable
@@ -196,6 +213,8 @@ public class DataPathStats implements JsonpSerializable {
 	}
 
 	/**
+	 * Total amount of unallocated disk space in the file store.
+	 * <p>
 	 * API name: {@code free}
 	 */
 	@Nullable
@@ -204,6 +223,8 @@ public class DataPathStats implements JsonpSerializable {
 	}
 
 	/**
+	 * Total number of unallocated bytes in the file store.
+	 * <p>
 	 * API name: {@code free_in_bytes}
 	 */
 	@Nullable
@@ -212,6 +233,8 @@ public class DataPathStats implements JsonpSerializable {
 	}
 
 	/**
+	 * Mount point of the file store (for example: <code>/dev/sda2</code>).
+	 * <p>
 	 * API name: {@code mount}
 	 */
 	@Nullable
@@ -220,6 +243,8 @@ public class DataPathStats implements JsonpSerializable {
 	}
 
 	/**
+	 * Path to the file store.
+	 * <p>
 	 * API name: {@code path}
 	 */
 	@Nullable
@@ -228,6 +253,8 @@ public class DataPathStats implements JsonpSerializable {
 	}
 
 	/**
+	 * Total size of the file store.
+	 * <p>
 	 * API name: {@code total}
 	 */
 	@Nullable
@@ -236,6 +263,8 @@ public class DataPathStats implements JsonpSerializable {
 	}
 
 	/**
+	 * Total size of the file store in bytes.
+	 * <p>
 	 * API name: {@code total_in_bytes}
 	 */
 	@Nullable
@@ -244,6 +273,8 @@ public class DataPathStats implements JsonpSerializable {
 	}
 
 	/**
+	 * Type of the file store (ex: ext4).
+	 * <p>
 	 * API name: {@code type}
 	 */
 	@Nullable
@@ -406,6 +437,9 @@ public class DataPathStats implements JsonpSerializable {
 		private String type;
 
 		/**
+		 * Total amount of disk space available to this Java virtual machine on this
+		 * file store.
+		 * <p>
 		 * API name: {@code available}
 		 */
 		public final Builder available(@Nullable String value) {
@@ -414,6 +448,9 @@ public class DataPathStats implements JsonpSerializable {
 		}
 
 		/**
+		 * Total number of bytes available to this Java virtual machine on this file
+		 * store.
+		 * <p>
 		 * API name: {@code available_in_bytes}
 		 */
 		public final Builder availableInBytes(@Nullable Long value) {
@@ -478,6 +515,8 @@ public class DataPathStats implements JsonpSerializable {
 		}
 
 		/**
+		 * Total amount of unallocated disk space in the file store.
+		 * <p>
 		 * API name: {@code free}
 		 */
 		public final Builder free(@Nullable String value) {
@@ -486,6 +525,8 @@ public class DataPathStats implements JsonpSerializable {
 		}
 
 		/**
+		 * Total number of unallocated bytes in the file store.
+		 * <p>
 		 * API name: {@code free_in_bytes}
 		 */
 		public final Builder freeInBytes(@Nullable Long value) {
@@ -494,6 +535,8 @@ public class DataPathStats implements JsonpSerializable {
 		}
 
 		/**
+		 * Mount point of the file store (for example: <code>/dev/sda2</code>).
+		 * <p>
 		 * API name: {@code mount}
 		 */
 		public final Builder mount(@Nullable String value) {
@@ -502,6 +545,8 @@ public class DataPathStats implements JsonpSerializable {
 		}
 
 		/**
+		 * Path to the file store.
+		 * <p>
 		 * API name: {@code path}
 		 */
 		public final Builder path(@Nullable String value) {
@@ -510,6 +555,8 @@ public class DataPathStats implements JsonpSerializable {
 		}
 
 		/**
+		 * Total size of the file store.
+		 * <p>
 		 * API name: {@code total}
 		 */
 		public final Builder total(@Nullable String value) {
@@ -518,6 +565,8 @@ public class DataPathStats implements JsonpSerializable {
 		}
 
 		/**
+		 * Total size of the file store in bytes.
+		 * <p>
 		 * API name: {@code total_in_bytes}
 		 */
 		public final Builder totalInBytes(@Nullable Long value) {
@@ -526,6 +575,8 @@ public class DataPathStats implements JsonpSerializable {
 		}
 
 		/**
+		 * Type of the file store (ex: ext4).
+		 * <p>
 		 * API name: {@code type}
 		 */
 		public final Builder type(@Nullable String value) {

@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.rollup;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -42,6 +38,21 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: rollup.stop_job.Request
 
@@ -76,7 +87,7 @@ public class StopJobRequest extends RequestBase {
 	}
 
 	/**
-	 * Required - The ID of the job to stop
+	 * Required - Identifier for the rollup job.
 	 * <p>
 	 * API name: {@code id}
 	 */
@@ -85,8 +96,10 @@ public class StopJobRequest extends RequestBase {
 	}
 
 	/**
-	 * Block for (at maximum) the specified duration while waiting for the job to
-	 * stop. Defaults to 30s.
+	 * If <code>wait_for_completion</code> is <code>true</code>, the API blocks for
+	 * (at maximum) the specified duration while waiting for the job to stop. If
+	 * more than <code>timeout</code> time has passed, the API throws a timeout
+	 * exception.
 	 * <p>
 	 * API name: {@code timeout}
 	 */
@@ -96,8 +109,9 @@ public class StopJobRequest extends RequestBase {
 	}
 
 	/**
-	 * True if the API should block until the job has fully stopped, false if should
-	 * be executed async. Defaults to false.
+	 * If set to <code>true</code>, causes the API to block until the indexer state
+	 * completely stops. If set to <code>false</code>, the API returns immediately
+	 * and the indexer is stopped asynchronously in the background.
 	 * <p>
 	 * API name: {@code wait_for_completion}
 	 */
@@ -122,7 +136,7 @@ public class StopJobRequest extends RequestBase {
 		private Boolean waitForCompletion;
 
 		/**
-		 * Required - The ID of the job to stop
+		 * Required - Identifier for the rollup job.
 		 * <p>
 		 * API name: {@code id}
 		 */
@@ -132,8 +146,10 @@ public class StopJobRequest extends RequestBase {
 		}
 
 		/**
-		 * Block for (at maximum) the specified duration while waiting for the job to
-		 * stop. Defaults to 30s.
+		 * If <code>wait_for_completion</code> is <code>true</code>, the API blocks for
+		 * (at maximum) the specified duration while waiting for the job to stop. If
+		 * more than <code>timeout</code> time has passed, the API throws a timeout
+		 * exception.
 		 * <p>
 		 * API name: {@code timeout}
 		 */
@@ -143,8 +159,10 @@ public class StopJobRequest extends RequestBase {
 		}
 
 		/**
-		 * Block for (at maximum) the specified duration while waiting for the job to
-		 * stop. Defaults to 30s.
+		 * If <code>wait_for_completion</code> is <code>true</code>, the API blocks for
+		 * (at maximum) the specified duration while waiting for the job to stop. If
+		 * more than <code>timeout</code> time has passed, the API throws a timeout
+		 * exception.
 		 * <p>
 		 * API name: {@code timeout}
 		 */
@@ -153,8 +171,9 @@ public class StopJobRequest extends RequestBase {
 		}
 
 		/**
-		 * True if the API should block until the job has fully stopped, false if should
-		 * be executed async. Defaults to false.
+		 * If set to <code>true</code>, causes the API to block until the indexer state
+		 * completely stops. If set to <code>false</code>, the API returns immediately
+		 * and the indexer is stopped asynchronously in the background.
 		 * <p>
 		 * API name: {@code wait_for_completion}
 		 */
@@ -214,6 +233,21 @@ public class StopJobRequest extends RequestBase {
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _id = 1 << 0;
+
+				int propsSet = 0;
+
+				propsSet |= _id;
+
+				if (propsSet == (_id)) {
+					params.put("id", request.id);
+				}
+				return params;
 			},
 
 			// Request parameters

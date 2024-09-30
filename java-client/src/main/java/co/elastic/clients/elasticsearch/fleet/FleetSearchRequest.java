@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.fleet;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -61,6 +57,7 @@ import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Long;
 import java.lang.String;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -68,6 +65,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: fleet.search.Request
 
@@ -993,12 +1005,18 @@ public class FleetSearchRequest extends RequestBase implements JsonpSerializable
 		}
 		if (ApiTypeHelper.isDefined(this.storedFields)) {
 			generator.writeKey("stored_fields");
-			generator.writeStartArray();
-			for (String item0 : this.storedFields) {
-				generator.write(item0);
+			if (this.storedFields.size() == 1) {
+				String singleItem = this.storedFields.get(0);
+				generator.write(singleItem);
 
+			} else {
+				generator.writeStartArray();
+				for (String item0 : this.storedFields) {
+					generator.write(item0);
+
+				}
+				generator.writeEnd();
 			}
-			generator.writeEnd();
 
 		}
 		if (this.suggest != null) {
@@ -1828,6 +1846,66 @@ public class FleetSearchRequest extends RequestBase implements JsonpSerializable
 		/**
 		 * API name: {@code search_after}
 		 * <p>
+		 * Adds all passed values to <code>searchAfter</code>.
+		 */
+		public final Builder searchAfter(String value, String... values) {
+			this.searchAfter = _listAdd(this.searchAfter, FieldValue.of(value));
+			List<FieldValue> fieldValues = new ArrayList<>();
+			for (String v : values) {
+				fieldValues.add(FieldValue.of(v));
+			}
+			this.searchAfter = _listAddAll(this.searchAfter, fieldValues);
+			return this;
+		}
+
+		/**
+		 * API name: {@code search_after}
+		 * <p>
+		 * Adds all passed values to <code>searchAfter</code>.
+		 */
+		public final Builder searchAfter(long value, long... values) {
+			this.searchAfter = _listAdd(this.searchAfter, FieldValue.of(value));
+			List<FieldValue> fieldValues = new ArrayList<>();
+			for (long v : values) {
+				fieldValues.add(FieldValue.of(v));
+			}
+			this.searchAfter = _listAddAll(this.searchAfter, fieldValues);
+			return this;
+		}
+
+		/**
+		 * API name: {@code search_after}
+		 * <p>
+		 * Adds all passed values to <code>searchAfter</code>.
+		 */
+		public final Builder searchAfter(double value, double... values) {
+			this.searchAfter = _listAdd(this.searchAfter, FieldValue.of(value));
+			List<FieldValue> fieldValues = new ArrayList<>();
+			for (double v : values) {
+				fieldValues.add(FieldValue.of(v));
+			}
+			this.searchAfter = _listAddAll(this.searchAfter, fieldValues);
+			return this;
+		}
+
+		/**
+		 * API name: {@code search_after}
+		 * <p>
+		 * Adds all passed values to <code>searchAfter</code>.
+		 */
+		public final Builder searchAfter(boolean value, boolean... values) {
+			this.searchAfter = _listAdd(this.searchAfter, FieldValue.of(value));
+			List<FieldValue> fieldValues = new ArrayList<>();
+			for (boolean v : values) {
+				fieldValues.add(FieldValue.of(v));
+			}
+			this.searchAfter = _listAddAll(this.searchAfter, fieldValues);
+			return this;
+		}
+
+		/**
+		 * API name: {@code search_after}
+		 * <p>
 		 * Adds a value to <code>searchAfter</code> using a builder lambda.
 		 */
 		public final Builder searchAfter(Function<FieldValue.Builder, ObjectBuilder<FieldValue>> fn) {
@@ -2184,6 +2262,21 @@ public class FleetSearchRequest extends RequestBase implements JsonpSerializable
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _index = 1 << 0;
+
+				int propsSet = 0;
+
+				propsSet |= _index;
+
+				if (propsSet == (_index)) {
+					params.put("index", request.index);
+				}
+				return params;
 			},
 
 			// Request parameters

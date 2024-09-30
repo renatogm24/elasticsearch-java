@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cluster;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -35,16 +31,33 @@ import co.elastic.clients.transport.endpoints.SimpleEndpoint;
 import co.elastic.clients.util.ObjectBuilder;
 import jakarta.json.stream.JsonGenerator;
 import java.lang.Boolean;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: cluster.get_settings.Request
 
 /**
- * Returns cluster settings.
+ * Returns cluster-wide settings. By default, it returns only settings that have
+ * been explicitly defined.
  * 
  * @see <a href="../doc-files/api-spec.html#cluster.get_settings.Request">API
  *      specification</a>
@@ -79,7 +92,7 @@ public class GetClusterSettingsRequest extends RequestBase {
 	}
 
 	/**
-	 * Return settings in flat format (default: false)
+	 * If <code>true</code>, returns settings in flat format.
 	 * <p>
 	 * API name: {@code flat_settings}
 	 */
@@ -89,7 +102,7 @@ public class GetClusterSettingsRequest extends RequestBase {
 	}
 
 	/**
-	 * Whether to return all default clusters setting.
+	 * If <code>true</code>, returns default cluster settings from the local node.
 	 * <p>
 	 * API name: {@code include_defaults}
 	 */
@@ -99,7 +112,8 @@ public class GetClusterSettingsRequest extends RequestBase {
 	}
 
 	/**
-	 * Explicit operation timeout for connection to master node
+	 * Period to wait for a connection to the master node. If no response is
+	 * received before the timeout expires, the request fails and returns an error.
 	 * <p>
 	 * API name: {@code master_timeout}
 	 */
@@ -109,7 +123,8 @@ public class GetClusterSettingsRequest extends RequestBase {
 	}
 
 	/**
-	 * Explicit operation timeout
+	 * Period to wait for a response. If no response is received before the timeout
+	 * expires, the request fails and returns an error.
 	 * <p>
 	 * API name: {@code timeout}
 	 */
@@ -140,7 +155,7 @@ public class GetClusterSettingsRequest extends RequestBase {
 		private Time timeout;
 
 		/**
-		 * Return settings in flat format (default: false)
+		 * If <code>true</code>, returns settings in flat format.
 		 * <p>
 		 * API name: {@code flat_settings}
 		 */
@@ -150,7 +165,7 @@ public class GetClusterSettingsRequest extends RequestBase {
 		}
 
 		/**
-		 * Whether to return all default clusters setting.
+		 * If <code>true</code>, returns default cluster settings from the local node.
 		 * <p>
 		 * API name: {@code include_defaults}
 		 */
@@ -160,7 +175,8 @@ public class GetClusterSettingsRequest extends RequestBase {
 		}
 
 		/**
-		 * Explicit operation timeout for connection to master node
+		 * Period to wait for a connection to the master node. If no response is
+		 * received before the timeout expires, the request fails and returns an error.
 		 * <p>
 		 * API name: {@code master_timeout}
 		 */
@@ -170,7 +186,8 @@ public class GetClusterSettingsRequest extends RequestBase {
 		}
 
 		/**
-		 * Explicit operation timeout for connection to master node
+		 * Period to wait for a connection to the master node. If no response is
+		 * received before the timeout expires, the request fails and returns an error.
 		 * <p>
 		 * API name: {@code master_timeout}
 		 */
@@ -179,7 +196,8 @@ public class GetClusterSettingsRequest extends RequestBase {
 		}
 
 		/**
-		 * Explicit operation timeout
+		 * Period to wait for a response. If no response is received before the timeout
+		 * expires, the request fails and returns an error.
 		 * <p>
 		 * API name: {@code timeout}
 		 */
@@ -189,7 +207,8 @@ public class GetClusterSettingsRequest extends RequestBase {
 		}
 
 		/**
-		 * Explicit operation timeout
+		 * Period to wait for a response. If no response is received before the timeout
+		 * expires, the request fails and returns an error.
 		 * <p>
 		 * API name: {@code timeout}
 		 */
@@ -233,6 +252,11 @@ public class GetClusterSettingsRequest extends RequestBase {
 			request -> {
 				return "/_cluster/settings";
 
+			},
+
+			// Path parameters
+			request -> {
+				return Collections.emptyMap();
 			},
 
 			// Request parameters

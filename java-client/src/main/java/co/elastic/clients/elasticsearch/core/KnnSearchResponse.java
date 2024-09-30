@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.core;
 
 import co.elastic.clients.elasticsearch._types.ShardStatistics;
@@ -48,6 +44,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: _global.knn_search.Response
 
@@ -365,7 +376,7 @@ public class KnnSearchResponse<TDocument> implements JsonpSerializable {
 	 */
 	public static final JsonpDeserializer<KnnSearchResponse<Object>> _DESERIALIZER = JsonpDeserializer
 			.lazy(() -> createKnnSearchResponseDeserializer(
-					new NamedDeserializer<>("co.elastic.clients:Deserializer:_global.knn_search.TDocument")));
+					new NamedDeserializer<>("co.elastic.clients:Deserializer:_global.knn_search.Response.TDocument")));
 
 	protected static <TDocument> void setupKnnSearchResponseDeserializer(
 			ObjectDeserializer<KnnSearchResponse.Builder<TDocument>> op,

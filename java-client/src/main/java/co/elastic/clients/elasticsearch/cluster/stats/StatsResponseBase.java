@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cluster.stats;
 
 import co.elastic.clients.elasticsearch._types.HealthStatus;
@@ -39,6 +35,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: cluster.stats.StatsResponseBase
 
@@ -77,7 +88,7 @@ public abstract class StatsResponseBase extends NodesResponseBase {
 	}
 
 	/**
-	 * Required - Name of the cluster, based on the Cluster name setting setting.
+	 * Required - Name of the cluster, based on the cluster name setting.
 	 * <p>
 	 * API name: {@code cluster_name}
 	 */
@@ -125,7 +136,7 @@ public abstract class StatsResponseBase extends NodesResponseBase {
 	}
 
 	/**
-	 * Required - Unix timestamp, in milliseconds, of the last time the cluster
+	 * Required - Unix timestamp, in milliseconds, for the last time the cluster
 	 * statistics were refreshed.
 	 * <p>
 	 * API name: {@code timestamp}
@@ -172,7 +183,7 @@ public abstract class StatsResponseBase extends NodesResponseBase {
 		private Long timestamp;
 
 		/**
-		 * Required - Name of the cluster, based on the Cluster name setting setting.
+		 * Required - Name of the cluster, based on the cluster name setting.
 		 * <p>
 		 * API name: {@code cluster_name}
 		 */
@@ -245,7 +256,7 @@ public abstract class StatsResponseBase extends NodesResponseBase {
 		}
 
 		/**
-		 * Required - Unix timestamp, in milliseconds, of the last time the cluster
+		 * Required - Unix timestamp, in milliseconds, for the last time the cluster
 		 * statistics were refreshed.
 		 * <p>
 		 * API name: {@code timestamp}

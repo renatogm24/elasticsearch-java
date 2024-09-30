@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.ml;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -50,10 +46,25 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: ml.post_data.Request
 
 /**
- * Sends data to an anomaly detection job for analysis.
+ * Send data to an anomaly detection job for analysis.
  * <p>
  * IMPORTANT: For each job, data can be accepted from only a single connection
  * at a time. It is not currently possible to post data to multiple jobs using
@@ -263,7 +274,7 @@ public class PostDataRequest<TData> extends RequestBase implements JsonpSerializ
 	 * provided by the calling {@code JsonMapper}.
 	 */
 	public static final JsonpDeserializer<PostDataRequest<Object>> _DESERIALIZER = createPostDataRequestDeserializer(
-			new NamedDeserializer<>("co.elastic.clients:Deserializer:ml.post_data.TData"));
+			new NamedDeserializer<>("co.elastic.clients:Deserializer:ml.post_data.Request.TData"));
 
 	public static <TData> JsonpDeserializer<PostDataRequest<TData>> createPostDataRequestDeserializer(
 			JsonpDeserializer<TData> tDataDeserializer) {
@@ -307,6 +318,21 @@ public class PostDataRequest<TData> extends RequestBase implements JsonpSerializ
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _jobId = 1 << 0;
+
+				int propsSet = 0;
+
+				propsSet |= _jobId;
+
+				if (propsSet == (_jobId)) {
+					params.put("jobId", request.jobId);
+				}
+				return params;
 			},
 
 			// Request parameters

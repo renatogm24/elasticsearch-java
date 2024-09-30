@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.indices;
 
 import co.elastic.clients.ApiClient;
@@ -36,6 +32,21 @@ import co.elastic.clients.util.ObjectBuilder;
 import java.io.IOException;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 /**
  * Client for the indices namespace.
@@ -58,7 +69,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.add_block
 
 	/**
-	 * Adds a block to an index.
+	 * Add an index block. Limits the operations allowed on an index by blocking
+	 * specific operation types.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/index-modules-blocks.html">Documentation
@@ -73,7 +85,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Adds a block to an index.
+	 * Add an index block. Limits the operations allowed on an index by blocking
+	 * specific operation types.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -91,11 +104,10 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.analyze
 
 	/**
-	 * Performs the analysis process on a text and return the tokens breakdown of
-	 * the text.
+	 * Performs analysis on a text string and returns the resulting tokens.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-analyze.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/indices-analyze.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -107,14 +119,13 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Performs the analysis process on a text and return the tokens breakdown of
-	 * the text.
+	 * Performs analysis on a text string and returns the resulting tokens.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link AnalyzeRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-analyze.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/indices-analyze.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -124,11 +135,10 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Performs the analysis process on a text and return the tokens breakdown of
-	 * the text.
+	 * Performs analysis on a text string and returns the resulting tokens.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-analyze.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/indices-analyze.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -140,7 +150,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.clear_cache
 
 	/**
-	 * Clears all or specific caches for one or more indices.
+	 * Clears the caches of one or more indices. For data streams, the API clears
+	 * the caches of the stream’s backing indices.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-clearcache.html">Documentation
@@ -155,7 +166,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Clears all or specific caches for one or more indices.
+	 * Clears the caches of one or more indices. For data streams, the API clears
+	 * the caches of the stream’s backing indices.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -171,7 +183,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Clears all or specific caches for one or more indices.
+	 * Clears the caches of one or more indices. For data streams, the API clears
+	 * the caches of the stream’s backing indices.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-clearcache.html">Documentation
@@ -186,7 +199,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.clone
 
 	/**
-	 * Clones an index
+	 * Clones an existing index.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-clone-index.html">Documentation
@@ -201,7 +214,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Clones an index
+	 * Clones an existing index.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -222,7 +235,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	 * Closes an index.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-open-close.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/indices-close.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -240,7 +253,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	 *            a function that initializes a builder to create the
 	 *            {@link CloseIndexRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-open-close.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/indices-close.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -252,10 +265,10 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.create
 
 	/**
-	 * Creates an index with optional settings and mappings.
+	 * Create an index. Creates a new index.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-create-index.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/indices-create-index.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -267,13 +280,13 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Creates an index with optional settings and mappings.
+	 * Create an index. Creates a new index.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link CreateIndexRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-create-index.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/indices-create-index.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -285,7 +298,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.create_data_stream
 
 	/**
-	 * Creates a data stream
+	 * Create a data stream. Creates a data stream. You must have a matching index
+	 * template with data stream enabled.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/data-streams.html">Documentation
@@ -301,7 +315,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Creates a data stream
+	 * Create a data stream. Creates a data stream. You must have a matching index
+	 * template with data stream enabled.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -320,7 +335,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.data_streams_stats
 
 	/**
-	 * Provides statistics on operations happening in a data stream.
+	 * Get data stream stats. Retrieves statistics for one or more data streams.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/data-streams.html">Documentation
@@ -336,7 +351,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Provides statistics on operations happening in a data stream.
+	 * Get data stream stats. Retrieves statistics for one or more data streams.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -353,7 +368,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Provides statistics on operations happening in a data stream.
+	 * Get data stream stats. Retrieves statistics for one or more data streams.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/data-streams.html">Documentation
@@ -368,7 +383,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.delete
 
 	/**
-	 * Deletes an index.
+	 * Delete indices. Deletes one or more indices.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-delete-index.html">Documentation
@@ -383,7 +398,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Deletes an index.
+	 * Delete indices. Deletes one or more indices.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -401,7 +416,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.delete_alias
 
 	/**
-	 * Deletes an alias.
+	 * Delete an alias. Removes a data stream or index from an alias.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Documentation
@@ -416,7 +431,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Deletes an alias.
+	 * Delete an alias. Removes a data stream or index from an alias.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -432,10 +447,48 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 		return deleteAlias(fn.apply(new DeleteAliasRequest.Builder()).build());
 	}
 
+	// ----- Endpoint: indices.delete_data_lifecycle
+
+	/**
+	 * Delete data stream lifecycles. Removes the data stream lifecycle from a data
+	 * stream, rendering it not managed by the data stream lifecycle.
+	 * 
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/data-streams-delete-lifecycle.html">Documentation
+	 *      on elastic.co</a>
+	 */
+
+	public DeleteDataLifecycleResponse deleteDataLifecycle(DeleteDataLifecycleRequest request)
+			throws IOException, ElasticsearchException {
+		@SuppressWarnings("unchecked")
+		JsonEndpoint<DeleteDataLifecycleRequest, DeleteDataLifecycleResponse, ErrorResponse> endpoint = (JsonEndpoint<DeleteDataLifecycleRequest, DeleteDataLifecycleResponse, ErrorResponse>) DeleteDataLifecycleRequest._ENDPOINT;
+
+		return this.transport.performRequest(request, endpoint, this.transportOptions);
+	}
+
+	/**
+	 * Delete data stream lifecycles. Removes the data stream lifecycle from a data
+	 * stream, rendering it not managed by the data stream lifecycle.
+	 * 
+	 * @param fn
+	 *            a function that initializes a builder to create the
+	 *            {@link DeleteDataLifecycleRequest}
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/data-streams-delete-lifecycle.html">Documentation
+	 *      on elastic.co</a>
+	 */
+
+	public final DeleteDataLifecycleResponse deleteDataLifecycle(
+			Function<DeleteDataLifecycleRequest.Builder, ObjectBuilder<DeleteDataLifecycleRequest>> fn)
+			throws IOException, ElasticsearchException {
+		return deleteDataLifecycle(fn.apply(new DeleteDataLifecycleRequest.Builder()).build());
+	}
+
 	// ----- Endpoint: indices.delete_data_stream
 
 	/**
-	 * Deletes a data stream.
+	 * Delete data streams. Deletes one or more data streams and their backing
+	 * indices.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/data-streams.html">Documentation
@@ -451,7 +504,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Deletes a data stream.
+	 * Delete data streams. Deletes one or more data streams and their backing
+	 * indices.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -470,10 +524,13 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.delete_index_template
 
 	/**
-	 * Deletes an index template.
+	 * Delete an index template. The provided &lt;index-template&gt; may contain
+	 * multiple template names separated by a comma. If multiple template names are
+	 * specified then there is no wildcard support and the provided names should
+	 * match completely with existing templates.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-delete-template.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -486,13 +543,16 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Deletes an index template.
+	 * Delete an index template. The provided &lt;index-template&gt; may contain
+	 * multiple template names separated by a comma. If multiple template names are
+	 * specified then there is no wildcard support and the provided names should
+	 * match completely with existing templates.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link DeleteIndexTemplateRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-delete-template.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -505,10 +565,10 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.delete_template
 
 	/**
-	 * Deletes an index template.
+	 * Deletes a legacy index template.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-delete-template-v1.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -521,13 +581,13 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Deletes an index template.
+	 * Deletes a legacy index template.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link DeleteTemplateRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-delete-template-v1.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -540,10 +600,10 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.disk_usage
 
 	/**
-	 * Analyzes the disk usage of each field of an index or data stream
+	 * Analyzes the disk usage of each field of an index or data stream.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-disk-usage.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/indices-disk-usage.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -555,13 +615,13 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Analyzes the disk usage of each field of an index or data stream
+	 * Analyzes the disk usage of each field of an index or data stream.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link DiskUsageRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-disk-usage.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/indices-disk-usage.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -573,10 +633,13 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.downsample
 
 	/**
-	 * Downsample an index
+	 * Aggregates a time series (TSDS) index and stores pre-computed statistical
+	 * summaries (<code>min</code>, <code>max</code>, <code>sum</code>,
+	 * <code>value_count</code> and <code>avg</code>) for each metric field grouped
+	 * by a configured time interval.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/current/xpack-rollup.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/indices-downsample-data-stream.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -588,13 +651,16 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Downsample an index
+	 * Aggregates a time series (TSDS) index and stores pre-computed statistical
+	 * summaries (<code>min</code>, <code>max</code>, <code>sum</code>,
+	 * <code>value_count</code> and <code>avg</code>) for each metric field grouped
+	 * by a configured time interval.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link DownsampleRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/current/xpack-rollup.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/indices-downsample-data-stream.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -606,7 +672,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.exists
 
 	/**
-	 * Returns information about whether a particular index exists.
+	 * Check indices. Checks if one or more indices, index aliases, or data streams
+	 * exist.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-exists.html">Documentation
@@ -621,7 +688,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Returns information about whether a particular index exists.
+	 * Check indices. Checks if one or more indices, index aliases, or data streams
+	 * exist.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -639,7 +707,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.exists_alias
 
 	/**
-	 * Returns information about whether a particular alias exists.
+	 * Check aliases. Checks if one or more data stream or index aliases exist.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Documentation
@@ -654,7 +722,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Returns information about whether a particular alias exists.
+	 * Check aliases. Checks if one or more data stream or index aliases exist.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -675,7 +743,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	 * Returns information about whether a particular index template exists.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/index-templates.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -694,7 +762,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	 *            a function that initializes a builder to create the
 	 *            {@link ExistsIndexTemplateRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/index-templates.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -707,10 +775,11 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.exists_template
 
 	/**
-	 * Returns information about whether a particular index template exists.
+	 * Check existence of index templates. Returns information about whether a
+	 * particular index template exists.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-template-exists-v1.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -722,13 +791,14 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Returns information about whether a particular index template exists.
+	 * Check existence of index templates. Returns information about whether a
+	 * particular index template exists.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link ExistsTemplateRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-template-exists-v1.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -738,10 +808,51 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 		return existsTemplate(fn.apply(new ExistsTemplateRequest.Builder()).build());
 	}
 
+	// ----- Endpoint: indices.explain_data_lifecycle
+
+	/**
+	 * Get the status for a data stream lifecycle. Retrieves information about an
+	 * index or data stream’s current data stream lifecycle status, such as time
+	 * since index creation, time since rollover, the lifecycle configuration
+	 * managing the index, or any errors encountered during lifecycle execution.
+	 * 
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/current/data-streams-explain-lifecycle.html">Documentation
+	 *      on elastic.co</a>
+	 */
+
+	public ExplainDataLifecycleResponse explainDataLifecycle(ExplainDataLifecycleRequest request)
+			throws IOException, ElasticsearchException {
+		@SuppressWarnings("unchecked")
+		JsonEndpoint<ExplainDataLifecycleRequest, ExplainDataLifecycleResponse, ErrorResponse> endpoint = (JsonEndpoint<ExplainDataLifecycleRequest, ExplainDataLifecycleResponse, ErrorResponse>) ExplainDataLifecycleRequest._ENDPOINT;
+
+		return this.transport.performRequest(request, endpoint, this.transportOptions);
+	}
+
+	/**
+	 * Get the status for a data stream lifecycle. Retrieves information about an
+	 * index or data stream’s current data stream lifecycle status, such as time
+	 * since index creation, time since rollover, the lifecycle configuration
+	 * managing the index, or any errors encountered during lifecycle execution.
+	 * 
+	 * @param fn
+	 *            a function that initializes a builder to create the
+	 *            {@link ExplainDataLifecycleRequest}
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/current/data-streams-explain-lifecycle.html">Documentation
+	 *      on elastic.co</a>
+	 */
+
+	public final ExplainDataLifecycleResponse explainDataLifecycle(
+			Function<ExplainDataLifecycleRequest.Builder, ObjectBuilder<ExplainDataLifecycleRequest>> fn)
+			throws IOException, ElasticsearchException {
+		return explainDataLifecycle(fn.apply(new ExplainDataLifecycleRequest.Builder()).build());
+	}
+
 	// ----- Endpoint: indices.field_usage_stats
 
 	/**
-	 * Returns the field usage stats for each field of an index
+	 * Returns field usage information for each shard and field of an index.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/field-usage-stats.html">Documentation
@@ -757,7 +868,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Returns the field usage stats for each field of an index
+	 * Returns field usage information for each shard and field of an index.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -776,10 +887,10 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.flush
 
 	/**
-	 * Performs the flush operation on one or more indices.
+	 * Flushes one or more data streams or indices.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-flush.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/indices-flush.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -791,13 +902,13 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Performs the flush operation on one or more indices.
+	 * Flushes one or more data streams or indices.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link FlushRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-flush.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/indices-flush.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -807,10 +918,10 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Performs the flush operation on one or more indices.
+	 * Flushes one or more data streams or indices.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-flush.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/indices-flush.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -868,7 +979,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.get
 
 	/**
-	 * Returns information about one or more indices.
+	 * Get index information. Returns information about one or more indices. For
+	 * data streams, the API returns information about the stream’s backing indices.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-index.html">Documentation
@@ -883,7 +995,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Returns information about one or more indices.
+	 * Get index information. Returns information about one or more indices. For
+	 * data streams, the API returns information about the stream’s backing indices.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -901,7 +1014,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.get_alias
 
 	/**
-	 * Returns an alias.
+	 * Get aliases. Retrieves information for one or more data stream or index
+	 * aliases.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Documentation
@@ -916,7 +1030,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Returns an alias.
+	 * Get aliases. Retrieves information for one or more data stream or index
+	 * aliases.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -932,7 +1047,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Returns an alias.
+	 * Get aliases. Retrieves information for one or more data stream or index
+	 * aliases.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Documentation
@@ -944,10 +1060,47 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 				this.transportOptions);
 	}
 
+	// ----- Endpoint: indices.get_data_lifecycle
+
+	/**
+	 * Get data stream lifecycles. Retrieves the data stream lifecycle configuration
+	 * of one or more data streams.
+	 * 
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/data-streams-get-lifecycle.html">Documentation
+	 *      on elastic.co</a>
+	 */
+
+	public GetDataLifecycleResponse getDataLifecycle(GetDataLifecycleRequest request)
+			throws IOException, ElasticsearchException {
+		@SuppressWarnings("unchecked")
+		JsonEndpoint<GetDataLifecycleRequest, GetDataLifecycleResponse, ErrorResponse> endpoint = (JsonEndpoint<GetDataLifecycleRequest, GetDataLifecycleResponse, ErrorResponse>) GetDataLifecycleRequest._ENDPOINT;
+
+		return this.transport.performRequest(request, endpoint, this.transportOptions);
+	}
+
+	/**
+	 * Get data stream lifecycles. Retrieves the data stream lifecycle configuration
+	 * of one or more data streams.
+	 * 
+	 * @param fn
+	 *            a function that initializes a builder to create the
+	 *            {@link GetDataLifecycleRequest}
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/data-streams-get-lifecycle.html">Documentation
+	 *      on elastic.co</a>
+	 */
+
+	public final GetDataLifecycleResponse getDataLifecycle(
+			Function<GetDataLifecycleRequest.Builder, ObjectBuilder<GetDataLifecycleRequest>> fn)
+			throws IOException, ElasticsearchException {
+		return getDataLifecycle(fn.apply(new GetDataLifecycleRequest.Builder()).build());
+	}
+
 	// ----- Endpoint: indices.get_data_stream
 
 	/**
-	 * Returns data streams.
+	 * Get data streams. Retrieves information about one or more data streams.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/data-streams.html">Documentation
@@ -963,7 +1116,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Returns data streams.
+	 * Get data streams. Retrieves information about one or more data streams.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -980,7 +1133,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Returns data streams.
+	 * Get data streams. Retrieves information about one or more data streams.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/data-streams.html">Documentation
@@ -995,7 +1148,9 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.get_field_mapping
 
 	/**
-	 * Returns mapping for one or more fields.
+	 * Get mapping definitions. Retrieves mapping definitions for one or more
+	 * fields. For data streams, the API retrieves field mappings for the stream’s
+	 * backing indices.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-field-mapping.html">Documentation
@@ -1011,7 +1166,9 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Returns mapping for one or more fields.
+	 * Get mapping definitions. Retrieves mapping definitions for one or more
+	 * fields. For data streams, the API retrieves field mappings for the stream’s
+	 * backing indices.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -1030,10 +1187,10 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.get_index_template
 
 	/**
-	 * Returns an index template.
+	 * Get index templates. Returns information about one or more index templates.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-template.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1046,13 +1203,13 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Returns an index template.
+	 * Get index templates. Returns information about one or more index templates.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link GetIndexTemplateRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-template.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1063,10 +1220,10 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Returns an index template.
+	 * Get index templates. Returns information about one or more index templates.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-template.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1078,7 +1235,9 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.get_mapping
 
 	/**
-	 * Returns mappings for one or more indices.
+	 * Get mapping definitions. Retrieves mapping definitions for one or more
+	 * indices. For data streams, the API retrieves mappings for the stream’s
+	 * backing indices.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-mapping.html">Documentation
@@ -1093,7 +1252,9 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Returns mappings for one or more indices.
+	 * Get mapping definitions. Retrieves mapping definitions for one or more
+	 * indices. For data streams, the API retrieves mappings for the stream’s
+	 * backing indices.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -1109,7 +1270,9 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Returns mappings for one or more indices.
+	 * Get mapping definitions. Retrieves mapping definitions for one or more
+	 * indices. For data streams, the API retrieves mappings for the stream’s
+	 * backing indices.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-mapping.html">Documentation
@@ -1124,7 +1287,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.get_settings
 
 	/**
-	 * Returns settings for one or more indices.
+	 * Get index settings. Returns setting information for one or more indices. For
+	 * data streams, returns setting information for the stream’s backing indices.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-settings.html">Documentation
@@ -1140,7 +1304,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Returns settings for one or more indices.
+	 * Get index settings. Returns setting information for one or more indices. For
+	 * data streams, returns setting information for the stream’s backing indices.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -1157,7 +1322,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Returns settings for one or more indices.
+	 * Get index settings. Returns setting information for one or more indices. For
+	 * data streams, returns setting information for the stream’s backing indices.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-settings.html">Documentation
@@ -1172,10 +1338,10 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.get_template
 
 	/**
-	 * Returns an index template.
+	 * Get index templates. Retrieves information about one or more index templates.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-template-v1.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1187,13 +1353,13 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Returns an index template.
+	 * Get index templates. Retrieves information about one or more index templates.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link GetTemplateRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-template-v1.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1204,10 +1370,10 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Returns an index template.
+	 * Get index templates. Retrieves information about one or more index templates.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-template-v1.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1219,7 +1385,15 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.migrate_to_data_stream
 
 	/**
-	 * Migrates an alias to a data stream
+	 * Convert an index alias to a data stream. Converts an index alias to a data
+	 * stream. You must have a matching index template that is data stream enabled.
+	 * The alias must meet the following criteria: The alias must have a write
+	 * index; All indices for the alias must have a <code>@timestamp</code> field
+	 * mapping of a <code>date</code> or <code>date_nanos</code> field type; The
+	 * alias must not have any filters; The alias must not use custom routing. If
+	 * successful, the request removes the alias and creates a data stream with the
+	 * same name. The indices for the alias become hidden backing indices for the
+	 * stream. The write index for the alias becomes the write index for the stream.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/data-streams.html">Documentation
@@ -1235,7 +1409,15 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Migrates an alias to a data stream
+	 * Convert an index alias to a data stream. Converts an index alias to a data
+	 * stream. You must have a matching index template that is data stream enabled.
+	 * The alias must meet the following criteria: The alias must have a write
+	 * index; All indices for the alias must have a <code>@timestamp</code> field
+	 * mapping of a <code>date</code> or <code>date_nanos</code> field type; The
+	 * alias must not have any filters; The alias must not use custom routing. If
+	 * successful, the request removes the alias and creates a data stream with the
+	 * same name. The indices for the alias become hidden backing indices for the
+	 * stream. The write index for the alias becomes the write index for the stream.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -1254,7 +1436,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.modify_data_stream
 
 	/**
-	 * Modifies a data stream
+	 * Update data streams. Performs one or more data stream modification actions in
+	 * a single atomic operation.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/data-streams.html">Documentation
@@ -1270,7 +1453,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Modifies a data stream
+	 * Update data streams. Performs one or more data stream modification actions in
+	 * a single atomic operation.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -1289,7 +1473,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.open
 
 	/**
-	 * Opens an index.
+	 * Opens a closed index. For data streams, the API opens any closed backing
+	 * indices.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-open-close.html">Documentation
@@ -1304,7 +1489,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Opens an index.
+	 * Opens a closed index. For data streams, the API opens any closed backing
+	 * indices.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -1359,7 +1545,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.put_alias
 
 	/**
-	 * Creates or updates an alias.
+	 * Create or update an alias. Adds a data stream or index to an alias.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Documentation
@@ -1374,7 +1560,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Creates or updates an alias.
+	 * Create or update an alias. Adds a data stream or index to an alias.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -1389,13 +1575,51 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 		return putAlias(fn.apply(new PutAliasRequest.Builder()).build());
 	}
 
+	// ----- Endpoint: indices.put_data_lifecycle
+
+	/**
+	 * Update data stream lifecycles. Update the data stream lifecycle of the
+	 * specified data streams.
+	 * 
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/data-streams-put-lifecycle.html">Documentation
+	 *      on elastic.co</a>
+	 */
+
+	public PutDataLifecycleResponse putDataLifecycle(PutDataLifecycleRequest request)
+			throws IOException, ElasticsearchException {
+		@SuppressWarnings("unchecked")
+		JsonEndpoint<PutDataLifecycleRequest, PutDataLifecycleResponse, ErrorResponse> endpoint = (JsonEndpoint<PutDataLifecycleRequest, PutDataLifecycleResponse, ErrorResponse>) PutDataLifecycleRequest._ENDPOINT;
+
+		return this.transport.performRequest(request, endpoint, this.transportOptions);
+	}
+
+	/**
+	 * Update data stream lifecycles. Update the data stream lifecycle of the
+	 * specified data streams.
+	 * 
+	 * @param fn
+	 *            a function that initializes a builder to create the
+	 *            {@link PutDataLifecycleRequest}
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/data-streams-put-lifecycle.html">Documentation
+	 *      on elastic.co</a>
+	 */
+
+	public final PutDataLifecycleResponse putDataLifecycle(
+			Function<PutDataLifecycleRequest.Builder, ObjectBuilder<PutDataLifecycleRequest>> fn)
+			throws IOException, ElasticsearchException {
+		return putDataLifecycle(fn.apply(new PutDataLifecycleRequest.Builder()).build());
+	}
+
 	// ----- Endpoint: indices.put_index_template
 
 	/**
-	 * Creates or updates an index template.
+	 * Create or update an index template. Index templates define settings,
+	 * mappings, and aliases that can be applied automatically to new indices.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-put-template.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1408,13 +1632,14 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Creates or updates an index template.
+	 * Create or update an index template. Index templates define settings,
+	 * mappings, and aliases that can be applied automatically to new indices.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link PutIndexTemplateRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-put-template.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1427,7 +1652,10 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.put_mapping
 
 	/**
-	 * Updates the index mappings.
+	 * Update field mappings. Adds new fields to an existing data stream or index.
+	 * You can also use this API to change the search settings of existing fields.
+	 * For data streams, these changes are applied to all backing indices by
+	 * default.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-put-mapping.html">Documentation
@@ -1442,7 +1670,10 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Updates the index mappings.
+	 * Update field mappings. Adds new fields to an existing data stream or index.
+	 * You can also use this API to change the search settings of existing fields.
+	 * For data streams, these changes are applied to all backing indices by
+	 * default.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -1460,7 +1691,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.put_settings
 
 	/**
-	 * Updates the index settings.
+	 * Update index settings. Changes dynamic index settings in real time. For data
+	 * streams, index setting changes are applied to all backing indices by default.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-update-settings.html">Documentation
@@ -1476,7 +1708,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Updates the index settings.
+	 * Update index settings. Changes dynamic index settings in real time. For data
+	 * streams, index setting changes are applied to all backing indices by default.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -1493,7 +1726,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Updates the index settings.
+	 * Update index settings. Changes dynamic index settings in real time. For data
+	 * streams, index setting changes are applied to all backing indices by default.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-update-settings.html">Documentation
@@ -1508,10 +1742,11 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.put_template
 
 	/**
-	 * Creates or updates an index template.
+	 * Create or update an index template. Index templates define settings,
+	 * mappings, and aliases that can be applied automatically to new indices.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates-v1.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1523,13 +1758,14 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Creates or updates an index template.
+	 * Create or update an index template. Index templates define settings,
+	 * mappings, and aliases that can be applied automatically to new indices.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link PutTemplateRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates-v1.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1542,7 +1778,9 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.recovery
 
 	/**
-	 * Returns information about ongoing index shard recoveries.
+	 * Returns information about ongoing and completed shard recoveries for one or
+	 * more indices. For data streams, the API returns information for the stream’s
+	 * backing indices.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-recovery.html">Documentation
@@ -1557,7 +1795,9 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Returns information about ongoing index shard recoveries.
+	 * Returns information about ongoing and completed shard recoveries for one or
+	 * more indices. For data streams, the API returns information for the stream’s
+	 * backing indices.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -1573,7 +1813,9 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Returns information about ongoing index shard recoveries.
+	 * Returns information about ongoing and completed shard recoveries for one or
+	 * more indices. For data streams, the API returns information for the stream’s
+	 * backing indices.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-recovery.html">Documentation
@@ -1588,7 +1830,9 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.refresh
 
 	/**
-	 * Performs the refresh operation in one or more indices.
+	 * Refresh an index. A refresh makes recent operations performed on one or more
+	 * indices available for search. For data streams, the API runs the refresh
+	 * operation on the stream’s backing indices.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-refresh.html">Documentation
@@ -1603,7 +1847,9 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Performs the refresh operation in one or more indices.
+	 * Refresh an index. A refresh makes recent operations performed on one or more
+	 * indices available for search. For data streams, the API runs the refresh
+	 * operation on the stream’s backing indices.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -1619,7 +1865,9 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Performs the refresh operation in one or more indices.
+	 * Refresh an index. A refresh makes recent operations performed on one or more
+	 * indices available for search. For data streams, the API runs the refresh
+	 * operation on the stream’s backing indices.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-refresh.html">Documentation
@@ -1666,10 +1914,50 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 		return reloadSearchAnalyzers(fn.apply(new ReloadSearchAnalyzersRequest.Builder()).build());
 	}
 
+	// ----- Endpoint: indices.resolve_cluster
+
+	/**
+	 * Resolves the specified index expressions to return information about each
+	 * cluster, including the local cluster, if included. Multiple patterns and
+	 * remote clusters are supported.
+	 * 
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-resolve-cluster-api.html">Documentation
+	 *      on elastic.co</a>
+	 */
+
+	public ResolveClusterResponse resolveCluster(ResolveClusterRequest request)
+			throws IOException, ElasticsearchException {
+		@SuppressWarnings("unchecked")
+		JsonEndpoint<ResolveClusterRequest, ResolveClusterResponse, ErrorResponse> endpoint = (JsonEndpoint<ResolveClusterRequest, ResolveClusterResponse, ErrorResponse>) ResolveClusterRequest._ENDPOINT;
+
+		return this.transport.performRequest(request, endpoint, this.transportOptions);
+	}
+
+	/**
+	 * Resolves the specified index expressions to return information about each
+	 * cluster, including the local cluster, if included. Multiple patterns and
+	 * remote clusters are supported.
+	 * 
+	 * @param fn
+	 *            a function that initializes a builder to create the
+	 *            {@link ResolveClusterRequest}
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-resolve-cluster-api.html">Documentation
+	 *      on elastic.co</a>
+	 */
+
+	public final ResolveClusterResponse resolveCluster(
+			Function<ResolveClusterRequest.Builder, ObjectBuilder<ResolveClusterRequest>> fn)
+			throws IOException, ElasticsearchException {
+		return resolveCluster(fn.apply(new ResolveClusterRequest.Builder()).build());
+	}
+
 	// ----- Endpoint: indices.resolve_index
 
 	/**
-	 * Returns information about any matching indices, aliases, and data streams
+	 * Resolves the specified name(s) and/or index patterns for indices, aliases,
+	 * and data streams. Multiple patterns and remote clusters are supported.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-resolve-index-api.html">Documentation
@@ -1684,7 +1972,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Returns information about any matching indices, aliases, and data streams
+	 * Resolves the specified name(s) and/or index patterns for indices, aliases,
+	 * and data streams. Multiple patterns and remote clusters are supported.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -1703,11 +1992,11 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.rollover
 
 	/**
-	 * Updates an alias to point to a new index when the existing index is
-	 * considered to be too large or too old.
+	 * Roll over to a new index. Creates a new index for a data stream or index
+	 * alias.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-rollover-index.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/indices-rollover-index.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1719,14 +2008,14 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Updates an alias to point to a new index when the existing index is
-	 * considered to be too large or too old.
+	 * Roll over to a new index. Creates a new index for a data stream or index
+	 * alias.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link RolloverRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-rollover-index.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/indices-rollover-index.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1738,7 +2027,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.segments
 
 	/**
-	 * Provides low-level information about segments in a Lucene index.
+	 * Returns low-level information about the Lucene segments in index shards. For
+	 * data streams, the API returns information about the stream’s backing indices.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-segments.html">Documentation
@@ -1753,7 +2043,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Provides low-level information about segments in a Lucene index.
+	 * Returns low-level information about the Lucene segments in index shards. For
+	 * data streams, the API returns information about the stream’s backing indices.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -1769,7 +2060,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Provides low-level information about segments in a Lucene index.
+	 * Returns low-level information about the Lucene segments in index shards. For
+	 * data streams, the API returns information about the stream’s backing indices.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-segments.html">Documentation
@@ -1784,7 +2076,9 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.shard_stores
 
 	/**
-	 * Provides store information for shard copies of indices.
+	 * Retrieves store information about replica shards in one or more indices. For
+	 * data streams, the API retrieves store information for the stream’s backing
+	 * indices.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-shards-stores.html">Documentation
@@ -1799,7 +2093,9 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Provides store information for shard copies of indices.
+	 * Retrieves store information about replica shards in one or more indices. For
+	 * data streams, the API retrieves store information for the stream’s backing
+	 * indices.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -1816,7 +2112,9 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Provides store information for shard copies of indices.
+	 * Retrieves store information about replica shards in one or more indices. For
+	 * data streams, the API retrieves store information for the stream’s backing
+	 * indices.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-shards-stores.html">Documentation
@@ -1831,10 +2129,10 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.shrink
 
 	/**
-	 * Allow to shrink an existing index into a new index with fewer primary shards.
+	 * Shrinks an existing index into a new index with fewer primary shards.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-shrink-index.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/indices-shrink-index.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1846,13 +2144,13 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Allow to shrink an existing index into a new index with fewer primary shards.
+	 * Shrinks an existing index into a new index with fewer primary shards.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link ShrinkRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-shrink-index.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/indices-shrink-index.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1864,11 +2162,11 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.simulate_index_template
 
 	/**
-	 * Simulate matching the given index name against the index templates in the
-	 * system
+	 * Simulate an index. Returns the index configuration that would be applied to
+	 * the specified index from an existing index template.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-simulate-index.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1881,14 +2179,14 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Simulate matching the given index name against the index templates in the
-	 * system
+	 * Simulate an index. Returns the index configuration that would be applied to
+	 * the specified index from an existing index template.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link SimulateIndexTemplateRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-simulate-index.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1901,10 +2199,11 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.simulate_template
 
 	/**
-	 * Simulate resolving the given template name or body
+	 * Simulate an index template. Returns the index configuration that would be
+	 * applied by a particular index template.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-simulate-template.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1917,13 +2216,14 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Simulate resolving the given template name or body
+	 * Simulate an index template. Returns the index configuration that would be
+	 * applied by a particular index template.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link SimulateTemplateRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-simulate-template.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1934,10 +2234,11 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Simulate resolving the given template name or body
+	 * Simulate an index template. Returns the index configuration that would be
+	 * applied by a particular index template.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-templates.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-simulate-template.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1949,11 +2250,10 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.split
 
 	/**
-	 * Allows you to split an existing index into a new index with more primary
-	 * shards.
+	 * Splits an existing index into a new index with more primary shards.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-split-index.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/indices-split-index.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1965,14 +2265,13 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Allows you to split an existing index into a new index with more primary
-	 * shards.
+	 * Splits an existing index into a new index with more primary shards.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link SplitRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-split-index.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/indices-split-index.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1984,7 +2283,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.stats
 
 	/**
-	 * Provides statistics on operations happening in an index.
+	 * Returns statistics for one or more indices. For data streams, the API
+	 * retrieves statistics for the stream’s backing indices.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-stats.html">Documentation
@@ -1999,7 +2299,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Provides statistics on operations happening in an index.
+	 * Returns statistics for one or more indices. For data streams, the API
+	 * retrieves statistics for the stream’s backing indices.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -2016,7 +2317,8 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Provides statistics on operations happening in an index.
+	 * Returns statistics for one or more indices. For data streams, the API
+	 * retrieves statistics for the stream’s backing indices.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-stats.html">Documentation
@@ -2031,8 +2333,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.unfreeze
 
 	/**
-	 * Unfreezes an index. When a frozen index is unfrozen, the index goes through
-	 * the normal recovery process and becomes writeable again.
+	 * Unfreezes an index.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/current/unfreeze-index-api.html">Documentation
@@ -2047,8 +2348,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Unfreezes an index. When a frozen index is unfrozen, the index goes through
-	 * the normal recovery process and becomes writeable again.
+	 * Unfreezes an index.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -2066,7 +2366,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.update_aliases
 
 	/**
-	 * Updates index aliases.
+	 * Create or update an alias. Adds a data stream or index to an alias.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Documentation
@@ -2082,7 +2382,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Updates index aliases.
+	 * Create or update an alias. Adds a data stream or index to an alias.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -2099,7 +2399,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Updates index aliases.
+	 * Create or update an alias. Adds a data stream or index to an alias.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Documentation
@@ -2114,7 +2414,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	// ----- Endpoint: indices.validate_query
 
 	/**
-	 * Allows a user to validate a potentially expensive query without executing it.
+	 * Validate a query. Validates a query without running it.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/search-validate.html">Documentation
@@ -2130,7 +2430,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Allows a user to validate a potentially expensive query without executing it.
+	 * Validate a query. Validates a query without running it.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -2147,7 +2447,7 @@ public class ElasticsearchIndicesClient extends ApiClient<ElasticsearchTransport
 	}
 
 	/**
-	 * Allows a user to validate a potentially expensive query without executing it.
+	 * Validate a query. Validates a query without running it.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/search-validate.html">Documentation

@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.security.has_privileges_user_profile;
 
 import co.elastic.clients.elasticsearch.security.ClusterPrivilege;
@@ -37,10 +33,26 @@ import co.elastic.clients.util.ApiTypeHelper;
 import co.elastic.clients.util.ObjectBuilder;
 import co.elastic.clients.util.WithJsonObjectBuilderBase;
 import jakarta.json.stream.JsonGenerator;
+import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: security.has_privileges_user_profile.PrivilegesCheck
 
@@ -54,7 +66,7 @@ import javax.annotation.Nullable;
 public class PrivilegesCheck implements JsonpSerializable {
 	private final List<ApplicationPrivilegesCheck> application;
 
-	private final List<ClusterPrivilege> cluster;
+	private final List<String> cluster;
 
 	private final List<IndexPrivilegesCheck> index;
 
@@ -84,7 +96,7 @@ public class PrivilegesCheck implements JsonpSerializable {
 	 * <p>
 	 * API name: {@code cluster}
 	 */
-	public final List<ClusterPrivilege> cluster() {
+	public final List<String> cluster() {
 		return this.cluster;
 	}
 
@@ -119,8 +131,9 @@ public class PrivilegesCheck implements JsonpSerializable {
 		if (ApiTypeHelper.isDefined(this.cluster)) {
 			generator.writeKey("cluster");
 			generator.writeStartArray();
-			for (ClusterPrivilege item0 : this.cluster) {
-				item0.serialize(generator, mapper);
+			for (String item0 : this.cluster) {
+				generator.write(item0);
+
 			}
 			generator.writeEnd();
 
@@ -154,7 +167,7 @@ public class PrivilegesCheck implements JsonpSerializable {
 		private List<ApplicationPrivilegesCheck> application;
 
 		@Nullable
-		private List<ClusterPrivilege> cluster;
+		private List<String> cluster;
 
 		@Nullable
 		private List<IndexPrivilegesCheck> index;
@@ -196,7 +209,7 @@ public class PrivilegesCheck implements JsonpSerializable {
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>cluster</code>.
 		 */
-		public final Builder cluster(List<ClusterPrivilege> list) {
+		public final Builder cluster(List<String> list) {
 			this.cluster = _listAddAll(this.cluster, list);
 			return this;
 		}
@@ -208,7 +221,7 @@ public class PrivilegesCheck implements JsonpSerializable {
 		 * <p>
 		 * Adds one or more values to <code>cluster</code>.
 		 */
-		public final Builder cluster(ClusterPrivilege value, ClusterPrivilege... values) {
+		public final Builder cluster(String value, String... values) {
 			this.cluster = _listAdd(this.cluster, value, values);
 			return this;
 		}
@@ -272,7 +285,8 @@ public class PrivilegesCheck implements JsonpSerializable {
 
 		op.add(Builder::application, JsonpDeserializer.arrayDeserializer(ApplicationPrivilegesCheck._DESERIALIZER),
 				"application");
-		op.add(Builder::cluster, JsonpDeserializer.arrayDeserializer(ClusterPrivilege._DESERIALIZER), "cluster");
+		op.add(Builder::cluster, JsonpDeserializer.arrayDeserializer(JsonpDeserializer.stringDeserializer()),
+				"cluster");
 		op.add(Builder::index, JsonpDeserializer.arrayDeserializer(IndexPrivilegesCheck._DESERIALIZER), "index");
 
 	}

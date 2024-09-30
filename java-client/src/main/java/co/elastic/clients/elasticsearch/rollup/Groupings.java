@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.rollup;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -36,6 +32,21 @@ import jakarta.json.stream.JsonGenerator;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: rollup._types.Groupings
 
@@ -70,6 +81,10 @@ public class Groupings implements JsonpSerializable {
 	}
 
 	/**
+	 * A date histogram group aggregates a date field into time-based buckets. This
+	 * group is mandatory; you currently cannot roll up documents without a
+	 * timestamp and a <code>date_histogram</code> group.
+	 * <p>
 	 * API name: {@code date_histogram}
 	 */
 	@Nullable
@@ -78,6 +93,9 @@ public class Groupings implements JsonpSerializable {
 	}
 
 	/**
+	 * The histogram group aggregates one or more numeric fields into numeric
+	 * histogram intervals.
+	 * <p>
 	 * API name: {@code histogram}
 	 */
 	@Nullable
@@ -86,6 +104,12 @@ public class Groupings implements JsonpSerializable {
 	}
 
 	/**
+	 * The terms group can be used on keyword or numeric fields to allow bucketing
+	 * via the terms aggregation at a later point. The indexer enumerates and stores
+	 * all values of a field for each time-period. This can be potentially costly
+	 * for high-cardinality groups such as IP addresses, especially if the
+	 * time-bucket is particularly sparse.
+	 * <p>
 	 * API name: {@code terms}
 	 */
 	@Nullable
@@ -144,6 +168,10 @@ public class Groupings implements JsonpSerializable {
 		private TermsGrouping terms;
 
 		/**
+		 * A date histogram group aggregates a date field into time-based buckets. This
+		 * group is mandatory; you currently cannot roll up documents without a
+		 * timestamp and a <code>date_histogram</code> group.
+		 * <p>
 		 * API name: {@code date_histogram}
 		 */
 		public final Builder dateHistogram(@Nullable DateHistogramGrouping value) {
@@ -152,6 +180,10 @@ public class Groupings implements JsonpSerializable {
 		}
 
 		/**
+		 * A date histogram group aggregates a date field into time-based buckets. This
+		 * group is mandatory; you currently cannot roll up documents without a
+		 * timestamp and a <code>date_histogram</code> group.
+		 * <p>
 		 * API name: {@code date_histogram}
 		 */
 		public final Builder dateHistogram(
@@ -160,6 +192,9 @@ public class Groupings implements JsonpSerializable {
 		}
 
 		/**
+		 * The histogram group aggregates one or more numeric fields into numeric
+		 * histogram intervals.
+		 * <p>
 		 * API name: {@code histogram}
 		 */
 		public final Builder histogram(@Nullable HistogramGrouping value) {
@@ -168,6 +203,9 @@ public class Groupings implements JsonpSerializable {
 		}
 
 		/**
+		 * The histogram group aggregates one or more numeric fields into numeric
+		 * histogram intervals.
+		 * <p>
 		 * API name: {@code histogram}
 		 */
 		public final Builder histogram(Function<HistogramGrouping.Builder, ObjectBuilder<HistogramGrouping>> fn) {
@@ -175,6 +213,12 @@ public class Groupings implements JsonpSerializable {
 		}
 
 		/**
+		 * The terms group can be used on keyword or numeric fields to allow bucketing
+		 * via the terms aggregation at a later point. The indexer enumerates and stores
+		 * all values of a field for each time-period. This can be potentially costly
+		 * for high-cardinality groups such as IP addresses, especially if the
+		 * time-bucket is particularly sparse.
+		 * <p>
 		 * API name: {@code terms}
 		 */
 		public final Builder terms(@Nullable TermsGrouping value) {
@@ -183,6 +227,12 @@ public class Groupings implements JsonpSerializable {
 		}
 
 		/**
+		 * The terms group can be used on keyword or numeric fields to allow bucketing
+		 * via the terms aggregation at a later point. The indexer enumerates and stores
+		 * all values of a field for each time-period. This can be potentially costly
+		 * for high-cardinality groups such as IP addresses, especially if the
+		 * time-bucket is particularly sparse.
+		 * <p>
 		 * API name: {@code terms}
 		 */
 		public final Builder terms(Function<TermsGrouping.Builder, ObjectBuilder<TermsGrouping>> fn) {

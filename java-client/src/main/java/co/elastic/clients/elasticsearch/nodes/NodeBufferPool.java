@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -38,6 +34,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.NodeBufferPool
 
@@ -80,6 +91,8 @@ public class NodeBufferPool implements JsonpSerializable {
 	}
 
 	/**
+	 * Number of buffer pools.
+	 * <p>
 	 * API name: {@code count}
 	 */
 	@Nullable
@@ -88,6 +101,8 @@ public class NodeBufferPool implements JsonpSerializable {
 	}
 
 	/**
+	 * Total capacity of buffer pools.
+	 * <p>
 	 * API name: {@code total_capacity}
 	 */
 	@Nullable
@@ -96,6 +111,8 @@ public class NodeBufferPool implements JsonpSerializable {
 	}
 
 	/**
+	 * Total capacity of buffer pools in bytes.
+	 * <p>
 	 * API name: {@code total_capacity_in_bytes}
 	 */
 	@Nullable
@@ -104,6 +121,8 @@ public class NodeBufferPool implements JsonpSerializable {
 	}
 
 	/**
+	 * Size of buffer pools.
+	 * <p>
 	 * API name: {@code used}
 	 */
 	@Nullable
@@ -112,6 +131,8 @@ public class NodeBufferPool implements JsonpSerializable {
 	}
 
 	/**
+	 * Size of buffer pools in bytes.
+	 * <p>
 	 * API name: {@code used_in_bytes}
 	 */
 	@Nullable
@@ -186,6 +207,8 @@ public class NodeBufferPool implements JsonpSerializable {
 		private Long usedInBytes;
 
 		/**
+		 * Number of buffer pools.
+		 * <p>
 		 * API name: {@code count}
 		 */
 		public final Builder count(@Nullable Long value) {
@@ -194,6 +217,8 @@ public class NodeBufferPool implements JsonpSerializable {
 		}
 
 		/**
+		 * Total capacity of buffer pools.
+		 * <p>
 		 * API name: {@code total_capacity}
 		 */
 		public final Builder totalCapacity(@Nullable String value) {
@@ -202,6 +227,8 @@ public class NodeBufferPool implements JsonpSerializable {
 		}
 
 		/**
+		 * Total capacity of buffer pools in bytes.
+		 * <p>
 		 * API name: {@code total_capacity_in_bytes}
 		 */
 		public final Builder totalCapacityInBytes(@Nullable Long value) {
@@ -210,6 +237,8 @@ public class NodeBufferPool implements JsonpSerializable {
 		}
 
 		/**
+		 * Size of buffer pools.
+		 * <p>
 		 * API name: {@code used}
 		 */
 		public final Builder used(@Nullable String value) {
@@ -218,6 +247,8 @@ public class NodeBufferPool implements JsonpSerializable {
 		}
 
 		/**
+		 * Size of buffer pools in bytes.
+		 * <p>
 		 * API name: {@code used_in_bytes}
 		 */
 		public final Builder usedInBytes(@Nullable Long value) {

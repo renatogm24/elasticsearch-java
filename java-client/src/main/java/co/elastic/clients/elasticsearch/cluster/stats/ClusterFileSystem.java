@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cluster.stats;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -37,6 +33,21 @@ import jakarta.json.stream.JsonGenerator;
 import java.lang.Long;
 import java.util.Objects;
 import java.util.function.Function;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: cluster.stats.ClusterFileSystem
 
@@ -69,21 +80,32 @@ public class ClusterFileSystem implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code available_in_bytes}
+	 * Required - Total number of bytes available to JVM in file stores across all
+	 * selected nodes. Depending on operating system or process-level restrictions,
+	 * this number may be less than <code>nodes.fs.free_in_byes</code>. This is the
+	 * actual amount of free disk space the selected Elasticsearch nodes can use.
+	 * <p>
+	 * API name: {@code available_in_bytes}
 	 */
 	public final long availableInBytes() {
 		return this.availableInBytes;
 	}
 
 	/**
-	 * Required - API name: {@code free_in_bytes}
+	 * Required - Total number of unallocated bytes in file stores across all
+	 * selected nodes.
+	 * <p>
+	 * API name: {@code free_in_bytes}
 	 */
 	public final long freeInBytes() {
 		return this.freeInBytes;
 	}
 
 	/**
-	 * Required - API name: {@code total_in_bytes}
+	 * Required - Total size, in bytes, of all file stores across all selected
+	 * nodes.
+	 * <p>
+	 * API name: {@code total_in_bytes}
 	 */
 	public final long totalInBytes() {
 		return this.totalInBytes;
@@ -130,7 +152,12 @@ public class ClusterFileSystem implements JsonpSerializable {
 		private Long totalInBytes;
 
 		/**
-		 * Required - API name: {@code available_in_bytes}
+		 * Required - Total number of bytes available to JVM in file stores across all
+		 * selected nodes. Depending on operating system or process-level restrictions,
+		 * this number may be less than <code>nodes.fs.free_in_byes</code>. This is the
+		 * actual amount of free disk space the selected Elasticsearch nodes can use.
+		 * <p>
+		 * API name: {@code available_in_bytes}
 		 */
 		public final Builder availableInBytes(long value) {
 			this.availableInBytes = value;
@@ -138,7 +165,10 @@ public class ClusterFileSystem implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code free_in_bytes}
+		 * Required - Total number of unallocated bytes in file stores across all
+		 * selected nodes.
+		 * <p>
+		 * API name: {@code free_in_bytes}
 		 */
 		public final Builder freeInBytes(long value) {
 			this.freeInBytes = value;
@@ -146,7 +176,10 @@ public class ClusterFileSystem implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code total_in_bytes}
+		 * Required - Total size, in bytes, of all file stores across all selected
+		 * nodes.
+		 * <p>
+		 * API name: {@code total_in_bytes}
 		 */
 		public final Builder totalInBytes(long value) {
 			this.totalInBytes = value;

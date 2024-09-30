@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -39,6 +35,21 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.Discovery
 
@@ -80,6 +91,8 @@ public class Discovery implements JsonpSerializable {
 	}
 
 	/**
+	 * Contains statistics for the cluster state queue of the node.
+	 * <p>
 	 * API name: {@code cluster_state_queue}
 	 */
 	@Nullable
@@ -88,6 +101,8 @@ public class Discovery implements JsonpSerializable {
 	}
 
 	/**
+	 * Contains statistics for the published cluster states of the node.
+	 * <p>
 	 * API name: {@code published_cluster_states}
 	 */
 	@Nullable
@@ -96,6 +111,14 @@ public class Discovery implements JsonpSerializable {
 	}
 
 	/**
+	 * Contains low-level statistics about how long various activities took during
+	 * cluster state updates while the node was the elected master. Omitted if the
+	 * node is not master-eligible. Every field whose name ends in
+	 * <code>_time</code> within this object is also represented as a raw number of
+	 * milliseconds in a field whose name ends in <code>_time_millis</code>. The
+	 * human-readable fields with a <code>_time</code> suffix are only returned if
+	 * requested with the <code>?human=true</code> query parameter.
+	 * <p>
 	 * API name: {@code cluster_state_update}
 	 */
 	public final Map<String, ClusterStateUpdate> clusterStateUpdate() {
@@ -191,6 +214,8 @@ public class Discovery implements JsonpSerializable {
 		private ClusterAppliedStats clusterApplierStats;
 
 		/**
+		 * Contains statistics for the cluster state queue of the node.
+		 * <p>
 		 * API name: {@code cluster_state_queue}
 		 */
 		public final Builder clusterStateQueue(@Nullable ClusterStateQueue value) {
@@ -199,6 +224,8 @@ public class Discovery implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics for the cluster state queue of the node.
+		 * <p>
 		 * API name: {@code cluster_state_queue}
 		 */
 		public final Builder clusterStateQueue(
@@ -207,6 +234,8 @@ public class Discovery implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics for the published cluster states of the node.
+		 * <p>
 		 * API name: {@code published_cluster_states}
 		 */
 		public final Builder publishedClusterStates(@Nullable PublishedClusterStates value) {
@@ -215,6 +244,8 @@ public class Discovery implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics for the published cluster states of the node.
+		 * <p>
 		 * API name: {@code published_cluster_states}
 		 */
 		public final Builder publishedClusterStates(
@@ -223,6 +254,14 @@ public class Discovery implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains low-level statistics about how long various activities took during
+		 * cluster state updates while the node was the elected master. Omitted if the
+		 * node is not master-eligible. Every field whose name ends in
+		 * <code>_time</code> within this object is also represented as a raw number of
+		 * milliseconds in a field whose name ends in <code>_time_millis</code>. The
+		 * human-readable fields with a <code>_time</code> suffix are only returned if
+		 * requested with the <code>?human=true</code> query parameter.
+		 * <p>
 		 * API name: {@code cluster_state_update}
 		 * <p>
 		 * Adds all entries of <code>map</code> to <code>clusterStateUpdate</code>.
@@ -233,6 +272,14 @@ public class Discovery implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains low-level statistics about how long various activities took during
+		 * cluster state updates while the node was the elected master. Omitted if the
+		 * node is not master-eligible. Every field whose name ends in
+		 * <code>_time</code> within this object is also represented as a raw number of
+		 * milliseconds in a field whose name ends in <code>_time_millis</code>. The
+		 * human-readable fields with a <code>_time</code> suffix are only returned if
+		 * requested with the <code>?human=true</code> query parameter.
+		 * <p>
 		 * API name: {@code cluster_state_update}
 		 * <p>
 		 * Adds an entry to <code>clusterStateUpdate</code>.
@@ -243,6 +290,14 @@ public class Discovery implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains low-level statistics about how long various activities took during
+		 * cluster state updates while the node was the elected master. Omitted if the
+		 * node is not master-eligible. Every field whose name ends in
+		 * <code>_time</code> within this object is also represented as a raw number of
+		 * milliseconds in a field whose name ends in <code>_time_millis</code>. The
+		 * human-readable fields with a <code>_time</code> suffix are only returned if
+		 * requested with the <code>?human=true</code> query parameter.
+		 * <p>
 		 * API name: {@code cluster_state_update}
 		 * <p>
 		 * Adds an entry to <code>clusterStateUpdate</code> using a builder lambda.

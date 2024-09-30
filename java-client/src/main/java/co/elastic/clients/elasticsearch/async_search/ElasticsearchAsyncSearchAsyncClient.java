@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.async_search;
 
 import co.elastic.clients.ApiClient;
@@ -36,6 +32,21 @@ import java.lang.reflect.Type;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 /**
  * Client for the async_search namespace.
@@ -61,11 +72,15 @@ public class ElasticsearchAsyncSearchAsyncClient
 	// ----- Endpoint: async_search.delete
 
 	/**
-	 * Deletes an async search by ID. If the search is still running, the search
-	 * request will be cancelled. Otherwise, the saved search results are deleted.
+	 * Deletes an async search by identifier. If the search is still running, the
+	 * search request will be cancelled. Otherwise, the saved search results are
+	 * deleted. If the Elasticsearch security features are enabled, the deletion of
+	 * a specific async search is restricted to: the authenticated user that
+	 * submitted the original search request; users that have the
+	 * <code>cancel_task</code> cluster privilege.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.8/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -77,14 +92,18 @@ public class ElasticsearchAsyncSearchAsyncClient
 	}
 
 	/**
-	 * Deletes an async search by ID. If the search is still running, the search
-	 * request will be cancelled. Otherwise, the saved search results are deleted.
+	 * Deletes an async search by identifier. If the search is still running, the
+	 * search request will be cancelled. Otherwise, the saved search results are
+	 * deleted. If the Elasticsearch security features are enabled, the deletion of
+	 * a specific async search is restricted to: the authenticated user that
+	 * submitted the original search request; users that have the
+	 * <code>cancel_task</code> cluster privilege.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link DeleteAsyncSearchRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.8/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -97,10 +116,12 @@ public class ElasticsearchAsyncSearchAsyncClient
 
 	/**
 	 * Retrieves the results of a previously submitted async search request given
-	 * its ID.
+	 * its identifier. If the Elasticsearch security features are enabled, access to
+	 * the results of a specific async search is restricted to the user or API key
+	 * that submitted it.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.8/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -109,20 +130,22 @@ public class ElasticsearchAsyncSearchAsyncClient
 		@SuppressWarnings("unchecked")
 		JsonEndpoint<GetAsyncSearchRequest, GetAsyncSearchResponse<TDocument>, ErrorResponse> endpoint = (JsonEndpoint<GetAsyncSearchRequest, GetAsyncSearchResponse<TDocument>, ErrorResponse>) GetAsyncSearchRequest._ENDPOINT;
 		endpoint = new EndpointWithResponseMapperAttr<>(endpoint,
-				"co.elastic.clients:Deserializer:async_search.get.TDocument", getDeserializer(tDocumentClass));
+				"co.elastic.clients:Deserializer:async_search.get.Response.TDocument", getDeserializer(tDocumentClass));
 
 		return this.transport.performRequestAsync(request, endpoint, this.transportOptions);
 	}
 
 	/**
 	 * Retrieves the results of a previously submitted async search request given
-	 * its ID.
+	 * its identifier. If the Elasticsearch security features are enabled, access to
+	 * the results of a specific async search is restricted to the user or API key
+	 * that submitted it.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link GetAsyncSearchRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.8/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -134,10 +157,12 @@ public class ElasticsearchAsyncSearchAsyncClient
 
 	/**
 	 * Retrieves the results of a previously submitted async search request given
-	 * its ID.
+	 * its identifier. If the Elasticsearch security features are enabled, access to
+	 * the results of a specific async search is restricted to the user or API key
+	 * that submitted it.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.8/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -146,20 +171,22 @@ public class ElasticsearchAsyncSearchAsyncClient
 		@SuppressWarnings("unchecked")
 		JsonEndpoint<GetAsyncSearchRequest, GetAsyncSearchResponse<TDocument>, ErrorResponse> endpoint = (JsonEndpoint<GetAsyncSearchRequest, GetAsyncSearchResponse<TDocument>, ErrorResponse>) GetAsyncSearchRequest._ENDPOINT;
 		endpoint = new EndpointWithResponseMapperAttr<>(endpoint,
-				"co.elastic.clients:Deserializer:async_search.get.TDocument", getDeserializer(tDocumentType));
+				"co.elastic.clients:Deserializer:async_search.get.Response.TDocument", getDeserializer(tDocumentType));
 
 		return this.transport.performRequestAsync(request, endpoint, this.transportOptions);
 	}
 
 	/**
 	 * Retrieves the results of a previously submitted async search request given
-	 * its ID.
+	 * its identifier. If the Elasticsearch security features are enabled, access to
+	 * the results of a specific async search is restricted to the user or API key
+	 * that submitted it.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link GetAsyncSearchRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.8/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -171,11 +198,13 @@ public class ElasticsearchAsyncSearchAsyncClient
 	// ----- Endpoint: async_search.status
 
 	/**
-	 * Retrieves the status of a previously submitted async search request given its
-	 * ID.
+	 * Get async search status Retrieves the status of a previously submitted async
+	 * search request given its identifier, without retrieving search results. If
+	 * the Elasticsearch security features are enabled, use of this API is
+	 * restricted to the <code>monitoring_user</code> role.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.8/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -187,14 +216,16 @@ public class ElasticsearchAsyncSearchAsyncClient
 	}
 
 	/**
-	 * Retrieves the status of a previously submitted async search request given its
-	 * ID.
+	 * Get async search status Retrieves the status of a previously submitted async
+	 * search request given its identifier, without retrieving search results. If
+	 * the Elasticsearch security features are enabled, use of this API is
+	 * restricted to the <code>monitoring_user</code> role.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link AsyncSearchStatusRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.8/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -206,10 +237,18 @@ public class ElasticsearchAsyncSearchAsyncClient
 	// ----- Endpoint: async_search.submit
 
 	/**
-	 * Executes a search request asynchronously.
+	 * Runs a search request asynchronously. When the primary sort of the results is
+	 * an indexed field, shards get sorted based on minimum and maximum value that
+	 * they hold for that field, hence partial results become available following
+	 * the sort criteria that was requested. Warning: Async search does not support
+	 * scroll nor search requests that only include the suggest section. By default,
+	 * Elasticsearch doesn’t allow you to store an async search response larger than
+	 * 10Mb and an attempt to do this results in an error. The maximum allowed size
+	 * for a stored async search response can be set by changing the
+	 * <code>search.max_async_search_response_size</code> cluster level setting.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.8/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -218,19 +257,28 @@ public class ElasticsearchAsyncSearchAsyncClient
 		@SuppressWarnings("unchecked")
 		JsonEndpoint<SubmitRequest, SubmitResponse<TDocument>, ErrorResponse> endpoint = (JsonEndpoint<SubmitRequest, SubmitResponse<TDocument>, ErrorResponse>) SubmitRequest._ENDPOINT;
 		endpoint = new EndpointWithResponseMapperAttr<>(endpoint,
-				"co.elastic.clients:Deserializer:async_search.submit.TDocument", getDeserializer(tDocumentClass));
+				"co.elastic.clients:Deserializer:async_search.submit.Response.TDocument",
+				getDeserializer(tDocumentClass));
 
 		return this.transport.performRequestAsync(request, endpoint, this.transportOptions);
 	}
 
 	/**
-	 * Executes a search request asynchronously.
+	 * Runs a search request asynchronously. When the primary sort of the results is
+	 * an indexed field, shards get sorted based on minimum and maximum value that
+	 * they hold for that field, hence partial results become available following
+	 * the sort criteria that was requested. Warning: Async search does not support
+	 * scroll nor search requests that only include the suggest section. By default,
+	 * Elasticsearch doesn’t allow you to store an async search response larger than
+	 * 10Mb and an attempt to do this results in an error. The maximum allowed size
+	 * for a stored async search response can be set by changing the
+	 * <code>search.max_async_search_response_size</code> cluster level setting.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link SubmitRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.8/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -240,10 +288,18 @@ public class ElasticsearchAsyncSearchAsyncClient
 	}
 
 	/**
-	 * Executes a search request asynchronously.
+	 * Runs a search request asynchronously. When the primary sort of the results is
+	 * an indexed field, shards get sorted based on minimum and maximum value that
+	 * they hold for that field, hence partial results become available following
+	 * the sort criteria that was requested. Warning: Async search does not support
+	 * scroll nor search requests that only include the suggest section. By default,
+	 * Elasticsearch doesn’t allow you to store an async search response larger than
+	 * 10Mb and an attempt to do this results in an error. The maximum allowed size
+	 * for a stored async search response can be set by changing the
+	 * <code>search.max_async_search_response_size</code> cluster level setting.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.8/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -251,19 +307,28 @@ public class ElasticsearchAsyncSearchAsyncClient
 		@SuppressWarnings("unchecked")
 		JsonEndpoint<SubmitRequest, SubmitResponse<TDocument>, ErrorResponse> endpoint = (JsonEndpoint<SubmitRequest, SubmitResponse<TDocument>, ErrorResponse>) SubmitRequest._ENDPOINT;
 		endpoint = new EndpointWithResponseMapperAttr<>(endpoint,
-				"co.elastic.clients:Deserializer:async_search.submit.TDocument", getDeserializer(tDocumentType));
+				"co.elastic.clients:Deserializer:async_search.submit.Response.TDocument",
+				getDeserializer(tDocumentType));
 
 		return this.transport.performRequestAsync(request, endpoint, this.transportOptions);
 	}
 
 	/**
-	 * Executes a search request asynchronously.
+	 * Runs a search request asynchronously. When the primary sort of the results is
+	 * an indexed field, shards get sorted based on minimum and maximum value that
+	 * they hold for that field, hence partial results become available following
+	 * the sort criteria that was requested. Warning: Async search does not support
+	 * scroll nor search requests that only include the suggest section. By default,
+	 * Elasticsearch doesn’t allow you to store an async search response larger than
+	 * 10Mb and an attempt to do this results in an error. The maximum allowed size
+	 * for a stored async search response can be set by changing the
+	 * <code>search.max_async_search_response_size</code> cluster level setting.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link SubmitRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.8/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 

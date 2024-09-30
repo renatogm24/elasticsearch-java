@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.core.search;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -37,6 +33,21 @@ import jakarta.json.stream.JsonGenerator;
 import java.lang.Long;
 import java.util.Objects;
 import java.util.function.Function;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: _global.search._types.QueryBreakdown
 
@@ -80,6 +91,10 @@ public class QueryBreakdown implements JsonpSerializable {
 
 	private final long computeMaxScoreCount;
 
+	private final long countWeight;
+
+	private final long countWeightCount;
+
 	private final long setMinCompetitiveScore;
 
 	private final long setMinCompetitiveScoreCount;
@@ -106,6 +121,8 @@ public class QueryBreakdown implements JsonpSerializable {
 		this.computeMaxScore = ApiTypeHelper.requireNonNull(builder.computeMaxScore, this, "computeMaxScore");
 		this.computeMaxScoreCount = ApiTypeHelper.requireNonNull(builder.computeMaxScoreCount, this,
 				"computeMaxScoreCount");
+		this.countWeight = ApiTypeHelper.requireNonNull(builder.countWeight, this, "countWeight");
+		this.countWeightCount = ApiTypeHelper.requireNonNull(builder.countWeightCount, this, "countWeightCount");
 		this.setMinCompetitiveScore = ApiTypeHelper.requireNonNull(builder.setMinCompetitiveScore, this,
 				"setMinCompetitiveScore");
 		this.setMinCompetitiveScoreCount = ApiTypeHelper.requireNonNull(builder.setMinCompetitiveScoreCount, this,
@@ -230,6 +247,20 @@ public class QueryBreakdown implements JsonpSerializable {
 	}
 
 	/**
+	 * Required - API name: {@code count_weight}
+	 */
+	public final long countWeight() {
+		return this.countWeight;
+	}
+
+	/**
+	 * Required - API name: {@code count_weight_count}
+	 */
+	public final long countWeightCount() {
+		return this.countWeightCount;
+	}
+
+	/**
 	 * Required - API name: {@code set_min_competitive_score}
 	 */
 	public final long setMinCompetitiveScore() {
@@ -302,6 +333,12 @@ public class QueryBreakdown implements JsonpSerializable {
 		generator.writeKey("compute_max_score_count");
 		generator.write(this.computeMaxScoreCount);
 
+		generator.writeKey("count_weight");
+		generator.write(this.countWeight);
+
+		generator.writeKey("count_weight_count");
+		generator.write(this.countWeightCount);
+
 		generator.writeKey("set_min_competitive_score");
 		generator.write(this.setMinCompetitiveScore);
 
@@ -353,6 +390,10 @@ public class QueryBreakdown implements JsonpSerializable {
 		private Long computeMaxScore;
 
 		private Long computeMaxScoreCount;
+
+		private Long countWeight;
+
+		private Long countWeightCount;
 
 		private Long setMinCompetitiveScore;
 
@@ -487,6 +528,22 @@ public class QueryBreakdown implements JsonpSerializable {
 		}
 
 		/**
+		 * Required - API name: {@code count_weight}
+		 */
+		public final Builder countWeight(long value) {
+			this.countWeight = value;
+			return this;
+		}
+
+		/**
+		 * Required - API name: {@code count_weight_count}
+		 */
+		public final Builder countWeightCount(long value) {
+			this.countWeightCount = value;
+			return this;
+		}
+
+		/**
 		 * Required - API name: {@code set_min_competitive_score}
 		 */
 		public final Builder setMinCompetitiveScore(long value) {
@@ -546,6 +603,8 @@ public class QueryBreakdown implements JsonpSerializable {
 		op.add(Builder::scoreCount, JsonpDeserializer.longDeserializer(), "score_count");
 		op.add(Builder::computeMaxScore, JsonpDeserializer.longDeserializer(), "compute_max_score");
 		op.add(Builder::computeMaxScoreCount, JsonpDeserializer.longDeserializer(), "compute_max_score_count");
+		op.add(Builder::countWeight, JsonpDeserializer.longDeserializer(), "count_weight");
+		op.add(Builder::countWeightCount, JsonpDeserializer.longDeserializer(), "count_weight_count");
 		op.add(Builder::setMinCompetitiveScore, JsonpDeserializer.longDeserializer(), "set_min_competitive_score");
 		op.add(Builder::setMinCompetitiveScoreCount, JsonpDeserializer.longDeserializer(),
 				"set_min_competitive_score_count");

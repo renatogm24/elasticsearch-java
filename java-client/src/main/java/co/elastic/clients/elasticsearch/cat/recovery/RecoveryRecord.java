@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cat.recovery;
 
 import co.elastic.clients.elasticsearch._types.Time;
@@ -40,6 +36,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: cat.recovery.RecoveryRecord
 
@@ -166,7 +177,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * index name
+	 * The index name.
 	 * <p>
 	 * API name: {@code index}
 	 */
@@ -176,7 +187,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * shard name
+	 * The shard name.
 	 * <p>
 	 * API name: {@code shard}
 	 */
@@ -186,7 +197,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * recovery start time
+	 * The recovery start time.
 	 * <p>
 	 * API name: {@code start_time}
 	 */
@@ -196,7 +207,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * recovery start time in epoch milliseconds
+	 * The recovery start time in epoch milliseconds.
 	 * <p>
 	 * API name: {@code start_time_millis}
 	 */
@@ -206,7 +217,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * recovery stop time
+	 * The recovery stop time.
 	 * <p>
 	 * API name: {@code stop_time}
 	 */
@@ -216,7 +227,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * recovery stop time in epoch milliseconds
+	 * The recovery stop time in epoch milliseconds.
 	 * <p>
 	 * API name: {@code stop_time_millis}
 	 */
@@ -226,7 +237,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * recovery time
+	 * The recovery time.
 	 * <p>
 	 * API name: {@code time}
 	 */
@@ -236,7 +247,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * recovery type
+	 * The recovery type.
 	 * <p>
 	 * API name: {@code type}
 	 */
@@ -246,7 +257,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * recovery stage
+	 * The recovery stage.
 	 * <p>
 	 * API name: {@code stage}
 	 */
@@ -256,7 +267,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * source host
+	 * The source host.
 	 * <p>
 	 * API name: {@code source_host}
 	 */
@@ -266,7 +277,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * source node name
+	 * The source node name.
 	 * <p>
 	 * API name: {@code source_node}
 	 */
@@ -276,7 +287,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * target host
+	 * The target host.
 	 * <p>
 	 * API name: {@code target_host}
 	 */
@@ -286,7 +297,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * target node name
+	 * The target node name.
 	 * <p>
 	 * API name: {@code target_node}
 	 */
@@ -296,7 +307,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * repository
+	 * The repository name.
 	 * <p>
 	 * API name: {@code repository}
 	 */
@@ -306,7 +317,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * snapshot
+	 * The snapshot name.
 	 * <p>
 	 * API name: {@code snapshot}
 	 */
@@ -316,7 +327,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of files to recover
+	 * The number of files to recover.
 	 * <p>
 	 * API name: {@code files}
 	 */
@@ -326,7 +337,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * files recovered
+	 * The files recovered.
 	 * <p>
 	 * API name: {@code files_recovered}
 	 */
@@ -336,7 +347,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * percent of files recovered
+	 * The ratio of files recovered.
 	 * <p>
 	 * API name: {@code files_percent}
 	 */
@@ -346,7 +357,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * total number of files
+	 * The total number of files.
 	 * <p>
 	 * API name: {@code files_total}
 	 */
@@ -356,7 +367,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of bytes to recover
+	 * The number of bytes to recover.
 	 * <p>
 	 * API name: {@code bytes}
 	 */
@@ -366,7 +377,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * bytes recovered
+	 * The bytes recovered.
 	 * <p>
 	 * API name: {@code bytes_recovered}
 	 */
@@ -376,7 +387,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * percent of bytes recovered
+	 * The ratio of bytes recovered.
 	 * <p>
 	 * API name: {@code bytes_percent}
 	 */
@@ -386,7 +397,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * total number of bytes
+	 * The total number of bytes.
 	 * <p>
 	 * API name: {@code bytes_total}
 	 */
@@ -396,7 +407,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of translog ops to recover
+	 * The number of translog operations to recover.
 	 * <p>
 	 * API name: {@code translog_ops}
 	 */
@@ -406,7 +417,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * translog ops recovered
+	 * The translog operations recovered.
 	 * <p>
 	 * API name: {@code translog_ops_recovered}
 	 */
@@ -416,7 +427,7 @@ public class RecoveryRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * percent of translog ops recovered
+	 * The ratio of translog operations recovered.
 	 * <p>
 	 * API name: {@code translog_ops_percent}
 	 */
@@ -658,7 +669,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		private String translogOpsPercent;
 
 		/**
-		 * index name
+		 * The index name.
 		 * <p>
 		 * API name: {@code index}
 		 */
@@ -668,7 +679,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * shard name
+		 * The shard name.
 		 * <p>
 		 * API name: {@code shard}
 		 */
@@ -678,7 +689,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * recovery start time
+		 * The recovery start time.
 		 * <p>
 		 * API name: {@code start_time}
 		 */
@@ -688,7 +699,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * recovery start time in epoch milliseconds
+		 * The recovery start time in epoch milliseconds.
 		 * <p>
 		 * API name: {@code start_time_millis}
 		 */
@@ -698,7 +709,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * recovery stop time
+		 * The recovery stop time.
 		 * <p>
 		 * API name: {@code stop_time}
 		 */
@@ -708,7 +719,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * recovery stop time in epoch milliseconds
+		 * The recovery stop time in epoch milliseconds.
 		 * <p>
 		 * API name: {@code stop_time_millis}
 		 */
@@ -718,7 +729,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * recovery time
+		 * The recovery time.
 		 * <p>
 		 * API name: {@code time}
 		 */
@@ -728,7 +739,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * recovery time
+		 * The recovery time.
 		 * <p>
 		 * API name: {@code time}
 		 */
@@ -737,7 +748,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * recovery type
+		 * The recovery type.
 		 * <p>
 		 * API name: {@code type}
 		 */
@@ -747,7 +758,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * recovery stage
+		 * The recovery stage.
 		 * <p>
 		 * API name: {@code stage}
 		 */
@@ -757,7 +768,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * source host
+		 * The source host.
 		 * <p>
 		 * API name: {@code source_host}
 		 */
@@ -767,7 +778,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * source node name
+		 * The source node name.
 		 * <p>
 		 * API name: {@code source_node}
 		 */
@@ -777,7 +788,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * target host
+		 * The target host.
 		 * <p>
 		 * API name: {@code target_host}
 		 */
@@ -787,7 +798,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * target node name
+		 * The target node name.
 		 * <p>
 		 * API name: {@code target_node}
 		 */
@@ -797,7 +808,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * repository
+		 * The repository name.
 		 * <p>
 		 * API name: {@code repository}
 		 */
@@ -807,7 +818,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * snapshot
+		 * The snapshot name.
 		 * <p>
 		 * API name: {@code snapshot}
 		 */
@@ -817,7 +828,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of files to recover
+		 * The number of files to recover.
 		 * <p>
 		 * API name: {@code files}
 		 */
@@ -827,7 +838,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * files recovered
+		 * The files recovered.
 		 * <p>
 		 * API name: {@code files_recovered}
 		 */
@@ -837,7 +848,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * percent of files recovered
+		 * The ratio of files recovered.
 		 * <p>
 		 * API name: {@code files_percent}
 		 */
@@ -847,7 +858,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * total number of files
+		 * The total number of files.
 		 * <p>
 		 * API name: {@code files_total}
 		 */
@@ -857,7 +868,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of bytes to recover
+		 * The number of bytes to recover.
 		 * <p>
 		 * API name: {@code bytes}
 		 */
@@ -867,7 +878,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * bytes recovered
+		 * The bytes recovered.
 		 * <p>
 		 * API name: {@code bytes_recovered}
 		 */
@@ -877,7 +888,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * percent of bytes recovered
+		 * The ratio of bytes recovered.
 		 * <p>
 		 * API name: {@code bytes_percent}
 		 */
@@ -887,7 +898,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * total number of bytes
+		 * The total number of bytes.
 		 * <p>
 		 * API name: {@code bytes_total}
 		 */
@@ -897,7 +908,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of translog ops to recover
+		 * The number of translog operations to recover.
 		 * <p>
 		 * API name: {@code translog_ops}
 		 */
@@ -907,7 +918,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * translog ops recovered
+		 * The translog operations recovered.
 		 * <p>
 		 * API name: {@code translog_ops_recovered}
 		 */
@@ -917,7 +928,7 @@ public class RecoveryRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * percent of translog ops recovered
+		 * The ratio of translog operations recovered.
 		 * <p>
 		 * API name: {@code translog_ops_percent}
 		 */

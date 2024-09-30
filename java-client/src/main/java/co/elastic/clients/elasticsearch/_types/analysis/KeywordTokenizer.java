@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.analysis;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -28,12 +24,27 @@ import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.JsonpMapper;
 import co.elastic.clients.json.ObjectBuilderDeserializer;
 import co.elastic.clients.json.ObjectDeserializer;
-import co.elastic.clients.util.ApiTypeHelper;
 import co.elastic.clients.util.ObjectBuilder;
 import jakarta.json.stream.JsonGenerator;
 import java.lang.Integer;
 import java.util.Objects;
 import java.util.function.Function;
+import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: _types.analysis.KeywordTokenizer
 
@@ -45,14 +56,15 @@ import java.util.function.Function;
  */
 @JsonpDeserializable
 public class KeywordTokenizer extends TokenizerBase implements TokenizerDefinitionVariant {
-	private final int bufferSize;
+	@Nullable
+	private final Integer bufferSize;
 
 	// ---------------------------------------------------------------------------------------------
 
 	private KeywordTokenizer(Builder builder) {
 		super(builder);
 
-		this.bufferSize = ApiTypeHelper.requireNonNull(builder.bufferSize, this, "bufferSize");
+		this.bufferSize = builder.bufferSize;
 
 	}
 
@@ -69,9 +81,10 @@ public class KeywordTokenizer extends TokenizerBase implements TokenizerDefiniti
 	}
 
 	/**
-	 * Required - API name: {@code buffer_size}
+	 * API name: {@code buffer_size}
 	 */
-	public final int bufferSize() {
+	@Nullable
+	public final Integer bufferSize() {
 		return this.bufferSize;
 	}
 
@@ -79,8 +92,11 @@ public class KeywordTokenizer extends TokenizerBase implements TokenizerDefiniti
 
 		generator.write("type", "keyword");
 		super.serializeInternal(generator, mapper);
-		generator.writeKey("buffer_size");
-		generator.write(this.bufferSize);
+		if (this.bufferSize != null) {
+			generator.writeKey("buffer_size");
+			generator.write(this.bufferSize);
+
+		}
 
 	}
 
@@ -93,12 +109,13 @@ public class KeywordTokenizer extends TokenizerBase implements TokenizerDefiniti
 	public static class Builder extends TokenizerBase.AbstractBuilder<Builder>
 			implements
 				ObjectBuilder<KeywordTokenizer> {
+		@Nullable
 		private Integer bufferSize;
 
 		/**
-		 * Required - API name: {@code buffer_size}
+		 * API name: {@code buffer_size}
 		 */
-		public final Builder bufferSize(int value) {
+		public final Builder bufferSize(@Nullable Integer value) {
 			this.bufferSize = value;
 			return this;
 		}

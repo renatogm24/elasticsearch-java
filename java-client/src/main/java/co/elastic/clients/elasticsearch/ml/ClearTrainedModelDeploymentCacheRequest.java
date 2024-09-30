@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.ml;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -36,18 +32,35 @@ import co.elastic.clients.util.ObjectBuilder;
 import jakarta.json.stream.JsonGenerator;
 import java.lang.String;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: ml.clear_trained_model_deployment_cache.Request
 
 /**
- * Clears a trained model deployment cache on all nodes where the trained model
- * is assigned. A trained model deployment may have an inference cache enabled.
- * As requests are handled by each allocated node, their responses may be cached
- * on that individual node. Calling this API clears the caches without
- * restarting the deployment.
+ * Clear trained model deployment cache. Cache will be cleared on all nodes
+ * where the trained model is assigned. A trained model deployment may have an
+ * inference cache enabled. As requests are handled by each allocated node,
+ * their responses may be cached on that individual node. Calling this API
+ * clears the caches without restarting the deployment.
  * 
  * @see <a href=
  *      "../doc-files/api-spec.html#ml.clear_trained_model_deployment_cache.Request">API
@@ -153,6 +166,21 @@ public class ClearTrainedModelDeploymentCacheRequest extends RequestBase {
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _modelId = 1 << 0;
+
+				int propsSet = 0;
+
+				propsSet |= _modelId;
+
+				if (propsSet == (_modelId)) {
+					params.put("modelId", request.modelId);
+				}
+				return params;
 			},
 
 			// Request parameters

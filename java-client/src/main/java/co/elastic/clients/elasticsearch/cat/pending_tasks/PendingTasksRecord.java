@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cat.pending_tasks;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -37,6 +33,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: cat.pending_tasks.PendingTasksRecord
 
@@ -76,7 +87,7 @@ public class PendingTasksRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * task insertion order
+	 * The task insertion order.
 	 * <p>
 	 * API name: {@code insertOrder}
 	 */
@@ -86,7 +97,7 @@ public class PendingTasksRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * how long task has been in queue
+	 * Indicates how long the task has been in queue.
 	 * <p>
 	 * API name: {@code timeInQueue}
 	 */
@@ -96,7 +107,7 @@ public class PendingTasksRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * task priority
+	 * The task priority.
 	 * <p>
 	 * API name: {@code priority}
 	 */
@@ -106,7 +117,7 @@ public class PendingTasksRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * task source
+	 * The task source.
 	 * <p>
 	 * API name: {@code source}
 	 */
@@ -176,7 +187,7 @@ public class PendingTasksRecord implements JsonpSerializable {
 		private String source;
 
 		/**
-		 * task insertion order
+		 * The task insertion order.
 		 * <p>
 		 * API name: {@code insertOrder}
 		 */
@@ -186,7 +197,7 @@ public class PendingTasksRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * how long task has been in queue
+		 * Indicates how long the task has been in queue.
 		 * <p>
 		 * API name: {@code timeInQueue}
 		 */
@@ -196,7 +207,7 @@ public class PendingTasksRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * task priority
+		 * The task priority.
 		 * <p>
 		 * API name: {@code priority}
 		 */
@@ -206,7 +217,7 @@ public class PendingTasksRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * task source
+		 * The task source.
 		 * <p>
 		 * API name: {@code source}
 		 */

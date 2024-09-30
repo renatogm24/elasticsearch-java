@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.mapping;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -38,6 +34,21 @@ import java.util.List;
 import java.util.Objects;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: _types.mapping.CorePropertyBase
 
 /**
@@ -51,9 +62,6 @@ public abstract class CorePropertyBase extends PropertyBase {
 	private final List<String> copyTo;
 
 	@Nullable
-	private final String similarity;
-
-	@Nullable
 	private final Boolean store;
 
 	// ---------------------------------------------------------------------------------------------
@@ -62,7 +70,6 @@ public abstract class CorePropertyBase extends PropertyBase {
 		super(builder);
 
 		this.copyTo = ApiTypeHelper.unmodifiable(builder.copyTo);
-		this.similarity = builder.similarity;
 		this.store = builder.store;
 
 	}
@@ -72,14 +79,6 @@ public abstract class CorePropertyBase extends PropertyBase {
 	 */
 	public final List<String> copyTo() {
 		return this.copyTo;
-	}
-
-	/**
-	 * API name: {@code similarity}
-	 */
-	@Nullable
-	public final String similarity() {
-		return this.similarity;
 	}
 
 	/**
@@ -103,11 +102,6 @@ public abstract class CorePropertyBase extends PropertyBase {
 			generator.writeEnd();
 
 		}
-		if (this.similarity != null) {
-			generator.writeKey("similarity");
-			generator.write(this.similarity);
-
-		}
 		if (this.store != null) {
 			generator.writeKey("store");
 			generator.write(this.store);
@@ -121,9 +115,6 @@ public abstract class CorePropertyBase extends PropertyBase {
 				PropertyBase.AbstractBuilder<BuilderT> {
 		@Nullable
 		private List<String> copyTo;
-
-		@Nullable
-		private String similarity;
 
 		@Nullable
 		private Boolean store;
@@ -149,14 +140,6 @@ public abstract class CorePropertyBase extends PropertyBase {
 		}
 
 		/**
-		 * API name: {@code similarity}
-		 */
-		public final BuilderT similarity(@Nullable String value) {
-			this.similarity = value;
-			return self();
-		}
-
-		/**
 		 * API name: {@code store}
 		 */
 		public final BuilderT store(@Nullable Boolean value) {
@@ -172,7 +155,6 @@ public abstract class CorePropertyBase extends PropertyBase {
 		PropertyBase.setupPropertyBaseDeserializer(op);
 		op.add(AbstractBuilder::copyTo, JsonpDeserializer.arrayDeserializer(JsonpDeserializer.stringDeserializer()),
 				"copy_to");
-		op.add(AbstractBuilder::similarity, JsonpDeserializer.stringDeserializer(), "similarity");
 		op.add(AbstractBuilder::store, JsonpDeserializer.booleanDeserializer(), "store");
 
 	}

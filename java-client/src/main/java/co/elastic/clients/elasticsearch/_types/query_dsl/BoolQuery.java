@@ -17,12 +17,14 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.query_dsl;
 
+import co.elastic.clients.elasticsearch.security.query_api_keys.ApiKeyQuery;
+import co.elastic.clients.elasticsearch.security.query_api_keys.ApiKeyQueryVariant;
+import co.elastic.clients.elasticsearch.security.query_role.RoleQuery;
+import co.elastic.clients.elasticsearch.security.query_role.RoleQueryVariant;
+import co.elastic.clients.elasticsearch.security.query_user.UserQuery;
+import co.elastic.clients.elasticsearch.security.query_user.UserQueryVariant;
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.JsonpMapper;
@@ -37,6 +39,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: _types.query_dsl.BoolQuery
 
 /**
@@ -45,7 +62,12 @@ import javax.annotation.Nullable;
  *      specification</a>
  */
 @JsonpDeserializable
-public class BoolQuery extends QueryBase implements QueryVariant {
+public class BoolQuery extends QueryBase
+		implements
+			ApiKeyQueryVariant,
+			QueryVariant,
+			RoleQueryVariant,
+			UserQueryVariant {
 	private final List<Query> filter;
 
 	@Nullable
@@ -75,6 +97,14 @@ public class BoolQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
+	 * ApiKeyQuery variant kind.
+	 */
+	@Override
+	public ApiKeyQuery.Kind _apiKeyQueryKind() {
+		return ApiKeyQuery.Kind.Bool;
+	}
+
+	/**
 	 * Query variant kind.
 	 */
 	@Override
@@ -83,6 +113,25 @@ public class BoolQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
+	 * RoleQuery variant kind.
+	 */
+	@Override
+	public RoleQuery.Kind _roleQueryKind() {
+		return RoleQuery.Kind.Bool;
+	}
+
+	/**
+	 * UserQuery variant kind.
+	 */
+	@Override
+	public UserQuery.Kind _userQueryKind() {
+		return UserQuery.Kind.Bool;
+	}
+
+	/**
+	 * The clause (query) must appear in matching documents. However, unlike
+	 * <code>must</code>, the score of the query will be ignored.
+	 * <p>
 	 * API name: {@code filter}
 	 */
 	public final List<Query> filter() {
@@ -90,6 +139,9 @@ public class BoolQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
+	 * Specifies the number or percentage of <code>should</code> clauses returned
+	 * documents must match.
+	 * <p>
 	 * API name: {@code minimum_should_match}
 	 */
 	@Nullable
@@ -98,6 +150,9 @@ public class BoolQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
+	 * The clause (query) must appear in matching documents and will contribute to
+	 * the score.
+	 * <p>
 	 * API name: {@code must}
 	 */
 	public final List<Query> must() {
@@ -105,6 +160,9 @@ public class BoolQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
+	 * The clause (query) must not appear in the matching documents. Because scoring
+	 * is ignored, a score of <code>0</code> is returned for all documents.
+	 * <p>
 	 * API name: {@code must_not}
 	 */
 	public final List<Query> mustNot() {
@@ -112,6 +170,8 @@ public class BoolQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
+	 * The clause (query) should appear in the matching document.
+	 * <p>
 	 * API name: {@code should}
 	 */
 	public final List<Query> should() {
@@ -192,6 +252,9 @@ public class BoolQuery extends QueryBase implements QueryVariant {
 		private List<Query> should;
 
 		/**
+		 * The clause (query) must appear in matching documents. However, unlike
+		 * <code>must</code>, the score of the query will be ignored.
+		 * <p>
 		 * API name: {@code filter}
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>filter</code>.
@@ -202,6 +265,9 @@ public class BoolQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * The clause (query) must appear in matching documents. However, unlike
+		 * <code>must</code>, the score of the query will be ignored.
+		 * <p>
 		 * API name: {@code filter}
 		 * <p>
 		 * Adds one or more values to <code>filter</code>.
@@ -212,6 +278,9 @@ public class BoolQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * The clause (query) must appear in matching documents. However, unlike
+		 * <code>must</code>, the score of the query will be ignored.
+		 * <p>
 		 * API name: {@code filter}
 		 * <p>
 		 * Adds a value to <code>filter</code> using a builder lambda.
@@ -221,6 +290,9 @@ public class BoolQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * Specifies the number or percentage of <code>should</code> clauses returned
+		 * documents must match.
+		 * <p>
 		 * API name: {@code minimum_should_match}
 		 */
 		public final Builder minimumShouldMatch(@Nullable String value) {
@@ -229,6 +301,9 @@ public class BoolQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * The clause (query) must appear in matching documents and will contribute to
+		 * the score.
+		 * <p>
 		 * API name: {@code must}
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>must</code>.
@@ -239,6 +314,9 @@ public class BoolQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * The clause (query) must appear in matching documents and will contribute to
+		 * the score.
+		 * <p>
 		 * API name: {@code must}
 		 * <p>
 		 * Adds one or more values to <code>must</code>.
@@ -249,6 +327,9 @@ public class BoolQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * The clause (query) must appear in matching documents and will contribute to
+		 * the score.
+		 * <p>
 		 * API name: {@code must}
 		 * <p>
 		 * Adds a value to <code>must</code> using a builder lambda.
@@ -258,6 +339,9 @@ public class BoolQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * The clause (query) must not appear in the matching documents. Because scoring
+		 * is ignored, a score of <code>0</code> is returned for all documents.
+		 * <p>
 		 * API name: {@code must_not}
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>mustNot</code>.
@@ -268,6 +352,9 @@ public class BoolQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * The clause (query) must not appear in the matching documents. Because scoring
+		 * is ignored, a score of <code>0</code> is returned for all documents.
+		 * <p>
 		 * API name: {@code must_not}
 		 * <p>
 		 * Adds one or more values to <code>mustNot</code>.
@@ -278,6 +365,9 @@ public class BoolQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * The clause (query) must not appear in the matching documents. Because scoring
+		 * is ignored, a score of <code>0</code> is returned for all documents.
+		 * <p>
 		 * API name: {@code must_not}
 		 * <p>
 		 * Adds a value to <code>mustNot</code> using a builder lambda.
@@ -287,6 +377,8 @@ public class BoolQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * The clause (query) should appear in the matching document.
+		 * <p>
 		 * API name: {@code should}
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>should</code>.
@@ -297,6 +389,8 @@ public class BoolQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * The clause (query) should appear in the matching document.
+		 * <p>
 		 * API name: {@code should}
 		 * <p>
 		 * Adds one or more values to <code>should</code>.
@@ -307,6 +401,8 @@ public class BoolQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * The clause (query) should appear in the matching document.
+		 * <p>
 		 * API name: {@code should}
 		 * <p>
 		 * Adds a value to <code>should</code> using a builder lambda.

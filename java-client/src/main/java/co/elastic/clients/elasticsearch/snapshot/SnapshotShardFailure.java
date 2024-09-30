@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.snapshot;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -39,6 +35,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: snapshot._types.SnapshotShardFailure
 
 /**
@@ -51,11 +62,14 @@ import javax.annotation.Nullable;
 public class SnapshotShardFailure implements JsonpSerializable {
 	private final String index;
 
+	@Nullable
 	private final String nodeId;
 
 	private final String reason;
 
 	private final String shardId;
+
+	private final String indexUuid;
 
 	private final String status;
 
@@ -64,9 +78,10 @@ public class SnapshotShardFailure implements JsonpSerializable {
 	private SnapshotShardFailure(Builder builder) {
 
 		this.index = ApiTypeHelper.requireNonNull(builder.index, this, "index");
-		this.nodeId = ApiTypeHelper.requireNonNull(builder.nodeId, this, "nodeId");
+		this.nodeId = builder.nodeId;
 		this.reason = ApiTypeHelper.requireNonNull(builder.reason, this, "reason");
 		this.shardId = ApiTypeHelper.requireNonNull(builder.shardId, this, "shardId");
+		this.indexUuid = ApiTypeHelper.requireNonNull(builder.indexUuid, this, "indexUuid");
 		this.status = ApiTypeHelper.requireNonNull(builder.status, this, "status");
 
 	}
@@ -83,8 +98,9 @@ public class SnapshotShardFailure implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code node_id}
+	 * API name: {@code node_id}
 	 */
+	@Nullable
 	public final String nodeId() {
 		return this.nodeId;
 	}
@@ -101,6 +117,13 @@ public class SnapshotShardFailure implements JsonpSerializable {
 	 */
 	public final String shardId() {
 		return this.shardId;
+	}
+
+	/**
+	 * Required - API name: {@code index_uuid}
+	 */
+	public final String indexUuid() {
+		return this.indexUuid;
 	}
 
 	/**
@@ -124,14 +147,19 @@ public class SnapshotShardFailure implements JsonpSerializable {
 		generator.writeKey("index");
 		generator.write(this.index);
 
-		generator.writeKey("node_id");
-		generator.write(this.nodeId);
+		if (this.nodeId != null) {
+			generator.writeKey("node_id");
+			generator.write(this.nodeId);
 
+		}
 		generator.writeKey("reason");
 		generator.write(this.reason);
 
 		generator.writeKey("shard_id");
 		generator.write(this.shardId);
+
+		generator.writeKey("index_uuid");
+		generator.write(this.indexUuid);
 
 		generator.writeKey("status");
 		generator.write(this.status);
@@ -154,11 +182,14 @@ public class SnapshotShardFailure implements JsonpSerializable {
 				ObjectBuilder<SnapshotShardFailure> {
 		private String index;
 
+		@Nullable
 		private String nodeId;
 
 		private String reason;
 
 		private String shardId;
+
+		private String indexUuid;
 
 		private String status;
 
@@ -171,9 +202,9 @@ public class SnapshotShardFailure implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code node_id}
+		 * API name: {@code node_id}
 		 */
-		public final Builder nodeId(String value) {
+		public final Builder nodeId(@Nullable String value) {
 			this.nodeId = value;
 			return this;
 		}
@@ -191,6 +222,14 @@ public class SnapshotShardFailure implements JsonpSerializable {
 		 */
 		public final Builder shardId(String value) {
 			this.shardId = value;
+			return this;
+		}
+
+		/**
+		 * Required - API name: {@code index_uuid}
+		 */
+		public final Builder indexUuid(String value) {
+			this.indexUuid = value;
 			return this;
 		}
 
@@ -234,6 +273,7 @@ public class SnapshotShardFailure implements JsonpSerializable {
 		op.add(Builder::nodeId, JsonpDeserializer.stringDeserializer(), "node_id");
 		op.add(Builder::reason, JsonpDeserializer.stringDeserializer(), "reason");
 		op.add(Builder::shardId, JsonpDeserializer.stringDeserializer(), "shard_id");
+		op.add(Builder::indexUuid, JsonpDeserializer.stringDeserializer(), "index_uuid");
 		op.add(Builder::status, JsonpDeserializer.stringDeserializer(), "status");
 
 	}

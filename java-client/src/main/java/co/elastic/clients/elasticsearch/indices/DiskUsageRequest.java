@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.indices;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -45,10 +41,25 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: indices.disk_usage.Request
 
 /**
- * Analyzes the disk usage of each field of an index or data stream
+ * Analyzes the disk usage of each field of an index or data stream.
  * 
  * @see <a href="../doc-files/api-spec.html#indices.disk_usage.Request">API
  *      specification</a>
@@ -90,10 +101,10 @@ public class DiskUsageRequest extends RequestBase {
 
 	/**
 	 * If false, the request returns an error if any wildcard expression, index
-	 * alias, or _all value targets only missing or closed indices. This behavior
-	 * applies even if the request targets other open indices. For example, a
-	 * request targeting foo*,bar* returns an error if an index starts with foo but
-	 * no index starts with bar.
+	 * alias, or <code>_all</code> value targets only missing or closed indices.
+	 * This behavior applies even if the request targets other open indices. For
+	 * example, a request targeting <code>foo*,bar*</code> returns an error if an
+	 * index starts with <code>foo</code> but no index starts with <code>bar</code>.
 	 * <p>
 	 * API name: {@code allow_no_indices}
 	 */
@@ -105,7 +116,8 @@ public class DiskUsageRequest extends RequestBase {
 	/**
 	 * Type of index that wildcard patterns can match. If the request can target
 	 * data streams, this argument determines whether wildcard expressions match
-	 * hidden data streams. Supports comma-separated values, such as open,hidden.
+	 * hidden data streams. Supports comma-separated values, such as
+	 * <code>open,hidden</code>.
 	 * <p>
 	 * API name: {@code expand_wildcards}
 	 */
@@ -114,8 +126,8 @@ public class DiskUsageRequest extends RequestBase {
 	}
 
 	/**
-	 * If true, the API performs a flush before analysis. If false, the response may
-	 * not include uncommitted data.
+	 * If <code>true</code>, the API performs a flush before analysis. If
+	 * <code>false</code>, the response may not include uncommitted data.
 	 * <p>
 	 * API name: {@code flush}
 	 */
@@ -125,7 +137,8 @@ public class DiskUsageRequest extends RequestBase {
 	}
 
 	/**
-	 * If true, missing or closed indices are not included in the response.
+	 * If <code>true</code>, missing or closed indices are not included in the
+	 * response.
 	 * <p>
 	 * API name: {@code ignore_unavailable}
 	 */
@@ -148,7 +161,7 @@ public class DiskUsageRequest extends RequestBase {
 
 	/**
 	 * Analyzing field disk usage is resource-intensive. To use the API, this
-	 * parameter must be set to true.
+	 * parameter must be set to <code>true</code>.
 	 * <p>
 	 * API name: {@code run_expensive_tasks}
 	 */
@@ -185,10 +198,10 @@ public class DiskUsageRequest extends RequestBase {
 
 		/**
 		 * If false, the request returns an error if any wildcard expression, index
-		 * alias, or _all value targets only missing or closed indices. This behavior
-		 * applies even if the request targets other open indices. For example, a
-		 * request targeting foo*,bar* returns an error if an index starts with foo but
-		 * no index starts with bar.
+		 * alias, or <code>_all</code> value targets only missing or closed indices.
+		 * This behavior applies even if the request targets other open indices. For
+		 * example, a request targeting <code>foo*,bar*</code> returns an error if an
+		 * index starts with <code>foo</code> but no index starts with <code>bar</code>.
 		 * <p>
 		 * API name: {@code allow_no_indices}
 		 */
@@ -200,7 +213,8 @@ public class DiskUsageRequest extends RequestBase {
 		/**
 		 * Type of index that wildcard patterns can match. If the request can target
 		 * data streams, this argument determines whether wildcard expressions match
-		 * hidden data streams. Supports comma-separated values, such as open,hidden.
+		 * hidden data streams. Supports comma-separated values, such as
+		 * <code>open,hidden</code>.
 		 * <p>
 		 * API name: {@code expand_wildcards}
 		 * <p>
@@ -214,7 +228,8 @@ public class DiskUsageRequest extends RequestBase {
 		/**
 		 * Type of index that wildcard patterns can match. If the request can target
 		 * data streams, this argument determines whether wildcard expressions match
-		 * hidden data streams. Supports comma-separated values, such as open,hidden.
+		 * hidden data streams. Supports comma-separated values, such as
+		 * <code>open,hidden</code>.
 		 * <p>
 		 * API name: {@code expand_wildcards}
 		 * <p>
@@ -226,8 +241,8 @@ public class DiskUsageRequest extends RequestBase {
 		}
 
 		/**
-		 * If true, the API performs a flush before analysis. If false, the response may
-		 * not include uncommitted data.
+		 * If <code>true</code>, the API performs a flush before analysis. If
+		 * <code>false</code>, the response may not include uncommitted data.
 		 * <p>
 		 * API name: {@code flush}
 		 */
@@ -237,7 +252,8 @@ public class DiskUsageRequest extends RequestBase {
 		}
 
 		/**
-		 * If true, missing or closed indices are not included in the response.
+		 * If <code>true</code>, missing or closed indices are not included in the
+		 * response.
 		 * <p>
 		 * API name: {@code ignore_unavailable}
 		 */
@@ -278,7 +294,7 @@ public class DiskUsageRequest extends RequestBase {
 
 		/**
 		 * Analyzing field disk usage is resource-intensive. To use the API, this
-		 * parameter must be set to true.
+		 * parameter must be set to <code>true</code>.
 		 * <p>
 		 * API name: {@code run_expensive_tasks}
 		 */
@@ -336,6 +352,21 @@ public class DiskUsageRequest extends RequestBase {
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _index = 1 << 0;
+
+				int propsSet = 0;
+
+				propsSet |= _index;
+
+				if (propsSet == (_index)) {
+					params.put("index", request.index.stream().map(v -> v).collect(Collectors.joining(",")));
+				}
+				return params;
 			},
 
 			// Request parameters

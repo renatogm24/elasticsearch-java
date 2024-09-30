@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cluster.health;
 
 import co.elastic.clients.elasticsearch._types.HealthStatus;
@@ -41,6 +37,21 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: cluster.health.IndexHealthStats
 
@@ -70,6 +81,8 @@ public class IndexHealthStats implements JsonpSerializable {
 
 	private final int unassignedShards;
 
+	private final int unassignedPrimaryShards;
+
 	// ---------------------------------------------------------------------------------------------
 
 	private IndexHealthStats(Builder builder) {
@@ -84,6 +97,8 @@ public class IndexHealthStats implements JsonpSerializable {
 		this.shards = ApiTypeHelper.unmodifiable(builder.shards);
 		this.status = ApiTypeHelper.requireNonNull(builder.status, this, "status");
 		this.unassignedShards = ApiTypeHelper.requireNonNull(builder.unassignedShards, this, "unassignedShards");
+		this.unassignedPrimaryShards = ApiTypeHelper.requireNonNull(builder.unassignedPrimaryShards, this,
+				"unassignedPrimaryShards");
 
 	}
 
@@ -155,6 +170,13 @@ public class IndexHealthStats implements JsonpSerializable {
 	}
 
 	/**
+	 * Required - API name: {@code unassigned_primary_shards}
+	 */
+	public final int unassignedPrimaryShards() {
+		return this.unassignedPrimaryShards;
+	}
+
+	/**
 	 * Serialize this object to JSON.
 	 */
 	public void serialize(JsonGenerator generator, JsonpMapper mapper) {
@@ -199,6 +221,9 @@ public class IndexHealthStats implements JsonpSerializable {
 		generator.writeKey("unassigned_shards");
 		generator.write(this.unassignedShards);
 
+		generator.writeKey("unassigned_primary_shards");
+		generator.write(this.unassignedPrimaryShards);
+
 	}
 
 	@Override
@@ -231,6 +256,8 @@ public class IndexHealthStats implements JsonpSerializable {
 		private HealthStatus status;
 
 		private Integer unassignedShards;
+
+		private Integer unassignedPrimaryShards;
 
 		/**
 		 * Required - API name: {@code active_primary_shards}
@@ -326,6 +353,14 @@ public class IndexHealthStats implements JsonpSerializable {
 			return this;
 		}
 
+		/**
+		 * Required - API name: {@code unassigned_primary_shards}
+		 */
+		public final Builder unassignedPrimaryShards(int value) {
+			this.unassignedPrimaryShards = value;
+			return this;
+		}
+
 		@Override
 		protected Builder self() {
 			return this;
@@ -363,6 +398,7 @@ public class IndexHealthStats implements JsonpSerializable {
 		op.add(Builder::shards, JsonpDeserializer.stringMapDeserializer(ShardHealthStats._DESERIALIZER), "shards");
 		op.add(Builder::status, HealthStatus._DESERIALIZER, "status");
 		op.add(Builder::unassignedShards, JsonpDeserializer.integerDeserializer(), "unassigned_shards");
+		op.add(Builder::unassignedPrimaryShards, JsonpDeserializer.integerDeserializer(), "unassigned_primary_shards");
 
 	}
 

@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -40,6 +36,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: nodes._types.Ingest
 
 /**
@@ -49,7 +60,7 @@ import javax.annotation.Nullable;
  */
 @JsonpDeserializable
 public class Ingest implements JsonpSerializable {
-	private final Map<String, IngestTotal> pipelines;
+	private final Map<String, IngestStats> pipelines;
 
 	@Nullable
 	private final IngestTotal total;
@@ -68,13 +79,17 @@ public class Ingest implements JsonpSerializable {
 	}
 
 	/**
+	 * Contains statistics about ingest pipelines for the node.
+	 * <p>
 	 * API name: {@code pipelines}
 	 */
-	public final Map<String, IngestTotal> pipelines() {
+	public final Map<String, IngestStats> pipelines() {
 		return this.pipelines;
 	}
 
 	/**
+	 * Contains statistics about ingest operations for the node.
+	 * <p>
 	 * API name: {@code total}
 	 */
 	@Nullable
@@ -96,7 +111,7 @@ public class Ingest implements JsonpSerializable {
 		if (ApiTypeHelper.isDefined(this.pipelines)) {
 			generator.writeKey("pipelines");
 			generator.writeStartObject();
-			for (Map.Entry<String, IngestTotal> item0 : this.pipelines.entrySet()) {
+			for (Map.Entry<String, IngestStats> item0 : this.pipelines.entrySet()) {
 				generator.writeKey(item0.getKey());
 				item0.getValue().serialize(generator, mapper);
 
@@ -125,41 +140,49 @@ public class Ingest implements JsonpSerializable {
 
 	public static class Builder extends WithJsonObjectBuilderBase<Builder> implements ObjectBuilder<Ingest> {
 		@Nullable
-		private Map<String, IngestTotal> pipelines;
+		private Map<String, IngestStats> pipelines;
 
 		@Nullable
 		private IngestTotal total;
 
 		/**
+		 * Contains statistics about ingest pipelines for the node.
+		 * <p>
 		 * API name: {@code pipelines}
 		 * <p>
 		 * Adds all entries of <code>map</code> to <code>pipelines</code>.
 		 */
-		public final Builder pipelines(Map<String, IngestTotal> map) {
+		public final Builder pipelines(Map<String, IngestStats> map) {
 			this.pipelines = _mapPutAll(this.pipelines, map);
 			return this;
 		}
 
 		/**
+		 * Contains statistics about ingest pipelines for the node.
+		 * <p>
 		 * API name: {@code pipelines}
 		 * <p>
 		 * Adds an entry to <code>pipelines</code>.
 		 */
-		public final Builder pipelines(String key, IngestTotal value) {
+		public final Builder pipelines(String key, IngestStats value) {
 			this.pipelines = _mapPut(this.pipelines, key, value);
 			return this;
 		}
 
 		/**
+		 * Contains statistics about ingest pipelines for the node.
+		 * <p>
 		 * API name: {@code pipelines}
 		 * <p>
 		 * Adds an entry to <code>pipelines</code> using a builder lambda.
 		 */
-		public final Builder pipelines(String key, Function<IngestTotal.Builder, ObjectBuilder<IngestTotal>> fn) {
-			return pipelines(key, fn.apply(new IngestTotal.Builder()).build());
+		public final Builder pipelines(String key, Function<IngestStats.Builder, ObjectBuilder<IngestStats>> fn) {
+			return pipelines(key, fn.apply(new IngestStats.Builder()).build());
 		}
 
 		/**
+		 * Contains statistics about ingest operations for the node.
+		 * <p>
 		 * API name: {@code total}
 		 */
 		public final Builder total(@Nullable IngestTotal value) {
@@ -168,6 +191,8 @@ public class Ingest implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics about ingest operations for the node.
+		 * <p>
 		 * API name: {@code total}
 		 */
 		public final Builder total(Function<IngestTotal.Builder, ObjectBuilder<IngestTotal>> fn) {
@@ -202,7 +227,7 @@ public class Ingest implements JsonpSerializable {
 
 	protected static void setupIngestDeserializer(ObjectDeserializer<Ingest.Builder> op) {
 
-		op.add(Builder::pipelines, JsonpDeserializer.stringMapDeserializer(IngestTotal._DESERIALIZER), "pipelines");
+		op.add(Builder::pipelines, JsonpDeserializer.stringMapDeserializer(IngestStats._DESERIALIZER), "pipelines");
 		op.add(Builder::total, IngestTotal._DESERIALIZER, "total");
 
 	}

@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -37,6 +33,21 @@ import java.lang.Long;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.ClusterStateQueue
 
@@ -71,6 +82,8 @@ public class ClusterStateQueue implements JsonpSerializable {
 	}
 
 	/**
+	 * Total number of cluster states in queue.
+	 * <p>
 	 * API name: {@code total}
 	 */
 	@Nullable
@@ -79,6 +92,8 @@ public class ClusterStateQueue implements JsonpSerializable {
 	}
 
 	/**
+	 * Number of pending cluster states in queue.
+	 * <p>
 	 * API name: {@code pending}
 	 */
 	@Nullable
@@ -87,6 +102,8 @@ public class ClusterStateQueue implements JsonpSerializable {
 	}
 
 	/**
+	 * Number of committed cluster states in queue.
+	 * <p>
 	 * API name: {@code committed}
 	 */
 	@Nullable
@@ -145,6 +162,8 @@ public class ClusterStateQueue implements JsonpSerializable {
 		private Long committed;
 
 		/**
+		 * Total number of cluster states in queue.
+		 * <p>
 		 * API name: {@code total}
 		 */
 		public final Builder total(@Nullable Long value) {
@@ -153,6 +172,8 @@ public class ClusterStateQueue implements JsonpSerializable {
 		}
 
 		/**
+		 * Number of pending cluster states in queue.
+		 * <p>
 		 * API name: {@code pending}
 		 */
 		public final Builder pending(@Nullable Long value) {
@@ -161,6 +182,8 @@ public class ClusterStateQueue implements JsonpSerializable {
 		}
 
 		/**
+		 * Number of committed cluster states in queue.
+		 * <p>
 		 * API name: {@code committed}
 		 */
 		public final Builder committed(@Nullable Long value) {

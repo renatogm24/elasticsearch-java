@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.core;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -47,10 +43,26 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: _global.get.Request
 
 /**
- * Returns a document.
+ * Get a document by its ID. Retrieves the document with the specified ID from
+ * an index.
  * 
  * @see <a href="../doc-files/api-spec.html#_global.get.Request">API
  *      specification</a>
@@ -63,6 +75,9 @@ public class GetRequest extends RequestBase {
 	private final List<String> sourceExcludes;
 
 	private final List<String> sourceIncludes;
+
+	@Nullable
+	private final Boolean forceSyntheticSource;
 
 	private final String id;
 
@@ -95,6 +110,7 @@ public class GetRequest extends RequestBase {
 		this.source = builder.source;
 		this.sourceExcludes = ApiTypeHelper.unmodifiable(builder.sourceExcludes);
 		this.sourceIncludes = ApiTypeHelper.unmodifiable(builder.sourceIncludes);
+		this.forceSyntheticSource = builder.forceSyntheticSource;
 		this.id = ApiTypeHelper.requireNonNull(builder.id, this, "id");
 		this.index = ApiTypeHelper.requireNonNull(builder.index, this, "index");
 		this.preference = builder.preference;
@@ -141,6 +157,19 @@ public class GetRequest extends RequestBase {
 	}
 
 	/**
+	 * Should this request force synthetic _source? Use this to test if the mapping
+	 * supports synthetic _source and to get a sense of the worst case performance.
+	 * Fetches with this enabled will be slower the enabling synthetic source
+	 * natively in the index.
+	 * <p>
+	 * API name: {@code force_synthetic_source}
+	 */
+	@Nullable
+	public final Boolean forceSyntheticSource() {
+		return this.forceSyntheticSource;
+	}
+
+	/**
 	 * Required - Unique identifier of the document.
 	 * <p>
 	 * API name: {@code id}
@@ -170,7 +199,7 @@ public class GetRequest extends RequestBase {
 	}
 
 	/**
-	 * Boolean) If true, the request is real-time as opposed to near-real-time.
+	 * If <code>true</code>, the request is real-time as opposed to near-real-time.
 	 * <p>
 	 * API name: {@code realtime}
 	 */
@@ -201,7 +230,9 @@ public class GetRequest extends RequestBase {
 	}
 
 	/**
-	 * A comma-separated list of stored fields to return in the response
+	 * List of stored fields to return as part of a hit. If no fields are specified,
+	 * no stored fields are included in the response. If this field is specified,
+	 * the <code>_source</code> parameter defaults to false.
 	 * <p>
 	 * API name: {@code stored_fields}
 	 */
@@ -245,6 +276,9 @@ public class GetRequest extends RequestBase {
 
 		@Nullable
 		private List<String> sourceIncludes;
+
+		@Nullable
+		private Boolean forceSyntheticSource;
 
 		private String id;
 
@@ -341,6 +375,19 @@ public class GetRequest extends RequestBase {
 		}
 
 		/**
+		 * Should this request force synthetic _source? Use this to test if the mapping
+		 * supports synthetic _source and to get a sense of the worst case performance.
+		 * Fetches with this enabled will be slower the enabling synthetic source
+		 * natively in the index.
+		 * <p>
+		 * API name: {@code force_synthetic_source}
+		 */
+		public final Builder forceSyntheticSource(@Nullable Boolean value) {
+			this.forceSyntheticSource = value;
+			return this;
+		}
+
+		/**
 		 * Required - Unique identifier of the document.
 		 * <p>
 		 * API name: {@code id}
@@ -372,7 +419,7 @@ public class GetRequest extends RequestBase {
 		}
 
 		/**
-		 * Boolean) If true, the request is real-time as opposed to near-real-time.
+		 * If <code>true</code>, the request is real-time as opposed to near-real-time.
 		 * <p>
 		 * API name: {@code realtime}
 		 */
@@ -403,7 +450,9 @@ public class GetRequest extends RequestBase {
 		}
 
 		/**
-		 * A comma-separated list of stored fields to return in the response
+		 * List of stored fields to return as part of a hit. If no fields are specified,
+		 * no stored fields are included in the response. If this field is specified,
+		 * the <code>_source</code> parameter defaults to false.
 		 * <p>
 		 * API name: {@code stored_fields}
 		 * <p>
@@ -415,7 +464,9 @@ public class GetRequest extends RequestBase {
 		}
 
 		/**
-		 * A comma-separated list of stored fields to return in the response
+		 * List of stored fields to return as part of a hit. If no fields are specified,
+		 * no stored fields are included in the response. If this field is specified,
+		 * the <code>_source</code> parameter defaults to false.
 		 * <p>
 		 * API name: {@code stored_fields}
 		 * <p>
@@ -501,6 +552,24 @@ public class GetRequest extends RequestBase {
 
 			},
 
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _index = 1 << 0;
+				final int _id = 1 << 1;
+
+				int propsSet = 0;
+
+				propsSet |= _index;
+				propsSet |= _id;
+
+				if (propsSet == (_index | _id)) {
+					params.put("index", request.index);
+					params.put("id", request.id);
+				}
+				return params;
+			},
+
 			// Request parameters
 			request -> {
 				Map<String, String> params = new HashMap<>();
@@ -529,6 +598,9 @@ public class GetRequest extends RequestBase {
 				if (ApiTypeHelper.isDefined(request.sourceExcludes)) {
 					params.put("_source_excludes",
 							request.sourceExcludes.stream().map(v -> v).collect(Collectors.joining(",")));
+				}
+				if (request.forceSyntheticSource != null) {
+					params.put("force_synthetic_source", String.valueOf(request.forceSyntheticSource));
 				}
 				if (ApiTypeHelper.isDefined(request.sourceIncludes)) {
 					params.put("_source_includes",

@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cat;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -43,10 +39,29 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: cat.snapshots.Request
 
 /**
- * Returns all snapshots in a specific repository.
+ * Returns information about the snapshots stored in one or more repositories. A
+ * snapshot is a backup of an index or running Elasticsearch cluster. IMPORTANT:
+ * cat APIs are only intended for human consumption using the command line or
+ * Kibana console. They are not intended for use by applications. For
+ * application consumption, use the get snapshot API.
  * 
  * @see <a href="../doc-files/api-spec.html#cat.snapshots.Request">API
  *      specification</a>
@@ -72,7 +87,8 @@ public class SnapshotsRequest extends CatRequestBase {
 	}
 
 	/**
-	 * Set to true to ignore unavailable snapshots
+	 * If <code>true</code>, the response does not include information from
+	 * unavailable snapshots.
 	 * <p>
 	 * API name: {@code ignore_unavailable}
 	 */
@@ -82,7 +98,9 @@ public class SnapshotsRequest extends CatRequestBase {
 	}
 
 	/**
-	 * Name of repository from which to fetch the snapshot information
+	 * A comma-separated list of snapshot repositories used to limit the request.
+	 * Accepts wildcard expressions. <code>_all</code> returns all repositories. If
+	 * any repository fails during the request, Elasticsearch returns an error.
 	 * <p>
 	 * API name: {@code repository}
 	 */
@@ -106,7 +124,8 @@ public class SnapshotsRequest extends CatRequestBase {
 		private List<String> repository;
 
 		/**
-		 * Set to true to ignore unavailable snapshots
+		 * If <code>true</code>, the response does not include information from
+		 * unavailable snapshots.
 		 * <p>
 		 * API name: {@code ignore_unavailable}
 		 */
@@ -116,7 +135,9 @@ public class SnapshotsRequest extends CatRequestBase {
 		}
 
 		/**
-		 * Name of repository from which to fetch the snapshot information
+		 * A comma-separated list of snapshot repositories used to limit the request.
+		 * Accepts wildcard expressions. <code>_all</code> returns all repositories. If
+		 * any repository fails during the request, Elasticsearch returns an error.
 		 * <p>
 		 * API name: {@code repository}
 		 * <p>
@@ -128,7 +149,9 @@ public class SnapshotsRequest extends CatRequestBase {
 		}
 
 		/**
-		 * Name of repository from which to fetch the snapshot information
+		 * A comma-separated list of snapshot repositories used to limit the request.
+		 * Accepts wildcard expressions. <code>_all</code> returns all repositories. If
+		 * any repository fails during the request, Elasticsearch returns an error.
 		 * <p>
 		 * API name: {@code repository}
 		 * <p>
@@ -197,6 +220,24 @@ public class SnapshotsRequest extends CatRequestBase {
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _repository = 1 << 0;
+
+				int propsSet = 0;
+
+				if (ApiTypeHelper.isDefined(request.repository()))
+					propsSet |= _repository;
+
+				if (propsSet == 0) {
+				}
+				if (propsSet == (_repository)) {
+					params.put("repository", request.repository.stream().map(v -> v).collect(Collectors.joining(",")));
+				}
+				return params;
 			},
 
 			// Request parameters

@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cluster.stats;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -40,6 +36,21 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: cluster.stats.ClusterNetworkTypes
 
@@ -69,14 +80,20 @@ public class ClusterNetworkTypes implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code http_types}
+	 * Required - Contains statistics about the HTTP network types used by selected
+	 * nodes.
+	 * <p>
+	 * API name: {@code http_types}
 	 */
 	public final Map<String, Integer> httpTypes() {
 		return this.httpTypes;
 	}
 
 	/**
-	 * Required - API name: {@code transport_types}
+	 * Required - Contains statistics about the transport network types used by
+	 * selected nodes.
+	 * <p>
+	 * API name: {@code transport_types}
 	 */
 	public final Map<String, Integer> transportTypes() {
 		return this.transportTypes;
@@ -137,7 +154,10 @@ public class ClusterNetworkTypes implements JsonpSerializable {
 		private Map<String, Integer> transportTypes;
 
 		/**
-		 * Required - API name: {@code http_types}
+		 * Required - Contains statistics about the HTTP network types used by selected
+		 * nodes.
+		 * <p>
+		 * API name: {@code http_types}
 		 * <p>
 		 * Adds all entries of <code>map</code> to <code>httpTypes</code>.
 		 */
@@ -147,7 +167,10 @@ public class ClusterNetworkTypes implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code http_types}
+		 * Required - Contains statistics about the HTTP network types used by selected
+		 * nodes.
+		 * <p>
+		 * API name: {@code http_types}
 		 * <p>
 		 * Adds an entry to <code>httpTypes</code>.
 		 */
@@ -157,7 +180,10 @@ public class ClusterNetworkTypes implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code transport_types}
+		 * Required - Contains statistics about the transport network types used by
+		 * selected nodes.
+		 * <p>
+		 * API name: {@code transport_types}
 		 * <p>
 		 * Adds all entries of <code>map</code> to <code>transportTypes</code>.
 		 */
@@ -167,7 +193,10 @@ public class ClusterNetworkTypes implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code transport_types}
+		 * Required - Contains statistics about the transport network types used by
+		 * selected nodes.
+		 * <p>
+		 * API name: {@code transport_types}
 		 * <p>
 		 * Adds an entry to <code>transportTypes</code>.
 		 */

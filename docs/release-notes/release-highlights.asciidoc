@@ -6,6 +6,84 @@ These are the important new features and changes in minor releases. Every releas
 For a list of detailed changes, including bug fixes, please see the https://github.com/elastic/elasticsearch-java/releases[GitHub project realease notes].
 
 [discrete]
+==== Version 8.16
+* `ElasticsearchClient` is now `Closeable`. Closing a client object also closes the underlying transport - https://github.com/elastic/elasticsearch-java/pull/851[#851]
+
+[discrete]
+==== Version 8.15
+
+* New https://www.elastic.co/guide/en/elasticsearch/reference/current/connector-apis.html[Connector API] available
+* Fixed bug in BulkIngester - https://github.com/elastic/elasticsearch-java/pull/830[#830]
+* Various bug fixes, among which are https://github.com/elastic/elasticsearch-java/pull/844[#844], https://github.com/elastic/elasticsearch-java/pull/847[#847]
+* Changed builders for queries that use generic types, for example:
+
+** Old RangeQuery:
++
+[source,java]
+----
+RangeQuery ra = RangeQuery.of(r -> r  // no distinction between various types (date, term, number)
+    .field("day")
+    .gte(JsonData.of("2024-06-20"))   // must use custom json for fields because there's no defined type
+    .lte(JsonData.of("2024-07-05"))
+    .boost(1.0F)
+    .format("yyyy-MM-dd")
+    .relation(RangeRelation.Contains));
+----
++
+** New RangeQuery:
++
+[source,java]
+----
+RangeQuery ra = RangeQuery.of(r -> r
+    .date(d -> d             // choose query type before
+        .field("day")
+        .gte("20-06-24")    // field now only accepts valid type for the specified query
+        .lte("20-07-24")
+        .boost(1.0F)
+        .format("yyyy-MM-dd")
+        .relation(RangeRelation.Contains)));
+----
+
+[discrete]
+==== Version 8.14
+* No new feature.
+
+[discrete]
+==== Version 8.13
+
+* Add ES|QL helpers - https://github.com/elastic/elasticsearch-java/pull/763[#763]
+* Add an example SpringBoot application - https://github.com/elastic/elasticsearch-java/pull/737[#737]
+
+[discrete]
+==== Version 8.12
+
+* No new feature.
+
+[discrete]
+==== Version 8.11
+
+* No new feature.
+
+[discrete]
+==== Version 8.10
+
+* Add instrumentation API and native OpenTelemetry implementation - https://github.com/elastic/elasticsearch-java/pull/588[#588], <<opentelemetry,docs>>
+
+[discrete]
+==== Version 8.9
+
+* Refactor RestClientTransport to allow using other http client libraries - https://github.com/elastic/elasticsearch-java/pull/584[#584]
+
+[discrete]
+==== Version 8.8
+
+* Throw a TransportException when an error response cannot be parsed - https://github.com/elastic/elasticsearch-java/pull/579[#579]
+* Speed up URL path encoding and remove dependency on httpclient - https://github.com/elastic/elasticsearch-java/pull/576[#576]
+* Add buffered lookahead and JsonData implementation for Jackson - https://github.com/elastic/elasticsearch-java/pull/489[#489], https://github.com/elastic/elasticsearch-java/pull/567[#567]
+* Expose additional BulkIngester metrics - https://github.com/elastic/elasticsearch-java/pull/513[#513]
+* Allow unparsed binary data to be used for ingestion - https://github.com/elastic/elasticsearch-java/pull/508[#508]
+
+[discrete]
 ==== Version 8.7
 
 * Add `BulkIngester` helper -  https://github.com/elastic/elasticsearch-java/pull/474[#474], https://github.com/elastic/elasticsearch-java/pull/513[#513], <<indexing-bulk,docs>>

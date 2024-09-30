@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cat;
 
 import co.elastic.clients.elasticsearch._types.Bytes;
@@ -43,11 +39,29 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: cat.fielddata.Request
 
 /**
- * Shows how much heap memory is currently being used by fielddata on every data
- * node in the cluster.
+ * Returns the amount of heap memory currently used by the field data cache on
+ * every data node in the cluster. IMPORTANT: cat APIs are only intended for
+ * human consumption using the command line or Kibana console. They are not
+ * intended for use by applications. For application consumption, use the nodes
+ * stats API.
  * 
  * @see <a href="../doc-files/api-spec.html#cat.fielddata.Request">API
  *      specification</a>
@@ -73,7 +87,7 @@ public class FielddataRequest extends CatRequestBase {
 	}
 
 	/**
-	 * The unit in which to display byte values
+	 * The unit used to display byte values.
 	 * <p>
 	 * API name: {@code bytes}
 	 */
@@ -83,7 +97,8 @@ public class FielddataRequest extends CatRequestBase {
 	}
 
 	/**
-	 * A comma-separated list of fields to return the fielddata size
+	 * Comma-separated list of fields used to limit returned information. To
+	 * retrieve all fields, omit this parameter.
 	 * <p>
 	 * API name: {@code fields}
 	 */
@@ -107,7 +122,7 @@ public class FielddataRequest extends CatRequestBase {
 		private List<String> fields;
 
 		/**
-		 * The unit in which to display byte values
+		 * The unit used to display byte values.
 		 * <p>
 		 * API name: {@code bytes}
 		 */
@@ -117,7 +132,8 @@ public class FielddataRequest extends CatRequestBase {
 		}
 
 		/**
-		 * A comma-separated list of fields to return the fielddata size
+		 * Comma-separated list of fields used to limit returned information. To
+		 * retrieve all fields, omit this parameter.
 		 * <p>
 		 * API name: {@code fields}
 		 * <p>
@@ -129,7 +145,8 @@ public class FielddataRequest extends CatRequestBase {
 		}
 
 		/**
-		 * A comma-separated list of fields to return the fielddata size
+		 * Comma-separated list of fields used to limit returned information. To
+		 * retrieve all fields, omit this parameter.
 		 * <p>
 		 * API name: {@code fields}
 		 * <p>
@@ -198,6 +215,24 @@ public class FielddataRequest extends CatRequestBase {
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _fields = 1 << 0;
+
+				int propsSet = 0;
+
+				if (ApiTypeHelper.isDefined(request.fields()))
+					propsSet |= _fields;
+
+				if (propsSet == 0) {
+				}
+				if (propsSet == (_fields)) {
+					params.put("fields", request.fields.stream().map(v -> v).collect(Collectors.joining(",")));
+				}
+				return params;
 			},
 
 			// Request parameters

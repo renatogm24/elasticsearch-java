@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.indices;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -45,10 +41,25 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: indices.get_template.Request
 
 /**
- * Returns an index template.
+ * Get index templates. Retrieves information about one or more index templates.
  * 
  * @see <a href="../doc-files/api-spec.html#indices.get_template.Request">API
  *      specification</a>
@@ -82,7 +93,7 @@ public class GetTemplateRequest extends RequestBase {
 	}
 
 	/**
-	 * Return settings in flat format (default: false)
+	 * If <code>true</code>, returns settings in flat format.
 	 * <p>
 	 * API name: {@code flat_settings}
 	 */
@@ -92,8 +103,8 @@ public class GetTemplateRequest extends RequestBase {
 	}
 
 	/**
-	 * Return local information, do not retrieve the state from master node
-	 * (default: false)
+	 * If <code>true</code>, the request retrieves information from the local node
+	 * only.
 	 * <p>
 	 * API name: {@code local}
 	 */
@@ -103,7 +114,8 @@ public class GetTemplateRequest extends RequestBase {
 	}
 
 	/**
-	 * Explicit operation timeout for connection to master node
+	 * Period to wait for a connection to the master node. If no response is
+	 * received before the timeout expires, the request fails and returns an error.
 	 * <p>
 	 * API name: {@code master_timeout}
 	 */
@@ -113,7 +125,10 @@ public class GetTemplateRequest extends RequestBase {
 	}
 
 	/**
-	 * The comma separated names of the index templates
+	 * Comma-separated list of index template names used to limit the request.
+	 * Wildcard (<code>*</code>) expressions are supported. To return all index
+	 * templates, omit this parameter or use a value of <code>_all</code> or
+	 * <code>*</code>.
 	 * <p>
 	 * API name: {@code name}
 	 */
@@ -143,7 +158,7 @@ public class GetTemplateRequest extends RequestBase {
 		private List<String> name;
 
 		/**
-		 * Return settings in flat format (default: false)
+		 * If <code>true</code>, returns settings in flat format.
 		 * <p>
 		 * API name: {@code flat_settings}
 		 */
@@ -153,8 +168,8 @@ public class GetTemplateRequest extends RequestBase {
 		}
 
 		/**
-		 * Return local information, do not retrieve the state from master node
-		 * (default: false)
+		 * If <code>true</code>, the request retrieves information from the local node
+		 * only.
 		 * <p>
 		 * API name: {@code local}
 		 */
@@ -164,7 +179,8 @@ public class GetTemplateRequest extends RequestBase {
 		}
 
 		/**
-		 * Explicit operation timeout for connection to master node
+		 * Period to wait for a connection to the master node. If no response is
+		 * received before the timeout expires, the request fails and returns an error.
 		 * <p>
 		 * API name: {@code master_timeout}
 		 */
@@ -174,7 +190,8 @@ public class GetTemplateRequest extends RequestBase {
 		}
 
 		/**
-		 * Explicit operation timeout for connection to master node
+		 * Period to wait for a connection to the master node. If no response is
+		 * received before the timeout expires, the request fails and returns an error.
 		 * <p>
 		 * API name: {@code master_timeout}
 		 */
@@ -183,7 +200,10 @@ public class GetTemplateRequest extends RequestBase {
 		}
 
 		/**
-		 * The comma separated names of the index templates
+		 * Comma-separated list of index template names used to limit the request.
+		 * Wildcard (<code>*</code>) expressions are supported. To return all index
+		 * templates, omit this parameter or use a value of <code>_all</code> or
+		 * <code>*</code>.
 		 * <p>
 		 * API name: {@code name}
 		 * <p>
@@ -195,7 +215,10 @@ public class GetTemplateRequest extends RequestBase {
 		}
 
 		/**
-		 * The comma separated names of the index templates
+		 * Comma-separated list of index template names used to limit the request.
+		 * Wildcard (<code>*</code>) expressions are supported. To return all index
+		 * templates, omit this parameter or use a value of <code>_all</code> or
+		 * <code>*</code>.
 		 * <p>
 		 * API name: {@code name}
 		 * <p>
@@ -261,6 +284,24 @@ public class GetTemplateRequest extends RequestBase {
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _name = 1 << 0;
+
+				int propsSet = 0;
+
+				if (ApiTypeHelper.isDefined(request.name()))
+					propsSet |= _name;
+
+				if (propsSet == 0) {
+				}
+				if (propsSet == (_name)) {
+					params.put("name", request.name.stream().map(v -> v).collect(Collectors.joining(",")));
+				}
+				return params;
 			},
 
 			// Request parameters

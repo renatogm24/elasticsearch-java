@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.rollup;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -39,6 +35,21 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: rollup._types.TermsGrouping
 
@@ -64,7 +75,10 @@ public class TermsGrouping implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code fields}
+	 * Required - The set of fields that you wish to collect terms for. This array
+	 * can contain fields that are both keyword and numerics. Order does not matter.
+	 * <p>
+	 * API name: {@code fields}
 	 */
 	public final List<String> fields() {
 		return this.fields;
@@ -109,7 +123,10 @@ public class TermsGrouping implements JsonpSerializable {
 		private List<String> fields;
 
 		/**
-		 * Required - API name: {@code fields}
+		 * Required - The set of fields that you wish to collect terms for. This array
+		 * can contain fields that are both keyword and numerics. Order does not matter.
+		 * <p>
+		 * API name: {@code fields}
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>fields</code>.
 		 */
@@ -119,7 +136,10 @@ public class TermsGrouping implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code fields}
+		 * Required - The set of fields that you wish to collect terms for. This array
+		 * can contain fields that are both keyword and numerics. Order does not matter.
+		 * <p>
+		 * API name: {@code fields}
 		 * <p>
 		 * Adds one or more values to <code>fields</code>.
 		 */

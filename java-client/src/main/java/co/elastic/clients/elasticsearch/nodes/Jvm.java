@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -40,6 +36,21 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.Jvm
 
@@ -93,6 +104,8 @@ public class Jvm implements JsonpSerializable {
 	}
 
 	/**
+	 * Contains statistics about JVM buffer pools for the node.
+	 * <p>
 	 * API name: {@code buffer_pools}
 	 */
 	public final Map<String, NodeBufferPool> bufferPools() {
@@ -100,6 +113,8 @@ public class Jvm implements JsonpSerializable {
 	}
 
 	/**
+	 * Contains statistics about classes loaded by JVM for the node.
+	 * <p>
 	 * API name: {@code classes}
 	 */
 	@Nullable
@@ -108,6 +123,8 @@ public class Jvm implements JsonpSerializable {
 	}
 
 	/**
+	 * Contains statistics about JVM garbage collectors for the node.
+	 * <p>
 	 * API name: {@code gc}
 	 */
 	@Nullable
@@ -116,6 +133,8 @@ public class Jvm implements JsonpSerializable {
 	}
 
 	/**
+	 * Contains JVM memory usage statistics for the node.
+	 * <p>
 	 * API name: {@code mem}
 	 */
 	@Nullable
@@ -124,6 +143,8 @@ public class Jvm implements JsonpSerializable {
 	}
 
 	/**
+	 * Contains statistics about JVM thread usage for the node.
+	 * <p>
 	 * API name: {@code threads}
 	 */
 	@Nullable
@@ -132,6 +153,8 @@ public class Jvm implements JsonpSerializable {
 	}
 
 	/**
+	 * Last time JVM statistics were refreshed.
+	 * <p>
 	 * API name: {@code timestamp}
 	 */
 	@Nullable
@@ -140,6 +163,9 @@ public class Jvm implements JsonpSerializable {
 	}
 
 	/**
+	 * Human-readable JVM uptime. Only returned if the <code>human</code> query
+	 * parameter is <code>true</code>.
+	 * <p>
 	 * API name: {@code uptime}
 	 */
 	@Nullable
@@ -148,6 +174,8 @@ public class Jvm implements JsonpSerializable {
 	}
 
 	/**
+	 * JVM uptime in milliseconds.
+	 * <p>
 	 * API name: {@code uptime_in_millis}
 	 */
 	@Nullable
@@ -252,6 +280,8 @@ public class Jvm implements JsonpSerializable {
 		private Long uptimeInMillis;
 
 		/**
+		 * Contains statistics about JVM buffer pools for the node.
+		 * <p>
 		 * API name: {@code buffer_pools}
 		 * <p>
 		 * Adds all entries of <code>map</code> to <code>bufferPools</code>.
@@ -262,6 +292,8 @@ public class Jvm implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics about JVM buffer pools for the node.
+		 * <p>
 		 * API name: {@code buffer_pools}
 		 * <p>
 		 * Adds an entry to <code>bufferPools</code>.
@@ -272,6 +304,8 @@ public class Jvm implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics about JVM buffer pools for the node.
+		 * <p>
 		 * API name: {@code buffer_pools}
 		 * <p>
 		 * Adds an entry to <code>bufferPools</code> using a builder lambda.
@@ -282,6 +316,8 @@ public class Jvm implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics about classes loaded by JVM for the node.
+		 * <p>
 		 * API name: {@code classes}
 		 */
 		public final Builder classes(@Nullable JvmClasses value) {
@@ -290,6 +326,8 @@ public class Jvm implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics about classes loaded by JVM for the node.
+		 * <p>
 		 * API name: {@code classes}
 		 */
 		public final Builder classes(Function<JvmClasses.Builder, ObjectBuilder<JvmClasses>> fn) {
@@ -297,6 +335,8 @@ public class Jvm implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics about JVM garbage collectors for the node.
+		 * <p>
 		 * API name: {@code gc}
 		 */
 		public final Builder gc(@Nullable GarbageCollector value) {
@@ -305,6 +345,8 @@ public class Jvm implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics about JVM garbage collectors for the node.
+		 * <p>
 		 * API name: {@code gc}
 		 */
 		public final Builder gc(Function<GarbageCollector.Builder, ObjectBuilder<GarbageCollector>> fn) {
@@ -312,6 +354,8 @@ public class Jvm implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains JVM memory usage statistics for the node.
+		 * <p>
 		 * API name: {@code mem}
 		 */
 		public final Builder mem(@Nullable JvmMemoryStats value) {
@@ -320,6 +364,8 @@ public class Jvm implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains JVM memory usage statistics for the node.
+		 * <p>
 		 * API name: {@code mem}
 		 */
 		public final Builder mem(Function<JvmMemoryStats.Builder, ObjectBuilder<JvmMemoryStats>> fn) {
@@ -327,6 +373,8 @@ public class Jvm implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics about JVM thread usage for the node.
+		 * <p>
 		 * API name: {@code threads}
 		 */
 		public final Builder threads(@Nullable JvmThreads value) {
@@ -335,6 +383,8 @@ public class Jvm implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics about JVM thread usage for the node.
+		 * <p>
 		 * API name: {@code threads}
 		 */
 		public final Builder threads(Function<JvmThreads.Builder, ObjectBuilder<JvmThreads>> fn) {
@@ -342,6 +392,8 @@ public class Jvm implements JsonpSerializable {
 		}
 
 		/**
+		 * Last time JVM statistics were refreshed.
+		 * <p>
 		 * API name: {@code timestamp}
 		 */
 		public final Builder timestamp(@Nullable Long value) {
@@ -350,6 +402,9 @@ public class Jvm implements JsonpSerializable {
 		}
 
 		/**
+		 * Human-readable JVM uptime. Only returned if the <code>human</code> query
+		 * parameter is <code>true</code>.
+		 * <p>
 		 * API name: {@code uptime}
 		 */
 		public final Builder uptime(@Nullable String value) {
@@ -358,6 +413,8 @@ public class Jvm implements JsonpSerializable {
 		}
 
 		/**
+		 * JVM uptime in milliseconds.
+		 * <p>
 		 * API name: {@code uptime_in_millis}
 		 */
 		public final Builder uptimeInMillis(@Nullable Long value) {

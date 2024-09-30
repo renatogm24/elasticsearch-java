@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -38,6 +34,21 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.IoStats
 
@@ -67,6 +78,10 @@ public class IoStats implements JsonpSerializable {
 	}
 
 	/**
+	 * Array of disk metrics for each device that is backing an Elasticsearch data
+	 * path. These disk metrics are probed periodically and averages between the
+	 * last probe and the current probe are computed.
+	 * <p>
 	 * API name: {@code devices}
 	 */
 	public final List<IoStatDevice> devices() {
@@ -74,6 +89,9 @@ public class IoStats implements JsonpSerializable {
 	}
 
 	/**
+	 * The sum of the disk metrics for all devices that back an Elasticsearch data
+	 * path.
+	 * <p>
 	 * API name: {@code total}
 	 */
 	@Nullable
@@ -129,6 +147,10 @@ public class IoStats implements JsonpSerializable {
 		private IoStatDevice total;
 
 		/**
+		 * Array of disk metrics for each device that is backing an Elasticsearch data
+		 * path. These disk metrics are probed periodically and averages between the
+		 * last probe and the current probe are computed.
+		 * <p>
 		 * API name: {@code devices}
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>devices</code>.
@@ -139,6 +161,10 @@ public class IoStats implements JsonpSerializable {
 		}
 
 		/**
+		 * Array of disk metrics for each device that is backing an Elasticsearch data
+		 * path. These disk metrics are probed periodically and averages between the
+		 * last probe and the current probe are computed.
+		 * <p>
 		 * API name: {@code devices}
 		 * <p>
 		 * Adds one or more values to <code>devices</code>.
@@ -149,6 +175,10 @@ public class IoStats implements JsonpSerializable {
 		}
 
 		/**
+		 * Array of disk metrics for each device that is backing an Elasticsearch data
+		 * path. These disk metrics are probed periodically and averages between the
+		 * last probe and the current probe are computed.
+		 * <p>
 		 * API name: {@code devices}
 		 * <p>
 		 * Adds a value to <code>devices</code> using a builder lambda.
@@ -158,6 +188,9 @@ public class IoStats implements JsonpSerializable {
 		}
 
 		/**
+		 * The sum of the disk metrics for all devices that back an Elasticsearch data
+		 * path.
+		 * <p>
 		 * API name: {@code total}
 		 */
 		public final Builder total(@Nullable IoStatDevice value) {
@@ -166,6 +199,9 @@ public class IoStats implements JsonpSerializable {
 		}
 
 		/**
+		 * The sum of the disk metrics for all devices that back an Elasticsearch data
+		 * path.
+		 * <p>
 		 * API name: {@code total}
 		 */
 		public final Builder total(Function<IoStatDevice.Builder, ObjectBuilder<IoStatDevice>> fn) {

@@ -17,14 +17,11 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.xpack;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
 import co.elastic.clients.elasticsearch._types.RequestBase;
+import co.elastic.clients.elasticsearch.xpack.info.XPackCategory;
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.ObjectBuilderDeserializer;
@@ -35,7 +32,7 @@ import co.elastic.clients.util.ApiTypeHelper;
 import co.elastic.clients.util.ObjectBuilder;
 import jakarta.json.stream.JsonGenerator;
 import java.lang.Boolean;
-import java.lang.String;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -43,6 +40,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: xpack.info.Request
 
@@ -57,7 +69,7 @@ public class XpackInfoRequest extends RequestBase {
 	@Nullable
 	private final Boolean acceptEnterprise;
 
-	private final List<String> categories;
+	private final List<XPackCategory> categories;
 
 	@Nullable
 	private final Boolean human;
@@ -92,7 +104,7 @@ public class XpackInfoRequest extends RequestBase {
 	 * <p>
 	 * API name: {@code categories}
 	 */
-	public final List<String> categories() {
+	public final List<XPackCategory> categories() {
 		return this.categories;
 	}
 
@@ -120,7 +132,7 @@ public class XpackInfoRequest extends RequestBase {
 		private Boolean acceptEnterprise;
 
 		@Nullable
-		private List<String> categories;
+		private List<XPackCategory> categories;
 
 		@Nullable
 		private Boolean human;
@@ -143,7 +155,7 @@ public class XpackInfoRequest extends RequestBase {
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>categories</code>.
 		 */
-		public final Builder categories(List<String> list) {
+		public final Builder categories(List<XPackCategory> list) {
 			this.categories = _listAddAll(this.categories, list);
 			return this;
 		}
@@ -156,7 +168,7 @@ public class XpackInfoRequest extends RequestBase {
 		 * <p>
 		 * Adds one or more values to <code>categories</code>.
 		 */
-		public final Builder categories(String value, String... values) {
+		public final Builder categories(XPackCategory value, XPackCategory... values) {
 			this.categories = _listAdd(this.categories, value, values);
 			return this;
 		}
@@ -210,11 +222,17 @@ public class XpackInfoRequest extends RequestBase {
 
 			},
 
+			// Path parameters
+			request -> {
+				return Collections.emptyMap();
+			},
+
 			// Request parameters
 			request -> {
 				Map<String, String> params = new HashMap<>();
 				if (ApiTypeHelper.isDefined(request.categories)) {
-					params.put("categories", request.categories.stream().map(v -> v).collect(Collectors.joining(",")));
+					params.put("categories",
+							request.categories.stream().map(v -> v.jsonValue()).collect(Collectors.joining(",")));
 				}
 				if (request.human != null) {
 					params.put("human", String.valueOf(request.human));

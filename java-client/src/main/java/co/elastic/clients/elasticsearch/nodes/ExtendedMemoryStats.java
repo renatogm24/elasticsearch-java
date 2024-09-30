@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -34,6 +30,21 @@ import java.lang.Integer;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.ExtendedMemoryStats
 
@@ -66,6 +77,8 @@ public class ExtendedMemoryStats extends MemoryStats {
 	}
 
 	/**
+	 * Percentage of free memory.
+	 * <p>
 	 * API name: {@code free_percent}
 	 */
 	@Nullable
@@ -74,6 +87,8 @@ public class ExtendedMemoryStats extends MemoryStats {
 	}
 
 	/**
+	 * Percentage of used memory.
+	 * <p>
 	 * API name: {@code used_percent}
 	 */
 	@Nullable
@@ -113,6 +128,8 @@ public class ExtendedMemoryStats extends MemoryStats {
 		private Integer usedPercent;
 
 		/**
+		 * Percentage of free memory.
+		 * <p>
 		 * API name: {@code free_percent}
 		 */
 		public final Builder freePercent(@Nullable Integer value) {
@@ -121,6 +138,8 @@ public class ExtendedMemoryStats extends MemoryStats {
 		}
 
 		/**
+		 * Percentage of used memory.
+		 * <p>
 		 * API name: {@code used_percent}
 		 */
 		public final Builder usedPercent(@Nullable Integer value) {

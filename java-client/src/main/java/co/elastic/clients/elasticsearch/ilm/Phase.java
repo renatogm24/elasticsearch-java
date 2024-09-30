@@ -17,14 +17,9 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.ilm;
 
 import co.elastic.clients.elasticsearch._types.Time;
-import co.elastic.clients.json.JsonData;
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.JsonpMapper;
@@ -39,6 +34,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: ilm._types.Phase
 
 /**
@@ -49,13 +59,10 @@ import javax.annotation.Nullable;
 @JsonpDeserializable
 public class Phase implements JsonpSerializable {
 	@Nullable
-	private final JsonData actions;
+	private final Actions actions;
 
 	@Nullable
 	private final Time minAge;
-
-	@Nullable
-	private final Configurations configurations;
 
 	// ---------------------------------------------------------------------------------------------
 
@@ -63,7 +70,6 @@ public class Phase implements JsonpSerializable {
 
 		this.actions = builder.actions;
 		this.minAge = builder.minAge;
-		this.configurations = builder.configurations;
 
 	}
 
@@ -75,7 +81,7 @@ public class Phase implements JsonpSerializable {
 	 * API name: {@code actions}
 	 */
 	@Nullable
-	public final JsonData actions() {
+	public final Actions actions() {
 		return this.actions;
 	}
 
@@ -85,14 +91,6 @@ public class Phase implements JsonpSerializable {
 	@Nullable
 	public final Time minAge() {
 		return this.minAge;
-	}
-
-	/**
-	 * API name: {@code configurations}
-	 */
-	@Nullable
-	public final Configurations configurations() {
-		return this.configurations;
 	}
 
 	/**
@@ -116,11 +114,6 @@ public class Phase implements JsonpSerializable {
 			this.minAge.serialize(generator, mapper);
 
 		}
-		if (this.configurations != null) {
-			generator.writeKey("configurations");
-			this.configurations.serialize(generator, mapper);
-
-		}
 
 	}
 
@@ -137,20 +130,24 @@ public class Phase implements JsonpSerializable {
 
 	public static class Builder extends WithJsonObjectBuilderBase<Builder> implements ObjectBuilder<Phase> {
 		@Nullable
-		private JsonData actions;
+		private Actions actions;
 
 		@Nullable
 		private Time minAge;
 
-		@Nullable
-		private Configurations configurations;
+		/**
+		 * API name: {@code actions}
+		 */
+		public final Builder actions(@Nullable Actions value) {
+			this.actions = value;
+			return this;
+		}
 
 		/**
 		 * API name: {@code actions}
 		 */
-		public final Builder actions(@Nullable JsonData value) {
-			this.actions = value;
-			return this;
+		public final Builder actions(Function<Actions.Builder, ObjectBuilder<Actions>> fn) {
+			return this.actions(fn.apply(new Actions.Builder()).build());
 		}
 
 		/**
@@ -166,21 +163,6 @@ public class Phase implements JsonpSerializable {
 		 */
 		public final Builder minAge(Function<Time.Builder, ObjectBuilder<Time>> fn) {
 			return this.minAge(fn.apply(new Time.Builder()).build());
-		}
-
-		/**
-		 * API name: {@code configurations}
-		 */
-		public final Builder configurations(@Nullable Configurations value) {
-			this.configurations = value;
-			return this;
-		}
-
-		/**
-		 * API name: {@code configurations}
-		 */
-		public final Builder configurations(Function<Configurations.Builder, ObjectBuilder<Configurations>> fn) {
-			return this.configurations(fn.apply(new Configurations.Builder()).build());
 		}
 
 		@Override
@@ -211,9 +193,8 @@ public class Phase implements JsonpSerializable {
 
 	protected static void setupPhaseDeserializer(ObjectDeserializer<Phase.Builder> op) {
 
-		op.add(Builder::actions, JsonData._DESERIALIZER, "actions");
+		op.add(Builder::actions, Actions._DESERIALIZER, "actions");
 		op.add(Builder::minAge, Time._DESERIALIZER, "min_age");
-		op.add(Builder::configurations, Configurations._DESERIALIZER, "configurations");
 
 	}
 

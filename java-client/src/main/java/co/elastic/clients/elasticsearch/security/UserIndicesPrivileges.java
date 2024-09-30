@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.security;
 
 import co.elastic.clients.elasticsearch._types.query_dsl.Query;
@@ -42,6 +38,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: security._types.UserIndicesPrivileges
 
 /**
@@ -56,7 +67,7 @@ public class UserIndicesPrivileges implements JsonpSerializable {
 
 	private final List<String> names;
 
-	private final List<IndexPrivilege> privileges;
+	private final List<String> privileges;
 
 	private final List<Query> query;
 
@@ -104,7 +115,7 @@ public class UserIndicesPrivileges implements JsonpSerializable {
 	 * <p>
 	 * API name: {@code privileges}
 	 */
-	public final List<IndexPrivilege> privileges() {
+	public final List<String> privileges() {
 		return this.privileges;
 	}
 
@@ -169,8 +180,9 @@ public class UserIndicesPrivileges implements JsonpSerializable {
 		if (ApiTypeHelper.isDefined(this.privileges)) {
 			generator.writeKey("privileges");
 			generator.writeStartArray();
-			for (IndexPrivilege item0 : this.privileges) {
-				item0.serialize(generator, mapper);
+			for (String item0 : this.privileges) {
+				generator.write(item0);
+
 			}
 			generator.writeEnd();
 
@@ -209,7 +221,7 @@ public class UserIndicesPrivileges implements JsonpSerializable {
 
 		private List<String> names;
 
-		private List<IndexPrivilege> privileges;
+		private List<String> privileges;
 
 		@Nullable
 		private List<Query> query;
@@ -285,7 +297,7 @@ public class UserIndicesPrivileges implements JsonpSerializable {
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>privileges</code>.
 		 */
-		public final Builder privileges(List<IndexPrivilege> list) {
+		public final Builder privileges(List<String> list) {
 			this.privileges = _listAddAll(this.privileges, list);
 			return this;
 		}
@@ -298,7 +310,7 @@ public class UserIndicesPrivileges implements JsonpSerializable {
 		 * <p>
 		 * Adds one or more values to <code>privileges</code>.
 		 */
-		public final Builder privileges(IndexPrivilege value, IndexPrivilege... values) {
+		public final Builder privileges(String value, String... values) {
 			this.privileges = _listAdd(this.privileges, value, values);
 			return this;
 		}
@@ -396,7 +408,8 @@ public class UserIndicesPrivileges implements JsonpSerializable {
 		op.add(Builder::fieldSecurity, JsonpDeserializer.arrayDeserializer(FieldSecurity._DESERIALIZER),
 				"field_security");
 		op.add(Builder::names, JsonpDeserializer.arrayDeserializer(JsonpDeserializer.stringDeserializer()), "names");
-		op.add(Builder::privileges, JsonpDeserializer.arrayDeserializer(IndexPrivilege._DESERIALIZER), "privileges");
+		op.add(Builder::privileges, JsonpDeserializer.arrayDeserializer(JsonpDeserializer.stringDeserializer()),
+				"privileges");
 		op.add(Builder::query, JsonpDeserializer.arrayDeserializer(JsonpDeserializer.jsonString(Query._DESERIALIZER)),
 				"query");
 		op.add(Builder::allowRestrictedIndices, JsonpDeserializer.booleanDeserializer(), "allow_restricted_indices");

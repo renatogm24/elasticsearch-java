@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -37,6 +33,21 @@ import java.lang.Long;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.JvmClasses
 
@@ -71,6 +82,8 @@ public class JvmClasses implements JsonpSerializable {
 	}
 
 	/**
+	 * Number of classes currently loaded by JVM.
+	 * <p>
 	 * API name: {@code current_loaded_count}
 	 */
 	@Nullable
@@ -79,6 +92,8 @@ public class JvmClasses implements JsonpSerializable {
 	}
 
 	/**
+	 * Total number of classes loaded since the JVM started.
+	 * <p>
 	 * API name: {@code total_loaded_count}
 	 */
 	@Nullable
@@ -87,6 +102,8 @@ public class JvmClasses implements JsonpSerializable {
 	}
 
 	/**
+	 * Total number of classes unloaded since the JVM started.
+	 * <p>
 	 * API name: {@code total_unloaded_count}
 	 */
 	@Nullable
@@ -145,6 +162,8 @@ public class JvmClasses implements JsonpSerializable {
 		private Long totalUnloadedCount;
 
 		/**
+		 * Number of classes currently loaded by JVM.
+		 * <p>
 		 * API name: {@code current_loaded_count}
 		 */
 		public final Builder currentLoadedCount(@Nullable Long value) {
@@ -153,6 +172,8 @@ public class JvmClasses implements JsonpSerializable {
 		}
 
 		/**
+		 * Total number of classes loaded since the JVM started.
+		 * <p>
 		 * API name: {@code total_loaded_count}
 		 */
 		public final Builder totalLoadedCount(@Nullable Long value) {
@@ -161,6 +182,8 @@ public class JvmClasses implements JsonpSerializable {
 		}
 
 		/**
+		 * Total number of classes unloaded since the JVM started.
+		 * <p>
 		 * API name: {@code total_unloaded_count}
 		 */
 		public final Builder totalUnloadedCount(@Nullable Long value) {

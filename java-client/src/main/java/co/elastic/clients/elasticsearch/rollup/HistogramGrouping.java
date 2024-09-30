@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.rollup;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -40,6 +36,21 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: rollup._types.HistogramGrouping
 
@@ -68,14 +79,23 @@ public class HistogramGrouping implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code fields}
+	 * Required - The set of fields that you wish to build histograms for. All
+	 * fields specified must be some kind of numeric. Order does not matter.
+	 * <p>
+	 * API name: {@code fields}
 	 */
 	public final List<String> fields() {
 		return this.fields;
 	}
 
 	/**
-	 * Required - API name: {@code interval}
+	 * Required - The interval of histogram buckets to be generated when rolling up.
+	 * For example, a value of <code>5</code> creates buckets that are five units
+	 * wide (<code>0-5</code>, <code>5-10</code>, etc). Note that only one interval
+	 * can be specified in the histogram group, meaning that all fields being
+	 * grouped via the histogram must share the same interval.
+	 * <p>
+	 * API name: {@code interval}
 	 */
 	public final long interval() {
 		return this.interval;
@@ -124,7 +144,10 @@ public class HistogramGrouping implements JsonpSerializable {
 		private Long interval;
 
 		/**
-		 * Required - API name: {@code fields}
+		 * Required - The set of fields that you wish to build histograms for. All
+		 * fields specified must be some kind of numeric. Order does not matter.
+		 * <p>
+		 * API name: {@code fields}
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>fields</code>.
 		 */
@@ -134,7 +157,10 @@ public class HistogramGrouping implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code fields}
+		 * Required - The set of fields that you wish to build histograms for. All
+		 * fields specified must be some kind of numeric. Order does not matter.
+		 * <p>
+		 * API name: {@code fields}
 		 * <p>
 		 * Adds one or more values to <code>fields</code>.
 		 */
@@ -144,7 +170,13 @@ public class HistogramGrouping implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code interval}
+		 * Required - The interval of histogram buckets to be generated when rolling up.
+		 * For example, a value of <code>5</code> creates buckets that are five units
+		 * wide (<code>0-5</code>, <code>5-10</code>, etc). Note that only one interval
+		 * can be specified in the histogram group, meaning that all fields being
+		 * grouped via the histogram must share the same interval.
+		 * <p>
+		 * API name: {@code interval}
 		 */
 		public final Builder interval(long value) {
 			this.interval = value;

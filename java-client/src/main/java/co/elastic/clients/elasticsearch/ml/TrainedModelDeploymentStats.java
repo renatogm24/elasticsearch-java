@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.ml;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -37,9 +33,25 @@ import jakarta.json.stream.JsonGenerator;
 import java.lang.Integer;
 import java.lang.Long;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: ml._types.TrainedModelDeploymentStats
 
@@ -56,13 +68,15 @@ public class TrainedModelDeploymentStats implements JsonpSerializable {
 	@Nullable
 	private final String cacheSize;
 
+	private final String deploymentId;
+
 	private final int errorCount;
 
 	private final int inferenceCount;
 
 	private final String modelId;
 
-	private final TrainedModelDeploymentNodesStats nodes;
+	private final List<TrainedModelDeploymentNodesStats> nodes;
 
 	private final int numberOfAllocations;
 
@@ -74,7 +88,7 @@ public class TrainedModelDeploymentStats implements JsonpSerializable {
 
 	private final long startTime;
 
-	private final DeploymentState state;
+	private final DeploymentAssignmentState state;
 
 	private final int threadsPerAllocation;
 
@@ -86,10 +100,11 @@ public class TrainedModelDeploymentStats implements JsonpSerializable {
 
 		this.allocationStatus = ApiTypeHelper.requireNonNull(builder.allocationStatus, this, "allocationStatus");
 		this.cacheSize = builder.cacheSize;
+		this.deploymentId = ApiTypeHelper.requireNonNull(builder.deploymentId, this, "deploymentId");
 		this.errorCount = ApiTypeHelper.requireNonNull(builder.errorCount, this, "errorCount");
 		this.inferenceCount = ApiTypeHelper.requireNonNull(builder.inferenceCount, this, "inferenceCount");
 		this.modelId = ApiTypeHelper.requireNonNull(builder.modelId, this, "modelId");
-		this.nodes = ApiTypeHelper.requireNonNull(builder.nodes, this, "nodes");
+		this.nodes = ApiTypeHelper.unmodifiableRequired(builder.nodes, this, "nodes");
 		this.numberOfAllocations = ApiTypeHelper.requireNonNull(builder.numberOfAllocations, this,
 				"numberOfAllocations");
 		this.queueCapacity = ApiTypeHelper.requireNonNull(builder.queueCapacity, this, "queueCapacity");
@@ -126,6 +141,15 @@ public class TrainedModelDeploymentStats implements JsonpSerializable {
 	}
 
 	/**
+	 * Required - The unique identifier for the trained model deployment.
+	 * <p>
+	 * API name: {@code deployment_id}
+	 */
+	public final String deploymentId() {
+		return this.deploymentId;
+	}
+
+	/**
 	 * Required - The sum of <code>error_count</code> for all nodes in the
 	 * deployment.
 	 * <p>
@@ -155,12 +179,13 @@ public class TrainedModelDeploymentStats implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - The deployent stats for each node that currently has the model
-	 * allocated.
+	 * Required - The deployment stats for each node that currently has the model
+	 * allocated. In serverless, stats are reported for a single unnamed virtual
+	 * node.
 	 * <p>
 	 * API name: {@code nodes}
 	 */
-	public final TrainedModelDeploymentNodesStats nodes() {
+	public final List<TrainedModelDeploymentNodesStats> nodes() {
 		return this.nodes;
 	}
 
@@ -220,7 +245,7 @@ public class TrainedModelDeploymentStats implements JsonpSerializable {
 	 * <p>
 	 * API name: {@code state}
 	 */
-	public final DeploymentState state() {
+	public final DeploymentAssignmentState state() {
 		return this.state;
 	}
 
@@ -262,6 +287,9 @@ public class TrainedModelDeploymentStats implements JsonpSerializable {
 			generator.write(this.cacheSize);
 
 		}
+		generator.writeKey("deployment_id");
+		generator.write(this.deploymentId);
+
 		generator.writeKey("error_count");
 		generator.write(this.errorCount);
 
@@ -271,9 +299,16 @@ public class TrainedModelDeploymentStats implements JsonpSerializable {
 		generator.writeKey("model_id");
 		generator.write(this.modelId);
 
-		generator.writeKey("nodes");
-		this.nodes.serialize(generator, mapper);
+		if (ApiTypeHelper.isDefined(this.nodes)) {
+			generator.writeKey("nodes");
+			generator.writeStartArray();
+			for (TrainedModelDeploymentNodesStats item0 : this.nodes) {
+				item0.serialize(generator, mapper);
 
+			}
+			generator.writeEnd();
+
+		}
 		generator.writeKey("number_of_allocations");
 		generator.write(this.numberOfAllocations);
 
@@ -318,13 +353,15 @@ public class TrainedModelDeploymentStats implements JsonpSerializable {
 		@Nullable
 		private String cacheSize;
 
+		private String deploymentId;
+
 		private Integer errorCount;
 
 		private Integer inferenceCount;
 
 		private String modelId;
 
-		private TrainedModelDeploymentNodesStats nodes;
+		private List<TrainedModelDeploymentNodesStats> nodes;
 
 		private Integer numberOfAllocations;
 
@@ -336,7 +373,7 @@ public class TrainedModelDeploymentStats implements JsonpSerializable {
 
 		private Long startTime;
 
-		private DeploymentState state;
+		private DeploymentAssignmentState state;
 
 		private Integer threadsPerAllocation;
 
@@ -367,6 +404,16 @@ public class TrainedModelDeploymentStats implements JsonpSerializable {
 		 */
 		public final Builder cacheSize(@Nullable String value) {
 			this.cacheSize = value;
+			return this;
+		}
+
+		/**
+		 * Required - The unique identifier for the trained model deployment.
+		 * <p>
+		 * API name: {@code deployment_id}
+		 */
+		public final Builder deploymentId(String value) {
+			this.deploymentId = value;
 			return this;
 		}
 
@@ -403,25 +450,45 @@ public class TrainedModelDeploymentStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - The deployent stats for each node that currently has the model
-		 * allocated.
+		 * Required - The deployment stats for each node that currently has the model
+		 * allocated. In serverless, stats are reported for a single unnamed virtual
+		 * node.
 		 * <p>
 		 * API name: {@code nodes}
+		 * <p>
+		 * Adds all elements of <code>list</code> to <code>nodes</code>.
 		 */
-		public final Builder nodes(TrainedModelDeploymentNodesStats value) {
-			this.nodes = value;
+		public final Builder nodes(List<TrainedModelDeploymentNodesStats> list) {
+			this.nodes = _listAddAll(this.nodes, list);
 			return this;
 		}
 
 		/**
-		 * Required - The deployent stats for each node that currently has the model
-		 * allocated.
+		 * Required - The deployment stats for each node that currently has the model
+		 * allocated. In serverless, stats are reported for a single unnamed virtual
+		 * node.
 		 * <p>
 		 * API name: {@code nodes}
+		 * <p>
+		 * Adds one or more values to <code>nodes</code>.
+		 */
+		public final Builder nodes(TrainedModelDeploymentNodesStats value, TrainedModelDeploymentNodesStats... values) {
+			this.nodes = _listAdd(this.nodes, value, values);
+			return this;
+		}
+
+		/**
+		 * Required - The deployment stats for each node that currently has the model
+		 * allocated. In serverless, stats are reported for a single unnamed virtual
+		 * node.
+		 * <p>
+		 * API name: {@code nodes}
+		 * <p>
+		 * Adds a value to <code>nodes</code> using a builder lambda.
 		 */
 		public final Builder nodes(
 				Function<TrainedModelDeploymentNodesStats.Builder, ObjectBuilder<TrainedModelDeploymentNodesStats>> fn) {
-			return this.nodes(fn.apply(new TrainedModelDeploymentNodesStats.Builder()).build());
+			return nodes(fn.apply(new TrainedModelDeploymentNodesStats.Builder()).build());
 		}
 
 		/**
@@ -485,7 +552,7 @@ public class TrainedModelDeploymentStats implements JsonpSerializable {
 		 * <p>
 		 * API name: {@code state}
 		 */
-		public final Builder state(DeploymentState value) {
+		public final Builder state(DeploymentAssignmentState value) {
 			this.state = value;
 			return this;
 		}
@@ -542,16 +609,18 @@ public class TrainedModelDeploymentStats implements JsonpSerializable {
 
 		op.add(Builder::allocationStatus, TrainedModelDeploymentAllocationStatus._DESERIALIZER, "allocation_status");
 		op.add(Builder::cacheSize, JsonpDeserializer.stringDeserializer(), "cache_size");
+		op.add(Builder::deploymentId, JsonpDeserializer.stringDeserializer(), "deployment_id");
 		op.add(Builder::errorCount, JsonpDeserializer.integerDeserializer(), "error_count");
 		op.add(Builder::inferenceCount, JsonpDeserializer.integerDeserializer(), "inference_count");
 		op.add(Builder::modelId, JsonpDeserializer.stringDeserializer(), "model_id");
-		op.add(Builder::nodes, TrainedModelDeploymentNodesStats._DESERIALIZER, "nodes");
+		op.add(Builder::nodes, JsonpDeserializer.arrayDeserializer(TrainedModelDeploymentNodesStats._DESERIALIZER),
+				"nodes");
 		op.add(Builder::numberOfAllocations, JsonpDeserializer.integerDeserializer(), "number_of_allocations");
 		op.add(Builder::queueCapacity, JsonpDeserializer.integerDeserializer(), "queue_capacity");
 		op.add(Builder::rejectedExecutionCount, JsonpDeserializer.integerDeserializer(), "rejected_execution_count");
 		op.add(Builder::reason, JsonpDeserializer.stringDeserializer(), "reason");
 		op.add(Builder::startTime, JsonpDeserializer.longDeserializer(), "start_time");
-		op.add(Builder::state, DeploymentState._DESERIALIZER, "state");
+		op.add(Builder::state, DeploymentAssignmentState._DESERIALIZER, "state");
 		op.add(Builder::threadsPerAllocation, JsonpDeserializer.integerDeserializer(), "threads_per_allocation");
 		op.add(Builder::timeoutCount, JsonpDeserializer.integerDeserializer(), "timeout_count");
 

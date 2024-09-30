@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cluster.pending_tasks;
 
 import co.elastic.clients.elasticsearch._types.Time;
@@ -42,6 +38,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: cluster.pending_tasks.PendingTask
 
@@ -84,34 +95,50 @@ public class PendingTask implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code executing}
+	 * Required - Indicates whether the pending tasks are currently executing or
+	 * not.
+	 * <p>
+	 * API name: {@code executing}
 	 */
 	public final boolean executing() {
 		return this.executing;
 	}
 
 	/**
-	 * Required - API name: {@code insert_order}
+	 * Required - The number that represents when the task has been inserted into
+	 * the task queue.
+	 * <p>
+	 * API name: {@code insert_order}
 	 */
 	public final int insertOrder() {
 		return this.insertOrder;
 	}
 
 	/**
-	 * Required - API name: {@code priority}
+	 * Required - The priority of the pending task. The valid priorities in
+	 * descending priority order are: <code>IMMEDIATE</code> &gt;
+	 * <code>URGENT</code> &gt; <code>HIGH</code> &gt; <code>NORMAL</code> &gt;
+	 * <code>LOW</code> &gt; <code>LANGUID</code>.
+	 * <p>
+	 * API name: {@code priority}
 	 */
 	public final String priority() {
 		return this.priority;
 	}
 
 	/**
-	 * Required - API name: {@code source}
+	 * Required - A general description of the cluster task that may include a
+	 * reason and origin.
+	 * <p>
+	 * API name: {@code source}
 	 */
 	public final String source() {
 		return this.source;
 	}
 
 	/**
+	 * The time since the task is waiting for being performed.
+	 * <p>
 	 * API name: {@code time_in_queue}
 	 */
 	@Nullable
@@ -120,7 +147,10 @@ public class PendingTask implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code time_in_queue_millis}
+	 * Required - The time expressed in milliseconds since the task is waiting for
+	 * being performed.
+	 * <p>
+	 * API name: {@code time_in_queue_millis}
 	 */
 	public final long timeInQueueMillis() {
 		return this.timeInQueueMillis;
@@ -185,7 +215,10 @@ public class PendingTask implements JsonpSerializable {
 		private Long timeInQueueMillis;
 
 		/**
-		 * Required - API name: {@code executing}
+		 * Required - Indicates whether the pending tasks are currently executing or
+		 * not.
+		 * <p>
+		 * API name: {@code executing}
 		 */
 		public final Builder executing(boolean value) {
 			this.executing = value;
@@ -193,7 +226,10 @@ public class PendingTask implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code insert_order}
+		 * Required - The number that represents when the task has been inserted into
+		 * the task queue.
+		 * <p>
+		 * API name: {@code insert_order}
 		 */
 		public final Builder insertOrder(int value) {
 			this.insertOrder = value;
@@ -201,7 +237,12 @@ public class PendingTask implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code priority}
+		 * Required - The priority of the pending task. The valid priorities in
+		 * descending priority order are: <code>IMMEDIATE</code> &gt;
+		 * <code>URGENT</code> &gt; <code>HIGH</code> &gt; <code>NORMAL</code> &gt;
+		 * <code>LOW</code> &gt; <code>LANGUID</code>.
+		 * <p>
+		 * API name: {@code priority}
 		 */
 		public final Builder priority(String value) {
 			this.priority = value;
@@ -209,7 +250,10 @@ public class PendingTask implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code source}
+		 * Required - A general description of the cluster task that may include a
+		 * reason and origin.
+		 * <p>
+		 * API name: {@code source}
 		 */
 		public final Builder source(String value) {
 			this.source = value;
@@ -217,6 +261,8 @@ public class PendingTask implements JsonpSerializable {
 		}
 
 		/**
+		 * The time since the task is waiting for being performed.
+		 * <p>
 		 * API name: {@code time_in_queue}
 		 */
 		public final Builder timeInQueue(@Nullable Time value) {
@@ -225,6 +271,8 @@ public class PendingTask implements JsonpSerializable {
 		}
 
 		/**
+		 * The time since the task is waiting for being performed.
+		 * <p>
 		 * API name: {@code time_in_queue}
 		 */
 		public final Builder timeInQueue(Function<Time.Builder, ObjectBuilder<Time>> fn) {
@@ -232,7 +280,10 @@ public class PendingTask implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code time_in_queue_millis}
+		 * Required - The time expressed in milliseconds since the task is waiting for
+		 * being performed.
+		 * <p>
+		 * API name: {@code time_in_queue_millis}
 		 */
 		public final Builder timeInQueueMillis(long value) {
 			this.timeInQueueMillis = value;

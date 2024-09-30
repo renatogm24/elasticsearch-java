@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cat.nodeattrs;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -37,6 +33,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: cat.nodeattrs.NodeAttributesRecord
 
@@ -92,7 +103,7 @@ public class NodeAttributesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * node name
+	 * The node name.
 	 * <p>
 	 * API name: {@code node}
 	 */
@@ -102,7 +113,7 @@ public class NodeAttributesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * unique node id
+	 * The unique node identifier.
 	 * <p>
 	 * API name: {@code id}
 	 */
@@ -112,7 +123,7 @@ public class NodeAttributesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * process id
+	 * The process identifier.
 	 * <p>
 	 * API name: {@code pid}
 	 */
@@ -122,7 +133,7 @@ public class NodeAttributesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * host name
+	 * The host name.
 	 * <p>
 	 * API name: {@code host}
 	 */
@@ -132,7 +143,7 @@ public class NodeAttributesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * ip address
+	 * The IP address.
 	 * <p>
 	 * API name: {@code ip}
 	 */
@@ -142,7 +153,7 @@ public class NodeAttributesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * bound transport port
+	 * The bound transport port.
 	 * <p>
 	 * API name: {@code port}
 	 */
@@ -152,7 +163,7 @@ public class NodeAttributesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * attribute description
+	 * The attribute name.
 	 * <p>
 	 * API name: {@code attr}
 	 */
@@ -162,7 +173,7 @@ public class NodeAttributesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * attribute value
+	 * The attribute value.
 	 * <p>
 	 * API name: {@code value}
 	 */
@@ -264,7 +275,7 @@ public class NodeAttributesRecord implements JsonpSerializable {
 		private String value;
 
 		/**
-		 * node name
+		 * The node name.
 		 * <p>
 		 * API name: {@code node}
 		 */
@@ -274,7 +285,7 @@ public class NodeAttributesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * unique node id
+		 * The unique node identifier.
 		 * <p>
 		 * API name: {@code id}
 		 */
@@ -284,7 +295,7 @@ public class NodeAttributesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * process id
+		 * The process identifier.
 		 * <p>
 		 * API name: {@code pid}
 		 */
@@ -294,7 +305,7 @@ public class NodeAttributesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * host name
+		 * The host name.
 		 * <p>
 		 * API name: {@code host}
 		 */
@@ -304,7 +315,7 @@ public class NodeAttributesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * ip address
+		 * The IP address.
 		 * <p>
 		 * API name: {@code ip}
 		 */
@@ -314,7 +325,7 @@ public class NodeAttributesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * bound transport port
+		 * The bound transport port.
 		 * <p>
 		 * API name: {@code port}
 		 */
@@ -324,7 +335,7 @@ public class NodeAttributesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * attribute description
+		 * The attribute name.
 		 * <p>
 		 * API name: {@code attr}
 		 */
@@ -334,7 +345,7 @@ public class NodeAttributesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * attribute value
+		 * The attribute value.
 		 * <p>
 		 * API name: {@code value}
 		 */

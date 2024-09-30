@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cat;
 
 import co.elastic.clients.elasticsearch._types.Bytes;
@@ -43,10 +39,28 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: cat.shards.Request
 
 /**
- * Provides a detailed view of shard allocation on nodes.
+ * Returns information about the shards in a cluster. For data streams, the API
+ * returns information about the backing indices. IMPORTANT: cat APIs are only
+ * intended for human consumption using the command line or Kibana console. They
+ * are not intended for use by applications.
  * 
  * @see <a href="../doc-files/api-spec.html#cat.shards.Request">API
  *      specification</a>
@@ -72,7 +86,7 @@ public class ShardsRequest extends CatRequestBase {
 	}
 
 	/**
-	 * The unit in which to display byte values
+	 * The unit used to display byte values.
 	 * <p>
 	 * API name: {@code bytes}
 	 */
@@ -82,7 +96,9 @@ public class ShardsRequest extends CatRequestBase {
 	}
 
 	/**
-	 * A comma-separated list of index names to limit the returned information
+	 * A comma-separated list of data streams, indices, and aliases used to limit
+	 * the request. Supports wildcards (<code>*</code>). To target all data streams
+	 * and indices, omit this parameter or use <code>*</code> or <code>_all</code>.
 	 * <p>
 	 * API name: {@code index}
 	 */
@@ -106,7 +122,7 @@ public class ShardsRequest extends CatRequestBase {
 		private List<String> index;
 
 		/**
-		 * The unit in which to display byte values
+		 * The unit used to display byte values.
 		 * <p>
 		 * API name: {@code bytes}
 		 */
@@ -116,7 +132,9 @@ public class ShardsRequest extends CatRequestBase {
 		}
 
 		/**
-		 * A comma-separated list of index names to limit the returned information
+		 * A comma-separated list of data streams, indices, and aliases used to limit
+		 * the request. Supports wildcards (<code>*</code>). To target all data streams
+		 * and indices, omit this parameter or use <code>*</code> or <code>_all</code>.
 		 * <p>
 		 * API name: {@code index}
 		 * <p>
@@ -128,7 +146,9 @@ public class ShardsRequest extends CatRequestBase {
 		}
 
 		/**
-		 * A comma-separated list of index names to limit the returned information
+		 * A comma-separated list of data streams, indices, and aliases used to limit
+		 * the request. Supports wildcards (<code>*</code>). To target all data streams
+		 * and indices, omit this parameter or use <code>*</code> or <code>_all</code>.
 		 * <p>
 		 * API name: {@code index}
 		 * <p>
@@ -196,6 +216,24 @@ public class ShardsRequest extends CatRequestBase {
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _index = 1 << 0;
+
+				int propsSet = 0;
+
+				if (ApiTypeHelper.isDefined(request.index()))
+					propsSet |= _index;
+
+				if (propsSet == 0) {
+				}
+				if (propsSet == (_index)) {
+					params.put("index", request.index.stream().map(v -> v).collect(Collectors.joining(",")));
+				}
+				return params;
 			},
 
 			// Request parameters

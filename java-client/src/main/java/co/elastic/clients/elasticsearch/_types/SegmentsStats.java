@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types;
 
 import co.elastic.clients.elasticsearch.indices.stats.ShardFileSizeInfo;
@@ -43,6 +39,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: _types.SegmentsStats
 
 /**
@@ -57,46 +68,46 @@ public class SegmentsStats implements JsonpSerializable {
 	@Nullable
 	private final String docValuesMemory;
 
-	private final int docValuesMemoryInBytes;
+	private final long docValuesMemoryInBytes;
 
 	private final Map<String, ShardFileSizeInfo> fileSizes;
 
 	@Nullable
 	private final String fixedBitSet;
 
-	private final int fixedBitSetMemoryInBytes;
+	private final long fixedBitSetMemoryInBytes;
 
 	@Nullable
 	private final String indexWriterMemory;
 
 	@Nullable
-	private final Integer indexWriterMaxMemoryInBytes;
+	private final Long indexWriterMaxMemoryInBytes;
 
-	private final int indexWriterMemoryInBytes;
+	private final long indexWriterMemoryInBytes;
 
 	private final long maxUnsafeAutoIdTimestamp;
 
 	@Nullable
 	private final String memory;
 
-	private final int memoryInBytes;
+	private final long memoryInBytes;
 
 	@Nullable
 	private final String normsMemory;
 
-	private final int normsMemoryInBytes;
+	private final long normsMemoryInBytes;
 
 	@Nullable
 	private final String pointsMemory;
 
-	private final int pointsMemoryInBytes;
+	private final long pointsMemoryInBytes;
 
 	@Nullable
 	private final String storedMemory;
 
-	private final int storedFieldsMemoryInBytes;
+	private final long storedFieldsMemoryInBytes;
 
-	private final int termsMemoryInBytes;
+	private final long termsMemoryInBytes;
 
 	@Nullable
 	private final String termsMemory;
@@ -104,12 +115,12 @@ public class SegmentsStats implements JsonpSerializable {
 	@Nullable
 	private final String termVectoryMemory;
 
-	private final int termVectorsMemoryInBytes;
+	private final long termVectorsMemoryInBytes;
 
 	@Nullable
 	private final String versionMapMemory;
 
-	private final int versionMapMemoryInBytes;
+	private final long versionMapMemoryInBytes;
 
 	// ---------------------------------------------------------------------------------------------
 
@@ -155,13 +166,19 @@ public class SegmentsStats implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code count}
+	 * Required - Total number of segments across all shards assigned to selected
+	 * nodes.
+	 * <p>
+	 * API name: {@code count}
 	 */
 	public final int count() {
 		return this.count;
 	}
 
 	/**
+	 * Total amount of memory used for doc values across all shards assigned to
+	 * selected nodes.
+	 * <p>
 	 * API name: {@code doc_values_memory}
 	 */
 	@Nullable
@@ -170,20 +187,30 @@ public class SegmentsStats implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code doc_values_memory_in_bytes}
+	 * Required - Total amount, in bytes, of memory used for doc values across all
+	 * shards assigned to selected nodes.
+	 * <p>
+	 * API name: {@code doc_values_memory_in_bytes}
 	 */
-	public final int docValuesMemoryInBytes() {
+	public final long docValuesMemoryInBytes() {
 		return this.docValuesMemoryInBytes;
 	}
 
 	/**
-	 * Required - API name: {@code file_sizes}
+	 * Required - This object is not populated by the cluster stats API. To get
+	 * information on segment files, use the node stats API.
+	 * <p>
+	 * API name: {@code file_sizes}
 	 */
 	public final Map<String, ShardFileSizeInfo> fileSizes() {
 		return this.fileSizes;
 	}
 
 	/**
+	 * Total amount of memory used by fixed bit sets across all shards assigned to
+	 * selected nodes. Fixed bit sets are used for nested object field types and
+	 * type filters for join fields.
+	 * <p>
 	 * API name: {@code fixed_bit_set}
 	 */
 	@Nullable
@@ -192,13 +219,19 @@ public class SegmentsStats implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code fixed_bit_set_memory_in_bytes}
+	 * Required - Total amount of memory, in bytes, used by fixed bit sets across
+	 * all shards assigned to selected nodes.
+	 * <p>
+	 * API name: {@code fixed_bit_set_memory_in_bytes}
 	 */
-	public final int fixedBitSetMemoryInBytes() {
+	public final long fixedBitSetMemoryInBytes() {
 		return this.fixedBitSetMemoryInBytes;
 	}
 
 	/**
+	 * Total amount of memory used by all index writers across all shards assigned
+	 * to selected nodes.
+	 * <p>
 	 * API name: {@code index_writer_memory}
 	 */
 	@Nullable
@@ -210,25 +243,34 @@ public class SegmentsStats implements JsonpSerializable {
 	 * API name: {@code index_writer_max_memory_in_bytes}
 	 */
 	@Nullable
-	public final Integer indexWriterMaxMemoryInBytes() {
+	public final Long indexWriterMaxMemoryInBytes() {
 		return this.indexWriterMaxMemoryInBytes;
 	}
 
 	/**
-	 * Required - API name: {@code index_writer_memory_in_bytes}
+	 * Required - Total amount, in bytes, of memory used by all index writers across
+	 * all shards assigned to selected nodes.
+	 * <p>
+	 * API name: {@code index_writer_memory_in_bytes}
 	 */
-	public final int indexWriterMemoryInBytes() {
+	public final long indexWriterMemoryInBytes() {
 		return this.indexWriterMemoryInBytes;
 	}
 
 	/**
-	 * Required - API name: {@code max_unsafe_auto_id_timestamp}
+	 * Required - Unix timestamp, in milliseconds, of the most recently retried
+	 * indexing request.
+	 * <p>
+	 * API name: {@code max_unsafe_auto_id_timestamp}
 	 */
 	public final long maxUnsafeAutoIdTimestamp() {
 		return this.maxUnsafeAutoIdTimestamp;
 	}
 
 	/**
+	 * Total amount of memory used for segments across all shards assigned to
+	 * selected nodes.
+	 * <p>
 	 * API name: {@code memory}
 	 */
 	@Nullable
@@ -237,13 +279,19 @@ public class SegmentsStats implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code memory_in_bytes}
+	 * Required - Total amount, in bytes, of memory used for segments across all
+	 * shards assigned to selected nodes.
+	 * <p>
+	 * API name: {@code memory_in_bytes}
 	 */
-	public final int memoryInBytes() {
+	public final long memoryInBytes() {
 		return this.memoryInBytes;
 	}
 
 	/**
+	 * Total amount of memory used for normalization factors across all shards
+	 * assigned to selected nodes.
+	 * <p>
 	 * API name: {@code norms_memory}
 	 */
 	@Nullable
@@ -252,13 +300,19 @@ public class SegmentsStats implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code norms_memory_in_bytes}
+	 * Required - Total amount, in bytes, of memory used for normalization factors
+	 * across all shards assigned to selected nodes.
+	 * <p>
+	 * API name: {@code norms_memory_in_bytes}
 	 */
-	public final int normsMemoryInBytes() {
+	public final long normsMemoryInBytes() {
 		return this.normsMemoryInBytes;
 	}
 
 	/**
+	 * Total amount of memory used for points across all shards assigned to selected
+	 * nodes.
+	 * <p>
 	 * API name: {@code points_memory}
 	 */
 	@Nullable
@@ -267,9 +321,12 @@ public class SegmentsStats implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code points_memory_in_bytes}
+	 * Required - Total amount, in bytes, of memory used for points across all
+	 * shards assigned to selected nodes.
+	 * <p>
+	 * API name: {@code points_memory_in_bytes}
 	 */
-	public final int pointsMemoryInBytes() {
+	public final long pointsMemoryInBytes() {
 		return this.pointsMemoryInBytes;
 	}
 
@@ -282,20 +339,29 @@ public class SegmentsStats implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code stored_fields_memory_in_bytes}
+	 * Required - Total amount, in bytes, of memory used for stored fields across
+	 * all shards assigned to selected nodes.
+	 * <p>
+	 * API name: {@code stored_fields_memory_in_bytes}
 	 */
-	public final int storedFieldsMemoryInBytes() {
+	public final long storedFieldsMemoryInBytes() {
 		return this.storedFieldsMemoryInBytes;
 	}
 
 	/**
-	 * Required - API name: {@code terms_memory_in_bytes}
+	 * Required - Total amount, in bytes, of memory used for terms across all shards
+	 * assigned to selected nodes.
+	 * <p>
+	 * API name: {@code terms_memory_in_bytes}
 	 */
-	public final int termsMemoryInBytes() {
+	public final long termsMemoryInBytes() {
 		return this.termsMemoryInBytes;
 	}
 
 	/**
+	 * Total amount of memory used for terms across all shards assigned to selected
+	 * nodes.
+	 * <p>
 	 * API name: {@code terms_memory}
 	 */
 	@Nullable
@@ -304,6 +370,9 @@ public class SegmentsStats implements JsonpSerializable {
 	}
 
 	/**
+	 * Total amount of memory used for term vectors across all shards assigned to
+	 * selected nodes.
+	 * <p>
 	 * API name: {@code term_vectory_memory}
 	 */
 	@Nullable
@@ -312,13 +381,19 @@ public class SegmentsStats implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code term_vectors_memory_in_bytes}
+	 * Required - Total amount, in bytes, of memory used for term vectors across all
+	 * shards assigned to selected nodes.
+	 * <p>
+	 * API name: {@code term_vectors_memory_in_bytes}
 	 */
-	public final int termVectorsMemoryInBytes() {
+	public final long termVectorsMemoryInBytes() {
 		return this.termVectorsMemoryInBytes;
 	}
 
 	/**
+	 * Total amount of memory used by all version maps across all shards assigned to
+	 * selected nodes.
+	 * <p>
 	 * API name: {@code version_map_memory}
 	 */
 	@Nullable
@@ -327,9 +402,12 @@ public class SegmentsStats implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code version_map_memory_in_bytes}
+	 * Required - Total amount, in bytes, of memory used by all version maps across
+	 * all shards assigned to selected nodes.
+	 * <p>
+	 * API name: {@code version_map_memory_in_bytes}
 	 */
-	public final int versionMapMemoryInBytes() {
+	public final long versionMapMemoryInBytes() {
 		return this.versionMapMemoryInBytes;
 	}
 
@@ -465,46 +543,46 @@ public class SegmentsStats implements JsonpSerializable {
 		@Nullable
 		private String docValuesMemory;
 
-		private Integer docValuesMemoryInBytes;
+		private Long docValuesMemoryInBytes;
 
 		private Map<String, ShardFileSizeInfo> fileSizes;
 
 		@Nullable
 		private String fixedBitSet;
 
-		private Integer fixedBitSetMemoryInBytes;
+		private Long fixedBitSetMemoryInBytes;
 
 		@Nullable
 		private String indexWriterMemory;
 
 		@Nullable
-		private Integer indexWriterMaxMemoryInBytes;
+		private Long indexWriterMaxMemoryInBytes;
 
-		private Integer indexWriterMemoryInBytes;
+		private Long indexWriterMemoryInBytes;
 
 		private Long maxUnsafeAutoIdTimestamp;
 
 		@Nullable
 		private String memory;
 
-		private Integer memoryInBytes;
+		private Long memoryInBytes;
 
 		@Nullable
 		private String normsMemory;
 
-		private Integer normsMemoryInBytes;
+		private Long normsMemoryInBytes;
 
 		@Nullable
 		private String pointsMemory;
 
-		private Integer pointsMemoryInBytes;
+		private Long pointsMemoryInBytes;
 
 		@Nullable
 		private String storedMemory;
 
-		private Integer storedFieldsMemoryInBytes;
+		private Long storedFieldsMemoryInBytes;
 
-		private Integer termsMemoryInBytes;
+		private Long termsMemoryInBytes;
 
 		@Nullable
 		private String termsMemory;
@@ -512,15 +590,18 @@ public class SegmentsStats implements JsonpSerializable {
 		@Nullable
 		private String termVectoryMemory;
 
-		private Integer termVectorsMemoryInBytes;
+		private Long termVectorsMemoryInBytes;
 
 		@Nullable
 		private String versionMapMemory;
 
-		private Integer versionMapMemoryInBytes;
+		private Long versionMapMemoryInBytes;
 
 		/**
-		 * Required - API name: {@code count}
+		 * Required - Total number of segments across all shards assigned to selected
+		 * nodes.
+		 * <p>
+		 * API name: {@code count}
 		 */
 		public final Builder count(int value) {
 			this.count = value;
@@ -528,6 +609,9 @@ public class SegmentsStats implements JsonpSerializable {
 		}
 
 		/**
+		 * Total amount of memory used for doc values across all shards assigned to
+		 * selected nodes.
+		 * <p>
 		 * API name: {@code doc_values_memory}
 		 */
 		public final Builder docValuesMemory(@Nullable String value) {
@@ -536,15 +620,21 @@ public class SegmentsStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code doc_values_memory_in_bytes}
+		 * Required - Total amount, in bytes, of memory used for doc values across all
+		 * shards assigned to selected nodes.
+		 * <p>
+		 * API name: {@code doc_values_memory_in_bytes}
 		 */
-		public final Builder docValuesMemoryInBytes(int value) {
+		public final Builder docValuesMemoryInBytes(long value) {
 			this.docValuesMemoryInBytes = value;
 			return this;
 		}
 
 		/**
-		 * Required - API name: {@code file_sizes}
+		 * Required - This object is not populated by the cluster stats API. To get
+		 * information on segment files, use the node stats API.
+		 * <p>
+		 * API name: {@code file_sizes}
 		 * <p>
 		 * Adds all entries of <code>map</code> to <code>fileSizes</code>.
 		 */
@@ -554,7 +644,10 @@ public class SegmentsStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code file_sizes}
+		 * Required - This object is not populated by the cluster stats API. To get
+		 * information on segment files, use the node stats API.
+		 * <p>
+		 * API name: {@code file_sizes}
 		 * <p>
 		 * Adds an entry to <code>fileSizes</code>.
 		 */
@@ -564,7 +657,10 @@ public class SegmentsStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code file_sizes}
+		 * Required - This object is not populated by the cluster stats API. To get
+		 * information on segment files, use the node stats API.
+		 * <p>
+		 * API name: {@code file_sizes}
 		 * <p>
 		 * Adds an entry to <code>fileSizes</code> using a builder lambda.
 		 */
@@ -574,6 +670,10 @@ public class SegmentsStats implements JsonpSerializable {
 		}
 
 		/**
+		 * Total amount of memory used by fixed bit sets across all shards assigned to
+		 * selected nodes. Fixed bit sets are used for nested object field types and
+		 * type filters for join fields.
+		 * <p>
 		 * API name: {@code fixed_bit_set}
 		 */
 		public final Builder fixedBitSet(@Nullable String value) {
@@ -582,14 +682,20 @@ public class SegmentsStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code fixed_bit_set_memory_in_bytes}
+		 * Required - Total amount of memory, in bytes, used by fixed bit sets across
+		 * all shards assigned to selected nodes.
+		 * <p>
+		 * API name: {@code fixed_bit_set_memory_in_bytes}
 		 */
-		public final Builder fixedBitSetMemoryInBytes(int value) {
+		public final Builder fixedBitSetMemoryInBytes(long value) {
 			this.fixedBitSetMemoryInBytes = value;
 			return this;
 		}
 
 		/**
+		 * Total amount of memory used by all index writers across all shards assigned
+		 * to selected nodes.
+		 * <p>
 		 * API name: {@code index_writer_memory}
 		 */
 		public final Builder indexWriterMemory(@Nullable String value) {
@@ -600,21 +706,27 @@ public class SegmentsStats implements JsonpSerializable {
 		/**
 		 * API name: {@code index_writer_max_memory_in_bytes}
 		 */
-		public final Builder indexWriterMaxMemoryInBytes(@Nullable Integer value) {
+		public final Builder indexWriterMaxMemoryInBytes(@Nullable Long value) {
 			this.indexWriterMaxMemoryInBytes = value;
 			return this;
 		}
 
 		/**
-		 * Required - API name: {@code index_writer_memory_in_bytes}
+		 * Required - Total amount, in bytes, of memory used by all index writers across
+		 * all shards assigned to selected nodes.
+		 * <p>
+		 * API name: {@code index_writer_memory_in_bytes}
 		 */
-		public final Builder indexWriterMemoryInBytes(int value) {
+		public final Builder indexWriterMemoryInBytes(long value) {
 			this.indexWriterMemoryInBytes = value;
 			return this;
 		}
 
 		/**
-		 * Required - API name: {@code max_unsafe_auto_id_timestamp}
+		 * Required - Unix timestamp, in milliseconds, of the most recently retried
+		 * indexing request.
+		 * <p>
+		 * API name: {@code max_unsafe_auto_id_timestamp}
 		 */
 		public final Builder maxUnsafeAutoIdTimestamp(long value) {
 			this.maxUnsafeAutoIdTimestamp = value;
@@ -622,6 +734,9 @@ public class SegmentsStats implements JsonpSerializable {
 		}
 
 		/**
+		 * Total amount of memory used for segments across all shards assigned to
+		 * selected nodes.
+		 * <p>
 		 * API name: {@code memory}
 		 */
 		public final Builder memory(@Nullable String value) {
@@ -630,14 +745,20 @@ public class SegmentsStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code memory_in_bytes}
+		 * Required - Total amount, in bytes, of memory used for segments across all
+		 * shards assigned to selected nodes.
+		 * <p>
+		 * API name: {@code memory_in_bytes}
 		 */
-		public final Builder memoryInBytes(int value) {
+		public final Builder memoryInBytes(long value) {
 			this.memoryInBytes = value;
 			return this;
 		}
 
 		/**
+		 * Total amount of memory used for normalization factors across all shards
+		 * assigned to selected nodes.
+		 * <p>
 		 * API name: {@code norms_memory}
 		 */
 		public final Builder normsMemory(@Nullable String value) {
@@ -646,14 +767,20 @@ public class SegmentsStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code norms_memory_in_bytes}
+		 * Required - Total amount, in bytes, of memory used for normalization factors
+		 * across all shards assigned to selected nodes.
+		 * <p>
+		 * API name: {@code norms_memory_in_bytes}
 		 */
-		public final Builder normsMemoryInBytes(int value) {
+		public final Builder normsMemoryInBytes(long value) {
 			this.normsMemoryInBytes = value;
 			return this;
 		}
 
 		/**
+		 * Total amount of memory used for points across all shards assigned to selected
+		 * nodes.
+		 * <p>
 		 * API name: {@code points_memory}
 		 */
 		public final Builder pointsMemory(@Nullable String value) {
@@ -662,9 +789,12 @@ public class SegmentsStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code points_memory_in_bytes}
+		 * Required - Total amount, in bytes, of memory used for points across all
+		 * shards assigned to selected nodes.
+		 * <p>
+		 * API name: {@code points_memory_in_bytes}
 		 */
-		public final Builder pointsMemoryInBytes(int value) {
+		public final Builder pointsMemoryInBytes(long value) {
 			this.pointsMemoryInBytes = value;
 			return this;
 		}
@@ -678,22 +808,31 @@ public class SegmentsStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code stored_fields_memory_in_bytes}
+		 * Required - Total amount, in bytes, of memory used for stored fields across
+		 * all shards assigned to selected nodes.
+		 * <p>
+		 * API name: {@code stored_fields_memory_in_bytes}
 		 */
-		public final Builder storedFieldsMemoryInBytes(int value) {
+		public final Builder storedFieldsMemoryInBytes(long value) {
 			this.storedFieldsMemoryInBytes = value;
 			return this;
 		}
 
 		/**
-		 * Required - API name: {@code terms_memory_in_bytes}
+		 * Required - Total amount, in bytes, of memory used for terms across all shards
+		 * assigned to selected nodes.
+		 * <p>
+		 * API name: {@code terms_memory_in_bytes}
 		 */
-		public final Builder termsMemoryInBytes(int value) {
+		public final Builder termsMemoryInBytes(long value) {
 			this.termsMemoryInBytes = value;
 			return this;
 		}
 
 		/**
+		 * Total amount of memory used for terms across all shards assigned to selected
+		 * nodes.
+		 * <p>
 		 * API name: {@code terms_memory}
 		 */
 		public final Builder termsMemory(@Nullable String value) {
@@ -702,6 +841,9 @@ public class SegmentsStats implements JsonpSerializable {
 		}
 
 		/**
+		 * Total amount of memory used for term vectors across all shards assigned to
+		 * selected nodes.
+		 * <p>
 		 * API name: {@code term_vectory_memory}
 		 */
 		public final Builder termVectoryMemory(@Nullable String value) {
@@ -710,14 +852,20 @@ public class SegmentsStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code term_vectors_memory_in_bytes}
+		 * Required - Total amount, in bytes, of memory used for term vectors across all
+		 * shards assigned to selected nodes.
+		 * <p>
+		 * API name: {@code term_vectors_memory_in_bytes}
 		 */
-		public final Builder termVectorsMemoryInBytes(int value) {
+		public final Builder termVectorsMemoryInBytes(long value) {
 			this.termVectorsMemoryInBytes = value;
 			return this;
 		}
 
 		/**
+		 * Total amount of memory used by all version maps across all shards assigned to
+		 * selected nodes.
+		 * <p>
 		 * API name: {@code version_map_memory}
 		 */
 		public final Builder versionMapMemory(@Nullable String value) {
@@ -726,9 +874,12 @@ public class SegmentsStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code version_map_memory_in_bytes}
+		 * Required - Total amount, in bytes, of memory used by all version maps across
+		 * all shards assigned to selected nodes.
+		 * <p>
+		 * API name: {@code version_map_memory_in_bytes}
 		 */
-		public final Builder versionMapMemoryInBytes(int value) {
+		public final Builder versionMapMemoryInBytes(long value) {
 			this.versionMapMemoryInBytes = value;
 			return this;
 		}
@@ -763,35 +914,32 @@ public class SegmentsStats implements JsonpSerializable {
 
 		op.add(Builder::count, JsonpDeserializer.integerDeserializer(), "count");
 		op.add(Builder::docValuesMemory, JsonpDeserializer.stringDeserializer(), "doc_values_memory");
-		op.add(Builder::docValuesMemoryInBytes, JsonpDeserializer.integerDeserializer(), "doc_values_memory_in_bytes");
+		op.add(Builder::docValuesMemoryInBytes, JsonpDeserializer.longDeserializer(), "doc_values_memory_in_bytes");
 		op.add(Builder::fileSizes, JsonpDeserializer.stringMapDeserializer(ShardFileSizeInfo._DESERIALIZER),
 				"file_sizes");
 		op.add(Builder::fixedBitSet, JsonpDeserializer.stringDeserializer(), "fixed_bit_set");
-		op.add(Builder::fixedBitSetMemoryInBytes, JsonpDeserializer.integerDeserializer(),
+		op.add(Builder::fixedBitSetMemoryInBytes, JsonpDeserializer.longDeserializer(),
 				"fixed_bit_set_memory_in_bytes");
 		op.add(Builder::indexWriterMemory, JsonpDeserializer.stringDeserializer(), "index_writer_memory");
-		op.add(Builder::indexWriterMaxMemoryInBytes, JsonpDeserializer.integerDeserializer(),
+		op.add(Builder::indexWriterMaxMemoryInBytes, JsonpDeserializer.longDeserializer(),
 				"index_writer_max_memory_in_bytes");
-		op.add(Builder::indexWriterMemoryInBytes, JsonpDeserializer.integerDeserializer(),
-				"index_writer_memory_in_bytes");
+		op.add(Builder::indexWriterMemoryInBytes, JsonpDeserializer.longDeserializer(), "index_writer_memory_in_bytes");
 		op.add(Builder::maxUnsafeAutoIdTimestamp, JsonpDeserializer.longDeserializer(), "max_unsafe_auto_id_timestamp");
 		op.add(Builder::memory, JsonpDeserializer.stringDeserializer(), "memory");
-		op.add(Builder::memoryInBytes, JsonpDeserializer.integerDeserializer(), "memory_in_bytes");
+		op.add(Builder::memoryInBytes, JsonpDeserializer.longDeserializer(), "memory_in_bytes");
 		op.add(Builder::normsMemory, JsonpDeserializer.stringDeserializer(), "norms_memory");
-		op.add(Builder::normsMemoryInBytes, JsonpDeserializer.integerDeserializer(), "norms_memory_in_bytes");
+		op.add(Builder::normsMemoryInBytes, JsonpDeserializer.longDeserializer(), "norms_memory_in_bytes");
 		op.add(Builder::pointsMemory, JsonpDeserializer.stringDeserializer(), "points_memory");
-		op.add(Builder::pointsMemoryInBytes, JsonpDeserializer.integerDeserializer(), "points_memory_in_bytes");
+		op.add(Builder::pointsMemoryInBytes, JsonpDeserializer.longDeserializer(), "points_memory_in_bytes");
 		op.add(Builder::storedMemory, JsonpDeserializer.stringDeserializer(), "stored_memory");
-		op.add(Builder::storedFieldsMemoryInBytes, JsonpDeserializer.integerDeserializer(),
+		op.add(Builder::storedFieldsMemoryInBytes, JsonpDeserializer.longDeserializer(),
 				"stored_fields_memory_in_bytes");
-		op.add(Builder::termsMemoryInBytes, JsonpDeserializer.integerDeserializer(), "terms_memory_in_bytes");
+		op.add(Builder::termsMemoryInBytes, JsonpDeserializer.longDeserializer(), "terms_memory_in_bytes");
 		op.add(Builder::termsMemory, JsonpDeserializer.stringDeserializer(), "terms_memory");
 		op.add(Builder::termVectoryMemory, JsonpDeserializer.stringDeserializer(), "term_vectory_memory");
-		op.add(Builder::termVectorsMemoryInBytes, JsonpDeserializer.integerDeserializer(),
-				"term_vectors_memory_in_bytes");
+		op.add(Builder::termVectorsMemoryInBytes, JsonpDeserializer.longDeserializer(), "term_vectors_memory_in_bytes");
 		op.add(Builder::versionMapMemory, JsonpDeserializer.stringDeserializer(), "version_map_memory");
-		op.add(Builder::versionMapMemoryInBytes, JsonpDeserializer.integerDeserializer(),
-				"version_map_memory_in_bytes");
+		op.add(Builder::versionMapMemoryInBytes, JsonpDeserializer.longDeserializer(), "version_map_memory_in_bytes");
 
 	}
 

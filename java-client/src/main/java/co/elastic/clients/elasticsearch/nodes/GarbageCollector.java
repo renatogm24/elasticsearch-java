@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -39,6 +35,21 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.GarbageCollector
 
@@ -64,6 +75,8 @@ public class GarbageCollector implements JsonpSerializable {
 	}
 
 	/**
+	 * Contains statistics about JVM garbage collectors for the node.
+	 * <p>
 	 * API name: {@code collectors}
 	 */
 	public final Map<String, GarbageCollectorTotal> collectors() {
@@ -111,6 +124,8 @@ public class GarbageCollector implements JsonpSerializable {
 		private Map<String, GarbageCollectorTotal> collectors;
 
 		/**
+		 * Contains statistics about JVM garbage collectors for the node.
+		 * <p>
 		 * API name: {@code collectors}
 		 * <p>
 		 * Adds all entries of <code>map</code> to <code>collectors</code>.
@@ -121,6 +136,8 @@ public class GarbageCollector implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics about JVM garbage collectors for the node.
+		 * <p>
 		 * API name: {@code collectors}
 		 * <p>
 		 * Adds an entry to <code>collectors</code>.
@@ -131,6 +148,8 @@ public class GarbageCollector implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics about JVM garbage collectors for the node.
+		 * <p>
 		 * API name: {@code collectors}
 		 * <p>
 		 * Adds an entry to <code>collectors</code> using a builder lambda.

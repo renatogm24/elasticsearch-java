@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -37,6 +33,21 @@ import java.lang.Long;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.JvmThreads
 
@@ -67,6 +78,8 @@ public class JvmThreads implements JsonpSerializable {
 	}
 
 	/**
+	 * Number of active threads in use by JVM.
+	 * <p>
 	 * API name: {@code count}
 	 */
 	@Nullable
@@ -75,6 +88,8 @@ public class JvmThreads implements JsonpSerializable {
 	}
 
 	/**
+	 * Highest number of threads used by JVM.
+	 * <p>
 	 * API name: {@code peak_count}
 	 */
 	@Nullable
@@ -125,6 +140,8 @@ public class JvmThreads implements JsonpSerializable {
 		private Long peakCount;
 
 		/**
+		 * Number of active threads in use by JVM.
+		 * <p>
 		 * API name: {@code count}
 		 */
 		public final Builder count(@Nullable Long value) {
@@ -133,6 +150,8 @@ public class JvmThreads implements JsonpSerializable {
 		}
 
 		/**
+		 * Highest number of threads used by JVM.
+		 * <p>
 		 * API name: {@code peak_count}
 		 */
 		public final Builder peakCount(@Nullable Long value) {

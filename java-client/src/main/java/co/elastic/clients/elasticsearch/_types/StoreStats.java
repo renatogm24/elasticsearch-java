@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -34,11 +30,26 @@ import co.elastic.clients.util.ApiTypeHelper;
 import co.elastic.clients.util.ObjectBuilder;
 import co.elastic.clients.util.WithJsonObjectBuilderBase;
 import jakarta.json.stream.JsonGenerator;
-import java.lang.Integer;
+import java.lang.Long;
 import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: _types.StoreStats
 
@@ -52,18 +63,18 @@ public class StoreStats implements JsonpSerializable {
 	@Nullable
 	private final String size;
 
-	private final int sizeInBytes;
+	private final long sizeInBytes;
 
 	@Nullable
 	private final String reserved;
 
-	private final int reservedInBytes;
+	private final long reservedInBytes;
 
 	@Nullable
 	private final String totalDataSetSize;
 
 	@Nullable
-	private final Integer totalDataSetSizeInBytes;
+	private final Long totalDataSetSizeInBytes;
 
 	// ---------------------------------------------------------------------------------------------
 
@@ -83,6 +94,8 @@ public class StoreStats implements JsonpSerializable {
 	}
 
 	/**
+	 * Total size of all shards assigned to selected nodes.
+	 * <p>
 	 * API name: {@code size}
 	 */
 	@Nullable
@@ -91,13 +104,18 @@ public class StoreStats implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code size_in_bytes}
+	 * Required - Total size, in bytes, of all shards assigned to selected nodes.
+	 * <p>
+	 * API name: {@code size_in_bytes}
 	 */
-	public final int sizeInBytes() {
+	public final long sizeInBytes() {
 		return this.sizeInBytes;
 	}
 
 	/**
+	 * A prediction of how much larger the shard stores will eventually grow due to
+	 * ongoing peer recoveries, restoring snapshots, and similar activities.
+	 * <p>
 	 * API name: {@code reserved}
 	 */
 	@Nullable
@@ -106,13 +124,21 @@ public class StoreStats implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code reserved_in_bytes}
+	 * Required - A prediction, in bytes, of how much larger the shard stores will
+	 * eventually grow due to ongoing peer recoveries, restoring snapshots, and
+	 * similar activities.
+	 * <p>
+	 * API name: {@code reserved_in_bytes}
 	 */
-	public final int reservedInBytes() {
+	public final long reservedInBytes() {
 		return this.reservedInBytes;
 	}
 
 	/**
+	 * Total data set size of all shards assigned to selected nodes. This includes
+	 * the size of shards not stored fully on the nodes, such as the cache for
+	 * partially mounted indices.
+	 * <p>
 	 * API name: {@code total_data_set_size}
 	 */
 	@Nullable
@@ -121,10 +147,14 @@ public class StoreStats implements JsonpSerializable {
 	}
 
 	/**
+	 * Total data set size, in bytes, of all shards assigned to selected nodes. This
+	 * includes the size of shards not stored fully on the nodes, such as the cache
+	 * for partially mounted indices.
+	 * <p>
 	 * API name: {@code total_data_set_size_in_bytes}
 	 */
 	@Nullable
-	public final Integer totalDataSetSizeInBytes() {
+	public final Long totalDataSetSizeInBytes() {
 		return this.totalDataSetSizeInBytes;
 	}
 
@@ -183,20 +213,22 @@ public class StoreStats implements JsonpSerializable {
 		@Nullable
 		private String size;
 
-		private Integer sizeInBytes;
+		private Long sizeInBytes;
 
 		@Nullable
 		private String reserved;
 
-		private Integer reservedInBytes;
+		private Long reservedInBytes;
 
 		@Nullable
 		private String totalDataSetSize;
 
 		@Nullable
-		private Integer totalDataSetSizeInBytes;
+		private Long totalDataSetSizeInBytes;
 
 		/**
+		 * Total size of all shards assigned to selected nodes.
+		 * <p>
 		 * API name: {@code size}
 		 */
 		public final Builder size(@Nullable String value) {
@@ -205,14 +237,19 @@ public class StoreStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code size_in_bytes}
+		 * Required - Total size, in bytes, of all shards assigned to selected nodes.
+		 * <p>
+		 * API name: {@code size_in_bytes}
 		 */
-		public final Builder sizeInBytes(int value) {
+		public final Builder sizeInBytes(long value) {
 			this.sizeInBytes = value;
 			return this;
 		}
 
 		/**
+		 * A prediction of how much larger the shard stores will eventually grow due to
+		 * ongoing peer recoveries, restoring snapshots, and similar activities.
+		 * <p>
 		 * API name: {@code reserved}
 		 */
 		public final Builder reserved(@Nullable String value) {
@@ -221,14 +258,22 @@ public class StoreStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code reserved_in_bytes}
+		 * Required - A prediction, in bytes, of how much larger the shard stores will
+		 * eventually grow due to ongoing peer recoveries, restoring snapshots, and
+		 * similar activities.
+		 * <p>
+		 * API name: {@code reserved_in_bytes}
 		 */
-		public final Builder reservedInBytes(int value) {
+		public final Builder reservedInBytes(long value) {
 			this.reservedInBytes = value;
 			return this;
 		}
 
 		/**
+		 * Total data set size of all shards assigned to selected nodes. This includes
+		 * the size of shards not stored fully on the nodes, such as the cache for
+		 * partially mounted indices.
+		 * <p>
 		 * API name: {@code total_data_set_size}
 		 */
 		public final Builder totalDataSetSize(@Nullable String value) {
@@ -237,9 +282,13 @@ public class StoreStats implements JsonpSerializable {
 		}
 
 		/**
+		 * Total data set size, in bytes, of all shards assigned to selected nodes. This
+		 * includes the size of shards not stored fully on the nodes, such as the cache
+		 * for partially mounted indices.
+		 * <p>
 		 * API name: {@code total_data_set_size_in_bytes}
 		 */
-		public final Builder totalDataSetSizeInBytes(@Nullable Integer value) {
+		public final Builder totalDataSetSizeInBytes(@Nullable Long value) {
 			this.totalDataSetSizeInBytes = value;
 			return this;
 		}
@@ -273,12 +322,11 @@ public class StoreStats implements JsonpSerializable {
 	protected static void setupStoreStatsDeserializer(ObjectDeserializer<StoreStats.Builder> op) {
 
 		op.add(Builder::size, JsonpDeserializer.stringDeserializer(), "size");
-		op.add(Builder::sizeInBytes, JsonpDeserializer.integerDeserializer(), "size_in_bytes");
+		op.add(Builder::sizeInBytes, JsonpDeserializer.longDeserializer(), "size_in_bytes");
 		op.add(Builder::reserved, JsonpDeserializer.stringDeserializer(), "reserved");
-		op.add(Builder::reservedInBytes, JsonpDeserializer.integerDeserializer(), "reserved_in_bytes");
+		op.add(Builder::reservedInBytes, JsonpDeserializer.longDeserializer(), "reserved_in_bytes");
 		op.add(Builder::totalDataSetSize, JsonpDeserializer.stringDeserializer(), "total_data_set_size");
-		op.add(Builder::totalDataSetSizeInBytes, JsonpDeserializer.integerDeserializer(),
-				"total_data_set_size_in_bytes");
+		op.add(Builder::totalDataSetSizeInBytes, JsonpDeserializer.longDeserializer(), "total_data_set_size_in_bytes");
 
 	}
 

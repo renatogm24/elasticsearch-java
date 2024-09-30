@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.ml;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -39,6 +35,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: ml.upgrade_job_snapshot.Response
 
@@ -68,8 +79,8 @@ public class UpgradeJobSnapshotResponse implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - The ID of the assigned node for the upgrade task if it is still
-	 * running.
+	 * Required - The ID of the node that the upgrade task was started on if it is
+	 * still running. In serverless this will be the &quot;serverless&quot;.
 	 * <p>
 	 * API name: {@code node}
 	 */
@@ -125,8 +136,8 @@ public class UpgradeJobSnapshotResponse implements JsonpSerializable {
 		private Boolean completed;
 
 		/**
-		 * Required - The ID of the assigned node for the upgrade task if it is still
-		 * running.
+		 * Required - The ID of the node that the upgrade task was started on if it is
+		 * still running. In serverless this will be the &quot;serverless&quot;.
 		 * <p>
 		 * API name: {@code node}
 		 */

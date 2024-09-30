@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -40,6 +36,21 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: _types.CompletionStats
 
@@ -72,13 +83,19 @@ public class CompletionStats implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code size_in_bytes}
+	 * Required - Total amount, in bytes, of memory used for completion across all
+	 * shards assigned to selected nodes.
+	 * <p>
+	 * API name: {@code size_in_bytes}
 	 */
 	public final long sizeInBytes() {
 		return this.sizeInBytes;
 	}
 
 	/**
+	 * Total amount of memory used for completion across all shards assigned to
+	 * selected nodes.
+	 * <p>
 	 * API name: {@code size}
 	 */
 	@Nullable
@@ -147,7 +164,10 @@ public class CompletionStats implements JsonpSerializable {
 		private Map<String, FieldSizeUsage> fields;
 
 		/**
-		 * Required - API name: {@code size_in_bytes}
+		 * Required - Total amount, in bytes, of memory used for completion across all
+		 * shards assigned to selected nodes.
+		 * <p>
+		 * API name: {@code size_in_bytes}
 		 */
 		public final Builder sizeInBytes(long value) {
 			this.sizeInBytes = value;
@@ -155,6 +175,9 @@ public class CompletionStats implements JsonpSerializable {
 		}
 
 		/**
+		 * Total amount of memory used for completion across all shards assigned to
+		 * selected nodes.
+		 * <p>
 		 * API name: {@code size}
 		 */
 		public final Builder size(@Nullable String value) {

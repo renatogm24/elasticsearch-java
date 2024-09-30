@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.ml;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -36,15 +32,31 @@ import jakarta.json.stream.JsonGenerator;
 import java.util.Collections;
 import java.util.Objects;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: ml.info.Request
 
 /**
- * Returns defaults and limits used by machine learning. This endpoint is
- * designed to be used by a user interface that needs to fully understand
- * machine learning configurations where some options are not specified, meaning
- * that the defaults should be used. This endpoint may be used to find out what
- * those defaults are. It also provides information about the maximum size of
- * machine learning jobs that could run in the current cluster configuration.
+ * Return ML defaults and limits. Returns defaults and limits used by machine
+ * learning. This endpoint is designed to be used by a user interface that needs
+ * to fully understand machine learning configurations where some options are
+ * not specified, meaning that the defaults should be used. This endpoint may be
+ * used to find out what those defaults are. It also provides information about
+ * the maximum size of machine learning jobs that could run in the current
+ * cluster configuration.
  * 
  * @see <a href="../doc-files/api-spec.html#ml.info.Request">API
  *      specification</a>
@@ -77,6 +89,11 @@ public class MlInfoRequest extends RequestBase {
 			request -> {
 				return "/_ml/info";
 
+			},
+
+			// Path parameters
+			request -> {
+				return Collections.emptyMap();
 			},
 
 			// Request parameters

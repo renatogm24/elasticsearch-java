@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cluster.stats;
 
 import co.elastic.clients.elasticsearch._types.PluginStats;
@@ -43,6 +39,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: cluster.stats.ClusterNodes
 
 /**
@@ -57,6 +68,8 @@ public class ClusterNodes implements JsonpSerializable {
 	private final Map<String, Integer> discoveryTypes;
 
 	private final ClusterFileSystem fs;
+
+	private final IndexingPressure indexingPressure;
 
 	private final ClusterIngest ingest;
 
@@ -74,8 +87,6 @@ public class ClusterNodes implements JsonpSerializable {
 
 	private final List<String> versions;
 
-	private final IndexingPressure indexingPressure;
-
 	// ---------------------------------------------------------------------------------------------
 
 	private ClusterNodes(Builder builder) {
@@ -83,6 +94,7 @@ public class ClusterNodes implements JsonpSerializable {
 		this.count = ApiTypeHelper.requireNonNull(builder.count, this, "count");
 		this.discoveryTypes = ApiTypeHelper.unmodifiableRequired(builder.discoveryTypes, this, "discoveryTypes");
 		this.fs = ApiTypeHelper.requireNonNull(builder.fs, this, "fs");
+		this.indexingPressure = ApiTypeHelper.requireNonNull(builder.indexingPressure, this, "indexingPressure");
 		this.ingest = ApiTypeHelper.requireNonNull(builder.ingest, this, "ingest");
 		this.jvm = ApiTypeHelper.requireNonNull(builder.jvm, this, "jvm");
 		this.networkTypes = ApiTypeHelper.requireNonNull(builder.networkTypes, this, "networkTypes");
@@ -91,7 +103,6 @@ public class ClusterNodes implements JsonpSerializable {
 		this.plugins = ApiTypeHelper.unmodifiableRequired(builder.plugins, this, "plugins");
 		this.process = ApiTypeHelper.requireNonNull(builder.process, this, "process");
 		this.versions = ApiTypeHelper.unmodifiableRequired(builder.versions, this, "versions");
-		this.indexingPressure = ApiTypeHelper.requireNonNull(builder.indexingPressure, this, "indexingPressure");
 
 	}
 
@@ -125,6 +136,13 @@ public class ClusterNodes implements JsonpSerializable {
 	 */
 	public final ClusterFileSystem fs() {
 		return this.fs;
+	}
+
+	/**
+	 * Required - API name: {@code indexing_pressure}
+	 */
+	public final IndexingPressure indexingPressure() {
+		return this.indexingPressure;
 	}
 
 	/**
@@ -176,7 +194,7 @@ public class ClusterNodes implements JsonpSerializable {
 
 	/**
 	 * Required - Contains statistics about installed plugins and modules by
-	 * selected nodes.
+	 * selected nodes. If no plugins or modules are installed, this array is empty.
 	 * <p>
 	 * API name: {@code plugins}
 	 */
@@ -200,13 +218,6 @@ public class ClusterNodes implements JsonpSerializable {
 	 */
 	public final List<String> versions() {
 		return this.versions;
-	}
-
-	/**
-	 * Required - API name: {@code indexing_pressure}
-	 */
-	public final IndexingPressure indexingPressure() {
-		return this.indexingPressure;
 	}
 
 	/**
@@ -236,6 +247,9 @@ public class ClusterNodes implements JsonpSerializable {
 		}
 		generator.writeKey("fs");
 		this.fs.serialize(generator, mapper);
+
+		generator.writeKey("indexing_pressure");
+		this.indexingPressure.serialize(generator, mapper);
 
 		generator.writeKey("ingest");
 		this.ingest.serialize(generator, mapper);
@@ -282,8 +296,6 @@ public class ClusterNodes implements JsonpSerializable {
 			generator.writeEnd();
 
 		}
-		generator.writeKey("indexing_pressure");
-		this.indexingPressure.serialize(generator, mapper);
 
 	}
 
@@ -305,6 +317,8 @@ public class ClusterNodes implements JsonpSerializable {
 
 		private ClusterFileSystem fs;
 
+		private IndexingPressure indexingPressure;
+
 		private ClusterIngest ingest;
 
 		private ClusterJvm jvm;
@@ -320,8 +334,6 @@ public class ClusterNodes implements JsonpSerializable {
 		private ClusterProcess process;
 
 		private List<String> versions;
-
-		private IndexingPressure indexingPressure;
 
 		/**
 		 * Required - Contains counts for nodes selected by the request’s node filters.
@@ -385,6 +397,21 @@ public class ClusterNodes implements JsonpSerializable {
 		 */
 		public final Builder fs(Function<ClusterFileSystem.Builder, ObjectBuilder<ClusterFileSystem>> fn) {
 			return this.fs(fn.apply(new ClusterFileSystem.Builder()).build());
+		}
+
+		/**
+		 * Required - API name: {@code indexing_pressure}
+		 */
+		public final Builder indexingPressure(IndexingPressure value) {
+			this.indexingPressure = value;
+			return this;
+		}
+
+		/**
+		 * Required - API name: {@code indexing_pressure}
+		 */
+		public final Builder indexingPressure(Function<IndexingPressure.Builder, ObjectBuilder<IndexingPressure>> fn) {
+			return this.indexingPressure(fn.apply(new IndexingPressure.Builder()).build());
 		}
 
 		/**
@@ -506,7 +533,7 @@ public class ClusterNodes implements JsonpSerializable {
 
 		/**
 		 * Required - Contains statistics about installed plugins and modules by
-		 * selected nodes.
+		 * selected nodes. If no plugins or modules are installed, this array is empty.
 		 * <p>
 		 * API name: {@code plugins}
 		 * <p>
@@ -519,7 +546,7 @@ public class ClusterNodes implements JsonpSerializable {
 
 		/**
 		 * Required - Contains statistics about installed plugins and modules by
-		 * selected nodes.
+		 * selected nodes. If no plugins or modules are installed, this array is empty.
 		 * <p>
 		 * API name: {@code plugins}
 		 * <p>
@@ -532,7 +559,7 @@ public class ClusterNodes implements JsonpSerializable {
 
 		/**
 		 * Required - Contains statistics about installed plugins and modules by
-		 * selected nodes.
+		 * selected nodes. If no plugins or modules are installed, this array is empty.
 		 * <p>
 		 * API name: {@code plugins}
 		 * <p>
@@ -585,21 +612,6 @@ public class ClusterNodes implements JsonpSerializable {
 			return this;
 		}
 
-		/**
-		 * Required - API name: {@code indexing_pressure}
-		 */
-		public final Builder indexingPressure(IndexingPressure value) {
-			this.indexingPressure = value;
-			return this;
-		}
-
-		/**
-		 * Required - API name: {@code indexing_pressure}
-		 */
-		public final Builder indexingPressure(Function<IndexingPressure.Builder, ObjectBuilder<IndexingPressure>> fn) {
-			return this.indexingPressure(fn.apply(new IndexingPressure.Builder()).build());
-		}
-
 		@Override
 		protected Builder self() {
 			return this;
@@ -632,6 +644,7 @@ public class ClusterNodes implements JsonpSerializable {
 		op.add(Builder::discoveryTypes,
 				JsonpDeserializer.stringMapDeserializer(JsonpDeserializer.integerDeserializer()), "discovery_types");
 		op.add(Builder::fs, ClusterFileSystem._DESERIALIZER, "fs");
+		op.add(Builder::indexingPressure, IndexingPressure._DESERIALIZER, "indexing_pressure");
 		op.add(Builder::ingest, ClusterIngest._DESERIALIZER, "ingest");
 		op.add(Builder::jvm, ClusterJvm._DESERIALIZER, "jvm");
 		op.add(Builder::networkTypes, ClusterNetworkTypes._DESERIALIZER, "network_types");
@@ -642,7 +655,6 @@ public class ClusterNodes implements JsonpSerializable {
 		op.add(Builder::process, ClusterProcess._DESERIALIZER, "process");
 		op.add(Builder::versions, JsonpDeserializer.arrayDeserializer(JsonpDeserializer.stringDeserializer()),
 				"versions");
-		op.add(Builder::indexingPressure, IndexingPressure._DESERIALIZER, "indexing_pressure");
 
 	}
 

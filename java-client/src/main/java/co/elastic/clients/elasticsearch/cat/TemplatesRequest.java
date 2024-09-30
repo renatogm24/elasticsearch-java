@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cat;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -39,10 +35,29 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: cat.templates.Request
 
 /**
- * Returns information about existing templates.
+ * Returns information about index templates in a cluster. You can use index
+ * templates to apply index settings and field mappings to new indices at
+ * creation. IMPORTANT: cat APIs are only intended for human consumption using
+ * the command line or Kibana console. They are not intended for use by
+ * applications. For application consumption, use the get index template API.
  * 
  * @see <a href="../doc-files/api-spec.html#cat.templates.Request">API
  *      specification</a>
@@ -65,7 +80,8 @@ public class TemplatesRequest extends CatRequestBase {
 	}
 
 	/**
-	 * A pattern that returned template names must match
+	 * The name of the template to return. Accepts wildcard expressions. If omitted,
+	 * all templates are returned.
 	 * <p>
 	 * API name: {@code name}
 	 */
@@ -87,7 +103,8 @@ public class TemplatesRequest extends CatRequestBase {
 		private String name;
 
 		/**
-		 * A pattern that returned template names must match
+		 * The name of the template to return. Accepts wildcard expressions. If omitted,
+		 * all templates are returned.
 		 * <p>
 		 * API name: {@code name}
 		 */
@@ -153,6 +170,24 @@ public class TemplatesRequest extends CatRequestBase {
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _name = 1 << 0;
+
+				int propsSet = 0;
+
+				if (request.name() != null)
+					propsSet |= _name;
+
+				if (propsSet == 0) {
+				}
+				if (propsSet == (_name)) {
+					params.put("name", request.name);
+				}
+				return params;
 			},
 
 			// Request parameters

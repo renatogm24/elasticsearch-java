@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cluster.stats;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -37,6 +33,21 @@ import jakarta.json.stream.JsonGenerator;
 import java.lang.Double;
 import java.util.Objects;
 import java.util.function.Function;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: cluster.stats.ClusterShardMetrics
 
@@ -69,21 +80,30 @@ public class ClusterShardMetrics implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code avg}
+	 * Required - Mean number of shards in an index, counting only shards assigned
+	 * to selected nodes.
+	 * <p>
+	 * API name: {@code avg}
 	 */
 	public final double avg() {
 		return this.avg;
 	}
 
 	/**
-	 * Required - API name: {@code max}
+	 * Required - Maximum number of shards in an index, counting only shards
+	 * assigned to selected nodes.
+	 * <p>
+	 * API name: {@code max}
 	 */
 	public final double max() {
 		return this.max;
 	}
 
 	/**
-	 * Required - API name: {@code min}
+	 * Required - Minimum number of shards in an index, counting only shards
+	 * assigned to selected nodes.
+	 * <p>
+	 * API name: {@code min}
 	 */
 	public final double min() {
 		return this.min;
@@ -132,7 +152,10 @@ public class ClusterShardMetrics implements JsonpSerializable {
 		private Double min;
 
 		/**
-		 * Required - API name: {@code avg}
+		 * Required - Mean number of shards in an index, counting only shards assigned
+		 * to selected nodes.
+		 * <p>
+		 * API name: {@code avg}
 		 */
 		public final Builder avg(double value) {
 			this.avg = value;
@@ -140,7 +163,10 @@ public class ClusterShardMetrics implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code max}
+		 * Required - Maximum number of shards in an index, counting only shards
+		 * assigned to selected nodes.
+		 * <p>
+		 * API name: {@code max}
 		 */
 		public final Builder max(double value) {
 			this.max = value;
@@ -148,7 +174,10 @@ public class ClusterShardMetrics implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code min}
+		 * Required - Minimum number of shards in an index, counting only shards
+		 * assigned to selected nodes.
+		 * <p>
+		 * API name: {@code min}
 		 */
 		public final Builder min(double value) {
 			this.min = value;

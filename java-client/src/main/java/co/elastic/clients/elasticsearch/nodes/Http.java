@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -36,10 +32,27 @@ import co.elastic.clients.util.WithJsonObjectBuilderBase;
 import jakarta.json.stream.JsonGenerator;
 import java.lang.Integer;
 import java.lang.Long;
+import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.Http
 
@@ -58,6 +71,8 @@ public class Http implements JsonpSerializable {
 
 	private final List<Client> clients;
 
+	private final Map<String, HttpRoute> routes;
+
 	// ---------------------------------------------------------------------------------------------
 
 	private Http(Builder builder) {
@@ -65,6 +80,7 @@ public class Http implements JsonpSerializable {
 		this.currentOpen = builder.currentOpen;
 		this.totalOpened = builder.totalOpened;
 		this.clients = ApiTypeHelper.unmodifiable(builder.clients);
+		this.routes = ApiTypeHelper.unmodifiableRequired(builder.routes, this, "routes");
 
 	}
 
@@ -73,6 +89,8 @@ public class Http implements JsonpSerializable {
 	}
 
 	/**
+	 * Current number of open HTTP connections for the node.
+	 * <p>
 	 * API name: {@code current_open}
 	 */
 	@Nullable
@@ -81,6 +99,8 @@ public class Http implements JsonpSerializable {
 	}
 
 	/**
+	 * Total number of HTTP connections opened for the node.
+	 * <p>
 	 * API name: {@code total_opened}
 	 */
 	@Nullable
@@ -89,10 +109,24 @@ public class Http implements JsonpSerializable {
 	}
 
 	/**
+	 * Information on current and recently-closed HTTP client connections. Clients
+	 * that have been closed longer than the
+	 * <code>http.client_stats.closed_channels.max_age</code> setting will not be
+	 * represented here.
+	 * <p>
 	 * API name: {@code clients}
 	 */
 	public final List<Client> clients() {
 		return this.clients;
+	}
+
+	/**
+	 * Required - Detailed HTTP stats broken down by route
+	 * <p>
+	 * API name: {@code routes}
+	 */
+	public final Map<String, HttpRoute> routes() {
+		return this.routes;
 	}
 
 	/**
@@ -126,6 +160,17 @@ public class Http implements JsonpSerializable {
 			generator.writeEnd();
 
 		}
+		if (ApiTypeHelper.isDefined(this.routes)) {
+			generator.writeKey("routes");
+			generator.writeStartObject();
+			for (Map.Entry<String, HttpRoute> item0 : this.routes.entrySet()) {
+				generator.writeKey(item0.getKey());
+				item0.getValue().serialize(generator, mapper);
+
+			}
+			generator.writeEnd();
+
+		}
 
 	}
 
@@ -150,7 +195,11 @@ public class Http implements JsonpSerializable {
 		@Nullable
 		private List<Client> clients;
 
+		private Map<String, HttpRoute> routes;
+
 		/**
+		 * Current number of open HTTP connections for the node.
+		 * <p>
 		 * API name: {@code current_open}
 		 */
 		public final Builder currentOpen(@Nullable Integer value) {
@@ -159,6 +208,8 @@ public class Http implements JsonpSerializable {
 		}
 
 		/**
+		 * Total number of HTTP connections opened for the node.
+		 * <p>
 		 * API name: {@code total_opened}
 		 */
 		public final Builder totalOpened(@Nullable Long value) {
@@ -167,6 +218,11 @@ public class Http implements JsonpSerializable {
 		}
 
 		/**
+		 * Information on current and recently-closed HTTP client connections. Clients
+		 * that have been closed longer than the
+		 * <code>http.client_stats.closed_channels.max_age</code> setting will not be
+		 * represented here.
+		 * <p>
 		 * API name: {@code clients}
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>clients</code>.
@@ -177,6 +233,11 @@ public class Http implements JsonpSerializable {
 		}
 
 		/**
+		 * Information on current and recently-closed HTTP client connections. Clients
+		 * that have been closed longer than the
+		 * <code>http.client_stats.closed_channels.max_age</code> setting will not be
+		 * represented here.
+		 * <p>
 		 * API name: {@code clients}
 		 * <p>
 		 * Adds one or more values to <code>clients</code>.
@@ -187,12 +248,52 @@ public class Http implements JsonpSerializable {
 		}
 
 		/**
+		 * Information on current and recently-closed HTTP client connections. Clients
+		 * that have been closed longer than the
+		 * <code>http.client_stats.closed_channels.max_age</code> setting will not be
+		 * represented here.
+		 * <p>
 		 * API name: {@code clients}
 		 * <p>
 		 * Adds a value to <code>clients</code> using a builder lambda.
 		 */
 		public final Builder clients(Function<Client.Builder, ObjectBuilder<Client>> fn) {
 			return clients(fn.apply(new Client.Builder()).build());
+		}
+
+		/**
+		 * Required - Detailed HTTP stats broken down by route
+		 * <p>
+		 * API name: {@code routes}
+		 * <p>
+		 * Adds all entries of <code>map</code> to <code>routes</code>.
+		 */
+		public final Builder routes(Map<String, HttpRoute> map) {
+			this.routes = _mapPutAll(this.routes, map);
+			return this;
+		}
+
+		/**
+		 * Required - Detailed HTTP stats broken down by route
+		 * <p>
+		 * API name: {@code routes}
+		 * <p>
+		 * Adds an entry to <code>routes</code>.
+		 */
+		public final Builder routes(String key, HttpRoute value) {
+			this.routes = _mapPut(this.routes, key, value);
+			return this;
+		}
+
+		/**
+		 * Required - Detailed HTTP stats broken down by route
+		 * <p>
+		 * API name: {@code routes}
+		 * <p>
+		 * Adds an entry to <code>routes</code> using a builder lambda.
+		 */
+		public final Builder routes(String key, Function<HttpRoute.Builder, ObjectBuilder<HttpRoute>> fn) {
+			return routes(key, fn.apply(new HttpRoute.Builder()).build());
 		}
 
 		@Override
@@ -226,6 +327,7 @@ public class Http implements JsonpSerializable {
 		op.add(Builder::currentOpen, JsonpDeserializer.integerDeserializer(), "current_open");
 		op.add(Builder::totalOpened, JsonpDeserializer.longDeserializer(), "total_opened");
 		op.add(Builder::clients, JsonpDeserializer.arrayDeserializer(Client._DESERIALIZER), "clients");
+		op.add(Builder::routes, JsonpDeserializer.stringMapDeserializer(HttpRoute._DESERIALIZER), "routes");
 
 	}
 

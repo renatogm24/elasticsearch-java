@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.rollup;
 
 import co.elastic.clients.elasticsearch._types.Time;
@@ -39,6 +35,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: rollup._types.DateHistogramGrouping
 
@@ -89,6 +100,13 @@ public class DateHistogramGrouping implements JsonpSerializable {
 	}
 
 	/**
+	 * How long to wait before rolling up new documents. By default, the indexer
+	 * attempts to roll up all data that is available. However, it is not uncommon
+	 * for data to arrive out of order. The indexer is unable to deal with data that
+	 * arrives after a time-span has been rolled up. You need to specify a delay
+	 * that matches the longest period of time you expect out-of-order data to
+	 * arrive.
+	 * <p>
 	 * API name: {@code delay}
 	 */
 	@Nullable
@@ -97,7 +115,9 @@ public class DateHistogramGrouping implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code field}
+	 * Required - The date field that is to be rolled up.
+	 * <p>
+	 * API name: {@code field}
 	 */
 	public final String field() {
 		return this.field;
@@ -120,6 +140,8 @@ public class DateHistogramGrouping implements JsonpSerializable {
 	}
 
 	/**
+	 * The interval of time buckets to be generated when rolling up.
+	 * <p>
 	 * API name: {@code calendar_interval}
 	 */
 	@Nullable
@@ -128,6 +150,8 @@ public class DateHistogramGrouping implements JsonpSerializable {
 	}
 
 	/**
+	 * The interval of time buckets to be generated when rolling up.
+	 * <p>
 	 * API name: {@code fixed_interval}
 	 */
 	@Nullable
@@ -136,6 +160,11 @@ public class DateHistogramGrouping implements JsonpSerializable {
 	}
 
 	/**
+	 * Defines what <code>time_zone</code> the rollup documents are stored as.
+	 * Unlike raw data, which can shift timezones on the fly, rolled documents have
+	 * to be stored with a specific timezone. By default, rollup documents are
+	 * stored in <code>UTC</code>.
+	 * <p>
 	 * API name: {@code time_zone}
 	 */
 	@Nullable
@@ -225,6 +254,13 @@ public class DateHistogramGrouping implements JsonpSerializable {
 		private String timeZone;
 
 		/**
+		 * How long to wait before rolling up new documents. By default, the indexer
+		 * attempts to roll up all data that is available. However, it is not uncommon
+		 * for data to arrive out of order. The indexer is unable to deal with data that
+		 * arrives after a time-span has been rolled up. You need to specify a delay
+		 * that matches the longest period of time you expect out-of-order data to
+		 * arrive.
+		 * <p>
 		 * API name: {@code delay}
 		 */
 		public final Builder delay(@Nullable Time value) {
@@ -233,6 +269,13 @@ public class DateHistogramGrouping implements JsonpSerializable {
 		}
 
 		/**
+		 * How long to wait before rolling up new documents. By default, the indexer
+		 * attempts to roll up all data that is available. However, it is not uncommon
+		 * for data to arrive out of order. The indexer is unable to deal with data that
+		 * arrives after a time-span has been rolled up. You need to specify a delay
+		 * that matches the longest period of time you expect out-of-order data to
+		 * arrive.
+		 * <p>
 		 * API name: {@code delay}
 		 */
 		public final Builder delay(Function<Time.Builder, ObjectBuilder<Time>> fn) {
@@ -240,7 +283,9 @@ public class DateHistogramGrouping implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code field}
+		 * Required - The date field that is to be rolled up.
+		 * <p>
+		 * API name: {@code field}
 		 */
 		public final Builder field(String value) {
 			this.field = value;
@@ -271,6 +316,8 @@ public class DateHistogramGrouping implements JsonpSerializable {
 		}
 
 		/**
+		 * The interval of time buckets to be generated when rolling up.
+		 * <p>
 		 * API name: {@code calendar_interval}
 		 */
 		public final Builder calendarInterval(@Nullable Time value) {
@@ -279,6 +326,8 @@ public class DateHistogramGrouping implements JsonpSerializable {
 		}
 
 		/**
+		 * The interval of time buckets to be generated when rolling up.
+		 * <p>
 		 * API name: {@code calendar_interval}
 		 */
 		public final Builder calendarInterval(Function<Time.Builder, ObjectBuilder<Time>> fn) {
@@ -286,6 +335,8 @@ public class DateHistogramGrouping implements JsonpSerializable {
 		}
 
 		/**
+		 * The interval of time buckets to be generated when rolling up.
+		 * <p>
 		 * API name: {@code fixed_interval}
 		 */
 		public final Builder fixedInterval(@Nullable Time value) {
@@ -294,6 +345,8 @@ public class DateHistogramGrouping implements JsonpSerializable {
 		}
 
 		/**
+		 * The interval of time buckets to be generated when rolling up.
+		 * <p>
 		 * API name: {@code fixed_interval}
 		 */
 		public final Builder fixedInterval(Function<Time.Builder, ObjectBuilder<Time>> fn) {
@@ -301,6 +354,11 @@ public class DateHistogramGrouping implements JsonpSerializable {
 		}
 
 		/**
+		 * Defines what <code>time_zone</code> the rollup documents are stored as.
+		 * Unlike raw data, which can shift timezones on the fly, rolled documents have
+		 * to be stored with a specific timezone. By default, rollup documents are
+		 * stored in <code>UTC</code>.
+		 * <p>
 		 * API name: {@code time_zone}
 		 */
 		public final Builder timeZone(@Nullable String value) {

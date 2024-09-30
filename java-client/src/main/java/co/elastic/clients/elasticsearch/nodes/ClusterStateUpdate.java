@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.elasticsearch._types.Time;
@@ -39,6 +35,21 @@ import java.lang.Long;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.ClusterStateUpdate
 
@@ -120,13 +131,19 @@ public class ClusterStateUpdate implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code count}
+	 * Required - The number of cluster state update attempts that did not change
+	 * the cluster state since the node started.
+	 * <p>
+	 * API name: {@code count}
 	 */
 	public final long count() {
 		return this.count;
 	}
 
 	/**
+	 * The cumulative amount of time spent computing no-op cluster state updates
+	 * since the node started.
+	 * <p>
 	 * API name: {@code computation_time}
 	 */
 	@Nullable
@@ -135,6 +152,9 @@ public class ClusterStateUpdate implements JsonpSerializable {
 	}
 
 	/**
+	 * The cumulative amount of time, in milliseconds, spent computing no-op cluster
+	 * state updates since the node started.
+	 * <p>
 	 * API name: {@code computation_time_millis}
 	 */
 	@Nullable
@@ -143,6 +163,14 @@ public class ClusterStateUpdate implements JsonpSerializable {
 	}
 
 	/**
+	 * The cumulative amount of time spent publishing cluster state updates which
+	 * ultimately succeeded, which includes everything from the start of the
+	 * publication (just after the computation of the new cluster state) until the
+	 * publication has finished and the master node is ready to start processing the
+	 * next state update. This includes the time measured by
+	 * <code>context_construction_time</code>, <code>commit_time</code>,
+	 * <code>completion_time</code> and <code>master_apply_time</code>.
+	 * <p>
 	 * API name: {@code publication_time}
 	 */
 	@Nullable
@@ -151,6 +179,14 @@ public class ClusterStateUpdate implements JsonpSerializable {
 	}
 
 	/**
+	 * The cumulative amount of time, in milliseconds, spent publishing cluster
+	 * state updates which ultimately succeeded, which includes everything from the
+	 * start of the publication (just after the computation of the new cluster
+	 * state) until the publication has finished and the master node is ready to
+	 * start processing the next state update. This includes the time measured by
+	 * <code>context_construction_time</code>, <code>commit_time</code>,
+	 * <code>completion_time</code> and <code>master_apply_time</code>.
+	 * <p>
 	 * API name: {@code publication_time_millis}
 	 */
 	@Nullable
@@ -159,6 +195,11 @@ public class ClusterStateUpdate implements JsonpSerializable {
 	}
 
 	/**
+	 * The cumulative amount of time spent constructing a publication context since
+	 * the node started for publications that ultimately succeeded. This statistic
+	 * includes the time spent computing the difference between the current and new
+	 * cluster state preparing a serialized representation of this difference.
+	 * <p>
 	 * API name: {@code context_construction_time}
 	 */
 	@Nullable
@@ -167,6 +208,12 @@ public class ClusterStateUpdate implements JsonpSerializable {
 	}
 
 	/**
+	 * The cumulative amount of time, in milliseconds, spent constructing a
+	 * publication context since the node started for publications that ultimately
+	 * succeeded. This statistic includes the time spent computing the difference
+	 * between the current and new cluster state preparing a serialized
+	 * representation of this difference.
+	 * <p>
 	 * API name: {@code context_construction_time_millis}
 	 */
 	@Nullable
@@ -175,6 +222,11 @@ public class ClusterStateUpdate implements JsonpSerializable {
 	}
 
 	/**
+	 * The cumulative amount of time spent waiting for a successful cluster state
+	 * update to commit, which measures the time from the start of each publication
+	 * until a majority of the master-eligible nodes have written the state to disk
+	 * and confirmed the write to the elected master.
+	 * <p>
 	 * API name: {@code commit_time}
 	 */
 	@Nullable
@@ -183,6 +235,11 @@ public class ClusterStateUpdate implements JsonpSerializable {
 	}
 
 	/**
+	 * The cumulative amount of time, in milliseconds, spent waiting for a
+	 * successful cluster state update to commit, which measures the time from the
+	 * start of each publication until a majority of the master-eligible nodes have
+	 * written the state to disk and confirmed the write to the elected master.
+	 * <p>
 	 * API name: {@code commit_time_millis}
 	 */
 	@Nullable
@@ -191,6 +248,11 @@ public class ClusterStateUpdate implements JsonpSerializable {
 	}
 
 	/**
+	 * The cumulative amount of time spent waiting for a successful cluster state
+	 * update to complete, which measures the time from the start of each
+	 * publication until all the other nodes have notified the elected master that
+	 * they have applied the cluster state.
+	 * <p>
 	 * API name: {@code completion_time}
 	 */
 	@Nullable
@@ -199,6 +261,11 @@ public class ClusterStateUpdate implements JsonpSerializable {
 	}
 
 	/**
+	 * The cumulative amount of time, in milliseconds, spent waiting for a
+	 * successful cluster state update to complete, which measures the time from the
+	 * start of each publication until all the other nodes have notified the elected
+	 * master that they have applied the cluster state.
+	 * <p>
 	 * API name: {@code completion_time_millis}
 	 */
 	@Nullable
@@ -207,6 +274,9 @@ public class ClusterStateUpdate implements JsonpSerializable {
 	}
 
 	/**
+	 * The cumulative amount of time spent successfully applying cluster state
+	 * updates on the elected master since the node started.
+	 * <p>
 	 * API name: {@code master_apply_time}
 	 */
 	@Nullable
@@ -215,6 +285,9 @@ public class ClusterStateUpdate implements JsonpSerializable {
 	}
 
 	/**
+	 * The cumulative amount of time, in milliseconds, spent successfully applying
+	 * cluster state updates on the elected master since the node started.
+	 * <p>
 	 * API name: {@code master_apply_time_millis}
 	 */
 	@Nullable
@@ -223,6 +296,9 @@ public class ClusterStateUpdate implements JsonpSerializable {
 	}
 
 	/**
+	 * The cumulative amount of time spent notifying listeners of a no-op cluster
+	 * state update since the node started.
+	 * <p>
 	 * API name: {@code notification_time}
 	 */
 	@Nullable
@@ -231,6 +307,9 @@ public class ClusterStateUpdate implements JsonpSerializable {
 	}
 
 	/**
+	 * The cumulative amount of time, in milliseconds, spent notifying listeners of
+	 * a no-op cluster state update since the node started.
+	 * <p>
 	 * API name: {@code notification_time_millis}
 	 */
 	@Nullable
@@ -384,7 +463,10 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		private Long notificationTimeMillis;
 
 		/**
-		 * Required - API name: {@code count}
+		 * Required - The number of cluster state update attempts that did not change
+		 * the cluster state since the node started.
+		 * <p>
+		 * API name: {@code count}
 		 */
 		public final Builder count(long value) {
 			this.count = value;
@@ -392,6 +474,9 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		}
 
 		/**
+		 * The cumulative amount of time spent computing no-op cluster state updates
+		 * since the node started.
+		 * <p>
 		 * API name: {@code computation_time}
 		 */
 		public final Builder computationTime(@Nullable Time value) {
@@ -400,6 +485,9 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		}
 
 		/**
+		 * The cumulative amount of time spent computing no-op cluster state updates
+		 * since the node started.
+		 * <p>
 		 * API name: {@code computation_time}
 		 */
 		public final Builder computationTime(Function<Time.Builder, ObjectBuilder<Time>> fn) {
@@ -407,6 +495,9 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		}
 
 		/**
+		 * The cumulative amount of time, in milliseconds, spent computing no-op cluster
+		 * state updates since the node started.
+		 * <p>
 		 * API name: {@code computation_time_millis}
 		 */
 		public final Builder computationTimeMillis(@Nullable Long value) {
@@ -415,6 +506,14 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		}
 
 		/**
+		 * The cumulative amount of time spent publishing cluster state updates which
+		 * ultimately succeeded, which includes everything from the start of the
+		 * publication (just after the computation of the new cluster state) until the
+		 * publication has finished and the master node is ready to start processing the
+		 * next state update. This includes the time measured by
+		 * <code>context_construction_time</code>, <code>commit_time</code>,
+		 * <code>completion_time</code> and <code>master_apply_time</code>.
+		 * <p>
 		 * API name: {@code publication_time}
 		 */
 		public final Builder publicationTime(@Nullable Time value) {
@@ -423,6 +522,14 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		}
 
 		/**
+		 * The cumulative amount of time spent publishing cluster state updates which
+		 * ultimately succeeded, which includes everything from the start of the
+		 * publication (just after the computation of the new cluster state) until the
+		 * publication has finished and the master node is ready to start processing the
+		 * next state update. This includes the time measured by
+		 * <code>context_construction_time</code>, <code>commit_time</code>,
+		 * <code>completion_time</code> and <code>master_apply_time</code>.
+		 * <p>
 		 * API name: {@code publication_time}
 		 */
 		public final Builder publicationTime(Function<Time.Builder, ObjectBuilder<Time>> fn) {
@@ -430,6 +537,14 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		}
 
 		/**
+		 * The cumulative amount of time, in milliseconds, spent publishing cluster
+		 * state updates which ultimately succeeded, which includes everything from the
+		 * start of the publication (just after the computation of the new cluster
+		 * state) until the publication has finished and the master node is ready to
+		 * start processing the next state update. This includes the time measured by
+		 * <code>context_construction_time</code>, <code>commit_time</code>,
+		 * <code>completion_time</code> and <code>master_apply_time</code>.
+		 * <p>
 		 * API name: {@code publication_time_millis}
 		 */
 		public final Builder publicationTimeMillis(@Nullable Long value) {
@@ -438,6 +553,11 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		}
 
 		/**
+		 * The cumulative amount of time spent constructing a publication context since
+		 * the node started for publications that ultimately succeeded. This statistic
+		 * includes the time spent computing the difference between the current and new
+		 * cluster state preparing a serialized representation of this difference.
+		 * <p>
 		 * API name: {@code context_construction_time}
 		 */
 		public final Builder contextConstructionTime(@Nullable Time value) {
@@ -446,6 +566,11 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		}
 
 		/**
+		 * The cumulative amount of time spent constructing a publication context since
+		 * the node started for publications that ultimately succeeded. This statistic
+		 * includes the time spent computing the difference between the current and new
+		 * cluster state preparing a serialized representation of this difference.
+		 * <p>
 		 * API name: {@code context_construction_time}
 		 */
 		public final Builder contextConstructionTime(Function<Time.Builder, ObjectBuilder<Time>> fn) {
@@ -453,6 +578,12 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		}
 
 		/**
+		 * The cumulative amount of time, in milliseconds, spent constructing a
+		 * publication context since the node started for publications that ultimately
+		 * succeeded. This statistic includes the time spent computing the difference
+		 * between the current and new cluster state preparing a serialized
+		 * representation of this difference.
+		 * <p>
 		 * API name: {@code context_construction_time_millis}
 		 */
 		public final Builder contextConstructionTimeMillis(@Nullable Long value) {
@@ -461,6 +592,11 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		}
 
 		/**
+		 * The cumulative amount of time spent waiting for a successful cluster state
+		 * update to commit, which measures the time from the start of each publication
+		 * until a majority of the master-eligible nodes have written the state to disk
+		 * and confirmed the write to the elected master.
+		 * <p>
 		 * API name: {@code commit_time}
 		 */
 		public final Builder commitTime(@Nullable Time value) {
@@ -469,6 +605,11 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		}
 
 		/**
+		 * The cumulative amount of time spent waiting for a successful cluster state
+		 * update to commit, which measures the time from the start of each publication
+		 * until a majority of the master-eligible nodes have written the state to disk
+		 * and confirmed the write to the elected master.
+		 * <p>
 		 * API name: {@code commit_time}
 		 */
 		public final Builder commitTime(Function<Time.Builder, ObjectBuilder<Time>> fn) {
@@ -476,6 +617,11 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		}
 
 		/**
+		 * The cumulative amount of time, in milliseconds, spent waiting for a
+		 * successful cluster state update to commit, which measures the time from the
+		 * start of each publication until a majority of the master-eligible nodes have
+		 * written the state to disk and confirmed the write to the elected master.
+		 * <p>
 		 * API name: {@code commit_time_millis}
 		 */
 		public final Builder commitTimeMillis(@Nullable Long value) {
@@ -484,6 +630,11 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		}
 
 		/**
+		 * The cumulative amount of time spent waiting for a successful cluster state
+		 * update to complete, which measures the time from the start of each
+		 * publication until all the other nodes have notified the elected master that
+		 * they have applied the cluster state.
+		 * <p>
 		 * API name: {@code completion_time}
 		 */
 		public final Builder completionTime(@Nullable Time value) {
@@ -492,6 +643,11 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		}
 
 		/**
+		 * The cumulative amount of time spent waiting for a successful cluster state
+		 * update to complete, which measures the time from the start of each
+		 * publication until all the other nodes have notified the elected master that
+		 * they have applied the cluster state.
+		 * <p>
 		 * API name: {@code completion_time}
 		 */
 		public final Builder completionTime(Function<Time.Builder, ObjectBuilder<Time>> fn) {
@@ -499,6 +655,11 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		}
 
 		/**
+		 * The cumulative amount of time, in milliseconds, spent waiting for a
+		 * successful cluster state update to complete, which measures the time from the
+		 * start of each publication until all the other nodes have notified the elected
+		 * master that they have applied the cluster state.
+		 * <p>
 		 * API name: {@code completion_time_millis}
 		 */
 		public final Builder completionTimeMillis(@Nullable Long value) {
@@ -507,6 +668,9 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		}
 
 		/**
+		 * The cumulative amount of time spent successfully applying cluster state
+		 * updates on the elected master since the node started.
+		 * <p>
 		 * API name: {@code master_apply_time}
 		 */
 		public final Builder masterApplyTime(@Nullable Time value) {
@@ -515,6 +679,9 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		}
 
 		/**
+		 * The cumulative amount of time spent successfully applying cluster state
+		 * updates on the elected master since the node started.
+		 * <p>
 		 * API name: {@code master_apply_time}
 		 */
 		public final Builder masterApplyTime(Function<Time.Builder, ObjectBuilder<Time>> fn) {
@@ -522,6 +689,9 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		}
 
 		/**
+		 * The cumulative amount of time, in milliseconds, spent successfully applying
+		 * cluster state updates on the elected master since the node started.
+		 * <p>
 		 * API name: {@code master_apply_time_millis}
 		 */
 		public final Builder masterApplyTimeMillis(@Nullable Long value) {
@@ -530,6 +700,9 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		}
 
 		/**
+		 * The cumulative amount of time spent notifying listeners of a no-op cluster
+		 * state update since the node started.
+		 * <p>
 		 * API name: {@code notification_time}
 		 */
 		public final Builder notificationTime(@Nullable Time value) {
@@ -538,6 +711,9 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		}
 
 		/**
+		 * The cumulative amount of time spent notifying listeners of a no-op cluster
+		 * state update since the node started.
+		 * <p>
 		 * API name: {@code notification_time}
 		 */
 		public final Builder notificationTime(Function<Time.Builder, ObjectBuilder<Time>> fn) {
@@ -545,6 +721,9 @@ public class ClusterStateUpdate implements JsonpSerializable {
 		}
 
 		/**
+		 * The cumulative amount of time, in milliseconds, spent notifying listeners of
+		 * a no-op cluster state update since the node started.
+		 * <p>
 		 * API name: {@code notification_time_millis}
 		 */
 		public final Builder notificationTimeMillis(@Nullable Long value) {

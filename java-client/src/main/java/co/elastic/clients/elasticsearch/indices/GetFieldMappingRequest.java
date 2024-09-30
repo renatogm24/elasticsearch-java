@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.indices;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -45,10 +41,27 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: indices.get_field_mapping.Request
 
 /**
- * Returns mapping for one or more fields.
+ * Get mapping definitions. Retrieves mapping definitions for one or more
+ * fields. For data streams, the API retrieves field mappings for the stream’s
+ * backing indices.
  * 
  * @see <a href=
  *      "../doc-files/api-spec.html#indices.get_field_mapping.Request">API
@@ -93,9 +106,10 @@ public class GetFieldMappingRequest extends RequestBase {
 	}
 
 	/**
-	 * Whether to ignore if a wildcard indices expression resolves into no concrete
-	 * indices. (This includes <code>_all</code> string or when no indices have been
-	 * specified)
+	 * If <code>false</code>, the request returns an error if any wildcard
+	 * expression, index alias, or <code>_all</code> value targets only missing or
+	 * closed indices. This behavior applies even if the request targets other open
+	 * indices.
 	 * <p>
 	 * API name: {@code allow_no_indices}
 	 */
@@ -105,8 +119,12 @@ public class GetFieldMappingRequest extends RequestBase {
 	}
 
 	/**
-	 * Whether to expand wildcard expression to concrete indices that are open,
-	 * closed or both.
+	 * Type of index that wildcard patterns can match. If the request can target
+	 * data streams, this argument determines whether wildcard expressions match
+	 * hidden data streams. Supports comma-separated values, such as
+	 * <code>open,hidden</code>. Valid values are: <code>all</code>,
+	 * <code>open</code>, <code>closed</code>, <code>hidden</code>,
+	 * <code>none</code>.
 	 * <p>
 	 * API name: {@code expand_wildcards}
 	 */
@@ -115,7 +133,8 @@ public class GetFieldMappingRequest extends RequestBase {
 	}
 
 	/**
-	 * Required - A comma-separated list of fields
+	 * Required - Comma-separated list or wildcard expression of fields used to
+	 * limit returned information.
 	 * <p>
 	 * API name: {@code fields}
 	 */
@@ -124,8 +143,8 @@ public class GetFieldMappingRequest extends RequestBase {
 	}
 
 	/**
-	 * Whether specified concrete indices should be ignored when unavailable
-	 * (missing or closed)
+	 * If <code>false</code>, the request returns an error if it targets a missing
+	 * or closed index.
 	 * <p>
 	 * API name: {@code ignore_unavailable}
 	 */
@@ -135,7 +154,7 @@ public class GetFieldMappingRequest extends RequestBase {
 	}
 
 	/**
-	 * Whether the default mapping values should be returned as well
+	 * If <code>true</code>, return all default settings in the response.
 	 * <p>
 	 * API name: {@code include_defaults}
 	 */
@@ -145,7 +164,9 @@ public class GetFieldMappingRequest extends RequestBase {
 	}
 
 	/**
-	 * A comma-separated list of index names
+	 * Comma-separated list of data streams, indices, and aliases used to limit the
+	 * request. Supports wildcards (<code>*</code>). To target all data streams and
+	 * indices, omit this parameter or use <code>*</code> or <code>_all</code>.
 	 * <p>
 	 * API name: {@code index}
 	 */
@@ -154,8 +175,8 @@ public class GetFieldMappingRequest extends RequestBase {
 	}
 
 	/**
-	 * Return local information, do not retrieve the state from master node
-	 * (default: false)
+	 * If <code>true</code>, the request retrieves information from the local node
+	 * only.
 	 * <p>
 	 * API name: {@code local}
 	 */
@@ -194,9 +215,10 @@ public class GetFieldMappingRequest extends RequestBase {
 		private Boolean local;
 
 		/**
-		 * Whether to ignore if a wildcard indices expression resolves into no concrete
-		 * indices. (This includes <code>_all</code> string or when no indices have been
-		 * specified)
+		 * If <code>false</code>, the request returns an error if any wildcard
+		 * expression, index alias, or <code>_all</code> value targets only missing or
+		 * closed indices. This behavior applies even if the request targets other open
+		 * indices.
 		 * <p>
 		 * API name: {@code allow_no_indices}
 		 */
@@ -206,8 +228,12 @@ public class GetFieldMappingRequest extends RequestBase {
 		}
 
 		/**
-		 * Whether to expand wildcard expression to concrete indices that are open,
-		 * closed or both.
+		 * Type of index that wildcard patterns can match. If the request can target
+		 * data streams, this argument determines whether wildcard expressions match
+		 * hidden data streams. Supports comma-separated values, such as
+		 * <code>open,hidden</code>. Valid values are: <code>all</code>,
+		 * <code>open</code>, <code>closed</code>, <code>hidden</code>,
+		 * <code>none</code>.
 		 * <p>
 		 * API name: {@code expand_wildcards}
 		 * <p>
@@ -219,8 +245,12 @@ public class GetFieldMappingRequest extends RequestBase {
 		}
 
 		/**
-		 * Whether to expand wildcard expression to concrete indices that are open,
-		 * closed or both.
+		 * Type of index that wildcard patterns can match. If the request can target
+		 * data streams, this argument determines whether wildcard expressions match
+		 * hidden data streams. Supports comma-separated values, such as
+		 * <code>open,hidden</code>. Valid values are: <code>all</code>,
+		 * <code>open</code>, <code>closed</code>, <code>hidden</code>,
+		 * <code>none</code>.
 		 * <p>
 		 * API name: {@code expand_wildcards}
 		 * <p>
@@ -232,7 +262,8 @@ public class GetFieldMappingRequest extends RequestBase {
 		}
 
 		/**
-		 * Required - A comma-separated list of fields
+		 * Required - Comma-separated list or wildcard expression of fields used to
+		 * limit returned information.
 		 * <p>
 		 * API name: {@code fields}
 		 * <p>
@@ -244,7 +275,8 @@ public class GetFieldMappingRequest extends RequestBase {
 		}
 
 		/**
-		 * Required - A comma-separated list of fields
+		 * Required - Comma-separated list or wildcard expression of fields used to
+		 * limit returned information.
 		 * <p>
 		 * API name: {@code fields}
 		 * <p>
@@ -256,8 +288,8 @@ public class GetFieldMappingRequest extends RequestBase {
 		}
 
 		/**
-		 * Whether specified concrete indices should be ignored when unavailable
-		 * (missing or closed)
+		 * If <code>false</code>, the request returns an error if it targets a missing
+		 * or closed index.
 		 * <p>
 		 * API name: {@code ignore_unavailable}
 		 */
@@ -267,7 +299,7 @@ public class GetFieldMappingRequest extends RequestBase {
 		}
 
 		/**
-		 * Whether the default mapping values should be returned as well
+		 * If <code>true</code>, return all default settings in the response.
 		 * <p>
 		 * API name: {@code include_defaults}
 		 */
@@ -277,7 +309,9 @@ public class GetFieldMappingRequest extends RequestBase {
 		}
 
 		/**
-		 * A comma-separated list of index names
+		 * Comma-separated list of data streams, indices, and aliases used to limit the
+		 * request. Supports wildcards (<code>*</code>). To target all data streams and
+		 * indices, omit this parameter or use <code>*</code> or <code>_all</code>.
 		 * <p>
 		 * API name: {@code index}
 		 * <p>
@@ -289,7 +323,9 @@ public class GetFieldMappingRequest extends RequestBase {
 		}
 
 		/**
-		 * A comma-separated list of index names
+		 * Comma-separated list of data streams, indices, and aliases used to limit the
+		 * request. Supports wildcards (<code>*</code>). To target all data streams and
+		 * indices, omit this parameter or use <code>*</code> or <code>_all</code>.
 		 * <p>
 		 * API name: {@code index}
 		 * <p>
@@ -301,8 +337,8 @@ public class GetFieldMappingRequest extends RequestBase {
 		}
 
 		/**
-		 * Return local information, do not retrieve the state from master node
-		 * (default: false)
+		 * If <code>true</code>, the request retrieves information from the local node
+		 * only.
 		 * <p>
 		 * API name: {@code local}
 		 */
@@ -376,6 +412,28 @@ public class GetFieldMappingRequest extends RequestBase {
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _index = 1 << 0;
+				final int _fields = 1 << 1;
+
+				int propsSet = 0;
+
+				if (ApiTypeHelper.isDefined(request.index()))
+					propsSet |= _index;
+				propsSet |= _fields;
+
+				if (propsSet == (_fields)) {
+					params.put("fields", request.fields.stream().map(v -> v).collect(Collectors.joining(",")));
+				}
+				if (propsSet == (_index | _fields)) {
+					params.put("index", request.index.stream().map(v -> v).collect(Collectors.joining(",")));
+					params.put("fields", request.fields.stream().map(v -> v).collect(Collectors.joining(",")));
+				}
+				return params;
 			},
 
 			// Request parameters

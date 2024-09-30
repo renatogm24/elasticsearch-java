@@ -17,13 +17,15 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.query_dsl;
 
 import co.elastic.clients.elasticsearch._types.FieldValue;
+import co.elastic.clients.elasticsearch.security.query_api_keys.ApiKeyQuery;
+import co.elastic.clients.elasticsearch.security.query_api_keys.ApiKeyQueryVariant;
+import co.elastic.clients.elasticsearch.security.query_role.RoleQuery;
+import co.elastic.clients.elasticsearch.security.query_role.RoleQueryVariant;
+import co.elastic.clients.elasticsearch.security.query_user.UserQuery;
+import co.elastic.clients.elasticsearch.security.query_user.UserQueryVariant;
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.JsonpMapper;
@@ -38,6 +40,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: _types.query_dsl.TermQuery
 
 /**
@@ -46,7 +63,12 @@ import javax.annotation.Nullable;
  *      specification</a>
  */
 @JsonpDeserializable
-public class TermQuery extends QueryBase implements QueryVariant {
+public class TermQuery extends QueryBase
+		implements
+			ApiKeyQueryVariant,
+			QueryVariant,
+			RoleQueryVariant,
+			UserQueryVariant {
 	// Single key dictionary
 	private final String field;
 
@@ -71,11 +93,35 @@ public class TermQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
+	 * ApiKeyQuery variant kind.
+	 */
+	@Override
+	public ApiKeyQuery.Kind _apiKeyQueryKind() {
+		return ApiKeyQuery.Kind.Term;
+	}
+
+	/**
 	 * Query variant kind.
 	 */
 	@Override
 	public Query.Kind _queryKind() {
 		return Query.Kind.Term;
+	}
+
+	/**
+	 * RoleQuery variant kind.
+	 */
+	@Override
+	public RoleQuery.Kind _roleQueryKind() {
+		return RoleQuery.Kind.Term;
+	}
+
+	/**
+	 * UserQuery variant kind.
+	 */
+	@Override
+	public UserQuery.Kind _userQueryKind() {
+		return UserQuery.Kind.Term;
 	}
 
 	/**
@@ -86,13 +132,19 @@ public class TermQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
-	 * Required - API name: {@code value}
+	 * Required - Term you wish to find in the provided field.
+	 * <p>
+	 * API name: {@code value}
 	 */
 	public final FieldValue value() {
 		return this.value;
 	}
 
 	/**
+	 * Allows ASCII case insensitive matching of the value with the indexed field
+	 * values when set to <code>true</code>. When <code>false</code>, the case
+	 * sensitivity of matching depends on the underlying field’s mapping.
+	 * <p>
 	 * API name: {@code case_insensitive}
 	 */
 	@Nullable
@@ -140,7 +192,9 @@ public class TermQuery extends QueryBase implements QueryVariant {
 		private Boolean caseInsensitive;
 
 		/**
-		 * Required - API name: {@code value}
+		 * Required - Term you wish to find in the provided field.
+		 * <p>
+		 * API name: {@code value}
 		 */
 		public final Builder value(FieldValue value) {
 			this.value = value;
@@ -148,14 +202,18 @@ public class TermQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
-		 * Required - API name: {@code value}
+		 * Required - Term you wish to find in the provided field.
+		 * <p>
+		 * API name: {@code value}
 		 */
 		public final Builder value(Function<FieldValue.Builder, ObjectBuilder<FieldValue>> fn) {
 			return this.value(fn.apply(new FieldValue.Builder()).build());
 		}
 
 		/**
-		 * Required - API name: {@code value}
+		 * Required - Term you wish to find in the provided field.
+		 * <p>
+		 * API name: {@code value}
 		 */
 		public final Builder value(String value) {
 			this.value = FieldValue.of(value);
@@ -163,7 +221,9 @@ public class TermQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
-		 * Required - API name: {@code value}
+		 * Required - Term you wish to find in the provided field.
+		 * <p>
+		 * API name: {@code value}
 		 */
 		public final Builder value(long value) {
 			this.value = FieldValue.of(value);
@@ -171,7 +231,9 @@ public class TermQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
-		 * Required - API name: {@code value}
+		 * Required - Term you wish to find in the provided field.
+		 * <p>
+		 * API name: {@code value}
 		 */
 		public final Builder value(double value) {
 			this.value = FieldValue.of(value);
@@ -179,7 +241,9 @@ public class TermQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
-		 * Required - API name: {@code value}
+		 * Required - Term you wish to find in the provided field.
+		 * <p>
+		 * API name: {@code value}
 		 */
 		public final Builder value(boolean value) {
 			this.value = FieldValue.of(value);
@@ -187,6 +251,10 @@ public class TermQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * Allows ASCII case insensitive matching of the value with the indexed field
+		 * values when set to <code>true</code>. When <code>false</code>, the case
+		 * sensitivity of matching depends on the underlying field’s mapping.
+		 * <p>
 		 * API name: {@code case_insensitive}
 		 */
 		public final Builder caseInsensitive(@Nullable Boolean value) {
@@ -226,7 +294,7 @@ public class TermQuery extends QueryBase implements QueryVariant {
 		op.add(Builder::caseInsensitive, JsonpDeserializer.booleanDeserializer(), "case_insensitive");
 
 		op.setKey(Builder::field, JsonpDeserializer.stringDeserializer());
-		op.shortcutProperty("value");
+		op.shortcutProperty("value", true);
 
 	}
 

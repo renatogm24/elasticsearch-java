@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.core.search;
 
 import co.elastic.clients.elasticsearch._types.FieldValue;
@@ -40,14 +36,31 @@ import co.elastic.clients.util.ObjectBuilder;
 import co.elastic.clients.util.WithJsonObjectBuilderBase;
 import jakarta.json.stream.JsonGenerator;
 import java.lang.Double;
+import java.lang.Integer;
 import java.lang.Long;
 import java.lang.String;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: _global.search._types.Hit
 
@@ -60,6 +73,7 @@ import javax.annotation.Nullable;
 public class Hit<TDocument> implements JsonpSerializable {
 	private final String index;
 
+	@Nullable
 	private final String id;
 
 	@Nullable
@@ -81,7 +95,7 @@ public class Hit<TDocument> implements JsonpSerializable {
 
 	private final List<String> ignored;
 
-	private final Map<String, List<String>> ignoredFieldValues;
+	private final Map<String, List<FieldValue>> ignoredFieldValues;
 
 	@Nullable
 	private final String shard;
@@ -94,6 +108,9 @@ public class Hit<TDocument> implements JsonpSerializable {
 
 	@Nullable
 	private final TDocument source;
+
+	@Nullable
+	private final Integer rank;
 
 	@Nullable
 	private final Long seqNo;
@@ -114,7 +131,7 @@ public class Hit<TDocument> implements JsonpSerializable {
 	private Hit(Builder<TDocument> builder) {
 
 		this.index = ApiTypeHelper.requireNonNull(builder.index, this, "index");
-		this.id = ApiTypeHelper.requireNonNull(builder.id, this, "id");
+		this.id = builder.id;
 		this.score = builder.score;
 		this.explanation = builder.explanation;
 		this.fields = ApiTypeHelper.unmodifiable(builder.fields);
@@ -128,6 +145,7 @@ public class Hit<TDocument> implements JsonpSerializable {
 		this.node = builder.node;
 		this.routing = builder.routing;
 		this.source = builder.source;
+		this.rank = builder.rank;
 		this.seqNo = builder.seqNo;
 		this.primaryTerm = builder.primaryTerm;
 		this.version = builder.version;
@@ -148,8 +166,9 @@ public class Hit<TDocument> implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code _id}
+	 * API name: {@code _id}
 	 */
+	@Nullable
 	public final String id() {
 		return this.id;
 	}
@@ -218,7 +237,7 @@ public class Hit<TDocument> implements JsonpSerializable {
 	/**
 	 * API name: {@code ignored_field_values}
 	 */
-	public final Map<String, List<String>> ignoredFieldValues() {
+	public final Map<String, List<FieldValue>> ignoredFieldValues() {
 		return this.ignoredFieldValues;
 	}
 
@@ -252,6 +271,14 @@ public class Hit<TDocument> implements JsonpSerializable {
 	@Nullable
 	public final TDocument source() {
 		return this.source;
+	}
+
+	/**
+	 * API name: {@code _rank}
+	 */
+	@Nullable
+	public final Integer rank() {
+		return this.rank;
 	}
 
 	/**
@@ -299,9 +326,11 @@ public class Hit<TDocument> implements JsonpSerializable {
 		generator.writeKey("_index");
 		generator.write(this.index);
 
-		generator.writeKey("_id");
-		generator.write(this.id);
+		if (this.id != null) {
+			generator.writeKey("_id");
+			generator.write(this.id);
 
+		}
 		if (this.score != null) {
 			generator.writeKey("_score");
 			JsonpUtils.serializeDoubleOrNull(generator, this.score, Double.NaN);
@@ -379,12 +408,12 @@ public class Hit<TDocument> implements JsonpSerializable {
 		if (ApiTypeHelper.isDefined(this.ignoredFieldValues)) {
 			generator.writeKey("ignored_field_values");
 			generator.writeStartObject();
-			for (Map.Entry<String, List<String>> item0 : this.ignoredFieldValues.entrySet()) {
+			for (Map.Entry<String, List<FieldValue>> item0 : this.ignoredFieldValues.entrySet()) {
 				generator.writeKey(item0.getKey());
 				generator.writeStartArray();
 				if (item0.getValue() != null) {
-					for (String item1 : item0.getValue()) {
-						generator.write(item1);
+					for (FieldValue item1 : item0.getValue()) {
+						item1.serialize(generator, mapper);
 
 					}
 				}
@@ -412,6 +441,11 @@ public class Hit<TDocument> implements JsonpSerializable {
 		if (this.source != null) {
 			generator.writeKey("_source");
 			JsonpUtils.serialize(this.source, generator, tDocumentSerializer, mapper);
+
+		}
+		if (this.rank != null) {
+			generator.writeKey("_rank");
+			generator.write(this.rank);
 
 		}
 		if (this.seqNo != null) {
@@ -458,6 +492,7 @@ public class Hit<TDocument> implements JsonpSerializable {
 				ObjectBuilder<Hit<TDocument>> {
 		private String index;
 
+		@Nullable
 		private String id;
 
 		@Nullable
@@ -485,7 +520,7 @@ public class Hit<TDocument> implements JsonpSerializable {
 		private List<String> ignored;
 
 		@Nullable
-		private Map<String, List<String>> ignoredFieldValues;
+		private Map<String, List<FieldValue>> ignoredFieldValues;
 
 		@Nullable
 		private String shard;
@@ -498,6 +533,9 @@ public class Hit<TDocument> implements JsonpSerializable {
 
 		@Nullable
 		private TDocument source;
+
+		@Nullable
+		private Integer rank;
 
 		@Nullable
 		private Long seqNo;
@@ -523,9 +561,9 @@ public class Hit<TDocument> implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code _id}
+		 * API name: {@code _id}
 		 */
-		public final Builder<TDocument> id(String value) {
+		public final Builder<TDocument> id(@Nullable String value) {
 			this.id = value;
 			return this;
 		}
@@ -685,7 +723,7 @@ public class Hit<TDocument> implements JsonpSerializable {
 		 * <p>
 		 * Adds all entries of <code>map</code> to <code>ignoredFieldValues</code>.
 		 */
-		public final Builder<TDocument> ignoredFieldValues(Map<String, List<String>> map) {
+		public final Builder<TDocument> ignoredFieldValues(Map<String, List<FieldValue>> map) {
 			this.ignoredFieldValues = _mapPutAll(this.ignoredFieldValues, map);
 			return this;
 		}
@@ -695,7 +733,7 @@ public class Hit<TDocument> implements JsonpSerializable {
 		 * <p>
 		 * Adds an entry to <code>ignoredFieldValues</code>.
 		 */
-		public final Builder<TDocument> ignoredFieldValues(String key, List<String> value) {
+		public final Builder<TDocument> ignoredFieldValues(String key, List<FieldValue> value) {
 			this.ignoredFieldValues = _mapPut(this.ignoredFieldValues, key, value);
 			return this;
 		}
@@ -729,6 +767,14 @@ public class Hit<TDocument> implements JsonpSerializable {
 		 */
 		public final Builder<TDocument> source(@Nullable TDocument value) {
 			this.source = value;
+			return this;
+		}
+
+		/**
+		 * API name: {@code _rank}
+		 */
+		public final Builder<TDocument> rank(@Nullable Integer value) {
+			this.rank = value;
 			return this;
 		}
 
@@ -773,6 +819,66 @@ public class Hit<TDocument> implements JsonpSerializable {
 		 */
 		public final Builder<TDocument> sort(FieldValue value, FieldValue... values) {
 			this.sort = _listAdd(this.sort, value, values);
+			return this;
+		}
+
+		/**
+		 * API name: {@code sort}
+		 * <p>
+		 * Adds all passed values to <code>sort</code>.
+		 */
+		public final Builder<TDocument> sort(String value, String... values) {
+			this.sort = _listAdd(this.sort, FieldValue.of(value));
+			List<FieldValue> fieldValues = new ArrayList<>();
+			for (String v : values) {
+				fieldValues.add(FieldValue.of(v));
+			}
+			this.sort = _listAddAll(this.sort, fieldValues);
+			return this;
+		}
+
+		/**
+		 * API name: {@code sort}
+		 * <p>
+		 * Adds all passed values to <code>sort</code>.
+		 */
+		public final Builder<TDocument> sort(long value, long... values) {
+			this.sort = _listAdd(this.sort, FieldValue.of(value));
+			List<FieldValue> fieldValues = new ArrayList<>();
+			for (long v : values) {
+				fieldValues.add(FieldValue.of(v));
+			}
+			this.sort = _listAddAll(this.sort, fieldValues);
+			return this;
+		}
+
+		/**
+		 * API name: {@code sort}
+		 * <p>
+		 * Adds all passed values to <code>sort</code>.
+		 */
+		public final Builder<TDocument> sort(double value, double... values) {
+			this.sort = _listAdd(this.sort, FieldValue.of(value));
+			List<FieldValue> fieldValues = new ArrayList<>();
+			for (double v : values) {
+				fieldValues.add(FieldValue.of(v));
+			}
+			this.sort = _listAddAll(this.sort, fieldValues);
+			return this;
+		}
+
+		/**
+		 * API name: {@code sort}
+		 * <p>
+		 * Adds all passed values to <code>sort</code>.
+		 */
+		public final Builder<TDocument> sort(boolean value, boolean... values) {
+			this.sort = _listAdd(this.sort, FieldValue.of(value));
+			List<FieldValue> fieldValues = new ArrayList<>();
+			for (boolean v : values) {
+				fieldValues.add(FieldValue.of(v));
+			}
+			this.sort = _listAddAll(this.sort, fieldValues);
 			return this;
 		}
 
@@ -829,7 +935,7 @@ public class Hit<TDocument> implements JsonpSerializable {
 	 */
 	public static final JsonpDeserializer<Hit<Object>> _DESERIALIZER = JsonpDeserializer
 			.lazy(() -> createHitDeserializer(
-					new NamedDeserializer<>("co.elastic.clients:Deserializer:_global.search._types.TDocument")));
+					new NamedDeserializer<>("co.elastic.clients:Deserializer:_global.search._types.Hit.TDocument")));
 
 	protected static <TDocument> void setupHitDeserializer(ObjectDeserializer<Hit.Builder<TDocument>> op,
 			JsonpDeserializer<TDocument> tDocumentDeserializer) {
@@ -849,13 +955,13 @@ public class Hit<TDocument> implements JsonpSerializable {
 		op.add(Builder::ignored, JsonpDeserializer.arrayDeserializer(JsonpDeserializer.stringDeserializer()),
 				"_ignored");
 		op.add(Builder::ignoredFieldValues,
-				JsonpDeserializer.stringMapDeserializer(
-						JsonpDeserializer.arrayDeserializer(JsonpDeserializer.stringDeserializer())),
+				JsonpDeserializer.stringMapDeserializer(JsonpDeserializer.arrayDeserializer(FieldValue._DESERIALIZER)),
 				"ignored_field_values");
 		op.add(Builder::shard, JsonpDeserializer.stringDeserializer(), "_shard");
 		op.add(Builder::node, JsonpDeserializer.stringDeserializer(), "_node");
 		op.add(Builder::routing, JsonpDeserializer.stringDeserializer(), "_routing");
 		op.add(Builder::source, tDocumentDeserializer, "_source");
+		op.add(Builder::rank, JsonpDeserializer.integerDeserializer(), "_rank");
 		op.add(Builder::seqNo, JsonpDeserializer.longDeserializer(), "_seq_no");
 		op.add(Builder::primaryTerm, JsonpDeserializer.longDeserializer(), "_primary_term");
 		op.add(Builder::version, JsonpDeserializer.longDeserializer(), "_version");

@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cat;
 
 import co.elastic.clients.elasticsearch._types.Bytes;
@@ -34,16 +30,35 @@ import co.elastic.clients.transport.endpoints.SimpleEndpoint;
 import co.elastic.clients.util.ObjectBuilder;
 import jakarta.json.stream.JsonGenerator;
 import java.lang.Boolean;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: cat.nodes.Request
 
 /**
- * Returns basic statistics about performance of cluster nodes.
+ * Returns information about the nodes in a cluster. IMPORTANT: cat APIs are
+ * only intended for human consumption using the command line or Kibana console.
+ * They are not intended for use by applications. For application consumption,
+ * use the nodes info API.
  * 
  * @see <a href="../doc-files/api-spec.html#cat.nodes.Request">API
  *      specification</a>
@@ -56,12 +71,16 @@ public class NodesRequest extends CatRequestBase {
 	@Nullable
 	private final Boolean fullId;
 
+	@Nullable
+	private final Boolean includeUnloadedSegments;
+
 	// ---------------------------------------------------------------------------------------------
 
 	private NodesRequest(Builder builder) {
 
 		this.bytes = builder.bytes;
 		this.fullId = builder.fullId;
+		this.includeUnloadedSegments = builder.includeUnloadedSegments;
 
 	}
 
@@ -70,7 +89,7 @@ public class NodesRequest extends CatRequestBase {
 	}
 
 	/**
-	 * The unit in which to display byte values
+	 * The unit used to display byte values.
 	 * <p>
 	 * API name: {@code bytes}
 	 */
@@ -80,13 +99,25 @@ public class NodesRequest extends CatRequestBase {
 	}
 
 	/**
-	 * Return the full node ID instead of the shortened version (default: false)
+	 * If <code>true</code>, return the full node ID. If <code>false</code>, return
+	 * the shortened node ID.
 	 * <p>
 	 * API name: {@code full_id}
 	 */
 	@Nullable
 	public final Boolean fullId() {
 		return this.fullId;
+	}
+
+	/**
+	 * If true, the response includes information from segments that are not loaded
+	 * into memory.
+	 * <p>
+	 * API name: {@code include_unloaded_segments}
+	 */
+	@Nullable
+	public final Boolean includeUnloadedSegments() {
+		return this.includeUnloadedSegments;
 	}
 
 	// ---------------------------------------------------------------------------------------------
@@ -102,8 +133,11 @@ public class NodesRequest extends CatRequestBase {
 		@Nullable
 		private Boolean fullId;
 
+		@Nullable
+		private Boolean includeUnloadedSegments;
+
 		/**
-		 * The unit in which to display byte values
+		 * The unit used to display byte values.
 		 * <p>
 		 * API name: {@code bytes}
 		 */
@@ -113,12 +147,24 @@ public class NodesRequest extends CatRequestBase {
 		}
 
 		/**
-		 * Return the full node ID instead of the shortened version (default: false)
+		 * If <code>true</code>, return the full node ID. If <code>false</code>, return
+		 * the shortened node ID.
 		 * <p>
 		 * API name: {@code full_id}
 		 */
 		public final Builder fullId(@Nullable Boolean value) {
 			this.fullId = value;
+			return this;
+		}
+
+		/**
+		 * If true, the response includes information from segments that are not loaded
+		 * into memory.
+		 * <p>
+		 * API name: {@code include_unloaded_segments}
+		 */
+		public final Builder includeUnloadedSegments(@Nullable Boolean value) {
+			this.includeUnloadedSegments = value;
 			return this;
 		}
 
@@ -160,12 +206,20 @@ public class NodesRequest extends CatRequestBase {
 
 			},
 
+			// Path parameters
+			request -> {
+				return Collections.emptyMap();
+			},
+
 			// Request parameters
 			request -> {
 				Map<String, String> params = new HashMap<>();
 				params.put("format", "json");
 				if (request.bytes != null) {
 					params.put("bytes", request.bytes.jsonValue());
+				}
+				if (request.includeUnloadedSegments != null) {
+					params.put("include_unloaded_segments", String.valueOf(request.includeUnloadedSegments));
 				}
 				if (request.fullId != null) {
 					params.put("full_id", String.valueOf(request.fullId));

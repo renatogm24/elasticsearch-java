@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.ml;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -39,21 +35,38 @@ import jakarta.json.stream.JsonGenerator;
 import java.lang.Float;
 import java.lang.String;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: ml.delete_expired_data.Request
 
 /**
- * Deletes expired and unused machine learning data. Deletes all job results,
- * model snapshots and forecast data that have exceeded their retention days
- * period. Machine learning state documents that are not associated with any job
- * are also deleted. You can limit the request to a single or set of anomaly
- * detection jobs by using a job identifier, a group name, a comma-separated
- * list of jobs, or a wildcard expression. You can delete expired data for all
- * anomaly detection jobs by using _all, by specifying * as the &lt;job_id&gt;,
- * or by omitting the &lt;job_id&gt;.
+ * Delete expired ML data. Deletes all job results, model snapshots and forecast
+ * data that have exceeded their retention days period. Machine learning state
+ * documents that are not associated with any job are also deleted. You can
+ * limit the request to a single or set of anomaly detection jobs by using a job
+ * identifier, a group name, a comma-separated list of jobs, or a wildcard
+ * expression. You can delete expired data for all anomaly detection jobs by
+ * using _all, by specifying * as the &lt;job_id&gt;, or by omitting the
+ * &lt;job_id&gt;.
  * 
  * @see <a href="../doc-files/api-spec.html#ml.delete_expired_data.Request">API
  *      specification</a>
@@ -271,6 +284,24 @@ public class DeleteExpiredDataRequest extends RequestBase implements JsonpSerial
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _jobId = 1 << 0;
+
+				int propsSet = 0;
+
+				if (request.jobId() != null)
+					propsSet |= _jobId;
+
+				if (propsSet == (_jobId)) {
+					params.put("jobId", request.jobId);
+				}
+				if (propsSet == 0) {
+				}
+				return params;
 			},
 
 			// Request parameters

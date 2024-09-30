@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.indices;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -44,10 +40,27 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: indices.recovery.Request
 
 /**
- * Returns information about ongoing index shard recoveries.
+ * Returns information about ongoing and completed shard recoveries for one or
+ * more indices. For data streams, the API returns information for the stream’s
+ * backing indices.
  * 
  * @see <a href="../doc-files/api-spec.html#indices.recovery.Request">API
  *      specification</a>
@@ -77,7 +90,7 @@ public class RecoveryRequest extends RequestBase {
 	}
 
 	/**
-	 * Display only those recoveries that are currently on-going
+	 * If <code>true</code>, the response only includes ongoing shard recoveries.
 	 * <p>
 	 * API name: {@code active_only}
 	 */
@@ -87,7 +100,8 @@ public class RecoveryRequest extends RequestBase {
 	}
 
 	/**
-	 * Whether to display detailed information about shard recovery
+	 * If <code>true</code>, the response includes detailed information about shard
+	 * recoveries.
 	 * <p>
 	 * API name: {@code detailed}
 	 */
@@ -97,8 +111,9 @@ public class RecoveryRequest extends RequestBase {
 	}
 
 	/**
-	 * A comma-separated list of index names; use <code>_all</code> or empty string
-	 * to perform the operation on all indices
+	 * Comma-separated list of data streams, indices, and aliases used to limit the
+	 * request. Supports wildcards (<code>*</code>). To target all data streams and
+	 * indices, omit this parameter or use <code>*</code> or <code>_all</code>.
 	 * <p>
 	 * API name: {@code index}
 	 */
@@ -123,7 +138,7 @@ public class RecoveryRequest extends RequestBase {
 		private List<String> index;
 
 		/**
-		 * Display only those recoveries that are currently on-going
+		 * If <code>true</code>, the response only includes ongoing shard recoveries.
 		 * <p>
 		 * API name: {@code active_only}
 		 */
@@ -133,7 +148,8 @@ public class RecoveryRequest extends RequestBase {
 		}
 
 		/**
-		 * Whether to display detailed information about shard recovery
+		 * If <code>true</code>, the response includes detailed information about shard
+		 * recoveries.
 		 * <p>
 		 * API name: {@code detailed}
 		 */
@@ -143,8 +159,9 @@ public class RecoveryRequest extends RequestBase {
 		}
 
 		/**
-		 * A comma-separated list of index names; use <code>_all</code> or empty string
-		 * to perform the operation on all indices
+		 * Comma-separated list of data streams, indices, and aliases used to limit the
+		 * request. Supports wildcards (<code>*</code>). To target all data streams and
+		 * indices, omit this parameter or use <code>*</code> or <code>_all</code>.
 		 * <p>
 		 * API name: {@code index}
 		 * <p>
@@ -156,8 +173,9 @@ public class RecoveryRequest extends RequestBase {
 		}
 
 		/**
-		 * A comma-separated list of index names; use <code>_all</code> or empty string
-		 * to perform the operation on all indices
+		 * Comma-separated list of data streams, indices, and aliases used to limit the
+		 * request. Supports wildcards (<code>*</code>). To target all data streams and
+		 * indices, omit this parameter or use <code>*</code> or <code>_all</code>.
 		 * <p>
 		 * API name: {@code index}
 		 * <p>
@@ -223,6 +241,24 @@ public class RecoveryRequest extends RequestBase {
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _index = 1 << 0;
+
+				int propsSet = 0;
+
+				if (ApiTypeHelper.isDefined(request.index()))
+					propsSet |= _index;
+
+				if (propsSet == 0) {
+				}
+				if (propsSet == (_index)) {
+					params.put("index", request.index.stream().map(v -> v).collect(Collectors.joining(",")));
+				}
+				return params;
 			},
 
 			// Request parameters

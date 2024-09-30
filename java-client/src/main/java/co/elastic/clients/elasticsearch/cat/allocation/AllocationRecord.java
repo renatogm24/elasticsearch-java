@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cat.allocation;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -33,10 +29,26 @@ import co.elastic.clients.json.ObjectDeserializer;
 import co.elastic.clients.util.ObjectBuilder;
 import co.elastic.clients.util.WithJsonObjectBuilderBase;
 import jakarta.json.stream.JsonGenerator;
+import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: cat.allocation.AllocationRecord
 
@@ -50,6 +62,15 @@ import javax.annotation.Nullable;
 public class AllocationRecord implements JsonpSerializable {
 	@Nullable
 	private final String shards;
+
+	@Nullable
+	private final String shardsUndesired;
+
+	@Nullable
+	private final Double writeLoadForecast;
+
+	@Nullable
+	private final String diskIndicesForecast;
 
 	@Nullable
 	private final String diskIndices;
@@ -75,11 +96,17 @@ public class AllocationRecord implements JsonpSerializable {
 	@Nullable
 	private final String node;
 
+	@Nullable
+	private final String nodeRole;
+
 	// ---------------------------------------------------------------------------------------------
 
 	private AllocationRecord(Builder builder) {
 
 		this.shards = builder.shards;
+		this.shardsUndesired = builder.shardsUndesired;
+		this.writeLoadForecast = builder.writeLoadForecast;
+		this.diskIndicesForecast = builder.diskIndicesForecast;
 		this.diskIndices = builder.diskIndices;
 		this.diskUsed = builder.diskUsed;
 		this.diskAvail = builder.diskAvail;
@@ -88,6 +115,7 @@ public class AllocationRecord implements JsonpSerializable {
 		this.host = builder.host;
 		this.ip = builder.ip;
 		this.node = builder.node;
+		this.nodeRole = builder.nodeRole;
 
 	}
 
@@ -96,7 +124,7 @@ public class AllocationRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of shards on node
+	 * Number of primary and replica shards assigned to the node.
 	 * <p>
 	 * API name: {@code shards}
 	 */
@@ -106,7 +134,43 @@ public class AllocationRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * disk used by ES indices
+	 * Amount of shards that are scheduled to be moved elsewhere in the cluster or
+	 * -1 other than desired balance allocator is used
+	 * <p>
+	 * API name: {@code shards.undesired}
+	 */
+	@Nullable
+	public final String shardsUndesired() {
+		return this.shardsUndesired;
+	}
+
+	/**
+	 * Sum of index write load forecasts
+	 * <p>
+	 * API name: {@code write_load.forecast}
+	 * <p>
+	 * Defaults to {@code 0} if parsed from a JSON {@code null} value.
+	 */
+	@Nullable
+	public final Double writeLoadForecast() {
+		return this.writeLoadForecast;
+	}
+
+	/**
+	 * Sum of shard size forecasts
+	 * <p>
+	 * API name: {@code disk.indices.forecast}
+	 */
+	@Nullable
+	public final String diskIndicesForecast() {
+		return this.diskIndicesForecast;
+	}
+
+	/**
+	 * Disk space used by the node’s shards. Does not include disk space for the
+	 * translog or unassigned shards. IMPORTANT: This metric double-counts disk
+	 * space for hard-linked files, such as those created when shrinking, splitting,
+	 * or cloning an index.
 	 * <p>
 	 * API name: {@code disk.indices}
 	 */
@@ -116,7 +180,12 @@ public class AllocationRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * disk used (total, not just ES)
+	 * Total disk space in use. Elasticsearch retrieves this metric from the node’s
+	 * operating system (OS). The metric includes disk space for: Elasticsearch,
+	 * including the translog and unassigned shards; the node’s operating system;
+	 * any other applications or files on the node. Unlike
+	 * <code>disk.indices</code>, this metric does not double-count disk space for
+	 * hard-linked files.
 	 * <p>
 	 * API name: {@code disk.used}
 	 */
@@ -126,7 +195,9 @@ public class AllocationRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * disk available
+	 * Free disk space available to Elasticsearch. Elasticsearch retrieves this
+	 * metric from the node’s operating system. Disk-based shard allocation uses
+	 * this metric to assign shards to nodes based on available disk space.
 	 * <p>
 	 * API name: {@code disk.avail}
 	 */
@@ -136,7 +207,7 @@ public class AllocationRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * total capacity of all volumes
+	 * Total disk space for the node, including in-use and available space.
 	 * <p>
 	 * API name: {@code disk.total}
 	 */
@@ -146,7 +217,8 @@ public class AllocationRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * percent disk used
+	 * Total percentage of disk space in use. Calculated as
+	 * <code>disk.used / disk.total</code>.
 	 * <p>
 	 * API name: {@code disk.percent}
 	 */
@@ -156,7 +228,7 @@ public class AllocationRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * host of node
+	 * Network host for the node. Set using the <code>network.host</code> setting.
 	 * <p>
 	 * API name: {@code host}
 	 */
@@ -166,7 +238,7 @@ public class AllocationRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * ip of node
+	 * IP address and port for the node.
 	 * <p>
 	 * API name: {@code ip}
 	 */
@@ -176,13 +248,23 @@ public class AllocationRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * name of node
+	 * Name for the node. Set using the <code>node.name</code> setting.
 	 * <p>
 	 * API name: {@code node}
 	 */
 	@Nullable
 	public final String node() {
 		return this.node;
+	}
+
+	/**
+	 * Node roles
+	 * <p>
+	 * API name: {@code node.role}
+	 */
+	@Nullable
+	public final String nodeRole() {
+		return this.nodeRole;
 	}
 
 	/**
@@ -199,6 +281,20 @@ public class AllocationRecord implements JsonpSerializable {
 		if (this.shards != null) {
 			generator.writeKey("shards");
 			generator.write(this.shards);
+
+		}
+		if (this.shardsUndesired != null) {
+			generator.writeKey("shards.undesired");
+			generator.write(this.shardsUndesired);
+
+		}
+		if (this.writeLoadForecast != null) {
+			generator.writeKey("write_load.forecast");
+			JsonpUtils.serializeDoubleOrNull(generator, this.writeLoadForecast, 0);
+		}
+		if (this.diskIndicesForecast != null) {
+			generator.writeKey("disk.indices.forecast");
+			generator.write(this.diskIndicesForecast);
 
 		}
 		if (this.diskIndices != null) {
@@ -241,6 +337,11 @@ public class AllocationRecord implements JsonpSerializable {
 			generator.write(this.node);
 
 		}
+		if (this.nodeRole != null) {
+			generator.writeKey("node.role");
+			generator.write(this.nodeRole);
+
+		}
 
 	}
 
@@ -258,6 +359,15 @@ public class AllocationRecord implements JsonpSerializable {
 	public static class Builder extends WithJsonObjectBuilderBase<Builder> implements ObjectBuilder<AllocationRecord> {
 		@Nullable
 		private String shards;
+
+		@Nullable
+		private String shardsUndesired;
+
+		@Nullable
+		private Double writeLoadForecast;
+
+		@Nullable
+		private String diskIndicesForecast;
 
 		@Nullable
 		private String diskIndices;
@@ -283,8 +393,11 @@ public class AllocationRecord implements JsonpSerializable {
 		@Nullable
 		private String node;
 
+		@Nullable
+		private String nodeRole;
+
 		/**
-		 * number of shards on node
+		 * Number of primary and replica shards assigned to the node.
 		 * <p>
 		 * API name: {@code shards}
 		 */
@@ -294,7 +407,43 @@ public class AllocationRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * disk used by ES indices
+		 * Amount of shards that are scheduled to be moved elsewhere in the cluster or
+		 * -1 other than desired balance allocator is used
+		 * <p>
+		 * API name: {@code shards.undesired}
+		 */
+		public final Builder shardsUndesired(@Nullable String value) {
+			this.shardsUndesired = value;
+			return this;
+		}
+
+		/**
+		 * Sum of index write load forecasts
+		 * <p>
+		 * API name: {@code write_load.forecast}
+		 * <p>
+		 * Defaults to {@code 0} if parsed from a JSON {@code null} value.
+		 */
+		public final Builder writeLoadForecast(@Nullable Double value) {
+			this.writeLoadForecast = value;
+			return this;
+		}
+
+		/**
+		 * Sum of shard size forecasts
+		 * <p>
+		 * API name: {@code disk.indices.forecast}
+		 */
+		public final Builder diskIndicesForecast(@Nullable String value) {
+			this.diskIndicesForecast = value;
+			return this;
+		}
+
+		/**
+		 * Disk space used by the node’s shards. Does not include disk space for the
+		 * translog or unassigned shards. IMPORTANT: This metric double-counts disk
+		 * space for hard-linked files, such as those created when shrinking, splitting,
+		 * or cloning an index.
 		 * <p>
 		 * API name: {@code disk.indices}
 		 */
@@ -304,7 +453,12 @@ public class AllocationRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * disk used (total, not just ES)
+		 * Total disk space in use. Elasticsearch retrieves this metric from the node’s
+		 * operating system (OS). The metric includes disk space for: Elasticsearch,
+		 * including the translog and unassigned shards; the node’s operating system;
+		 * any other applications or files on the node. Unlike
+		 * <code>disk.indices</code>, this metric does not double-count disk space for
+		 * hard-linked files.
 		 * <p>
 		 * API name: {@code disk.used}
 		 */
@@ -314,7 +468,9 @@ public class AllocationRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * disk available
+		 * Free disk space available to Elasticsearch. Elasticsearch retrieves this
+		 * metric from the node’s operating system. Disk-based shard allocation uses
+		 * this metric to assign shards to nodes based on available disk space.
 		 * <p>
 		 * API name: {@code disk.avail}
 		 */
@@ -324,7 +480,7 @@ public class AllocationRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * total capacity of all volumes
+		 * Total disk space for the node, including in-use and available space.
 		 * <p>
 		 * API name: {@code disk.total}
 		 */
@@ -334,7 +490,8 @@ public class AllocationRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * percent disk used
+		 * Total percentage of disk space in use. Calculated as
+		 * <code>disk.used / disk.total</code>.
 		 * <p>
 		 * API name: {@code disk.percent}
 		 */
@@ -344,7 +501,7 @@ public class AllocationRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * host of node
+		 * Network host for the node. Set using the <code>network.host</code> setting.
 		 * <p>
 		 * API name: {@code host}
 		 */
@@ -354,7 +511,7 @@ public class AllocationRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * ip of node
+		 * IP address and port for the node.
 		 * <p>
 		 * API name: {@code ip}
 		 */
@@ -364,12 +521,22 @@ public class AllocationRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * name of node
+		 * Name for the node. Set using the <code>node.name</code> setting.
 		 * <p>
 		 * API name: {@code node}
 		 */
 		public final Builder node(@Nullable String value) {
 			this.node = value;
+			return this;
+		}
+
+		/**
+		 * Node roles
+		 * <p>
+		 * API name: {@code node.role}
+		 */
+		public final Builder nodeRole(@Nullable String value) {
+			this.nodeRole = value;
 			return this;
 		}
 
@@ -402,6 +569,11 @@ public class AllocationRecord implements JsonpSerializable {
 	protected static void setupAllocationRecordDeserializer(ObjectDeserializer<AllocationRecord.Builder> op) {
 
 		op.add(Builder::shards, JsonpDeserializer.stringDeserializer(), "shards", "s");
+		op.add(Builder::shardsUndesired, JsonpDeserializer.stringDeserializer(), "shards.undesired");
+		op.add(Builder::writeLoadForecast, JsonpDeserializer.doubleOrNullDeserializer(0), "write_load.forecast", "wlf",
+				"writeLoadForecast");
+		op.add(Builder::diskIndicesForecast, JsonpDeserializer.stringDeserializer(), "disk.indices.forecast", "dif",
+				"diskIndicesForecast");
 		op.add(Builder::diskIndices, JsonpDeserializer.stringDeserializer(), "disk.indices", "di", "diskIndices");
 		op.add(Builder::diskUsed, JsonpDeserializer.stringDeserializer(), "disk.used", "du", "diskUsed");
 		op.add(Builder::diskAvail, JsonpDeserializer.stringDeserializer(), "disk.avail", "da", "diskAvail");
@@ -410,6 +582,7 @@ public class AllocationRecord implements JsonpSerializable {
 		op.add(Builder::host, JsonpDeserializer.stringDeserializer(), "host", "h");
 		op.add(Builder::ip, JsonpDeserializer.stringDeserializer(), "ip");
 		op.add(Builder::node, JsonpDeserializer.stringDeserializer(), "node", "n");
+		op.add(Builder::nodeRole, JsonpDeserializer.stringDeserializer(), "node.role", "r", "role", "nodeRole");
 
 	}
 

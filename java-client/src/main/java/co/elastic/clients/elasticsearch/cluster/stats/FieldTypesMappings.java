@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cluster.stats;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -41,6 +37,21 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: cluster.stats.FieldTypesMappings
 
@@ -86,13 +97,17 @@ public class FieldTypesMappings implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code field_types}
+	 * Required - Contains statistics about field data types used in selected nodes.
+	 * <p>
+	 * API name: {@code field_types}
 	 */
 	public final List<FieldTypes> fieldTypes() {
 		return this.fieldTypes;
 	}
 
 	/**
+	 * Contains statistics about runtime field data types used in selected nodes.
+	 * <p>
 	 * API name: {@code runtime_field_types}
 	 */
 	public final List<RuntimeFieldTypes> runtimeFieldTypes() {
@@ -100,6 +115,8 @@ public class FieldTypesMappings implements JsonpSerializable {
 	}
 
 	/**
+	 * Total number of fields in all non-system indices.
+	 * <p>
 	 * API name: {@code total_field_count}
 	 */
 	@Nullable
@@ -108,6 +125,9 @@ public class FieldTypesMappings implements JsonpSerializable {
 	}
 
 	/**
+	 * Total number of fields in all non-system indices, accounting for mapping
+	 * deduplication.
+	 * <p>
 	 * API name: {@code total_deduplicated_field_count}
 	 */
 	@Nullable
@@ -116,6 +136,8 @@ public class FieldTypesMappings implements JsonpSerializable {
 	}
 
 	/**
+	 * Total size of all mappings after deduplication and compression.
+	 * <p>
 	 * API name: {@code total_deduplicated_mapping_size}
 	 */
 	@Nullable
@@ -124,6 +146,8 @@ public class FieldTypesMappings implements JsonpSerializable {
 	}
 
 	/**
+	 * Total size of all mappings, in bytes, after deduplication and compression.
+	 * <p>
 	 * API name: {@code total_deduplicated_mapping_size_in_bytes}
 	 */
 	@Nullable
@@ -217,7 +241,9 @@ public class FieldTypesMappings implements JsonpSerializable {
 		private Long totalDeduplicatedMappingSizeInBytes;
 
 		/**
-		 * Required - API name: {@code field_types}
+		 * Required - Contains statistics about field data types used in selected nodes.
+		 * <p>
+		 * API name: {@code field_types}
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>fieldTypes</code>.
 		 */
@@ -227,7 +253,9 @@ public class FieldTypesMappings implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code field_types}
+		 * Required - Contains statistics about field data types used in selected nodes.
+		 * <p>
+		 * API name: {@code field_types}
 		 * <p>
 		 * Adds one or more values to <code>fieldTypes</code>.
 		 */
@@ -237,7 +265,9 @@ public class FieldTypesMappings implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code field_types}
+		 * Required - Contains statistics about field data types used in selected nodes.
+		 * <p>
+		 * API name: {@code field_types}
 		 * <p>
 		 * Adds a value to <code>fieldTypes</code> using a builder lambda.
 		 */
@@ -246,6 +276,8 @@ public class FieldTypesMappings implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics about runtime field data types used in selected nodes.
+		 * <p>
 		 * API name: {@code runtime_field_types}
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>runtimeFieldTypes</code>.
@@ -256,6 +288,8 @@ public class FieldTypesMappings implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics about runtime field data types used in selected nodes.
+		 * <p>
 		 * API name: {@code runtime_field_types}
 		 * <p>
 		 * Adds one or more values to <code>runtimeFieldTypes</code>.
@@ -266,6 +300,8 @@ public class FieldTypesMappings implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics about runtime field data types used in selected nodes.
+		 * <p>
 		 * API name: {@code runtime_field_types}
 		 * <p>
 		 * Adds a value to <code>runtimeFieldTypes</code> using a builder lambda.
@@ -276,6 +312,8 @@ public class FieldTypesMappings implements JsonpSerializable {
 		}
 
 		/**
+		 * Total number of fields in all non-system indices.
+		 * <p>
 		 * API name: {@code total_field_count}
 		 */
 		public final Builder totalFieldCount(@Nullable Integer value) {
@@ -284,6 +322,9 @@ public class FieldTypesMappings implements JsonpSerializable {
 		}
 
 		/**
+		 * Total number of fields in all non-system indices, accounting for mapping
+		 * deduplication.
+		 * <p>
 		 * API name: {@code total_deduplicated_field_count}
 		 */
 		public final Builder totalDeduplicatedFieldCount(@Nullable Integer value) {
@@ -292,6 +333,8 @@ public class FieldTypesMappings implements JsonpSerializable {
 		}
 
 		/**
+		 * Total size of all mappings after deduplication and compression.
+		 * <p>
 		 * API name: {@code total_deduplicated_mapping_size}
 		 */
 		public final Builder totalDeduplicatedMappingSize(@Nullable String value) {
@@ -300,6 +343,8 @@ public class FieldTypesMappings implements JsonpSerializable {
 		}
 
 		/**
+		 * Total size of all mappings, in bytes, after deduplication and compression.
+		 * <p>
 		 * API name: {@code total_deduplicated_mapping_size_in_bytes}
 		 */
 		public final Builder totalDeduplicatedMappingSizeInBytes(@Nullable Long value) {

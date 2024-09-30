@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.elasticsearch._types.Time;
@@ -39,6 +35,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.AdaptiveSelection
 
@@ -89,6 +100,9 @@ public class AdaptiveSelection implements JsonpSerializable {
 	}
 
 	/**
+	 * The exponentially weighted moving average queue size of search requests on
+	 * the keyed node.
+	 * <p>
 	 * API name: {@code avg_queue_size}
 	 */
 	@Nullable
@@ -97,6 +111,9 @@ public class AdaptiveSelection implements JsonpSerializable {
 	}
 
 	/**
+	 * The exponentially weighted moving average response time of search requests on
+	 * the keyed node.
+	 * <p>
 	 * API name: {@code avg_response_time}
 	 */
 	@Nullable
@@ -105,6 +122,9 @@ public class AdaptiveSelection implements JsonpSerializable {
 	}
 
 	/**
+	 * The exponentially weighted moving average response time, in nanoseconds, of
+	 * search requests on the keyed node.
+	 * <p>
 	 * API name: {@code avg_response_time_ns}
 	 */
 	@Nullable
@@ -113,6 +133,9 @@ public class AdaptiveSelection implements JsonpSerializable {
 	}
 
 	/**
+	 * The exponentially weighted moving average service time of search requests on
+	 * the keyed node.
+	 * <p>
 	 * API name: {@code avg_service_time}
 	 */
 	@Nullable
@@ -121,6 +144,9 @@ public class AdaptiveSelection implements JsonpSerializable {
 	}
 
 	/**
+	 * The exponentially weighted moving average service time, in nanoseconds, of
+	 * search requests on the keyed node.
+	 * <p>
 	 * API name: {@code avg_service_time_ns}
 	 */
 	@Nullable
@@ -129,6 +155,9 @@ public class AdaptiveSelection implements JsonpSerializable {
 	}
 
 	/**
+	 * The number of outstanding search requests to the keyed node from the node
+	 * these stats are for.
+	 * <p>
 	 * API name: {@code outgoing_searches}
 	 */
 	@Nullable
@@ -137,6 +166,8 @@ public class AdaptiveSelection implements JsonpSerializable {
 	}
 
 	/**
+	 * The rank of this node; used for shard selection when routing search requests.
+	 * <p>
 	 * API name: {@code rank}
 	 */
 	@Nullable
@@ -227,6 +258,9 @@ public class AdaptiveSelection implements JsonpSerializable {
 		private String rank;
 
 		/**
+		 * The exponentially weighted moving average queue size of search requests on
+		 * the keyed node.
+		 * <p>
 		 * API name: {@code avg_queue_size}
 		 */
 		public final Builder avgQueueSize(@Nullable Long value) {
@@ -235,6 +269,9 @@ public class AdaptiveSelection implements JsonpSerializable {
 		}
 
 		/**
+		 * The exponentially weighted moving average response time of search requests on
+		 * the keyed node.
+		 * <p>
 		 * API name: {@code avg_response_time}
 		 */
 		public final Builder avgResponseTime(@Nullable Time value) {
@@ -243,6 +280,9 @@ public class AdaptiveSelection implements JsonpSerializable {
 		}
 
 		/**
+		 * The exponentially weighted moving average response time of search requests on
+		 * the keyed node.
+		 * <p>
 		 * API name: {@code avg_response_time}
 		 */
 		public final Builder avgResponseTime(Function<Time.Builder, ObjectBuilder<Time>> fn) {
@@ -250,6 +290,9 @@ public class AdaptiveSelection implements JsonpSerializable {
 		}
 
 		/**
+		 * The exponentially weighted moving average response time, in nanoseconds, of
+		 * search requests on the keyed node.
+		 * <p>
 		 * API name: {@code avg_response_time_ns}
 		 */
 		public final Builder avgResponseTimeNs(@Nullable Long value) {
@@ -258,6 +301,9 @@ public class AdaptiveSelection implements JsonpSerializable {
 		}
 
 		/**
+		 * The exponentially weighted moving average service time of search requests on
+		 * the keyed node.
+		 * <p>
 		 * API name: {@code avg_service_time}
 		 */
 		public final Builder avgServiceTime(@Nullable Time value) {
@@ -266,6 +312,9 @@ public class AdaptiveSelection implements JsonpSerializable {
 		}
 
 		/**
+		 * The exponentially weighted moving average service time of search requests on
+		 * the keyed node.
+		 * <p>
 		 * API name: {@code avg_service_time}
 		 */
 		public final Builder avgServiceTime(Function<Time.Builder, ObjectBuilder<Time>> fn) {
@@ -273,6 +322,9 @@ public class AdaptiveSelection implements JsonpSerializable {
 		}
 
 		/**
+		 * The exponentially weighted moving average service time, in nanoseconds, of
+		 * search requests on the keyed node.
+		 * <p>
 		 * API name: {@code avg_service_time_ns}
 		 */
 		public final Builder avgServiceTimeNs(@Nullable Long value) {
@@ -281,6 +333,9 @@ public class AdaptiveSelection implements JsonpSerializable {
 		}
 
 		/**
+		 * The number of outstanding search requests to the keyed node from the node
+		 * these stats are for.
+		 * <p>
 		 * API name: {@code outgoing_searches}
 		 */
 		public final Builder outgoingSearches(@Nullable Long value) {
@@ -289,6 +344,8 @@ public class AdaptiveSelection implements JsonpSerializable {
 		}
 
 		/**
+		 * The rank of this node; used for shard selection when routing search requests.
+		 * <p>
 		 * API name: {@code rank}
 		 */
 		public final Builder rank(@Nullable String value) {

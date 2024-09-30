@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.ml;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -43,17 +39,32 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: ml.upgrade_job_snapshot.Request
 
 /**
- * Upgrades an anomaly detection model snapshot to the latest major version.
- * Over time, older snapshot formats are deprecated and removed. Anomaly
- * detection jobs support only snapshots that are from the current or previous
- * major version. This API provides a means to upgrade a snapshot to the current
- * major version. This aids in preparing the cluster for an upgrade to the next
- * major version. Only one snapshot per anomaly detection job can be upgraded at
- * a time and the upgraded snapshot cannot be the current snapshot of the
- * anomaly detection job.
+ * Upgrade a snapshot. Upgrades an anomaly detection model snapshot to the
+ * latest major version. Over time, older snapshot formats are deprecated and
+ * removed. Anomaly detection jobs support only snapshots that are from the
+ * current or previous major version. This API provides a means to upgrade a
+ * snapshot to the current major version. This aids in preparing the cluster for
+ * an upgrade to the next major version. Only one snapshot per anomaly detection
+ * job can be upgraded at a time and the upgraded snapshot cannot be the current
+ * snapshot of the anomaly detection job.
  * 
  * @see <a href="../doc-files/api-spec.html#ml.upgrade_job_snapshot.Request">API
  *      specification</a>
@@ -251,6 +262,24 @@ public class UpgradeJobSnapshotRequest extends RequestBase {
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _snapshotId = 1 << 0;
+				final int _jobId = 1 << 1;
+
+				int propsSet = 0;
+
+				propsSet |= _snapshotId;
+				propsSet |= _jobId;
+
+				if (propsSet == (_jobId | _snapshotId)) {
+					params.put("jobId", request.jobId);
+					params.put("snapshotId", request.snapshotId);
+				}
+				return params;
 			},
 
 			// Request parameters

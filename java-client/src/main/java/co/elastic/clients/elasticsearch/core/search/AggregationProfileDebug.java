@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.core.search;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -41,6 +37,21 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: _global.search._types.AggregationProfileDebug
 
@@ -134,6 +145,18 @@ public class AggregationProfileDebug implements JsonpSerializable {
 	@Nullable
 	private final String mapReducer;
 
+	@Nullable
+	private final Integer bruteForceUsed;
+
+	@Nullable
+	private final Integer dynamicPruningAttempted;
+
+	@Nullable
+	private final Integer dynamicPruningUsed;
+
+	@Nullable
+	private final Integer skippedDueToNoData;
+
 	// ---------------------------------------------------------------------------------------------
 
 	private AggregationProfileDebug(Builder builder) {
@@ -166,6 +189,10 @@ public class AggregationProfileDebug implements JsonpSerializable {
 		this.segmentsCounted = builder.segmentsCounted;
 		this.segmentsCollected = builder.segmentsCollected;
 		this.mapReducer = builder.mapReducer;
+		this.bruteForceUsed = builder.bruteForceUsed;
+		this.dynamicPruningAttempted = builder.dynamicPruningAttempted;
+		this.dynamicPruningUsed = builder.dynamicPruningUsed;
+		this.skippedDueToNoData = builder.skippedDueToNoData;
 
 	}
 
@@ -396,6 +423,38 @@ public class AggregationProfileDebug implements JsonpSerializable {
 	}
 
 	/**
+	 * API name: {@code brute_force_used}
+	 */
+	@Nullable
+	public final Integer bruteForceUsed() {
+		return this.bruteForceUsed;
+	}
+
+	/**
+	 * API name: {@code dynamic_pruning_attempted}
+	 */
+	@Nullable
+	public final Integer dynamicPruningAttempted() {
+		return this.dynamicPruningAttempted;
+	}
+
+	/**
+	 * API name: {@code dynamic_pruning_used}
+	 */
+	@Nullable
+	public final Integer dynamicPruningUsed() {
+		return this.dynamicPruningUsed;
+	}
+
+	/**
+	 * API name: {@code skipped_due_to_no_data}
+	 */
+	@Nullable
+	public final Integer skippedDueToNoData() {
+		return this.skippedDueToNoData;
+	}
+
+	/**
 	 * Serialize this object to JSON.
 	 */
 	public void serialize(JsonGenerator generator, JsonpMapper mapper) {
@@ -556,6 +615,26 @@ public class AggregationProfileDebug implements JsonpSerializable {
 			generator.write(this.mapReducer);
 
 		}
+		if (this.bruteForceUsed != null) {
+			generator.writeKey("brute_force_used");
+			generator.write(this.bruteForceUsed);
+
+		}
+		if (this.dynamicPruningAttempted != null) {
+			generator.writeKey("dynamic_pruning_attempted");
+			generator.write(this.dynamicPruningAttempted);
+
+		}
+		if (this.dynamicPruningUsed != null) {
+			generator.writeKey("dynamic_pruning_used");
+			generator.write(this.dynamicPruningUsed);
+
+		}
+		if (this.skippedDueToNoData != null) {
+			generator.writeKey("skipped_due_to_no_data");
+			generator.write(this.skippedDueToNoData);
+
+		}
 
 	}
 
@@ -656,6 +735,18 @@ public class AggregationProfileDebug implements JsonpSerializable {
 
 		@Nullable
 		private String mapReducer;
+
+		@Nullable
+		private Integer bruteForceUsed;
+
+		@Nullable
+		private Integer dynamicPruningAttempted;
+
+		@Nullable
+		private Integer dynamicPruningUsed;
+
+		@Nullable
+		private Integer skippedDueToNoData;
 
 		/**
 		 * API name: {@code segments_with_multi_valued_ords}
@@ -924,6 +1015,38 @@ public class AggregationProfileDebug implements JsonpSerializable {
 			return this;
 		}
 
+		/**
+		 * API name: {@code brute_force_used}
+		 */
+		public final Builder bruteForceUsed(@Nullable Integer value) {
+			this.bruteForceUsed = value;
+			return this;
+		}
+
+		/**
+		 * API name: {@code dynamic_pruning_attempted}
+		 */
+		public final Builder dynamicPruningAttempted(@Nullable Integer value) {
+			this.dynamicPruningAttempted = value;
+			return this;
+		}
+
+		/**
+		 * API name: {@code dynamic_pruning_used}
+		 */
+		public final Builder dynamicPruningUsed(@Nullable Integer value) {
+			this.dynamicPruningUsed = value;
+			return this;
+		}
+
+		/**
+		 * API name: {@code skipped_due_to_no_data}
+		 */
+		public final Builder skippedDueToNoData(@Nullable Integer value) {
+			this.skippedDueToNoData = value;
+			return this;
+		}
+
 		@Override
 		protected Builder self() {
 			return this;
@@ -988,6 +1111,10 @@ public class AggregationProfileDebug implements JsonpSerializable {
 		op.add(Builder::segmentsCounted, JsonpDeserializer.integerDeserializer(), "segments_counted");
 		op.add(Builder::segmentsCollected, JsonpDeserializer.integerDeserializer(), "segments_collected");
 		op.add(Builder::mapReducer, JsonpDeserializer.stringDeserializer(), "map_reducer");
+		op.add(Builder::bruteForceUsed, JsonpDeserializer.integerDeserializer(), "brute_force_used");
+		op.add(Builder::dynamicPruningAttempted, JsonpDeserializer.integerDeserializer(), "dynamic_pruning_attempted");
+		op.add(Builder::dynamicPruningUsed, JsonpDeserializer.integerDeserializer(), "dynamic_pruning_used");
+		op.add(Builder::skippedDueToNoData, JsonpDeserializer.integerDeserializer(), "skipped_due_to_no_data");
 
 	}
 

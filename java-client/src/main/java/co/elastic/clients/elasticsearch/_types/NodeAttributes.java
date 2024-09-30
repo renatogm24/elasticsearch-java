@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -35,11 +31,25 @@ import co.elastic.clients.util.ObjectBuilder;
 import co.elastic.clients.util.WithJsonObjectBuilderBase;
 import jakarta.json.stream.JsonGenerator;
 import java.lang.String;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: _types.NodeAttributes
 
@@ -61,11 +71,6 @@ public class NodeAttributes implements JsonpSerializable {
 
 	private final String transportAddress;
 
-	private final List<NodeRole> roles;
-
-	@Nullable
-	private final String externalId;
-
 	// ---------------------------------------------------------------------------------------------
 
 	private NodeAttributes(Builder builder) {
@@ -75,8 +80,6 @@ public class NodeAttributes implements JsonpSerializable {
 		this.id = builder.id;
 		this.name = ApiTypeHelper.requireNonNull(builder.name, this, "name");
 		this.transportAddress = ApiTypeHelper.requireNonNull(builder.transportAddress, this, "transportAddress");
-		this.roles = ApiTypeHelper.unmodifiable(builder.roles);
-		this.externalId = builder.externalId;
 
 	}
 
@@ -131,21 +134,6 @@ public class NodeAttributes implements JsonpSerializable {
 	}
 
 	/**
-	 * API name: {@code roles}
-	 */
-	public final List<NodeRole> roles() {
-		return this.roles;
-	}
-
-	/**
-	 * API name: {@code external_id}
-	 */
-	@Nullable
-	public final String externalId() {
-		return this.externalId;
-	}
-
-	/**
 	 * Serialize this object to JSON.
 	 */
 	public void serialize(JsonGenerator generator, JsonpMapper mapper) {
@@ -181,21 +169,6 @@ public class NodeAttributes implements JsonpSerializable {
 		generator.writeKey("transport_address");
 		generator.write(this.transportAddress);
 
-		if (ApiTypeHelper.isDefined(this.roles)) {
-			generator.writeKey("roles");
-			generator.writeStartArray();
-			for (NodeRole item0 : this.roles) {
-				item0.serialize(generator, mapper);
-			}
-			generator.writeEnd();
-
-		}
-		if (this.externalId != null) {
-			generator.writeKey("external_id");
-			generator.write(this.externalId);
-
-		}
-
 	}
 
 	@Override
@@ -220,12 +193,6 @@ public class NodeAttributes implements JsonpSerializable {
 		private String name;
 
 		private String transportAddress;
-
-		@Nullable
-		private List<NodeRole> roles;
-
-		@Nullable
-		private String externalId;
 
 		/**
 		 * Required - Lists node attributes.
@@ -291,34 +258,6 @@ public class NodeAttributes implements JsonpSerializable {
 			return this;
 		}
 
-		/**
-		 * API name: {@code roles}
-		 * <p>
-		 * Adds all elements of <code>list</code> to <code>roles</code>.
-		 */
-		public final Builder roles(List<NodeRole> list) {
-			this.roles = _listAddAll(this.roles, list);
-			return this;
-		}
-
-		/**
-		 * API name: {@code roles}
-		 * <p>
-		 * Adds one or more values to <code>roles</code>.
-		 */
-		public final Builder roles(NodeRole value, NodeRole... values) {
-			this.roles = _listAdd(this.roles, value, values);
-			return this;
-		}
-
-		/**
-		 * API name: {@code external_id}
-		 */
-		public final Builder externalId(@Nullable String value) {
-			this.externalId = value;
-			return this;
-		}
-
 		@Override
 		protected Builder self() {
 			return this;
@@ -353,8 +292,6 @@ public class NodeAttributes implements JsonpSerializable {
 		op.add(Builder::id, JsonpDeserializer.stringDeserializer(), "id");
 		op.add(Builder::name, JsonpDeserializer.stringDeserializer(), "name");
 		op.add(Builder::transportAddress, JsonpDeserializer.stringDeserializer(), "transport_address");
-		op.add(Builder::roles, JsonpDeserializer.arrayDeserializer(NodeRole._DESERIALIZER), "roles");
-		op.add(Builder::externalId, JsonpDeserializer.stringDeserializer(), "external_id");
 
 	}
 

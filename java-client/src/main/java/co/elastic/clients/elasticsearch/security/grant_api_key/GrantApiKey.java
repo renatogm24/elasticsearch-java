@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.security.grant_api_key;
 
 import co.elastic.clients.elasticsearch._types.Time;
@@ -43,6 +39,21 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: security.grant_api_key.GrantApiKey
 
@@ -86,6 +97,8 @@ public class GrantApiKey implements JsonpSerializable {
 	}
 
 	/**
+	 * Expiration time for the API key. By default, API keys never expire.
+	 * <p>
 	 * API name: {@code expiration}
 	 */
 	@Nullable
@@ -94,6 +107,12 @@ public class GrantApiKey implements JsonpSerializable {
 	}
 
 	/**
+	 * The role descriptors for this API key. This parameter is optional. When it is
+	 * not specified or is an empty array, the API key has a point in time snapshot
+	 * of permissions of the specified user or access token. If you supply role
+	 * descriptors, the resultant permissions are an intersection of API keys
+	 * permissions and the permissions of the user or access token.
+	 * <p>
 	 * API name: {@code role_descriptors}
 	 */
 	public final List<Map<String, RoleDescriptor>> roleDescriptors() {
@@ -101,6 +120,10 @@ public class GrantApiKey implements JsonpSerializable {
 	}
 
 	/**
+	 * Arbitrary metadata that you want to associate with the API key. It supports
+	 * nested data structure. Within the <code>metadata</code> object, keys
+	 * beginning with <code>_</code> are reserved for system usage.
+	 * <p>
 	 * API name: {@code metadata}
 	 */
 	public final Map<String, JsonData> metadata() {
@@ -190,6 +213,8 @@ public class GrantApiKey implements JsonpSerializable {
 		}
 
 		/**
+		 * Expiration time for the API key. By default, API keys never expire.
+		 * <p>
 		 * API name: {@code expiration}
 		 */
 		public final Builder expiration(@Nullable Time value) {
@@ -198,6 +223,8 @@ public class GrantApiKey implements JsonpSerializable {
 		}
 
 		/**
+		 * Expiration time for the API key. By default, API keys never expire.
+		 * <p>
 		 * API name: {@code expiration}
 		 */
 		public final Builder expiration(Function<Time.Builder, ObjectBuilder<Time>> fn) {
@@ -205,6 +232,12 @@ public class GrantApiKey implements JsonpSerializable {
 		}
 
 		/**
+		 * The role descriptors for this API key. This parameter is optional. When it is
+		 * not specified or is an empty array, the API key has a point in time snapshot
+		 * of permissions of the specified user or access token. If you supply role
+		 * descriptors, the resultant permissions are an intersection of API keys
+		 * permissions and the permissions of the user or access token.
+		 * <p>
 		 * API name: {@code role_descriptors}
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>roleDescriptors</code>.
@@ -215,6 +248,12 @@ public class GrantApiKey implements JsonpSerializable {
 		}
 
 		/**
+		 * The role descriptors for this API key. This parameter is optional. When it is
+		 * not specified or is an empty array, the API key has a point in time snapshot
+		 * of permissions of the specified user or access token. If you supply role
+		 * descriptors, the resultant permissions are an intersection of API keys
+		 * permissions and the permissions of the user or access token.
+		 * <p>
 		 * API name: {@code role_descriptors}
 		 * <p>
 		 * Adds one or more values to <code>roleDescriptors</code>.
@@ -225,6 +264,10 @@ public class GrantApiKey implements JsonpSerializable {
 		}
 
 		/**
+		 * Arbitrary metadata that you want to associate with the API key. It supports
+		 * nested data structure. Within the <code>metadata</code> object, keys
+		 * beginning with <code>_</code> are reserved for system usage.
+		 * <p>
 		 * API name: {@code metadata}
 		 * <p>
 		 * Adds all entries of <code>map</code> to <code>metadata</code>.
@@ -235,6 +278,10 @@ public class GrantApiKey implements JsonpSerializable {
 		}
 
 		/**
+		 * Arbitrary metadata that you want to associate with the API key. It supports
+		 * nested data structure. Within the <code>metadata</code> object, keys
+		 * beginning with <code>_</code> are reserved for system usage.
+		 * <p>
 		 * API name: {@code metadata}
 		 * <p>
 		 * Adds an entry to <code>metadata</code>.

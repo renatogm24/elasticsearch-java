@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -38,6 +34,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.FileSystemTotal
 
@@ -84,6 +95,11 @@ public class FileSystemTotal implements JsonpSerializable {
 	}
 
 	/**
+	 * Total disk space available to this Java virtual machine on all file stores.
+	 * Depending on OS or process level restrictions, this might appear less than
+	 * <code>free</code>. This is the actual amount of free disk space the
+	 * Elasticsearch node can utilise.
+	 * <p>
 	 * API name: {@code available}
 	 */
 	@Nullable
@@ -92,6 +108,11 @@ public class FileSystemTotal implements JsonpSerializable {
 	}
 
 	/**
+	 * Total number of bytes available to this Java virtual machine on all file
+	 * stores. Depending on OS or process level restrictions, this might appear less
+	 * than <code>free_in_bytes</code>. This is the actual amount of free disk space
+	 * the Elasticsearch node can utilise.
+	 * <p>
 	 * API name: {@code available_in_bytes}
 	 */
 	@Nullable
@@ -100,6 +121,8 @@ public class FileSystemTotal implements JsonpSerializable {
 	}
 
 	/**
+	 * Total unallocated disk space in all file stores.
+	 * <p>
 	 * API name: {@code free}
 	 */
 	@Nullable
@@ -108,6 +131,8 @@ public class FileSystemTotal implements JsonpSerializable {
 	}
 
 	/**
+	 * Total number of unallocated bytes in all file stores.
+	 * <p>
 	 * API name: {@code free_in_bytes}
 	 */
 	@Nullable
@@ -116,6 +141,8 @@ public class FileSystemTotal implements JsonpSerializable {
 	}
 
 	/**
+	 * Total size of all file stores.
+	 * <p>
 	 * API name: {@code total}
 	 */
 	@Nullable
@@ -124,6 +151,8 @@ public class FileSystemTotal implements JsonpSerializable {
 	}
 
 	/**
+	 * Total size of all file stores in bytes.
+	 * <p>
 	 * API name: {@code total_in_bytes}
 	 */
 	@Nullable
@@ -206,6 +235,11 @@ public class FileSystemTotal implements JsonpSerializable {
 		private Long totalInBytes;
 
 		/**
+		 * Total disk space available to this Java virtual machine on all file stores.
+		 * Depending on OS or process level restrictions, this might appear less than
+		 * <code>free</code>. This is the actual amount of free disk space the
+		 * Elasticsearch node can utilise.
+		 * <p>
 		 * API name: {@code available}
 		 */
 		public final Builder available(@Nullable String value) {
@@ -214,6 +248,11 @@ public class FileSystemTotal implements JsonpSerializable {
 		}
 
 		/**
+		 * Total number of bytes available to this Java virtual machine on all file
+		 * stores. Depending on OS or process level restrictions, this might appear less
+		 * than <code>free_in_bytes</code>. This is the actual amount of free disk space
+		 * the Elasticsearch node can utilise.
+		 * <p>
 		 * API name: {@code available_in_bytes}
 		 */
 		public final Builder availableInBytes(@Nullable Long value) {
@@ -222,6 +261,8 @@ public class FileSystemTotal implements JsonpSerializable {
 		}
 
 		/**
+		 * Total unallocated disk space in all file stores.
+		 * <p>
 		 * API name: {@code free}
 		 */
 		public final Builder free(@Nullable String value) {
@@ -230,6 +271,8 @@ public class FileSystemTotal implements JsonpSerializable {
 		}
 
 		/**
+		 * Total number of unallocated bytes in all file stores.
+		 * <p>
 		 * API name: {@code free_in_bytes}
 		 */
 		public final Builder freeInBytes(@Nullable Long value) {
@@ -238,6 +281,8 @@ public class FileSystemTotal implements JsonpSerializable {
 		}
 
 		/**
+		 * Total size of all file stores.
+		 * <p>
 		 * API name: {@code total}
 		 */
 		public final Builder total(@Nullable String value) {
@@ -246,6 +291,8 @@ public class FileSystemTotal implements JsonpSerializable {
 		}
 
 		/**
+		 * Total size of all file stores in bytes.
+		 * <p>
 		 * API name: {@code total_in_bytes}
 		 */
 		public final Builder totalInBytes(@Nullable Long value) {

@@ -110,7 +110,7 @@ public interface JsonpDeserializer<V> {
 
             @Override
             public T deserialize(JsonParser parser, JsonpMapper mapper, JsonParser.Event event) {
-                throw new UnsupportedOperationException();
+                return mapper.deserialize(parser, type, event);
             }
         };
     }
@@ -225,6 +225,10 @@ public interface JsonpDeserializer<V> {
         JsonpDeserializer<K> keyDeserializer, JsonpDeserializer<V> valueDeserializer
     ) {
         return new JsonpDeserializerBase.EnumMapDeserializer<>(keyDeserializer, valueDeserializer);
+    }
+
+    static <T extends JsonEnum> JsonpDeserializer<List<T>> pipeSeparatedDeserializer(JsonEnum.Deserializer<T> enumDeserializer) {
+        return new JsonEnums.PipeSeparatedDeserializer<>(enumDeserializer);
     }
 
     /**

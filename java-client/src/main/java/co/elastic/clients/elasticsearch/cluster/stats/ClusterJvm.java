@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cluster.stats;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -39,6 +35,21 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: cluster.stats.ClusterJvm
 
@@ -73,28 +84,36 @@ public class ClusterJvm implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code max_uptime_in_millis}
+	 * Required - Uptime duration, in milliseconds, since JVM last started.
+	 * <p>
+	 * API name: {@code max_uptime_in_millis}
 	 */
 	public final long maxUptimeInMillis() {
 		return this.maxUptimeInMillis;
 	}
 
 	/**
-	 * Required - API name: {@code mem}
+	 * Required - Contains statistics about memory used by selected nodes.
+	 * <p>
+	 * API name: {@code mem}
 	 */
 	public final ClusterJvmMemory mem() {
 		return this.mem;
 	}
 
 	/**
-	 * Required - API name: {@code threads}
+	 * Required - Number of active threads in use by JVM across all selected nodes.
+	 * <p>
+	 * API name: {@code threads}
 	 */
 	public final long threads() {
 		return this.threads;
 	}
 
 	/**
-	 * Required - API name: {@code versions}
+	 * Required - Contains statistics about the JVM versions used by selected nodes.
+	 * <p>
+	 * API name: {@code versions}
 	 */
 	public final List<ClusterJvmVersion> versions() {
 		return this.versions;
@@ -154,7 +173,9 @@ public class ClusterJvm implements JsonpSerializable {
 		private List<ClusterJvmVersion> versions;
 
 		/**
-		 * Required - API name: {@code max_uptime_in_millis}
+		 * Required - Uptime duration, in milliseconds, since JVM last started.
+		 * <p>
+		 * API name: {@code max_uptime_in_millis}
 		 */
 		public final Builder maxUptimeInMillis(long value) {
 			this.maxUptimeInMillis = value;
@@ -162,7 +183,9 @@ public class ClusterJvm implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code mem}
+		 * Required - Contains statistics about memory used by selected nodes.
+		 * <p>
+		 * API name: {@code mem}
 		 */
 		public final Builder mem(ClusterJvmMemory value) {
 			this.mem = value;
@@ -170,14 +193,18 @@ public class ClusterJvm implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code mem}
+		 * Required - Contains statistics about memory used by selected nodes.
+		 * <p>
+		 * API name: {@code mem}
 		 */
 		public final Builder mem(Function<ClusterJvmMemory.Builder, ObjectBuilder<ClusterJvmMemory>> fn) {
 			return this.mem(fn.apply(new ClusterJvmMemory.Builder()).build());
 		}
 
 		/**
-		 * Required - API name: {@code threads}
+		 * Required - Number of active threads in use by JVM across all selected nodes.
+		 * <p>
+		 * API name: {@code threads}
 		 */
 		public final Builder threads(long value) {
 			this.threads = value;
@@ -185,7 +212,9 @@ public class ClusterJvm implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code versions}
+		 * Required - Contains statistics about the JVM versions used by selected nodes.
+		 * <p>
+		 * API name: {@code versions}
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>versions</code>.
 		 */
@@ -195,7 +224,9 @@ public class ClusterJvm implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code versions}
+		 * Required - Contains statistics about the JVM versions used by selected nodes.
+		 * <p>
+		 * API name: {@code versions}
 		 * <p>
 		 * Adds one or more values to <code>versions</code>.
 		 */
@@ -205,7 +236,9 @@ public class ClusterJvm implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code versions}
+		 * Required - Contains statistics about the JVM versions used by selected nodes.
+		 * <p>
+		 * API name: {@code versions}
 		 * <p>
 		 * Adds a value to <code>versions</code> using a builder lambda.
 		 */

@@ -17,15 +17,26 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.aggregations;
 
 import co.elastic.clients.elasticsearch._types.query_dsl.Query;
 import co.elastic.clients.util.ObjectBuilder;
 import java.util.function.Function;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 /**
  * Builders for {@link Aggregation} variants.
@@ -446,6 +457,25 @@ public class AggregationBuilders {
 			Function<ExtendedStatsBucketAggregation.Builder, ObjectBuilder<ExtendedStatsBucketAggregation>> fn) {
 		Aggregation.Builder builder = new Aggregation.Builder();
 		builder.extendedStatsBucket(fn.apply(new ExtendedStatsBucketAggregation.Builder()).build());
+		return builder.build();
+	}
+
+	/**
+	 * Creates a builder for the {@link FrequentItemSetsAggregation
+	 * frequent_item_sets} {@code Aggregation} variant.
+	 */
+	public static FrequentItemSetsAggregation.Builder frequentItemSets() {
+		return new FrequentItemSetsAggregation.Builder();
+	}
+
+	/**
+	 * Creates a Aggregation of the {@link FrequentItemSetsAggregation
+	 * frequent_item_sets} {@code Aggregation} variant.
+	 */
+	public static Aggregation frequentItemSets(
+			Function<FrequentItemSetsAggregation.Builder, ObjectBuilder<FrequentItemSetsAggregation>> fn) {
+		Aggregation.Builder builder = new Aggregation.Builder();
+		builder.frequentItemSets(fn.apply(new FrequentItemSetsAggregation.Builder()).build());
 		return builder.build();
 	}
 
@@ -1101,6 +1131,25 @@ public class AggregationBuilders {
 	}
 
 	/**
+	 * Creates a builder for the {@link RandomSamplerAggregation random_sampler}
+	 * {@code Aggregation} variant.
+	 */
+	public static RandomSamplerAggregation.Builder randomSampler() {
+		return new RandomSamplerAggregation.Builder();
+	}
+
+	/**
+	 * Creates a Aggregation of the {@link RandomSamplerAggregation random_sampler}
+	 * {@code Aggregation} variant.
+	 */
+	public static Aggregation randomSampler(
+			Function<RandomSamplerAggregation.Builder, ObjectBuilder<RandomSamplerAggregation>> fn) {
+		Aggregation.Builder builder = new Aggregation.Builder();
+		builder.randomSampler(fn.apply(new RandomSamplerAggregation.Builder()).build());
+		return builder.build();
+	}
+
+	/**
 	 * Creates a builder for the {@link SamplerAggregation sampler}
 	 * {@code Aggregation} variant.
 	 */
@@ -1302,6 +1351,25 @@ public class AggregationBuilders {
 	public static Aggregation terms(Function<TermsAggregation.Builder, ObjectBuilder<TermsAggregation>> fn) {
 		Aggregation.Builder builder = new Aggregation.Builder();
 		builder.terms(fn.apply(new TermsAggregation.Builder()).build());
+		return builder.build();
+	}
+
+	/**
+	 * Creates a builder for the {@link TimeSeriesAggregation time_series}
+	 * {@code Aggregation} variant.
+	 */
+	public static TimeSeriesAggregation.Builder timeSeries() {
+		return new TimeSeriesAggregation.Builder();
+	}
+
+	/**
+	 * Creates a Aggregation of the {@link TimeSeriesAggregation time_series}
+	 * {@code Aggregation} variant.
+	 */
+	public static Aggregation timeSeries(
+			Function<TimeSeriesAggregation.Builder, ObjectBuilder<TimeSeriesAggregation>> fn) {
+		Aggregation.Builder builder = new Aggregation.Builder();
+		builder.timeSeries(fn.apply(new TimeSeriesAggregation.Builder()).build());
 		return builder.build();
 	}
 

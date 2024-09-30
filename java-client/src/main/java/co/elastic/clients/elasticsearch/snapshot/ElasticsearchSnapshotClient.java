@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.snapshot;
 
 import co.elastic.clients.ApiClient;
@@ -35,6 +31,21 @@ import co.elastic.clients.util.ObjectBuilder;
 import java.io.IOException;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 /**
  * Client for the snapshot namespace.
@@ -57,7 +68,8 @@ public class ElasticsearchSnapshotClient extends ApiClient<ElasticsearchTranspor
 	// ----- Endpoint: snapshot.cleanup_repository
 
 	/**
-	 * Removes stale data from repository.
+	 * Triggers the review of a snapshot repository’s contents and deletes any stale
+	 * data not referenced by existing snapshots.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/clean-up-snapshot-repo-api.html">Documentation
@@ -73,7 +85,8 @@ public class ElasticsearchSnapshotClient extends ApiClient<ElasticsearchTranspor
 	}
 
 	/**
-	 * Removes stale data from repository.
+	 * Triggers the review of a snapshot repository’s contents and deletes any stale
+	 * data not referenced by existing snapshots.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -342,6 +355,41 @@ public class ElasticsearchSnapshotClient extends ApiClient<ElasticsearchTranspor
 	public GetRepositoryResponse getRepository() throws IOException, ElasticsearchException {
 		return this.transport.performRequest(new GetRepositoryRequest.Builder().build(), GetRepositoryRequest._ENDPOINT,
 				this.transportOptions);
+	}
+
+	// ----- Endpoint: snapshot.repository_verify_integrity
+
+	/**
+	 * Verifies the integrity of the contents of a snapshot repository
+	 * 
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Documentation
+	 *      on elastic.co</a>
+	 */
+
+	public RepositoryVerifyIntegrityResponse repositoryVerifyIntegrity(RepositoryVerifyIntegrityRequest request)
+			throws IOException, ElasticsearchException {
+		@SuppressWarnings("unchecked")
+		JsonEndpoint<RepositoryVerifyIntegrityRequest, RepositoryVerifyIntegrityResponse, ErrorResponse> endpoint = (JsonEndpoint<RepositoryVerifyIntegrityRequest, RepositoryVerifyIntegrityResponse, ErrorResponse>) RepositoryVerifyIntegrityRequest._ENDPOINT;
+
+		return this.transport.performRequest(request, endpoint, this.transportOptions);
+	}
+
+	/**
+	 * Verifies the integrity of the contents of a snapshot repository
+	 * 
+	 * @param fn
+	 *            a function that initializes a builder to create the
+	 *            {@link RepositoryVerifyIntegrityRequest}
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Documentation
+	 *      on elastic.co</a>
+	 */
+
+	public final RepositoryVerifyIntegrityResponse repositoryVerifyIntegrity(
+			Function<RepositoryVerifyIntegrityRequest.Builder, ObjectBuilder<RepositoryVerifyIntegrityRequest>> fn)
+			throws IOException, ElasticsearchException {
+		return repositoryVerifyIntegrity(fn.apply(new RepositoryVerifyIntegrityRequest.Builder()).build());
 	}
 
 	// ----- Endpoint: snapshot.restore

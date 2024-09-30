@@ -36,7 +36,7 @@ import co.elastic.clients.elasticsearch.indices.CreateIndexRequest;
 import co.elastic.clients.elasticsearch.indices.GetFieldMappingRequest;
 import co.elastic.clients.elasticsearch.indices.GetFieldMappingResponse;
 import co.elastic.clients.elasticsearch.indices.IndexSettings;
-import co.elastic.clients.elasticsearch.model.ModelTestCase;
+import co.elastic.clients.testkit.ModelTestCase;
 import co.elastic.clients.elasticsearch.snapshot.RestoreResponse;
 import co.elastic.clients.json.JsonData;
 import co.elastic.clients.json.JsonpDeserializer;
@@ -98,9 +98,7 @@ public class SpecIssuesTest extends ModelTestCase {
         RuntimeField runtimeField = RuntimeField.of(rf -> rf
             .type(RuntimeFieldType.Double)
             .script(Script.of(s -> s
-                .inline(i -> i.
-                    source("emit(doc['price'].value * 1.19)")
-                )
+                .source("emit(doc['price'].value * 1.19)")
             ))
         );
 
@@ -117,7 +115,7 @@ public class SpecIssuesTest extends ModelTestCase {
             .index("i0297")
             .settings(s -> s
                 // This is "mapping" and not "mappings"
-                .mapping(m -> m.totalFields(totalFields -> totalFields.limit(1001)))
+                .mapping(m -> m.totalFields(totalFields -> totalFields.limit(1001L)))
                 .otherSettings("foo", JsonData.of("bar"))
             )
         );
@@ -164,6 +162,7 @@ public class SpecIssuesTest extends ModelTestCase {
     }
 
     @Test
+    // update: icu_collation_keyword has been released and added to the spec
     public void i0249_variantKind() throws Exception {
         try (ElasticsearchTestServer server = new ElasticsearchTestServer("analysis-icu").start()) {
 
@@ -198,8 +197,8 @@ public class SpecIssuesTest extends ModelTestCase {
 
             Property property = fm.get("i0249").mappings().get("name").mapping().get("name").text().fields().get("sort");
 
-            assertTrue(property._isCustom());
-            assertEquals("icu_collation_keyword", property._customKind());
+            assertFalse(property._isCustom());
+            assertEquals(Property.Kind.IcuCollationKeyword, property._kind());
         }
     }
 
@@ -296,6 +295,13 @@ public class SpecIssuesTest extends ModelTestCase {
                 .trackTotalHits(thb -> thb.enabled(false)), JsonData.class);
     }
 
+    @Test
+    public void gettingVersionFromNodes() throws Exception {
+        ElasticsearchTestServer.global().client()
+            .nodes().info().nodes().entrySet().forEach(node ->
+                assertNotNull(node.getValue().version()));
+    }
+    
     private <T> T loadRsrc(String res, JsonpDeserializer<T> deser) {
         InputStream is = this.getClass().getResourceAsStream(res);
         assertNotNull(is, "Resource not found: " + res);

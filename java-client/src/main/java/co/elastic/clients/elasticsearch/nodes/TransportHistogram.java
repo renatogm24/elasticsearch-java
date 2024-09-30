@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -37,6 +33,21 @@ import java.lang.Long;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.TransportHistogram
 
@@ -71,6 +82,9 @@ public class TransportHistogram implements JsonpSerializable {
 	}
 
 	/**
+	 * The number of times a transport thread took a period of time within the
+	 * bounds of this bucket to handle an inbound message.
+	 * <p>
 	 * API name: {@code count}
 	 */
 	@Nullable
@@ -79,6 +93,9 @@ public class TransportHistogram implements JsonpSerializable {
 	}
 
 	/**
+	 * The exclusive upper bound of the bucket in milliseconds. May be omitted on
+	 * the last bucket if this bucket has no upper bound.
+	 * <p>
 	 * API name: {@code lt_millis}
 	 */
 	@Nullable
@@ -87,6 +104,9 @@ public class TransportHistogram implements JsonpSerializable {
 	}
 
 	/**
+	 * The inclusive lower bound of the bucket in milliseconds. May be omitted on
+	 * the first bucket if this bucket has no lower bound.
+	 * <p>
 	 * API name: {@code ge_millis}
 	 */
 	@Nullable
@@ -147,6 +167,9 @@ public class TransportHistogram implements JsonpSerializable {
 		private Long geMillis;
 
 		/**
+		 * The number of times a transport thread took a period of time within the
+		 * bounds of this bucket to handle an inbound message.
+		 * <p>
 		 * API name: {@code count}
 		 */
 		public final Builder count(@Nullable Long value) {
@@ -155,6 +178,9 @@ public class TransportHistogram implements JsonpSerializable {
 		}
 
 		/**
+		 * The exclusive upper bound of the bucket in milliseconds. May be omitted on
+		 * the last bucket if this bucket has no upper bound.
+		 * <p>
 		 * API name: {@code lt_millis}
 		 */
 		public final Builder ltMillis(@Nullable Long value) {
@@ -163,6 +189,9 @@ public class TransportHistogram implements JsonpSerializable {
 		}
 
 		/**
+		 * The inclusive lower bound of the bucket in milliseconds. May be omitted on
+		 * the first bucket if this bucket has no lower bound.
+		 * <p>
 		 * API name: {@code ge_millis}
 		 */
 		public final Builder geMillis(@Nullable Long value) {

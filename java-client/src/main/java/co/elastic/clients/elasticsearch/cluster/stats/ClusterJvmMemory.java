@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cluster.stats;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -37,6 +33,21 @@ import jakarta.json.stream.JsonGenerator;
 import java.lang.Long;
 import java.util.Objects;
 import java.util.function.Function;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: cluster.stats.ClusterJvmMemory
 
@@ -66,14 +77,20 @@ public class ClusterJvmMemory implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code heap_max_in_bytes}
+	 * Required - Maximum amount of memory, in bytes, available for use by the heap
+	 * across all selected nodes.
+	 * <p>
+	 * API name: {@code heap_max_in_bytes}
 	 */
 	public final long heapMaxInBytes() {
 		return this.heapMaxInBytes;
 	}
 
 	/**
-	 * Required - API name: {@code heap_used_in_bytes}
+	 * Required - Memory, in bytes, currently in use by the heap across all selected
+	 * nodes.
+	 * <p>
+	 * API name: {@code heap_used_in_bytes}
 	 */
 	public final long heapUsedInBytes() {
 		return this.heapUsedInBytes;
@@ -115,7 +132,10 @@ public class ClusterJvmMemory implements JsonpSerializable {
 		private Long heapUsedInBytes;
 
 		/**
-		 * Required - API name: {@code heap_max_in_bytes}
+		 * Required - Maximum amount of memory, in bytes, available for use by the heap
+		 * across all selected nodes.
+		 * <p>
+		 * API name: {@code heap_max_in_bytes}
 		 */
 		public final Builder heapMaxInBytes(long value) {
 			this.heapMaxInBytes = value;
@@ -123,7 +143,10 @@ public class ClusterJvmMemory implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code heap_used_in_bytes}
+		 * Required - Memory, in bytes, currently in use by the heap across all selected
+		 * nodes.
+		 * <p>
+		 * API name: {@code heap_used_in_bytes}
 		 */
 		public final Builder heapUsedInBytes(long value) {
 			this.heapUsedInBytes = value;

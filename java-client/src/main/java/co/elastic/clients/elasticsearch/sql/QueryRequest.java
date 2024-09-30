@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.sql;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -28,6 +24,7 @@ import co.elastic.clients.elasticsearch._types.RequestBase;
 import co.elastic.clients.elasticsearch._types.Time;
 import co.elastic.clients.elasticsearch._types.mapping.RuntimeField;
 import co.elastic.clients.elasticsearch._types.query_dsl.Query;
+import co.elastic.clients.elasticsearch.sql.query.SqlFormat;
 import co.elastic.clients.json.JsonData;
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
@@ -43,11 +40,27 @@ import jakarta.json.stream.JsonGenerator;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: sql.query.Request
 
@@ -78,7 +91,7 @@ public class QueryRequest extends RequestBase implements JsonpSerializable {
 	private final Query filter;
 
 	@Nullable
-	private final String format;
+	private final SqlFormat format;
 
 	@Nullable
 	private final Boolean indexUsingFrozen;
@@ -159,6 +172,10 @@ public class QueryRequest extends RequestBase implements JsonpSerializable {
 	}
 
 	/**
+	 * Cursor used to retrieve a set of paginated results. If you specify a cursor,
+	 * the API only uses the <code>columnar</code> and <code>time_zone</code>
+	 * request body parameters. It ignores other request body parameters.
+	 * <p>
 	 * API name: {@code cursor}
 	 */
 	@Nullable
@@ -189,7 +206,7 @@ public class QueryRequest extends RequestBase implements JsonpSerializable {
 	}
 
 	/**
-	 * Optional Elasticsearch query DSL for additional filtering.
+	 * Elasticsearch query DSL for additional filtering.
 	 * <p>
 	 * API name: {@code filter}
 	 */
@@ -199,12 +216,12 @@ public class QueryRequest extends RequestBase implements JsonpSerializable {
 	}
 
 	/**
-	 * a short version of the Accept header, e.g. json, yaml
+	 * Format for the response.
 	 * <p>
 	 * API name: {@code format}
 	 */
 	@Nullable
-	public final String format() {
+	public final SqlFormat format() {
 		return this.format;
 	}
 
@@ -260,7 +277,7 @@ public class QueryRequest extends RequestBase implements JsonpSerializable {
 	}
 
 	/**
-	 * SQL query to execute
+	 * SQL query to run.
 	 * <p>
 	 * API name: {@code query}
 	 */
@@ -290,8 +307,7 @@ public class QueryRequest extends RequestBase implements JsonpSerializable {
 	}
 
 	/**
-	 * Time-zone in ISO 8601 used for executing the query on the server. More
-	 * information available here.
+	 * ISO-8601 time zone ID for the search.
 	 * <p>
 	 * API name: {@code time_zone}
 	 */
@@ -444,7 +460,7 @@ public class QueryRequest extends RequestBase implements JsonpSerializable {
 		private Query filter;
 
 		@Nullable
-		private String format;
+		private SqlFormat format;
 
 		@Nullable
 		private Boolean indexUsingFrozen;
@@ -499,6 +515,10 @@ public class QueryRequest extends RequestBase implements JsonpSerializable {
 		}
 
 		/**
+		 * Cursor used to retrieve a set of paginated results. If you specify a cursor,
+		 * the API only uses the <code>columnar</code> and <code>time_zone</code>
+		 * request body parameters. It ignores other request body parameters.
+		 * <p>
 		 * API name: {@code cursor}
 		 */
 		public final Builder cursor(@Nullable String value) {
@@ -529,7 +549,7 @@ public class QueryRequest extends RequestBase implements JsonpSerializable {
 		}
 
 		/**
-		 * Optional Elasticsearch query DSL for additional filtering.
+		 * Elasticsearch query DSL for additional filtering.
 		 * <p>
 		 * API name: {@code filter}
 		 */
@@ -539,7 +559,7 @@ public class QueryRequest extends RequestBase implements JsonpSerializable {
 		}
 
 		/**
-		 * Optional Elasticsearch query DSL for additional filtering.
+		 * Elasticsearch query DSL for additional filtering.
 		 * <p>
 		 * API name: {@code filter}
 		 */
@@ -548,11 +568,11 @@ public class QueryRequest extends RequestBase implements JsonpSerializable {
 		}
 
 		/**
-		 * a short version of the Accept header, e.g. json, yaml
+		 * Format for the response.
 		 * <p>
 		 * API name: {@code format}
 		 */
-		public final Builder format(@Nullable String value) {
+		public final Builder format(@Nullable SqlFormat value) {
 			this.format = value;
 			return this;
 		}
@@ -642,7 +662,7 @@ public class QueryRequest extends RequestBase implements JsonpSerializable {
 		}
 
 		/**
-		 * SQL query to execute
+		 * SQL query to run.
 		 * <p>
 		 * API name: {@code query}
 		 */
@@ -710,8 +730,7 @@ public class QueryRequest extends RequestBase implements JsonpSerializable {
 		}
 
 		/**
-		 * Time-zone in ISO 8601 used for executing the query on the server. More
-		 * information available here.
+		 * ISO-8601 time zone ID for the search.
 		 * <p>
 		 * API name: {@code time_zone}
 		 */
@@ -811,11 +830,16 @@ public class QueryRequest extends RequestBase implements JsonpSerializable {
 
 			},
 
+			// Path parameters
+			request -> {
+				return Collections.emptyMap();
+			},
+
 			// Request parameters
 			request -> {
 				Map<String, String> params = new HashMap<>();
 				if (request.format != null) {
-					params.put("format", request.format);
+					params.put("format", request.format.jsonValue());
 				}
 				return params;
 

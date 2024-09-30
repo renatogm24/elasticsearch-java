@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cat.templates;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -37,6 +33,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: cat.templates.TemplatesRecord
 
@@ -80,7 +91,7 @@ public class TemplatesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * template name
+	 * The template name.
 	 * <p>
 	 * API name: {@code name}
 	 */
@@ -90,7 +101,7 @@ public class TemplatesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * template index patterns
+	 * The template index patterns.
 	 * <p>
 	 * API name: {@code index_patterns}
 	 */
@@ -100,7 +111,7 @@ public class TemplatesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * template application order/priority number
+	 * The template application order or priority number.
 	 * <p>
 	 * API name: {@code order}
 	 */
@@ -110,7 +121,7 @@ public class TemplatesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * version
+	 * The template version.
 	 * <p>
 	 * API name: {@code version}
 	 */
@@ -120,7 +131,7 @@ public class TemplatesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * component templates comprising index template
+	 * The component templates that comprise the index template.
 	 * <p>
 	 * API name: {@code composed_of}
 	 */
@@ -196,7 +207,7 @@ public class TemplatesRecord implements JsonpSerializable {
 		private String composedOf;
 
 		/**
-		 * template name
+		 * The template name.
 		 * <p>
 		 * API name: {@code name}
 		 */
@@ -206,7 +217,7 @@ public class TemplatesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * template index patterns
+		 * The template index patterns.
 		 * <p>
 		 * API name: {@code index_patterns}
 		 */
@@ -216,7 +227,7 @@ public class TemplatesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * template application order/priority number
+		 * The template application order or priority number.
 		 * <p>
 		 * API name: {@code order}
 		 */
@@ -226,7 +237,7 @@ public class TemplatesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * version
+		 * The template version.
 		 * <p>
 		 * API name: {@code version}
 		 */
@@ -236,7 +247,7 @@ public class TemplatesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * component templates comprising index template
+		 * The component templates that comprise the index template.
 		 * <p>
 		 * API name: {@code composed_of}
 		 */

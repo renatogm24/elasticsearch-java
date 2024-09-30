@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.rollup;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -36,17 +32,34 @@ import co.elastic.clients.util.ObjectBuilder;
 import jakarta.json.stream.JsonGenerator;
 import java.lang.String;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: rollup.get_rollup_index_caps.Request
 
 /**
- * Returns the rollup capabilities of all jobs inside of a rollup index (e.g.
- * the index where rollup data is stored).
+ * Returns the rollup capabilities of all jobs inside of a rollup index (for
+ * example, the index where rollup data is stored).
  * 
  * @see <a href=
  *      "../doc-files/api-spec.html#rollup.get_rollup_index_caps.Request">API
@@ -69,8 +82,8 @@ public class GetRollupIndexCapsRequest extends RequestBase {
 	}
 
 	/**
-	 * Required - The rollup index or index pattern to obtain rollup capabilities
-	 * from.
+	 * Required - Data stream or index to check for rollup capabilities. Wildcard
+	 * (<code>*</code>) expressions are supported.
 	 * <p>
 	 * API name: {@code index}
 	 */
@@ -90,8 +103,8 @@ public class GetRollupIndexCapsRequest extends RequestBase {
 		private List<String> index;
 
 		/**
-		 * Required - The rollup index or index pattern to obtain rollup capabilities
-		 * from.
+		 * Required - Data stream or index to check for rollup capabilities. Wildcard
+		 * (<code>*</code>) expressions are supported.
 		 * <p>
 		 * API name: {@code index}
 		 * <p>
@@ -103,8 +116,8 @@ public class GetRollupIndexCapsRequest extends RequestBase {
 		}
 
 		/**
-		 * Required - The rollup index or index pattern to obtain rollup capabilities
-		 * from.
+		 * Required - Data stream or index to check for rollup capabilities. Wildcard
+		 * (<code>*</code>) expressions are supported.
 		 * <p>
 		 * API name: {@code index}
 		 * <p>
@@ -165,6 +178,21 @@ public class GetRollupIndexCapsRequest extends RequestBase {
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _index = 1 << 0;
+
+				int propsSet = 0;
+
+				propsSet |= _index;
+
+				if (propsSet == (_index)) {
+					params.put("index", request.index.stream().map(v -> v).collect(Collectors.joining(",")));
+				}
+				return params;
 			},
 
 			// Request parameters

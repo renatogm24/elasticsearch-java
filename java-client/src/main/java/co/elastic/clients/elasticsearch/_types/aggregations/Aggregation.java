@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.aggregations;
 
 import co.elastic.clients.elasticsearch._types.query_dsl.Query;
@@ -45,6 +41,21 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: _types.aggregations.AggregationContainer
 
@@ -109,6 +120,8 @@ public class Aggregation implements OpenTaggedUnion<Aggregation.Kind, Object>, J
 		ExtendedStats("extended_stats"),
 
 		ExtendedStatsBucket("extended_stats_bucket"),
+
+		FrequentItemSets("frequent_item_sets"),
 
 		Filter("filter"),
 
@@ -180,6 +193,8 @@ public class Aggregation implements OpenTaggedUnion<Aggregation.Kind, Object>, J
 
 		ReverseNested("reverse_nested"),
 
+		RandomSampler("random_sampler"),
+
 		Sampler("sampler"),
 
 		ScriptedMetric("scripted_metric"),
@@ -201,6 +216,8 @@ public class Aggregation implements OpenTaggedUnion<Aggregation.Kind, Object>, J
 		SumBucket("sum_bucket"),
 
 		Terms("terms"),
+
+		TimeSeries("time_series"),
 
 		TopHits("top_hits"),
 
@@ -671,6 +688,24 @@ public class Aggregation implements OpenTaggedUnion<Aggregation.Kind, Object>, J
 	 */
 	public ExtendedStatsBucketAggregation extendedStatsBucket() {
 		return TaggedUnionUtils.get(this, Kind.ExtendedStatsBucket);
+	}
+
+	/**
+	 * Is this variant instance of kind {@code frequent_item_sets}?
+	 */
+	public boolean isFrequentItemSets() {
+		return _kind == Kind.FrequentItemSets;
+	}
+
+	/**
+	 * Get the {@code frequent_item_sets} variant value.
+	 *
+	 * @throws IllegalStateException
+	 *             if the current variant is not of the {@code frequent_item_sets}
+	 *             kind.
+	 */
+	public FrequentItemSetsAggregation frequentItemSets() {
+		return TaggedUnionUtils.get(this, Kind.FrequentItemSets);
 	}
 
 	/**
@@ -1273,6 +1308,23 @@ public class Aggregation implements OpenTaggedUnion<Aggregation.Kind, Object>, J
 	}
 
 	/**
+	 * Is this variant instance of kind {@code random_sampler}?
+	 */
+	public boolean isRandomSampler() {
+		return _kind == Kind.RandomSampler;
+	}
+
+	/**
+	 * Get the {@code random_sampler} variant value.
+	 *
+	 * @throws IllegalStateException
+	 *             if the current variant is not of the {@code random_sampler} kind.
+	 */
+	public RandomSamplerAggregation randomSampler() {
+		return TaggedUnionUtils.get(this, Kind.RandomSampler);
+	}
+
+	/**
 	 * Is this variant instance of kind {@code sampler}?
 	 */
 	public boolean isSampler() {
@@ -1463,6 +1515,23 @@ public class Aggregation implements OpenTaggedUnion<Aggregation.Kind, Object>, J
 	}
 
 	/**
+	 * Is this variant instance of kind {@code time_series}?
+	 */
+	public boolean isTimeSeries() {
+		return _kind == Kind.TimeSeries;
+	}
+
+	/**
+	 * Get the {@code time_series} variant value.
+	 *
+	 * @throws IllegalStateException
+	 *             if the current variant is not of the {@code time_series} kind.
+	 */
+	public TimeSeriesAggregation timeSeries() {
+		return TaggedUnionUtils.get(this, Kind.TimeSeries);
+	}
+
+	/**
 	 * Is this variant instance of kind {@code top_hits}?
 	 */
 	public boolean isTopHits() {
@@ -1637,7 +1706,7 @@ public class Aggregation implements OpenTaggedUnion<Aggregation.Kind, Object>, J
 		return JsonpUtils.toString(this);
 	}
 
-	public static class Builder extends WithJsonObjectBuilderBase<Builder> {
+	public static class Builder extends WithJsonObjectBuilderBase<Builder> implements ObjectBuilder<Aggregation> {
 		private Kind _kind;
 		private Object _value;
 		private String _customKind;
@@ -1944,6 +2013,17 @@ public class Aggregation implements OpenTaggedUnion<Aggregation.Kind, Object>, J
 		public ContainerBuilder extendedStatsBucket(
 				Function<ExtendedStatsBucketAggregation.Builder, ObjectBuilder<ExtendedStatsBucketAggregation>> fn) {
 			return this.extendedStatsBucket(fn.apply(new ExtendedStatsBucketAggregation.Builder()).build());
+		}
+
+		public ContainerBuilder frequentItemSets(FrequentItemSetsAggregation v) {
+			this._kind = Kind.FrequentItemSets;
+			this._value = v;
+			return new ContainerBuilder();
+		}
+
+		public ContainerBuilder frequentItemSets(
+				Function<FrequentItemSetsAggregation.Builder, ObjectBuilder<FrequentItemSetsAggregation>> fn) {
+			return this.frequentItemSets(fn.apply(new FrequentItemSetsAggregation.Builder()).build());
 		}
 
 		public ContainerBuilder filter(Query v) {
@@ -2318,6 +2398,17 @@ public class Aggregation implements OpenTaggedUnion<Aggregation.Kind, Object>, J
 			return this.reverseNested(fn.apply(new ReverseNestedAggregation.Builder()).build());
 		}
 
+		public ContainerBuilder randomSampler(RandomSamplerAggregation v) {
+			this._kind = Kind.RandomSampler;
+			this._value = v;
+			return new ContainerBuilder();
+		}
+
+		public ContainerBuilder randomSampler(
+				Function<RandomSamplerAggregation.Builder, ObjectBuilder<RandomSamplerAggregation>> fn) {
+			return this.randomSampler(fn.apply(new RandomSamplerAggregation.Builder()).build());
+		}
+
 		public ContainerBuilder sampler(SamplerAggregation v) {
 			this._kind = Kind.Sampler;
 			this._value = v;
@@ -2435,6 +2526,17 @@ public class Aggregation implements OpenTaggedUnion<Aggregation.Kind, Object>, J
 			return this.terms(fn.apply(new TermsAggregation.Builder()).build());
 		}
 
+		public ContainerBuilder timeSeries(TimeSeriesAggregation v) {
+			this._kind = Kind.TimeSeries;
+			this._value = v;
+			return new ContainerBuilder();
+		}
+
+		public ContainerBuilder timeSeries(
+				Function<TimeSeriesAggregation.Builder, ObjectBuilder<TimeSeriesAggregation>> fn) {
+			return this.timeSeries(fn.apply(new TimeSeriesAggregation.Builder()).build());
+		}
+
 		public ContainerBuilder topHits(TopHitsAggregation v) {
 			this._kind = Kind.TopHits;
 			this._value = v;
@@ -2515,7 +2617,7 @@ public class Aggregation implements OpenTaggedUnion<Aggregation.Kind, Object>, J
 			return new ContainerBuilder();
 		}
 
-		protected Aggregation build() {
+		public Aggregation build() {
 			_checkSingleUse();
 			return new Aggregation(this);
 		}
@@ -2612,6 +2714,7 @@ public class Aggregation implements OpenTaggedUnion<Aggregation.Kind, Object>, J
 		op.add(Builder::diversifiedSampler, DiversifiedSamplerAggregation._DESERIALIZER, "diversified_sampler");
 		op.add(Builder::extendedStats, ExtendedStatsAggregation._DESERIALIZER, "extended_stats");
 		op.add(Builder::extendedStatsBucket, ExtendedStatsBucketAggregation._DESERIALIZER, "extended_stats_bucket");
+		op.add(Builder::frequentItemSets, FrequentItemSetsAggregation._DESERIALIZER, "frequent_item_sets");
 		op.add(Builder::filter, Query._DESERIALIZER, "filter");
 		op.add(Builder::filters, FiltersAggregation._DESERIALIZER, "filters");
 		op.add(Builder::geoBounds, GeoBoundsAggregation._DESERIALIZER, "geo_bounds");
@@ -2648,6 +2751,7 @@ public class Aggregation implements OpenTaggedUnion<Aggregation.Kind, Object>, J
 		op.add(Builder::rareTerms, RareTermsAggregation._DESERIALIZER, "rare_terms");
 		op.add(Builder::rate, RateAggregation._DESERIALIZER, "rate");
 		op.add(Builder::reverseNested, ReverseNestedAggregation._DESERIALIZER, "reverse_nested");
+		op.add(Builder::randomSampler, RandomSamplerAggregation._DESERIALIZER, "random_sampler");
 		op.add(Builder::sampler, SamplerAggregation._DESERIALIZER, "sampler");
 		op.add(Builder::scriptedMetric, ScriptedMetricAggregation._DESERIALIZER, "scripted_metric");
 		op.add(Builder::serialDiff, SerialDifferencingAggregation._DESERIALIZER, "serial_diff");
@@ -2659,6 +2763,7 @@ public class Aggregation implements OpenTaggedUnion<Aggregation.Kind, Object>, J
 		op.add(Builder::sum, SumAggregation._DESERIALIZER, "sum");
 		op.add(Builder::sumBucket, SumBucketAggregation._DESERIALIZER, "sum_bucket");
 		op.add(Builder::terms, TermsAggregation._DESERIALIZER, "terms");
+		op.add(Builder::timeSeries, TimeSeriesAggregation._DESERIALIZER, "time_series");
 		op.add(Builder::topHits, TopHitsAggregation._DESERIALIZER, "top_hits");
 		op.add(Builder::tTest, TTestAggregation._DESERIALIZER, "t_test");
 		op.add(Builder::topMetrics, TopMetricsAggregation._DESERIALIZER, "top_metrics");

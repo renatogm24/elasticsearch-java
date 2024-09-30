@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -39,6 +35,21 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.FileSystem
 
@@ -76,6 +87,8 @@ public class FileSystem implements JsonpSerializable {
 	}
 
 	/**
+	 * List of all file stores.
+	 * <p>
 	 * API name: {@code data}
 	 */
 	public final List<DataPathStats> data() {
@@ -83,6 +96,9 @@ public class FileSystem implements JsonpSerializable {
 	}
 
 	/**
+	 * Last time the file stores statistics were refreshed. Recorded in milliseconds
+	 * since the Unix Epoch.
+	 * <p>
 	 * API name: {@code timestamp}
 	 */
 	@Nullable
@@ -91,6 +107,8 @@ public class FileSystem implements JsonpSerializable {
 	}
 
 	/**
+	 * Contains statistics for all file stores of the node.
+	 * <p>
 	 * API name: {@code total}
 	 */
 	@Nullable
@@ -99,6 +117,8 @@ public class FileSystem implements JsonpSerializable {
 	}
 
 	/**
+	 * Contains I/O statistics for the node.
+	 * <p>
 	 * API name: {@code io_stats}
 	 */
 	@Nullable
@@ -170,6 +190,8 @@ public class FileSystem implements JsonpSerializable {
 		private IoStats ioStats;
 
 		/**
+		 * List of all file stores.
+		 * <p>
 		 * API name: {@code data}
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>data</code>.
@@ -180,6 +202,8 @@ public class FileSystem implements JsonpSerializable {
 		}
 
 		/**
+		 * List of all file stores.
+		 * <p>
 		 * API name: {@code data}
 		 * <p>
 		 * Adds one or more values to <code>data</code>.
@@ -190,6 +214,8 @@ public class FileSystem implements JsonpSerializable {
 		}
 
 		/**
+		 * List of all file stores.
+		 * <p>
 		 * API name: {@code data}
 		 * <p>
 		 * Adds a value to <code>data</code> using a builder lambda.
@@ -199,6 +225,9 @@ public class FileSystem implements JsonpSerializable {
 		}
 
 		/**
+		 * Last time the file stores statistics were refreshed. Recorded in milliseconds
+		 * since the Unix Epoch.
+		 * <p>
 		 * API name: {@code timestamp}
 		 */
 		public final Builder timestamp(@Nullable Long value) {
@@ -207,6 +236,8 @@ public class FileSystem implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics for all file stores of the node.
+		 * <p>
 		 * API name: {@code total}
 		 */
 		public final Builder total(@Nullable FileSystemTotal value) {
@@ -215,6 +246,8 @@ public class FileSystem implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics for all file stores of the node.
+		 * <p>
 		 * API name: {@code total}
 		 */
 		public final Builder total(Function<FileSystemTotal.Builder, ObjectBuilder<FileSystemTotal>> fn) {
@@ -222,6 +255,8 @@ public class FileSystem implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains I/O statistics for the node.
+		 * <p>
 		 * API name: {@code io_stats}
 		 */
 		public final Builder ioStats(@Nullable IoStats value) {
@@ -230,6 +265,8 @@ public class FileSystem implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains I/O statistics for the node.
+		 * <p>
 		 * API name: {@code io_stats}
 		 */
 		public final Builder ioStats(Function<IoStats.Builder, ObjectBuilder<IoStats>> fn) {

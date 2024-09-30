@@ -17,13 +17,15 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.query_dsl;
 
 import co.elastic.clients.elasticsearch._types.FieldValue;
+import co.elastic.clients.elasticsearch.security.query_api_keys.ApiKeyQuery;
+import co.elastic.clients.elasticsearch.security.query_api_keys.ApiKeyQueryVariant;
+import co.elastic.clients.elasticsearch.security.query_role.RoleQuery;
+import co.elastic.clients.elasticsearch.security.query_role.RoleQueryVariant;
+import co.elastic.clients.elasticsearch.security.query_user.UserQuery;
+import co.elastic.clients.elasticsearch.security.query_user.UserQueryVariant;
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.JsonpMapper;
@@ -40,6 +42,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: _types.query_dsl.MatchQuery
 
 /**
@@ -48,7 +65,12 @@ import javax.annotation.Nullable;
  *      specification</a>
  */
 @JsonpDeserializable
-public class MatchQuery extends QueryBase implements QueryVariant {
+public class MatchQuery extends QueryBase
+		implements
+			ApiKeyQueryVariant,
+			QueryVariant,
+			RoleQueryVariant,
+			UserQueryVariant {
 	// Single key dictionary
 	private final String field;
 
@@ -117,11 +139,35 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
+	 * ApiKeyQuery variant kind.
+	 */
+	@Override
+	public ApiKeyQuery.Kind _apiKeyQueryKind() {
+		return ApiKeyQuery.Kind.Match;
+	}
+
+	/**
 	 * Query variant kind.
 	 */
 	@Override
 	public Query.Kind _queryKind() {
 		return Query.Kind.Match;
+	}
+
+	/**
+	 * RoleQuery variant kind.
+	 */
+	@Override
+	public RoleQuery.Kind _roleQueryKind() {
+		return RoleQuery.Kind.Match;
+	}
+
+	/**
+	 * UserQuery variant kind.
+	 */
+	@Override
+	public UserQuery.Kind _userQueryKind() {
+		return UserQuery.Kind.Match;
 	}
 
 	/**
@@ -132,6 +178,8 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
+	 * Analyzer used to convert the text in the query value into tokens.
+	 * <p>
 	 * API name: {@code analyzer}
 	 */
 	@Nullable
@@ -140,6 +188,9 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
+	 * If <code>true</code>, match phrase queries are automatically created for
+	 * multi-term synonyms.
+	 * <p>
 	 * API name: {@code auto_generate_synonyms_phrase_query}
 	 */
 	@Nullable
@@ -159,6 +210,8 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
+	 * Maximum edit distance allowed for matching.
+	 * <p>
 	 * API name: {@code fuzziness}
 	 */
 	@Nullable
@@ -167,6 +220,8 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
+	 * Method used to rewrite the query.
+	 * <p>
 	 * API name: {@code fuzzy_rewrite}
 	 */
 	@Nullable
@@ -175,6 +230,9 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
+	 * If <code>true</code>, edits for fuzzy matching include transpositions of two
+	 * adjacent characters (for example, <code>ab</code> to <code>ba</code>).
+	 * <p>
 	 * API name: {@code fuzzy_transpositions}
 	 */
 	@Nullable
@@ -183,6 +241,9 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
+	 * If <code>true</code>, format-based errors, such as providing a text query
+	 * value for a numeric field, are ignored.
+	 * <p>
 	 * API name: {@code lenient}
 	 */
 	@Nullable
@@ -191,6 +252,8 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
+	 * Maximum number of terms to which the query will expand.
+	 * <p>
 	 * API name: {@code max_expansions}
 	 */
 	@Nullable
@@ -199,6 +262,8 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
+	 * Minimum number of clauses that must match for a document to be returned.
+	 * <p>
 	 * API name: {@code minimum_should_match}
 	 */
 	@Nullable
@@ -207,6 +272,8 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
+	 * Boolean logic used to interpret text in the query value.
+	 * <p>
 	 * API name: {@code operator}
 	 */
 	@Nullable
@@ -215,6 +282,8 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
+	 * Number of beginning characters left unchanged for fuzzy matching.
+	 * <p>
 	 * API name: {@code prefix_length}
 	 */
 	@Nullable
@@ -223,13 +292,19 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
-	 * Required - API name: {@code query}
+	 * Required - Text, number, boolean value or date you wish to find in the
+	 * provided field.
+	 * <p>
+	 * API name: {@code query}
 	 */
 	public final FieldValue query() {
 		return this.query;
 	}
 
 	/**
+	 * Indicates whether no documents are returned if the <code>analyzer</code>
+	 * removes all tokens, such as when using a <code>stop</code> filter.
+	 * <p>
 	 * API name: {@code zero_terms_query}
 	 */
 	@Nullable
@@ -363,6 +438,8 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 		private ZeroTermsQuery zeroTermsQuery;
 
 		/**
+		 * Analyzer used to convert the text in the query value into tokens.
+		 * <p>
 		 * API name: {@code analyzer}
 		 */
 		public final Builder analyzer(@Nullable String value) {
@@ -371,6 +448,9 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * If <code>true</code>, match phrase queries are automatically created for
+		 * multi-term synonyms.
+		 * <p>
 		 * API name: {@code auto_generate_synonyms_phrase_query}
 		 */
 		public final Builder autoGenerateSynonymsPhraseQuery(@Nullable Boolean value) {
@@ -390,6 +470,8 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * Maximum edit distance allowed for matching.
+		 * <p>
 		 * API name: {@code fuzziness}
 		 */
 		public final Builder fuzziness(@Nullable String value) {
@@ -398,6 +480,8 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * Method used to rewrite the query.
+		 * <p>
 		 * API name: {@code fuzzy_rewrite}
 		 */
 		public final Builder fuzzyRewrite(@Nullable String value) {
@@ -406,6 +490,9 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * If <code>true</code>, edits for fuzzy matching include transpositions of two
+		 * adjacent characters (for example, <code>ab</code> to <code>ba</code>).
+		 * <p>
 		 * API name: {@code fuzzy_transpositions}
 		 */
 		public final Builder fuzzyTranspositions(@Nullable Boolean value) {
@@ -414,6 +501,9 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * If <code>true</code>, format-based errors, such as providing a text query
+		 * value for a numeric field, are ignored.
+		 * <p>
 		 * API name: {@code lenient}
 		 */
 		public final Builder lenient(@Nullable Boolean value) {
@@ -422,6 +512,8 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * Maximum number of terms to which the query will expand.
+		 * <p>
 		 * API name: {@code max_expansions}
 		 */
 		public final Builder maxExpansions(@Nullable Integer value) {
@@ -430,6 +522,8 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * Minimum number of clauses that must match for a document to be returned.
+		 * <p>
 		 * API name: {@code minimum_should_match}
 		 */
 		public final Builder minimumShouldMatch(@Nullable String value) {
@@ -438,6 +532,8 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * Boolean logic used to interpret text in the query value.
+		 * <p>
 		 * API name: {@code operator}
 		 */
 		public final Builder operator(@Nullable Operator value) {
@@ -446,6 +542,8 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * Number of beginning characters left unchanged for fuzzy matching.
+		 * <p>
 		 * API name: {@code prefix_length}
 		 */
 		public final Builder prefixLength(@Nullable Integer value) {
@@ -454,7 +552,10 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
-		 * Required - API name: {@code query}
+		 * Required - Text, number, boolean value or date you wish to find in the
+		 * provided field.
+		 * <p>
+		 * API name: {@code query}
 		 */
 		public final Builder query(FieldValue value) {
 			this.query = value;
@@ -462,14 +563,20 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
-		 * Required - API name: {@code query}
+		 * Required - Text, number, boolean value or date you wish to find in the
+		 * provided field.
+		 * <p>
+		 * API name: {@code query}
 		 */
 		public final Builder query(Function<FieldValue.Builder, ObjectBuilder<FieldValue>> fn) {
 			return this.query(fn.apply(new FieldValue.Builder()).build());
 		}
 
 		/**
-		 * Required - API name: {@code query}
+		 * Required - Text, number, boolean value or date you wish to find in the
+		 * provided field.
+		 * <p>
+		 * API name: {@code query}
 		 */
 		public final Builder query(String value) {
 			this.query = FieldValue.of(value);
@@ -477,7 +584,10 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
-		 * Required - API name: {@code query}
+		 * Required - Text, number, boolean value or date you wish to find in the
+		 * provided field.
+		 * <p>
+		 * API name: {@code query}
 		 */
 		public final Builder query(long value) {
 			this.query = FieldValue.of(value);
@@ -485,7 +595,10 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
-		 * Required - API name: {@code query}
+		 * Required - Text, number, boolean value or date you wish to find in the
+		 * provided field.
+		 * <p>
+		 * API name: {@code query}
 		 */
 		public final Builder query(double value) {
 			this.query = FieldValue.of(value);
@@ -493,7 +606,10 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
-		 * Required - API name: {@code query}
+		 * Required - Text, number, boolean value or date you wish to find in the
+		 * provided field.
+		 * <p>
+		 * API name: {@code query}
 		 */
 		public final Builder query(boolean value) {
 			this.query = FieldValue.of(value);
@@ -501,6 +617,9 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
+		 * Indicates whether no documents are returned if the <code>analyzer</code>
+		 * removes all tokens, such as when using a <code>stop</code> filter.
+		 * <p>
 		 * API name: {@code zero_terms_query}
 		 */
 		public final Builder zeroTermsQuery(@Nullable ZeroTermsQuery value) {
@@ -552,7 +671,7 @@ public class MatchQuery extends QueryBase implements QueryVariant {
 		op.add(Builder::zeroTermsQuery, ZeroTermsQuery._DESERIALIZER, "zero_terms_query");
 
 		op.setKey(Builder::field, JsonpDeserializer.stringDeserializer());
-		op.shortcutProperty("query");
+		op.shortcutProperty("query", true);
 
 	}
 

@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.ingest;
 
 import co.elastic.clients.ApiClient;
@@ -35,6 +31,21 @@ import co.elastic.clients.util.ObjectBuilder;
 import java.io.IOException;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 /**
  * Client for the ingest namespace.
@@ -54,10 +65,45 @@ public class ElasticsearchIngestClient extends ApiClient<ElasticsearchTransport,
 		return new ElasticsearchIngestClient(this.transport, transportOptions);
 	}
 
+	// ----- Endpoint: ingest.delete_geoip_database
+
+	/**
+	 * Deletes a geoip database configuration.
+	 * 
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/delete-geoip-database-api.html">Documentation
+	 *      on elastic.co</a>
+	 */
+
+	public DeleteGeoipDatabaseResponse deleteGeoipDatabase(DeleteGeoipDatabaseRequest request)
+			throws IOException, ElasticsearchException {
+		@SuppressWarnings("unchecked")
+		JsonEndpoint<DeleteGeoipDatabaseRequest, DeleteGeoipDatabaseResponse, ErrorResponse> endpoint = (JsonEndpoint<DeleteGeoipDatabaseRequest, DeleteGeoipDatabaseResponse, ErrorResponse>) DeleteGeoipDatabaseRequest._ENDPOINT;
+
+		return this.transport.performRequest(request, endpoint, this.transportOptions);
+	}
+
+	/**
+	 * Deletes a geoip database configuration.
+	 * 
+	 * @param fn
+	 *            a function that initializes a builder to create the
+	 *            {@link DeleteGeoipDatabaseRequest}
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/delete-geoip-database-api.html">Documentation
+	 *      on elastic.co</a>
+	 */
+
+	public final DeleteGeoipDatabaseResponse deleteGeoipDatabase(
+			Function<DeleteGeoipDatabaseRequest.Builder, ObjectBuilder<DeleteGeoipDatabaseRequest>> fn)
+			throws IOException, ElasticsearchException {
+		return deleteGeoipDatabase(fn.apply(new DeleteGeoipDatabaseRequest.Builder()).build());
+	}
+
 	// ----- Endpoint: ingest.delete_pipeline
 
 	/**
-	 * Deletes a pipeline.
+	 * Deletes one or more existing ingest pipeline.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/delete-pipeline-api.html">Documentation
@@ -73,7 +119,7 @@ public class ElasticsearchIngestClient extends ApiClient<ElasticsearchTransport,
 	}
 
 	/**
-	 * Deletes a pipeline.
+	 * Deletes one or more existing ingest pipeline.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -92,10 +138,10 @@ public class ElasticsearchIngestClient extends ApiClient<ElasticsearchTransport,
 	// ----- Endpoint: ingest.geo_ip_stats
 
 	/**
-	 * Returns statistical information about geoip databases
+	 * Gets download statistics for GeoIP2 databases used with the geoip processor.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/geoip-stats-api.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/geoip-processor.html">Documentation
 	 *      on elastic.co</a>
 	 */
 	public GeoIpStatsResponse geoIpStats() throws IOException, ElasticsearchException {
@@ -103,10 +149,59 @@ public class ElasticsearchIngestClient extends ApiClient<ElasticsearchTransport,
 				this.transportOptions);
 	}
 
+	// ----- Endpoint: ingest.get_geoip_database
+
+	/**
+	 * Returns information about one or more geoip database configurations.
+	 * 
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/get-geoip-database-api.html">Documentation
+	 *      on elastic.co</a>
+	 */
+
+	public GetGeoipDatabaseResponse getGeoipDatabase(GetGeoipDatabaseRequest request)
+			throws IOException, ElasticsearchException {
+		@SuppressWarnings("unchecked")
+		JsonEndpoint<GetGeoipDatabaseRequest, GetGeoipDatabaseResponse, ErrorResponse> endpoint = (JsonEndpoint<GetGeoipDatabaseRequest, GetGeoipDatabaseResponse, ErrorResponse>) GetGeoipDatabaseRequest._ENDPOINT;
+
+		return this.transport.performRequest(request, endpoint, this.transportOptions);
+	}
+
+	/**
+	 * Returns information about one or more geoip database configurations.
+	 * 
+	 * @param fn
+	 *            a function that initializes a builder to create the
+	 *            {@link GetGeoipDatabaseRequest}
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/get-geoip-database-api.html">Documentation
+	 *      on elastic.co</a>
+	 */
+
+	public final GetGeoipDatabaseResponse getGeoipDatabase(
+			Function<GetGeoipDatabaseRequest.Builder, ObjectBuilder<GetGeoipDatabaseRequest>> fn)
+			throws IOException, ElasticsearchException {
+		return getGeoipDatabase(fn.apply(new GetGeoipDatabaseRequest.Builder()).build());
+	}
+
+	/**
+	 * Returns information about one or more geoip database configurations.
+	 * 
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/get-geoip-database-api.html">Documentation
+	 *      on elastic.co</a>
+	 */
+
+	public GetGeoipDatabaseResponse getGeoipDatabase() throws IOException, ElasticsearchException {
+		return this.transport.performRequest(new GetGeoipDatabaseRequest.Builder().build(),
+				GetGeoipDatabaseRequest._ENDPOINT, this.transportOptions);
+	}
+
 	// ----- Endpoint: ingest.get_pipeline
 
 	/**
-	 * Returns a pipeline.
+	 * Returns information about one or more ingest pipelines. This API returns a
+	 * local reference of the pipeline.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/get-pipeline-api.html">Documentation
@@ -121,7 +216,8 @@ public class ElasticsearchIngestClient extends ApiClient<ElasticsearchTransport,
 	}
 
 	/**
-	 * Returns a pipeline.
+	 * Returns information about one or more ingest pipelines. This API returns a
+	 * local reference of the pipeline.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -138,7 +234,8 @@ public class ElasticsearchIngestClient extends ApiClient<ElasticsearchTransport,
 	}
 
 	/**
-	 * Returns a pipeline.
+	 * Returns information about one or more ingest pipelines. This API returns a
+	 * local reference of the pipeline.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/get-pipeline-api.html">Documentation
@@ -153,10 +250,13 @@ public class ElasticsearchIngestClient extends ApiClient<ElasticsearchTransport,
 	// ----- Endpoint: ingest.processor_grok
 
 	/**
-	 * Returns a list of the built-in patterns.
+	 * Extracts structured fields out of a single text field within a document. You
+	 * choose which field to extract matched fields from, as well as the grok
+	 * pattern you expect will match. A grok pattern is like a regular expression
+	 * that supports aliased expressions that can be reused.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/grok-processor.html#grok-processor-rest-get">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/grok-processor.html">Documentation
 	 *      on elastic.co</a>
 	 */
 	public ProcessorGrokResponse processorGrok() throws IOException, ElasticsearchException {
@@ -164,13 +264,49 @@ public class ElasticsearchIngestClient extends ApiClient<ElasticsearchTransport,
 				this.transportOptions);
 	}
 
+	// ----- Endpoint: ingest.put_geoip_database
+
+	/**
+	 * Returns information about one or more geoip database configurations.
+	 * 
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/put-geoip-database-api.html">Documentation
+	 *      on elastic.co</a>
+	 */
+
+	public PutGeoipDatabaseResponse putGeoipDatabase(PutGeoipDatabaseRequest request)
+			throws IOException, ElasticsearchException {
+		@SuppressWarnings("unchecked")
+		JsonEndpoint<PutGeoipDatabaseRequest, PutGeoipDatabaseResponse, ErrorResponse> endpoint = (JsonEndpoint<PutGeoipDatabaseRequest, PutGeoipDatabaseResponse, ErrorResponse>) PutGeoipDatabaseRequest._ENDPOINT;
+
+		return this.transport.performRequest(request, endpoint, this.transportOptions);
+	}
+
+	/**
+	 * Returns information about one or more geoip database configurations.
+	 * 
+	 * @param fn
+	 *            a function that initializes a builder to create the
+	 *            {@link PutGeoipDatabaseRequest}
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/put-geoip-database-api.html">Documentation
+	 *      on elastic.co</a>
+	 */
+
+	public final PutGeoipDatabaseResponse putGeoipDatabase(
+			Function<PutGeoipDatabaseRequest.Builder, ObjectBuilder<PutGeoipDatabaseRequest>> fn)
+			throws IOException, ElasticsearchException {
+		return putGeoipDatabase(fn.apply(new PutGeoipDatabaseRequest.Builder()).build());
+	}
+
 	// ----- Endpoint: ingest.put_pipeline
 
 	/**
-	 * Creates or updates a pipeline.
+	 * Creates or updates an ingest pipeline. Changes made using this API take
+	 * effect immediately.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/put-pipeline-api.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/ingest.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -182,13 +318,14 @@ public class ElasticsearchIngestClient extends ApiClient<ElasticsearchTransport,
 	}
 
 	/**
-	 * Creates or updates a pipeline.
+	 * Creates or updates an ingest pipeline. Changes made using this API take
+	 * effect immediately.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link PutPipelineRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/put-pipeline-api.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/9.0/ingest.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -201,7 +338,7 @@ public class ElasticsearchIngestClient extends ApiClient<ElasticsearchTransport,
 	// ----- Endpoint: ingest.simulate
 
 	/**
-	 * Allows to simulate a pipeline with example documents.
+	 * Executes an ingest pipeline against a set of provided documents.
 	 * 
 	 * @see <a href=
 	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/simulate-pipeline-api.html">Documentation
@@ -216,7 +353,7 @@ public class ElasticsearchIngestClient extends ApiClient<ElasticsearchTransport,
 	}
 
 	/**
-	 * Allows to simulate a pipeline with example documents.
+	 * Executes an ingest pipeline against a set of provided documents.
 	 * 
 	 * @param fn
 	 *            a function that initializes a builder to create the
@@ -229,19 +366,6 @@ public class ElasticsearchIngestClient extends ApiClient<ElasticsearchTransport,
 	public final SimulateResponse simulate(Function<SimulateRequest.Builder, ObjectBuilder<SimulateRequest>> fn)
 			throws IOException, ElasticsearchException {
 		return simulate(fn.apply(new SimulateRequest.Builder()).build());
-	}
-
-	/**
-	 * Allows to simulate a pipeline with example documents.
-	 * 
-	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/master/simulate-pipeline-api.html">Documentation
-	 *      on elastic.co</a>
-	 */
-
-	public SimulateResponse simulate() throws IOException, ElasticsearchException {
-		return this.transport.performRequest(new SimulateRequest.Builder().build(), SimulateRequest._ENDPOINT,
-				this.transportOptions);
 	}
 
 }

@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -37,6 +33,21 @@ import java.lang.Long;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.PublishedClusterStates
 
@@ -72,6 +83,8 @@ public class PublishedClusterStates implements JsonpSerializable {
 	}
 
 	/**
+	 * Number of published cluster states.
+	 * <p>
 	 * API name: {@code full_states}
 	 */
 	@Nullable
@@ -80,6 +93,8 @@ public class PublishedClusterStates implements JsonpSerializable {
 	}
 
 	/**
+	 * Number of incompatible differences between published cluster states.
+	 * <p>
 	 * API name: {@code incompatible_diffs}
 	 */
 	@Nullable
@@ -88,6 +103,8 @@ public class PublishedClusterStates implements JsonpSerializable {
 	}
 
 	/**
+	 * Number of compatible differences between published cluster states.
+	 * <p>
 	 * API name: {@code compatible_diffs}
 	 */
 	@Nullable
@@ -148,6 +165,8 @@ public class PublishedClusterStates implements JsonpSerializable {
 		private Long compatibleDiffs;
 
 		/**
+		 * Number of published cluster states.
+		 * <p>
 		 * API name: {@code full_states}
 		 */
 		public final Builder fullStates(@Nullable Long value) {
@@ -156,6 +175,8 @@ public class PublishedClusterStates implements JsonpSerializable {
 		}
 
 		/**
+		 * Number of incompatible differences between published cluster states.
+		 * <p>
 		 * API name: {@code incompatible_diffs}
 		 */
 		public final Builder incompatibleDiffs(@Nullable Long value) {
@@ -164,6 +185,8 @@ public class PublishedClusterStates implements JsonpSerializable {
 		}
 
 		/**
+		 * Number of compatible differences between published cluster states.
+		 * <p>
 		 * API name: {@code compatible_diffs}
 		 */
 		public final Builder compatibleDiffs(@Nullable Long value) {

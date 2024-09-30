@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cat.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -37,6 +33,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: cat.nodes.NodesRecord
 
@@ -443,7 +454,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * unique node id
+	 * The unique node identifier.
 	 * <p>
 	 * API name: {@code id}
 	 */
@@ -453,7 +464,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * process id
+	 * The process identifier.
 	 * <p>
 	 * API name: {@code pid}
 	 */
@@ -463,7 +474,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * ip address
+	 * The IP address.
 	 * <p>
 	 * API name: {@code ip}
 	 */
@@ -473,7 +484,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * bound transport port
+	 * The bound transport port.
 	 * <p>
 	 * API name: {@code port}
 	 */
@@ -483,7 +494,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * bound http address
+	 * The bound HTTP address.
 	 * <p>
 	 * API name: {@code http_address}
 	 */
@@ -493,7 +504,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * es version
+	 * The Elasticsearch version.
 	 * <p>
 	 * API name: {@code version}
 	 */
@@ -503,7 +514,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * es distribution flavor
+	 * The Elasticsearch distribution flavor.
 	 * <p>
 	 * API name: {@code flavor}
 	 */
@@ -513,7 +524,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * es distribution type
+	 * The Elasticsearch distribution type.
 	 * <p>
 	 * API name: {@code type}
 	 */
@@ -523,7 +534,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * es build hash
+	 * The Elasticsearch build hash.
 	 * <p>
 	 * API name: {@code build}
 	 */
@@ -533,7 +544,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * jdk version
+	 * The Java version.
 	 * <p>
 	 * API name: {@code jdk}
 	 */
@@ -543,7 +554,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * total disk space
+	 * The total disk space.
 	 * <p>
 	 * API name: {@code disk.total}
 	 */
@@ -553,7 +564,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * used disk space
+	 * The used disk space.
 	 * <p>
 	 * API name: {@code disk.used}
 	 */
@@ -563,7 +574,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * available disk space
+	 * The available disk space.
 	 * <p>
 	 * API name: {@code disk.avail}
 	 */
@@ -573,7 +584,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * used disk space percentage
+	 * The used disk space percentage.
 	 * <p>
 	 * API name: {@code disk.used_percent}
 	 */
@@ -583,7 +594,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * used heap
+	 * The used heap.
 	 * <p>
 	 * API name: {@code heap.current}
 	 */
@@ -593,7 +604,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * used heap ratio
+	 * The used heap ratio.
 	 * <p>
 	 * API name: {@code heap.percent}
 	 */
@@ -603,7 +614,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * max configured heap
+	 * The maximum configured heap.
 	 * <p>
 	 * API name: {@code heap.max}
 	 */
@@ -613,7 +624,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * used machine memory
+	 * The used machine memory.
 	 * <p>
 	 * API name: {@code ram.current}
 	 */
@@ -623,7 +634,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * used machine memory ratio
+	 * The used machine memory ratio.
 	 * <p>
 	 * API name: {@code ram.percent}
 	 */
@@ -633,7 +644,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * total machine memory
+	 * The total machine memory.
 	 * <p>
 	 * API name: {@code ram.max}
 	 */
@@ -643,7 +654,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * used file descriptors
+	 * The used file descriptors.
 	 * <p>
 	 * API name: {@code file_desc.current}
 	 */
@@ -653,7 +664,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * used file descriptor ratio
+	 * The used file descriptor ratio.
 	 * <p>
 	 * API name: {@code file_desc.percent}
 	 */
@@ -663,7 +674,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * max file descriptors
+	 * The maximum number of file descriptors.
 	 * <p>
 	 * API name: {@code file_desc.max}
 	 */
@@ -673,7 +684,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * recent cpu usage
+	 * The recent system CPU usage as a percentage.
 	 * <p>
 	 * API name: {@code cpu}
 	 */
@@ -683,7 +694,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * 1m load avg
+	 * The load average for the most recent minute.
 	 * <p>
 	 * API name: {@code load_1m}
 	 */
@@ -693,7 +704,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * 5m load avg
+	 * The load average for the last five minutes.
 	 * <p>
 	 * API name: {@code load_5m}
 	 */
@@ -703,7 +714,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * 15m load avg
+	 * The load average for the last fifteen minutes.
 	 * <p>
 	 * API name: {@code load_15m}
 	 */
@@ -713,7 +724,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * node uptime
+	 * The node uptime.
 	 * <p>
 	 * API name: {@code uptime}
 	 */
@@ -723,7 +734,13 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * m:master eligible node, d:data node, i:ingest node, -:coordinating node only
+	 * The roles of the node. Returned values include <code>c</code>(cold node),
+	 * <code>d</code>(data node), <code>f</code>(frozen node), <code>h</code>(hot
+	 * node), <code>i</code>(ingest node), <code>l</code>(machine learning node),
+	 * <code>m</code> (master eligible node), <code>r</code>(remote cluster client
+	 * node), <code>s</code>(content node), <code>t</code>(transform node),
+	 * <code>v</code>(voting-only node), <code>w</code>(warm node),and
+	 * <code>-</code>(coordinating node only).
 	 * <p>
 	 * API name: {@code node.role}
 	 */
@@ -733,7 +750,9 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * *:current master
+	 * Indicates whether the node is the elected master node. Returned values
+	 * include <code>*</code>(elected master) and <code>-</code>(not elected
+	 * master).
 	 * <p>
 	 * API name: {@code master}
 	 */
@@ -743,7 +762,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * node name
+	 * The node name.
 	 * <p>
 	 * API name: {@code name}
 	 */
@@ -753,7 +772,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * size of completion
+	 * The size of completion.
 	 * <p>
 	 * API name: {@code completion.size}
 	 */
@@ -763,7 +782,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * used fielddata cache
+	 * The used fielddata cache.
 	 * <p>
 	 * API name: {@code fielddata.memory_size}
 	 */
@@ -773,7 +792,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * fielddata evictions
+	 * The fielddata evictions.
 	 * <p>
 	 * API name: {@code fielddata.evictions}
 	 */
@@ -783,7 +802,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * used query cache
+	 * The used query cache.
 	 * <p>
 	 * API name: {@code query_cache.memory_size}
 	 */
@@ -793,7 +812,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * query cache evictions
+	 * The query cache evictions.
 	 * <p>
 	 * API name: {@code query_cache.evictions}
 	 */
@@ -803,7 +822,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * query cache hit counts
+	 * The query cache hit counts.
 	 * <p>
 	 * API name: {@code query_cache.hit_count}
 	 */
@@ -813,7 +832,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * query cache miss counts
+	 * The query cache miss counts.
 	 * <p>
 	 * API name: {@code query_cache.miss_count}
 	 */
@@ -823,7 +842,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * used request cache
+	 * The used request cache.
 	 * <p>
 	 * API name: {@code request_cache.memory_size}
 	 */
@@ -833,7 +852,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * request cache evictions
+	 * The request cache evictions.
 	 * <p>
 	 * API name: {@code request_cache.evictions}
 	 */
@@ -843,7 +862,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * request cache hit counts
+	 * The request cache hit counts.
 	 * <p>
 	 * API name: {@code request_cache.hit_count}
 	 */
@@ -853,7 +872,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * request cache miss counts
+	 * The request cache miss counts.
 	 * <p>
 	 * API name: {@code request_cache.miss_count}
 	 */
@@ -863,7 +882,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of flushes
+	 * The number of flushes.
 	 * <p>
 	 * API name: {@code flush.total}
 	 */
@@ -873,7 +892,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in flush
+	 * The time spent in flush.
 	 * <p>
 	 * API name: {@code flush.total_time}
 	 */
@@ -883,7 +902,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of current get ops
+	 * The number of current get ops.
 	 * <p>
 	 * API name: {@code get.current}
 	 */
@@ -893,7 +912,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in get
+	 * The time spent in get.
 	 * <p>
 	 * API name: {@code get.time}
 	 */
@@ -903,7 +922,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of get ops
+	 * The number of get ops.
 	 * <p>
 	 * API name: {@code get.total}
 	 */
@@ -913,7 +932,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in successful gets
+	 * The time spent in successful gets.
 	 * <p>
 	 * API name: {@code get.exists_time}
 	 */
@@ -923,7 +942,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of successful gets
+	 * The number of successful get operations.
 	 * <p>
 	 * API name: {@code get.exists_total}
 	 */
@@ -933,7 +952,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in failed gets
+	 * The time spent in failed gets.
 	 * <p>
 	 * API name: {@code get.missing_time}
 	 */
@@ -943,7 +962,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of failed gets
+	 * The number of failed gets.
 	 * <p>
 	 * API name: {@code get.missing_total}
 	 */
@@ -953,7 +972,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of current deletions
+	 * The number of current deletions.
 	 * <p>
 	 * API name: {@code indexing.delete_current}
 	 */
@@ -963,7 +982,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in deletions
+	 * The time spent in deletions.
 	 * <p>
 	 * API name: {@code indexing.delete_time}
 	 */
@@ -973,7 +992,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of delete ops
+	 * The number of delete operations.
 	 * <p>
 	 * API name: {@code indexing.delete_total}
 	 */
@@ -983,7 +1002,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of current indexing ops
+	 * The number of current indexing operations.
 	 * <p>
 	 * API name: {@code indexing.index_current}
 	 */
@@ -993,7 +1012,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in indexing
+	 * The time spent in indexing.
 	 * <p>
 	 * API name: {@code indexing.index_time}
 	 */
@@ -1003,7 +1022,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of indexing ops
+	 * The number of indexing operations.
 	 * <p>
 	 * API name: {@code indexing.index_total}
 	 */
@@ -1013,7 +1032,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of failed indexing ops
+	 * The number of failed indexing operations.
 	 * <p>
 	 * API name: {@code indexing.index_failed}
 	 */
@@ -1023,7 +1042,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of current merges
+	 * The number of current merges.
 	 * <p>
 	 * API name: {@code merges.current}
 	 */
@@ -1033,7 +1052,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of current merging docs
+	 * The number of current merging docs.
 	 * <p>
 	 * API name: {@code merges.current_docs}
 	 */
@@ -1043,7 +1062,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * size of current merges
+	 * The size of current merges.
 	 * <p>
 	 * API name: {@code merges.current_size}
 	 */
@@ -1053,7 +1072,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of completed merge ops
+	 * The number of completed merge operations.
 	 * <p>
 	 * API name: {@code merges.total}
 	 */
@@ -1063,7 +1082,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * docs merged
+	 * The docs merged.
 	 * <p>
 	 * API name: {@code merges.total_docs}
 	 */
@@ -1073,7 +1092,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * size merged
+	 * The size merged.
 	 * <p>
 	 * API name: {@code merges.total_size}
 	 */
@@ -1083,7 +1102,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in merges
+	 * The time spent in merges.
 	 * <p>
 	 * API name: {@code merges.total_time}
 	 */
@@ -1093,7 +1112,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * total refreshes
+	 * The total refreshes.
 	 * <p>
 	 * API name: {@code refresh.total}
 	 */
@@ -1103,7 +1122,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in refreshes
+	 * The time spent in refreshes.
 	 * <p>
 	 * API name: {@code refresh.time}
 	 */
@@ -1113,7 +1132,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * total external refreshes
+	 * The total external refreshes.
 	 * <p>
 	 * API name: {@code refresh.external_total}
 	 */
@@ -1123,7 +1142,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in external refreshes
+	 * The time spent in external refreshes.
 	 * <p>
 	 * API name: {@code refresh.external_time}
 	 */
@@ -1133,7 +1152,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of pending refresh listeners
+	 * The number of pending refresh listeners.
 	 * <p>
 	 * API name: {@code refresh.listeners}
 	 */
@@ -1143,7 +1162,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * script compilations
+	 * The total script compilations.
 	 * <p>
 	 * API name: {@code script.compilations}
 	 */
@@ -1153,7 +1172,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * script cache evictions
+	 * The total compiled scripts evicted from the cache.
 	 * <p>
 	 * API name: {@code script.cache_evictions}
 	 */
@@ -1163,7 +1182,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * script cache compilation limit triggered
+	 * The script cache compilation limit triggered.
 	 * <p>
 	 * API name: {@code script.compilation_limit_triggered}
 	 */
@@ -1173,7 +1192,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * current fetch phase ops
+	 * The current fetch phase operations.
 	 * <p>
 	 * API name: {@code search.fetch_current}
 	 */
@@ -1183,7 +1202,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in fetch phase
+	 * The time spent in fetch phase.
 	 * <p>
 	 * API name: {@code search.fetch_time}
 	 */
@@ -1193,7 +1212,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * total fetch ops
+	 * The total fetch operations.
 	 * <p>
 	 * API name: {@code search.fetch_total}
 	 */
@@ -1203,7 +1222,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * open search contexts
+	 * The open search contexts.
 	 * <p>
 	 * API name: {@code search.open_contexts}
 	 */
@@ -1213,7 +1232,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * current query phase ops
+	 * The current query phase operations.
 	 * <p>
 	 * API name: {@code search.query_current}
 	 */
@@ -1223,7 +1242,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in query phase
+	 * The time spent in query phase.
 	 * <p>
 	 * API name: {@code search.query_time}
 	 */
@@ -1233,7 +1252,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * total query phase ops
+	 * The total query phase operations.
 	 * <p>
 	 * API name: {@code search.query_total}
 	 */
@@ -1243,7 +1262,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * open scroll contexts
+	 * The open scroll contexts.
 	 * <p>
 	 * API name: {@code search.scroll_current}
 	 */
@@ -1253,7 +1272,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time scroll contexts held open
+	 * The time scroll contexts held open.
 	 * <p>
 	 * API name: {@code search.scroll_time}
 	 */
@@ -1263,7 +1282,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * completed scroll contexts
+	 * The completed scroll contexts.
 	 * <p>
 	 * API name: {@code search.scroll_total}
 	 */
@@ -1273,7 +1292,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of segments
+	 * The number of segments.
 	 * <p>
 	 * API name: {@code segments.count}
 	 */
@@ -1283,7 +1302,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * memory used by segments
+	 * The memory used by segments.
 	 * <p>
 	 * API name: {@code segments.memory}
 	 */
@@ -1293,7 +1312,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * memory used by index writer
+	 * The memory used by the index writer.
 	 * <p>
 	 * API name: {@code segments.index_writer_memory}
 	 */
@@ -1303,7 +1322,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * memory used by version map
+	 * The memory used by the version map.
 	 * <p>
 	 * API name: {@code segments.version_map_memory}
 	 */
@@ -1313,8 +1332,8 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * memory used by fixed bit sets for nested object field types and export type
-	 * filters for types referred in _parent fields
+	 * The memory used by fixed bit sets for nested object field types and export
+	 * type filters for types referred in _parent fields.
 	 * <p>
 	 * API name: {@code segments.fixed_bitset_memory}
 	 */
@@ -1324,7 +1343,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of current suggest ops
+	 * The number of current suggest operations.
 	 * <p>
 	 * API name: {@code suggest.current}
 	 */
@@ -1334,7 +1353,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spend in suggest
+	 * The time spend in suggest.
 	 * <p>
 	 * API name: {@code suggest.time}
 	 */
@@ -1344,7 +1363,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of suggest ops
+	 * The number of suggest operations.
 	 * <p>
 	 * API name: {@code suggest.total}
 	 */
@@ -1354,7 +1373,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of bulk shard ops
+	 * The number of bulk shard operations.
 	 * <p>
 	 * API name: {@code bulk.total_operations}
 	 */
@@ -1364,7 +1383,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spend in shard bulk
+	 * The time spend in shard bulk.
 	 * <p>
 	 * API name: {@code bulk.total_time}
 	 */
@@ -1374,7 +1393,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * total size in bytes of shard bulk
+	 * The total size in bytes of shard bulk.
 	 * <p>
 	 * API name: {@code bulk.total_size_in_bytes}
 	 */
@@ -1384,7 +1403,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * average time spend in shard bulk
+	 * The average time spend in shard bulk.
 	 * <p>
 	 * API name: {@code bulk.avg_time}
 	 */
@@ -1394,7 +1413,7 @@ public class NodesRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * average size in bytes of shard bulk
+	 * The average size in bytes of shard bulk.
 	 * <p>
 	 * API name: {@code bulk.avg_size_in_bytes}
 	 */
@@ -2198,7 +2217,7 @@ public class NodesRecord implements JsonpSerializable {
 		private String bulkAvgSizeInBytes;
 
 		/**
-		 * unique node id
+		 * The unique node identifier.
 		 * <p>
 		 * API name: {@code id}
 		 */
@@ -2208,7 +2227,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * process id
+		 * The process identifier.
 		 * <p>
 		 * API name: {@code pid}
 		 */
@@ -2218,7 +2237,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * ip address
+		 * The IP address.
 		 * <p>
 		 * API name: {@code ip}
 		 */
@@ -2228,7 +2247,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * bound transport port
+		 * The bound transport port.
 		 * <p>
 		 * API name: {@code port}
 		 */
@@ -2238,7 +2257,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * bound http address
+		 * The bound HTTP address.
 		 * <p>
 		 * API name: {@code http_address}
 		 */
@@ -2248,7 +2267,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * es version
+		 * The Elasticsearch version.
 		 * <p>
 		 * API name: {@code version}
 		 */
@@ -2258,7 +2277,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * es distribution flavor
+		 * The Elasticsearch distribution flavor.
 		 * <p>
 		 * API name: {@code flavor}
 		 */
@@ -2268,7 +2287,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * es distribution type
+		 * The Elasticsearch distribution type.
 		 * <p>
 		 * API name: {@code type}
 		 */
@@ -2278,7 +2297,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * es build hash
+		 * The Elasticsearch build hash.
 		 * <p>
 		 * API name: {@code build}
 		 */
@@ -2288,7 +2307,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * jdk version
+		 * The Java version.
 		 * <p>
 		 * API name: {@code jdk}
 		 */
@@ -2298,7 +2317,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * total disk space
+		 * The total disk space.
 		 * <p>
 		 * API name: {@code disk.total}
 		 */
@@ -2308,7 +2327,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * used disk space
+		 * The used disk space.
 		 * <p>
 		 * API name: {@code disk.used}
 		 */
@@ -2318,7 +2337,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * available disk space
+		 * The available disk space.
 		 * <p>
 		 * API name: {@code disk.avail}
 		 */
@@ -2328,7 +2347,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * used disk space percentage
+		 * The used disk space percentage.
 		 * <p>
 		 * API name: {@code disk.used_percent}
 		 */
@@ -2338,7 +2357,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * used heap
+		 * The used heap.
 		 * <p>
 		 * API name: {@code heap.current}
 		 */
@@ -2348,7 +2367,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * used heap ratio
+		 * The used heap ratio.
 		 * <p>
 		 * API name: {@code heap.percent}
 		 */
@@ -2358,7 +2377,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * max configured heap
+		 * The maximum configured heap.
 		 * <p>
 		 * API name: {@code heap.max}
 		 */
@@ -2368,7 +2387,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * used machine memory
+		 * The used machine memory.
 		 * <p>
 		 * API name: {@code ram.current}
 		 */
@@ -2378,7 +2397,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * used machine memory ratio
+		 * The used machine memory ratio.
 		 * <p>
 		 * API name: {@code ram.percent}
 		 */
@@ -2388,7 +2407,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * total machine memory
+		 * The total machine memory.
 		 * <p>
 		 * API name: {@code ram.max}
 		 */
@@ -2398,7 +2417,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * used file descriptors
+		 * The used file descriptors.
 		 * <p>
 		 * API name: {@code file_desc.current}
 		 */
@@ -2408,7 +2427,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * used file descriptor ratio
+		 * The used file descriptor ratio.
 		 * <p>
 		 * API name: {@code file_desc.percent}
 		 */
@@ -2418,7 +2437,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * max file descriptors
+		 * The maximum number of file descriptors.
 		 * <p>
 		 * API name: {@code file_desc.max}
 		 */
@@ -2428,7 +2447,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * recent cpu usage
+		 * The recent system CPU usage as a percentage.
 		 * <p>
 		 * API name: {@code cpu}
 		 */
@@ -2438,7 +2457,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * 1m load avg
+		 * The load average for the most recent minute.
 		 * <p>
 		 * API name: {@code load_1m}
 		 */
@@ -2448,7 +2467,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * 5m load avg
+		 * The load average for the last five minutes.
 		 * <p>
 		 * API name: {@code load_5m}
 		 */
@@ -2458,7 +2477,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * 15m load avg
+		 * The load average for the last fifteen minutes.
 		 * <p>
 		 * API name: {@code load_15m}
 		 */
@@ -2468,7 +2487,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * node uptime
+		 * The node uptime.
 		 * <p>
 		 * API name: {@code uptime}
 		 */
@@ -2478,7 +2497,13 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * m:master eligible node, d:data node, i:ingest node, -:coordinating node only
+		 * The roles of the node. Returned values include <code>c</code>(cold node),
+		 * <code>d</code>(data node), <code>f</code>(frozen node), <code>h</code>(hot
+		 * node), <code>i</code>(ingest node), <code>l</code>(machine learning node),
+		 * <code>m</code> (master eligible node), <code>r</code>(remote cluster client
+		 * node), <code>s</code>(content node), <code>t</code>(transform node),
+		 * <code>v</code>(voting-only node), <code>w</code>(warm node),and
+		 * <code>-</code>(coordinating node only).
 		 * <p>
 		 * API name: {@code node.role}
 		 */
@@ -2488,7 +2513,9 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * *:current master
+		 * Indicates whether the node is the elected master node. Returned values
+		 * include <code>*</code>(elected master) and <code>-</code>(not elected
+		 * master).
 		 * <p>
 		 * API name: {@code master}
 		 */
@@ -2498,7 +2525,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * node name
+		 * The node name.
 		 * <p>
 		 * API name: {@code name}
 		 */
@@ -2508,7 +2535,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * size of completion
+		 * The size of completion.
 		 * <p>
 		 * API name: {@code completion.size}
 		 */
@@ -2518,7 +2545,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * used fielddata cache
+		 * The used fielddata cache.
 		 * <p>
 		 * API name: {@code fielddata.memory_size}
 		 */
@@ -2528,7 +2555,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * fielddata evictions
+		 * The fielddata evictions.
 		 * <p>
 		 * API name: {@code fielddata.evictions}
 		 */
@@ -2538,7 +2565,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * used query cache
+		 * The used query cache.
 		 * <p>
 		 * API name: {@code query_cache.memory_size}
 		 */
@@ -2548,7 +2575,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * query cache evictions
+		 * The query cache evictions.
 		 * <p>
 		 * API name: {@code query_cache.evictions}
 		 */
@@ -2558,7 +2585,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * query cache hit counts
+		 * The query cache hit counts.
 		 * <p>
 		 * API name: {@code query_cache.hit_count}
 		 */
@@ -2568,7 +2595,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * query cache miss counts
+		 * The query cache miss counts.
 		 * <p>
 		 * API name: {@code query_cache.miss_count}
 		 */
@@ -2578,7 +2605,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * used request cache
+		 * The used request cache.
 		 * <p>
 		 * API name: {@code request_cache.memory_size}
 		 */
@@ -2588,7 +2615,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * request cache evictions
+		 * The request cache evictions.
 		 * <p>
 		 * API name: {@code request_cache.evictions}
 		 */
@@ -2598,7 +2625,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * request cache hit counts
+		 * The request cache hit counts.
 		 * <p>
 		 * API name: {@code request_cache.hit_count}
 		 */
@@ -2608,7 +2635,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * request cache miss counts
+		 * The request cache miss counts.
 		 * <p>
 		 * API name: {@code request_cache.miss_count}
 		 */
@@ -2618,7 +2645,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of flushes
+		 * The number of flushes.
 		 * <p>
 		 * API name: {@code flush.total}
 		 */
@@ -2628,7 +2655,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in flush
+		 * The time spent in flush.
 		 * <p>
 		 * API name: {@code flush.total_time}
 		 */
@@ -2638,7 +2665,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of current get ops
+		 * The number of current get ops.
 		 * <p>
 		 * API name: {@code get.current}
 		 */
@@ -2648,7 +2675,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in get
+		 * The time spent in get.
 		 * <p>
 		 * API name: {@code get.time}
 		 */
@@ -2658,7 +2685,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of get ops
+		 * The number of get ops.
 		 * <p>
 		 * API name: {@code get.total}
 		 */
@@ -2668,7 +2695,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in successful gets
+		 * The time spent in successful gets.
 		 * <p>
 		 * API name: {@code get.exists_time}
 		 */
@@ -2678,7 +2705,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of successful gets
+		 * The number of successful get operations.
 		 * <p>
 		 * API name: {@code get.exists_total}
 		 */
@@ -2688,7 +2715,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in failed gets
+		 * The time spent in failed gets.
 		 * <p>
 		 * API name: {@code get.missing_time}
 		 */
@@ -2698,7 +2725,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of failed gets
+		 * The number of failed gets.
 		 * <p>
 		 * API name: {@code get.missing_total}
 		 */
@@ -2708,7 +2735,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of current deletions
+		 * The number of current deletions.
 		 * <p>
 		 * API name: {@code indexing.delete_current}
 		 */
@@ -2718,7 +2745,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in deletions
+		 * The time spent in deletions.
 		 * <p>
 		 * API name: {@code indexing.delete_time}
 		 */
@@ -2728,7 +2755,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of delete ops
+		 * The number of delete operations.
 		 * <p>
 		 * API name: {@code indexing.delete_total}
 		 */
@@ -2738,7 +2765,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of current indexing ops
+		 * The number of current indexing operations.
 		 * <p>
 		 * API name: {@code indexing.index_current}
 		 */
@@ -2748,7 +2775,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in indexing
+		 * The time spent in indexing.
 		 * <p>
 		 * API name: {@code indexing.index_time}
 		 */
@@ -2758,7 +2785,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of indexing ops
+		 * The number of indexing operations.
 		 * <p>
 		 * API name: {@code indexing.index_total}
 		 */
@@ -2768,7 +2795,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of failed indexing ops
+		 * The number of failed indexing operations.
 		 * <p>
 		 * API name: {@code indexing.index_failed}
 		 */
@@ -2778,7 +2805,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of current merges
+		 * The number of current merges.
 		 * <p>
 		 * API name: {@code merges.current}
 		 */
@@ -2788,7 +2815,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of current merging docs
+		 * The number of current merging docs.
 		 * <p>
 		 * API name: {@code merges.current_docs}
 		 */
@@ -2798,7 +2825,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * size of current merges
+		 * The size of current merges.
 		 * <p>
 		 * API name: {@code merges.current_size}
 		 */
@@ -2808,7 +2835,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of completed merge ops
+		 * The number of completed merge operations.
 		 * <p>
 		 * API name: {@code merges.total}
 		 */
@@ -2818,7 +2845,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * docs merged
+		 * The docs merged.
 		 * <p>
 		 * API name: {@code merges.total_docs}
 		 */
@@ -2828,7 +2855,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * size merged
+		 * The size merged.
 		 * <p>
 		 * API name: {@code merges.total_size}
 		 */
@@ -2838,7 +2865,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in merges
+		 * The time spent in merges.
 		 * <p>
 		 * API name: {@code merges.total_time}
 		 */
@@ -2848,7 +2875,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * total refreshes
+		 * The total refreshes.
 		 * <p>
 		 * API name: {@code refresh.total}
 		 */
@@ -2858,7 +2885,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in refreshes
+		 * The time spent in refreshes.
 		 * <p>
 		 * API name: {@code refresh.time}
 		 */
@@ -2868,7 +2895,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * total external refreshes
+		 * The total external refreshes.
 		 * <p>
 		 * API name: {@code refresh.external_total}
 		 */
@@ -2878,7 +2905,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in external refreshes
+		 * The time spent in external refreshes.
 		 * <p>
 		 * API name: {@code refresh.external_time}
 		 */
@@ -2888,7 +2915,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of pending refresh listeners
+		 * The number of pending refresh listeners.
 		 * <p>
 		 * API name: {@code refresh.listeners}
 		 */
@@ -2898,7 +2925,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * script compilations
+		 * The total script compilations.
 		 * <p>
 		 * API name: {@code script.compilations}
 		 */
@@ -2908,7 +2935,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * script cache evictions
+		 * The total compiled scripts evicted from the cache.
 		 * <p>
 		 * API name: {@code script.cache_evictions}
 		 */
@@ -2918,7 +2945,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * script cache compilation limit triggered
+		 * The script cache compilation limit triggered.
 		 * <p>
 		 * API name: {@code script.compilation_limit_triggered}
 		 */
@@ -2928,7 +2955,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * current fetch phase ops
+		 * The current fetch phase operations.
 		 * <p>
 		 * API name: {@code search.fetch_current}
 		 */
@@ -2938,7 +2965,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in fetch phase
+		 * The time spent in fetch phase.
 		 * <p>
 		 * API name: {@code search.fetch_time}
 		 */
@@ -2948,7 +2975,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * total fetch ops
+		 * The total fetch operations.
 		 * <p>
 		 * API name: {@code search.fetch_total}
 		 */
@@ -2958,7 +2985,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * open search contexts
+		 * The open search contexts.
 		 * <p>
 		 * API name: {@code search.open_contexts}
 		 */
@@ -2968,7 +2995,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * current query phase ops
+		 * The current query phase operations.
 		 * <p>
 		 * API name: {@code search.query_current}
 		 */
@@ -2978,7 +3005,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in query phase
+		 * The time spent in query phase.
 		 * <p>
 		 * API name: {@code search.query_time}
 		 */
@@ -2988,7 +3015,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * total query phase ops
+		 * The total query phase operations.
 		 * <p>
 		 * API name: {@code search.query_total}
 		 */
@@ -2998,7 +3025,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * open scroll contexts
+		 * The open scroll contexts.
 		 * <p>
 		 * API name: {@code search.scroll_current}
 		 */
@@ -3008,7 +3035,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time scroll contexts held open
+		 * The time scroll contexts held open.
 		 * <p>
 		 * API name: {@code search.scroll_time}
 		 */
@@ -3018,7 +3045,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * completed scroll contexts
+		 * The completed scroll contexts.
 		 * <p>
 		 * API name: {@code search.scroll_total}
 		 */
@@ -3028,7 +3055,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of segments
+		 * The number of segments.
 		 * <p>
 		 * API name: {@code segments.count}
 		 */
@@ -3038,7 +3065,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * memory used by segments
+		 * The memory used by segments.
 		 * <p>
 		 * API name: {@code segments.memory}
 		 */
@@ -3048,7 +3075,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * memory used by index writer
+		 * The memory used by the index writer.
 		 * <p>
 		 * API name: {@code segments.index_writer_memory}
 		 */
@@ -3058,7 +3085,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * memory used by version map
+		 * The memory used by the version map.
 		 * <p>
 		 * API name: {@code segments.version_map_memory}
 		 */
@@ -3068,8 +3095,8 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * memory used by fixed bit sets for nested object field types and export type
-		 * filters for types referred in _parent fields
+		 * The memory used by fixed bit sets for nested object field types and export
+		 * type filters for types referred in _parent fields.
 		 * <p>
 		 * API name: {@code segments.fixed_bitset_memory}
 		 */
@@ -3079,7 +3106,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of current suggest ops
+		 * The number of current suggest operations.
 		 * <p>
 		 * API name: {@code suggest.current}
 		 */
@@ -3089,7 +3116,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spend in suggest
+		 * The time spend in suggest.
 		 * <p>
 		 * API name: {@code suggest.time}
 		 */
@@ -3099,7 +3126,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of suggest ops
+		 * The number of suggest operations.
 		 * <p>
 		 * API name: {@code suggest.total}
 		 */
@@ -3109,7 +3136,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of bulk shard ops
+		 * The number of bulk shard operations.
 		 * <p>
 		 * API name: {@code bulk.total_operations}
 		 */
@@ -3119,7 +3146,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spend in shard bulk
+		 * The time spend in shard bulk.
 		 * <p>
 		 * API name: {@code bulk.total_time}
 		 */
@@ -3129,7 +3156,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * total size in bytes of shard bulk
+		 * The total size in bytes of shard bulk.
 		 * <p>
 		 * API name: {@code bulk.total_size_in_bytes}
 		 */
@@ -3139,7 +3166,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * average time spend in shard bulk
+		 * The average time spend in shard bulk.
 		 * <p>
 		 * API name: {@code bulk.avg_time}
 		 */
@@ -3149,7 +3176,7 @@ public class NodesRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * average size in bytes of shard bulk
+		 * The average size in bytes of shard bulk.
 		 * <p>
 		 * API name: {@code bulk.avg_size_in_bytes}
 		 */

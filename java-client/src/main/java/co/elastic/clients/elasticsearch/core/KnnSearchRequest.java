@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.core;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -49,6 +45,21 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: _global.knn_search.Request
 
 /**
@@ -56,7 +67,9 @@ import javax.annotation.Nullable;
  * 
  * @see <a href="../doc-files/api-spec.html#_global.knn_search.Request">API
  *      specification</a>
+ * @deprecated 8.4.0
  */
+@Deprecated
 @JsonpDeserializable
 public class KnnSearchRequest extends RequestBase implements JsonpSerializable {
 	@Nullable
@@ -231,12 +244,18 @@ public class KnnSearchRequest extends RequestBase implements JsonpSerializable {
 
 		if (ApiTypeHelper.isDefined(this.storedFields)) {
 			generator.writeKey("stored_fields");
-			generator.writeStartArray();
-			for (String item0 : this.storedFields) {
-				generator.write(item0);
+			if (this.storedFields.size() == 1) {
+				String singleItem = this.storedFields.get(0);
+				generator.write(singleItem);
 
+			} else {
+				generator.writeStartArray();
+				for (String item0 : this.storedFields) {
+					generator.write(item0);
+
+				}
+				generator.writeEnd();
 			}
-			generator.writeEnd();
 
 		}
 
@@ -247,7 +266,7 @@ public class KnnSearchRequest extends RequestBase implements JsonpSerializable {
 	/**
 	 * Builder for {@link KnnSearchRequest}.
 	 */
-
+	@Deprecated
 	public static class Builder extends RequestBase.AbstractBuilder<Builder>
 			implements
 				ObjectBuilder<KnnSearchRequest> {
@@ -556,6 +575,21 @@ public class KnnSearchRequest extends RequestBase implements JsonpSerializable {
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _index = 1 << 0;
+
+				int propsSet = 0;
+
+				propsSet |= _index;
+
+				if (propsSet == (_index)) {
+					params.put("index", request.index.stream().map(v -> v).collect(Collectors.joining(",")));
+				}
+				return params;
 			},
 
 			// Request parameters

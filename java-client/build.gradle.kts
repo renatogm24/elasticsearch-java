@@ -18,8 +18,8 @@
  */
 
 import com.github.jk1.license.ProjectData
-import com.github.jk1.license.render.ReportRenderer
 import com.github.jk1.license.render.LicenseDataCollector
+import com.github.jk1.license.render.ReportRenderer
 import java.io.FileWriter
 
 plugins {
@@ -27,8 +27,12 @@ plugins {
     `java-library`
     checkstyle
     `maven-publish`
-    id("com.github.jk1.dependency-license-report") version "2.1"
+    id("com.github.jk1.dependency-license-report") version "2.2"
     id("de.thetaphi.forbiddenapis") version "3.4"
+}
+
+checkstyle {
+    toolVersion = "10.16.0"
 }
 
 java {
@@ -37,6 +41,12 @@ java {
 
     withJavadocJar()
     withSourcesJar()
+}
+
+sourceSets {
+    main {
+        java.srcDir("src/main-flavored/java")
+    }
 }
 
 forbiddenApis {
@@ -53,8 +63,8 @@ tasks.getByName<ProcessResources>("processResources") {
         if (name != "apis.json") {
             // Only process main source-set resources (test files are large)
             expand(
-                "version" to version,
-                "git_revision" to (if (rootProject.extra.has("gitHashFull")) rootProject.extra["gitHashFull"] else "unknown")
+                    "version" to version,
+                    "git_revision" to (if (rootProject.extra.has("gitHashFull")) rootProject.extra["gitHashFull"] else "unknown")
             )
         }
     }
@@ -69,7 +79,7 @@ tasks.withType<Jar> {
         if (rootProject.extra.has("gitHashFull")) {
             val jar = this as Jar
             jar.manifest.attributes["X-Git-Revision"] = rootProject.extra["gitHashFull"]
-            jar.manifest.attributes["X-Git-Commit-Time"] = rootProject .extra["gitCommitTime"]
+            jar.manifest.attributes["X-Git-Commit-Time"] = rootProject.extra["gitCommitTime"]
         } else {
             throw GradleException("No git information available")
         }
@@ -154,7 +164,7 @@ publishing {
                     // are the same as the one used in the dependency section below.
                     val xPathFactory = javax.xml.xpath.XPathFactory.newInstance()
                     val depSelector = xPathFactory.newXPath()
-                        .compile("/project/dependencies/dependency[groupId/text() = 'org.elasticsearch.client']")
+                            .compile("/project/dependencies/dependency[groupId/text() = 'org.elasticsearch.client']")
                     val versionSelector = xPathFactory.newXPath().compile("version")
 
                     var foundVersion = false;
@@ -181,8 +191,9 @@ publishing {
 dependencies {
     // Compile and test with the last 7.x version to make sure transition scenarios where
     // the Java API client coexists with a 7.x HLRC work fine
-    val elasticsearchVersion = "7.17.7"
-    val jacksonVersion = "2.13.3"
+    val elasticsearchVersion = "8.10.0"
+    val jacksonVersion = "2.17.0"
+    val openTelemetryVersion = "1.29.0"
 
     // Apache 2.0
     // https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/java-rest-low.html
@@ -199,7 +210,14 @@ dependencies {
     // Needed even if using Jackson to have an implementation of the Jsonp object model
     // EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
     // https://github.com/eclipse-ee4j/parsson
-    api("org.eclipse.parsson:parsson:1.0.0")
+    api("org.eclipse.parsson:parsson:1.0.5")
+
+    // OpenTelemetry API for native instrumentation of the client.
+    // Apache 2.0
+    // https://github.com/open-telemetry/opentelemetry-java
+    implementation("io.opentelemetry", "opentelemetry-api", openTelemetryVersion)
+    // Use it once it's stable (see Instrumentation.java). Limited to tests for now.
+    testImplementation("io.opentelemetry", "opentelemetry-semconv", "$openTelemetryVersion-alpha")
 
     // EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
     // https://github.com/eclipse-ee4j/jsonb-api
@@ -236,6 +254,14 @@ dependencies {
     // https://www.testcontainers.org/
     testImplementation("org.testcontainers", "testcontainers", "1.17.3")
     testImplementation("org.testcontainers", "elasticsearch", "1.17.3")
+    // updating transitive dependency from testcontainers
+    testImplementation("org.apache.commons","commons-compress","1.26.1")
+
+    testImplementation("io.opentelemetry", "opentelemetry-sdk", openTelemetryVersion)
+
+    // Apache-2.0
+    // https://github.com/awaitility/awaitility
+    testImplementation("org.awaitility", "awaitility", "4.2.0")
 }
 
 
@@ -247,17 +273,18 @@ licenseReport {
 class SpdxReporter(val dest: File) : ReportRenderer {
     // License names to their SPDX identifier
     val spdxIds = mapOf(
-        "Apache License, Version 2.0" to "Apache-2.0",
-        "The Apache Software License, Version 2.0" to "Apache-2.0",
-        "BSD Zero Clause License" to "0BSD",
-        "Eclipse Public License 2.0" to "EPL-2.0",
-        "Eclipse Public License v. 2.0" to "EPL-2.0",
-        "Eclipse Public License - v 2.0" to "EPL-2.0",
-        "GNU General Public License, version 2 with the GNU Classpath Exception" to "GPL-2.0 WITH Classpath-exception-2.0",
-        "COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0" to "CDDL-1.0"
+            "The Apache License, Version 2.0" to "Apache-2.0",
+            "Apache License, Version 2.0" to "Apache-2.0",
+            "The Apache Software License, Version 2.0" to "Apache-2.0",
+            "BSD Zero Clause License" to "0BSD",
+            "Eclipse Public License 2.0" to "EPL-2.0",
+            "Eclipse Public License v. 2.0" to "EPL-2.0",
+            "Eclipse Public License - v 2.0" to "EPL-2.0",
+            "GNU General Public License, version 2 with the GNU Classpath Exception" to "GPL-2.0 WITH Classpath-exception-2.0",
+            "COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0" to "CDDL-1.0"
     )
 
-    private fun quote(str: String) : String {
+    private fun quote(str: String): String {
         return if (str.contains(',') || str.contains("\"")) {
             "\"" + str.replace("\"", "\"\"") + "\""
         } else {
@@ -274,26 +301,18 @@ class SpdxReporter(val dest: File) : ReportRenderer {
                 val depVersion = dep.version
                 val depName = dep.group + ":" + dep.name
 
-                //--------------
-                // FIXME: restore section below once 2.2 is released
-                // See https://github.com/jk1/Gradle-License-Report/issues/251
-                val (depUrl, licenseId, licenseUrl) = LicenseDataCollector.singleModuleLicenseInfo(dep)
-                checkNotNull(spdxIds[licenseId]) { "No SPDX identifier for $licenseId" }
+                val info = LicenseDataCollector.multiModuleLicenseInfo(dep)
+                val depUrl = info.moduleUrls.first()
 
-                //--------------
-                // val info = LicenseDataCollector.multiModuleLicenseInfo(dep)
-                // val depUrl = info.moduleUrls.first()
-                //
-                // val licenseIds = info.licenses.mapNotNull { license ->
-                //     license.name?.let {
-                //         checkNotNull(spdxIds[it]) { "No SPDX identifier for $license" }
-                //     }
-                // }.toSet()
-                //
-                // // Combine multiple licenses.
-                // // See https://spdx.github.io/spdx-spec/appendix-IV-SPDX-license-expressions/#composite-license-expressions
-                // val licenseId = licenseIds.joinToString(" OR ")
-                //--------------
+                val licenseIds = info.licenses.mapNotNull { license ->
+                    license.name?.let {
+                        checkNotNull(spdxIds[it]) { "No SPDX identifier for $license" }
+                    }
+                }.toSet()
+
+                // Combine multiple licenses.
+                // See https://spdx.github.io/spdx-spec/appendix-IV-SPDX-license-expressions/#composite-license-expressions
+                val licenseId = licenseIds.joinToString(" OR ")
 
                 out.append("${quote(depName)},${quote(depUrl)},${quote(depVersion)},,${quote(licenseId)}\n")
             }

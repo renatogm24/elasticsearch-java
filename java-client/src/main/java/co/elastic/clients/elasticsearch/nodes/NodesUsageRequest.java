@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -44,10 +40,25 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: nodes.usage.Request
 
 /**
- * Returns low-level information about REST actions usage on nodes.
+ * Returns information on the usage of features.
  * 
  * @see <a href="../doc-files/api-spec.html#nodes.usage.Request">API
  *      specification</a>
@@ -76,7 +87,8 @@ public class NodesUsageRequest extends RequestBase {
 	}
 
 	/**
-	 * Limit the information returned to the specified metrics
+	 * Limits the information returned to the specific metrics. A comma-separated
+	 * list of the following options: <code>_all</code>, <code>rest_actions</code>.
 	 * <p>
 	 * API name: {@code metric}
 	 */
@@ -96,7 +108,8 @@ public class NodesUsageRequest extends RequestBase {
 	}
 
 	/**
-	 * Explicit operation timeout
+	 * Period to wait for a response. If no response is received before the timeout
+	 * expires, the request fails and returns an error.
 	 * <p>
 	 * API name: {@code timeout}
 	 */
@@ -124,7 +137,8 @@ public class NodesUsageRequest extends RequestBase {
 		private Time timeout;
 
 		/**
-		 * Limit the information returned to the specified metrics
+		 * Limits the information returned to the specific metrics. A comma-separated
+		 * list of the following options: <code>_all</code>, <code>rest_actions</code>.
 		 * <p>
 		 * API name: {@code metric}
 		 * <p>
@@ -136,7 +150,8 @@ public class NodesUsageRequest extends RequestBase {
 		}
 
 		/**
-		 * Limit the information returned to the specified metrics
+		 * Limits the information returned to the specific metrics. A comma-separated
+		 * list of the following options: <code>_all</code>, <code>rest_actions</code>.
 		 * <p>
 		 * API name: {@code metric}
 		 * <p>
@@ -176,7 +191,8 @@ public class NodesUsageRequest extends RequestBase {
 		}
 
 		/**
-		 * Explicit operation timeout
+		 * Period to wait for a response. If no response is received before the timeout
+		 * expires, the request fails and returns an error.
 		 * <p>
 		 * API name: {@code timeout}
 		 */
@@ -186,7 +202,8 @@ public class NodesUsageRequest extends RequestBase {
 		}
 
 		/**
-		 * Explicit operation timeout
+		 * Period to wait for a response. If no response is received before the timeout
+		 * expires, the request fails and returns an error.
 		 * <p>
 		 * API name: {@code timeout}
 		 */
@@ -276,6 +293,34 @@ public class NodesUsageRequest extends RequestBase {
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _metric = 1 << 0;
+				final int _nodeId = 1 << 1;
+
+				int propsSet = 0;
+
+				if (ApiTypeHelper.isDefined(request.metric()))
+					propsSet |= _metric;
+				if (ApiTypeHelper.isDefined(request.nodeId()))
+					propsSet |= _nodeId;
+
+				if (propsSet == 0) {
+				}
+				if (propsSet == (_nodeId)) {
+					params.put("nodeId", request.nodeId.stream().map(v -> v).collect(Collectors.joining(",")));
+				}
+				if (propsSet == (_metric)) {
+					params.put("metric", request.metric.stream().map(v -> v).collect(Collectors.joining(",")));
+				}
+				if (propsSet == (_nodeId | _metric)) {
+					params.put("nodeId", request.nodeId.stream().map(v -> v).collect(Collectors.joining(",")));
+					params.put("metric", request.metric.stream().map(v -> v).collect(Collectors.joining(",")));
+				}
+				return params;
 			},
 
 			// Request parameters

@@ -17,13 +17,10 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.tasks;
 
 import co.elastic.clients.elasticsearch._types.Time;
+import co.elastic.clients.json.JsonData;
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.JsonpMapper;
@@ -42,6 +39,21 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: tasks._types.TaskInfo
 
@@ -76,7 +88,7 @@ public class TaskInfo implements JsonpSerializable {
 	private final long startTimeInMillis;
 
 	@Nullable
-	private final TaskStatus status;
+	private final JsonData status;
 
 	private final String type;
 
@@ -181,10 +193,12 @@ public class TaskInfo implements JsonpSerializable {
 	}
 
 	/**
+	 * Task status information can vary wildly from task to task.
+	 * <p>
 	 * API name: {@code status}
 	 */
 	@Nullable
-	public final TaskStatus status() {
+	public final JsonData status() {
 		return this.status;
 	}
 
@@ -331,7 +345,7 @@ public class TaskInfo implements JsonpSerializable {
 		private Long startTimeInMillis;
 
 		@Nullable
-		private TaskStatus status;
+		private JsonData status;
 
 		private String type;
 
@@ -438,18 +452,13 @@ public class TaskInfo implements JsonpSerializable {
 		}
 
 		/**
+		 * Task status information can vary wildly from task to task.
+		 * <p>
 		 * API name: {@code status}
 		 */
-		public final BuilderT status(@Nullable TaskStatus value) {
+		public final BuilderT status(@Nullable JsonData value) {
 			this.status = value;
 			return self();
-		}
-
-		/**
-		 * API name: {@code status}
-		 */
-		public final BuilderT status(Function<TaskStatus.Builder, ObjectBuilder<TaskStatus>> fn) {
-			return this.status(fn.apply(new TaskStatus.Builder()).build());
 		}
 
 		/**
@@ -494,7 +503,7 @@ public class TaskInfo implements JsonpSerializable {
 		op.add(AbstractBuilder::runningTime, Time._DESERIALIZER, "running_time");
 		op.add(AbstractBuilder::runningTimeInNanos, JsonpDeserializer.longDeserializer(), "running_time_in_nanos");
 		op.add(AbstractBuilder::startTimeInMillis, JsonpDeserializer.longDeserializer(), "start_time_in_millis");
-		op.add(AbstractBuilder::status, TaskStatus._DESERIALIZER, "status");
+		op.add(AbstractBuilder::status, JsonData._DESERIALIZER, "status");
 		op.add(AbstractBuilder::type, JsonpDeserializer.stringDeserializer(), "type");
 		op.add(AbstractBuilder::parentTaskId, JsonpDeserializer.stringDeserializer(), "parent_task_id");
 

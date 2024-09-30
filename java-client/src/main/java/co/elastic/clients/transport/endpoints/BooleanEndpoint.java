@@ -29,17 +29,20 @@ public class BooleanEndpoint<RequestT> extends EndpointBase<RequestT, BooleanRes
         Function<RequestT, String> method,
         Function<RequestT, String> requestUrl,
         Function<RequestT,
+            Map<String, String>> pathParameters,
+        Function<RequestT,
             Map<String, String>> queryParameters,
         Function<RequestT, Map<String, String>> headers,
         boolean hasRequestBody,
         Object ignored // same number of arguments as SimpleEndpoint
     ) {
-        super(id, method, requestUrl, queryParameters, headers, hasRequestBody ? returnSelf() : returnNull());
+        super(id, method, requestUrl, pathParameters, queryParameters, headers, hasRequestBody ? returnSelf() : returnNull());
     }
 
     @Override
     public boolean isError(int statusCode) {
-        return statusCode >= 500;
+        // 404 indicates a 'false' result.
+        return statusCode != 404 && super.isError(statusCode);
     }
 
     public boolean getResult(int statusCode) {

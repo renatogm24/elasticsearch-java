@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.ml;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -43,13 +39,28 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: ml.delete_forecast.Request
 
 /**
- * Deletes forecasts from a machine learning job. By default, forecasts are
- * retained for 14 days. You can specify a different retention period with the
- * <code>expires_in</code> parameter in the forecast jobs API. The delete
- * forecast API enables you to delete one or more forecasts before they expire.
+ * Delete forecasts from a job. By default, forecasts are retained for 14 days.
+ * You can specify a different retention period with the <code>expires_in</code>
+ * parameter in the forecast jobs API. The delete forecast API enables you to
+ * delete one or more forecasts before they expire.
  * 
  * @see <a href="../doc-files/api-spec.html#ml.delete_forecast.Request">API
  *      specification</a>
@@ -269,6 +280,28 @@ public class DeleteForecastRequest extends RequestBase {
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _jobId = 1 << 0;
+				final int _forecastId = 1 << 1;
+
+				int propsSet = 0;
+
+				propsSet |= _jobId;
+				if (request.forecastId() != null)
+					propsSet |= _forecastId;
+
+				if (propsSet == (_jobId)) {
+					params.put("jobId", request.jobId);
+				}
+				if (propsSet == (_jobId | _forecastId)) {
+					params.put("jobId", request.jobId);
+					params.put("forecastId", request.forecastId);
+				}
+				return params;
 			},
 
 			// Request parameters

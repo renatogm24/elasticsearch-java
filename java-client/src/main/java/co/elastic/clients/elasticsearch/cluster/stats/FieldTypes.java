@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cluster.stats;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -40,6 +36,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: cluster.stats.FieldTypes
 
@@ -87,27 +98,36 @@ public class FieldTypes implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code name}
+	 * Required - The name for the field type in selected nodes.
+	 * <p>
+	 * API name: {@code name}
 	 */
 	public final String name() {
 		return this.name;
 	}
 
 	/**
-	 * Required - API name: {@code count}
+	 * Required - The number of occurrences of the field type in selected nodes.
+	 * <p>
+	 * API name: {@code count}
 	 */
 	public final int count() {
 		return this.count;
 	}
 
 	/**
-	 * Required - API name: {@code index_count}
+	 * Required - The number of indices containing the field type in selected nodes.
+	 * <p>
+	 * API name: {@code index_count}
 	 */
 	public final int indexCount() {
 		return this.indexCount;
 	}
 
 	/**
+	 * For dense_vector field types, number of indexed vector types in selected
+	 * nodes.
+	 * <p>
 	 * API name: {@code indexed_vector_count}
 	 */
 	@Nullable
@@ -116,6 +136,9 @@ public class FieldTypes implements JsonpSerializable {
 	}
 
 	/**
+	 * For dense_vector field types, the maximum dimension of all indexed vector
+	 * types in selected nodes.
+	 * <p>
 	 * API name: {@code indexed_vector_dim_max}
 	 */
 	@Nullable
@@ -124,6 +147,9 @@ public class FieldTypes implements JsonpSerializable {
 	}
 
 	/**
+	 * For dense_vector field types, the minimum dimension of all indexed vector
+	 * types in selected nodes.
+	 * <p>
 	 * API name: {@code indexed_vector_dim_min}
 	 */
 	@Nullable
@@ -132,6 +158,8 @@ public class FieldTypes implements JsonpSerializable {
 	}
 
 	/**
+	 * The number of fields that declare a script.
+	 * <p>
 	 * API name: {@code script_count}
 	 */
 	@Nullable
@@ -213,7 +241,9 @@ public class FieldTypes implements JsonpSerializable {
 		private Integer scriptCount;
 
 		/**
-		 * Required - API name: {@code name}
+		 * Required - The name for the field type in selected nodes.
+		 * <p>
+		 * API name: {@code name}
 		 */
 		public final Builder name(String value) {
 			this.name = value;
@@ -221,7 +251,9 @@ public class FieldTypes implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code count}
+		 * Required - The number of occurrences of the field type in selected nodes.
+		 * <p>
+		 * API name: {@code count}
 		 */
 		public final Builder count(int value) {
 			this.count = value;
@@ -229,7 +261,9 @@ public class FieldTypes implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code index_count}
+		 * Required - The number of indices containing the field type in selected nodes.
+		 * <p>
+		 * API name: {@code index_count}
 		 */
 		public final Builder indexCount(int value) {
 			this.indexCount = value;
@@ -237,6 +271,9 @@ public class FieldTypes implements JsonpSerializable {
 		}
 
 		/**
+		 * For dense_vector field types, number of indexed vector types in selected
+		 * nodes.
+		 * <p>
 		 * API name: {@code indexed_vector_count}
 		 */
 		public final Builder indexedVectorCount(@Nullable Long value) {
@@ -245,6 +282,9 @@ public class FieldTypes implements JsonpSerializable {
 		}
 
 		/**
+		 * For dense_vector field types, the maximum dimension of all indexed vector
+		 * types in selected nodes.
+		 * <p>
 		 * API name: {@code indexed_vector_dim_max}
 		 */
 		public final Builder indexedVectorDimMax(@Nullable Long value) {
@@ -253,6 +293,9 @@ public class FieldTypes implements JsonpSerializable {
 		}
 
 		/**
+		 * For dense_vector field types, the minimum dimension of all indexed vector
+		 * types in selected nodes.
+		 * <p>
 		 * API name: {@code indexed_vector_dim_min}
 		 */
 		public final Builder indexedVectorDimMin(@Nullable Long value) {
@@ -261,6 +304,8 @@ public class FieldTypes implements JsonpSerializable {
 		}
 
 		/**
+		 * The number of fields that declare a script.
+		 * <p>
 		 * API name: {@code script_count}
 		 */
 		public final Builder scriptCount(@Nullable Integer value) {

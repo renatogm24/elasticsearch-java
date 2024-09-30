@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.slm;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -43,6 +39,21 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: slm.put_lifecycle.Request
 
@@ -446,6 +457,21 @@ public class PutLifecycleRequest extends RequestBase implements JsonpSerializabl
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _policyId = 1 << 0;
+
+				int propsSet = 0;
+
+				propsSet |= _policyId;
+
+				if (propsSet == (_policyId)) {
+					params.put("policyId", request.policyId);
+				}
+				return params;
 			},
 
 			// Request parameters

@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cluster.stats;
 
 import co.elastic.clients.elasticsearch._types.CompletionStats;
@@ -46,6 +42,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: cluster.stats.ClusterIndices
 
 /**
@@ -55,6 +66,8 @@ import javax.annotation.Nullable;
  */
 @JsonpDeserializable
 public class ClusterIndices implements JsonpSerializable {
+	private final CharFilterTypes analysis;
+
 	private final CompletionStats completion;
 
 	private final long count;
@@ -73,14 +86,13 @@ public class ClusterIndices implements JsonpSerializable {
 
 	private final FieldTypesMappings mappings;
 
-	private final CharFilterTypes analysis;
-
 	private final List<IndicesVersions> versions;
 
 	// ---------------------------------------------------------------------------------------------
 
 	private ClusterIndices(Builder builder) {
 
+		this.analysis = ApiTypeHelper.requireNonNull(builder.analysis, this, "analysis");
 		this.completion = ApiTypeHelper.requireNonNull(builder.completion, this, "completion");
 		this.count = ApiTypeHelper.requireNonNull(builder.count, this, "count");
 		this.docs = ApiTypeHelper.requireNonNull(builder.docs, this, "docs");
@@ -90,13 +102,22 @@ public class ClusterIndices implements JsonpSerializable {
 		this.shards = ApiTypeHelper.requireNonNull(builder.shards, this, "shards");
 		this.store = ApiTypeHelper.requireNonNull(builder.store, this, "store");
 		this.mappings = ApiTypeHelper.requireNonNull(builder.mappings, this, "mappings");
-		this.analysis = ApiTypeHelper.requireNonNull(builder.analysis, this, "analysis");
 		this.versions = ApiTypeHelper.unmodifiable(builder.versions);
 
 	}
 
 	public static ClusterIndices of(Function<Builder, ObjectBuilder<ClusterIndices>> fn) {
 		return fn.apply(new Builder()).build();
+	}
+
+	/**
+	 * Required - Contains statistics about analyzers and analyzer components used
+	 * in selected nodes.
+	 * <p>
+	 * API name: {@code analysis}
+	 */
+	public final CharFilterTypes analysis() {
+		return this.analysis;
 	}
 
 	/**
@@ -184,16 +205,9 @@ public class ClusterIndices implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - Contains statistics about analyzers and analyzer components used
-	 * in selected nodes.
+	 * Contains statistics about analyzers and analyzer components used in selected
+	 * nodes.
 	 * <p>
-	 * API name: {@code analysis}
-	 */
-	public final CharFilterTypes analysis() {
-		return this.analysis;
-	}
-
-	/**
 	 * API name: {@code versions}
 	 */
 	public final List<IndicesVersions> versions() {
@@ -210,6 +224,9 @@ public class ClusterIndices implements JsonpSerializable {
 	}
 
 	protected void serializeInternal(JsonGenerator generator, JsonpMapper mapper) {
+
+		generator.writeKey("analysis");
+		this.analysis.serialize(generator, mapper);
 
 		generator.writeKey("completion");
 		this.completion.serialize(generator, mapper);
@@ -238,9 +255,6 @@ public class ClusterIndices implements JsonpSerializable {
 		generator.writeKey("mappings");
 		this.mappings.serialize(generator, mapper);
 
-		generator.writeKey("analysis");
-		this.analysis.serialize(generator, mapper);
-
 		if (ApiTypeHelper.isDefined(this.versions)) {
 			generator.writeKey("versions");
 			generator.writeStartArray();
@@ -266,6 +280,8 @@ public class ClusterIndices implements JsonpSerializable {
 	 */
 
 	public static class Builder extends WithJsonObjectBuilderBase<Builder> implements ObjectBuilder<ClusterIndices> {
+		private CharFilterTypes analysis;
+
 		private CompletionStats completion;
 
 		private Long count;
@@ -284,10 +300,29 @@ public class ClusterIndices implements JsonpSerializable {
 
 		private FieldTypesMappings mappings;
 
-		private CharFilterTypes analysis;
-
 		@Nullable
 		private List<IndicesVersions> versions;
+
+		/**
+		 * Required - Contains statistics about analyzers and analyzer components used
+		 * in selected nodes.
+		 * <p>
+		 * API name: {@code analysis}
+		 */
+		public final Builder analysis(CharFilterTypes value) {
+			this.analysis = value;
+			return this;
+		}
+
+		/**
+		 * Required - Contains statistics about analyzers and analyzer components used
+		 * in selected nodes.
+		 * <p>
+		 * API name: {@code analysis}
+		 */
+		public final Builder analysis(Function<CharFilterTypes.Builder, ObjectBuilder<CharFilterTypes>> fn) {
+			return this.analysis(fn.apply(new CharFilterTypes.Builder()).build());
+		}
 
 		/**
 		 * Required - Contains statistics about memory used for completion in selected
@@ -458,27 +493,9 @@ public class ClusterIndices implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - Contains statistics about analyzers and analyzer components used
-		 * in selected nodes.
+		 * Contains statistics about analyzers and analyzer components used in selected
+		 * nodes.
 		 * <p>
-		 * API name: {@code analysis}
-		 */
-		public final Builder analysis(CharFilterTypes value) {
-			this.analysis = value;
-			return this;
-		}
-
-		/**
-		 * Required - Contains statistics about analyzers and analyzer components used
-		 * in selected nodes.
-		 * <p>
-		 * API name: {@code analysis}
-		 */
-		public final Builder analysis(Function<CharFilterTypes.Builder, ObjectBuilder<CharFilterTypes>> fn) {
-			return this.analysis(fn.apply(new CharFilterTypes.Builder()).build());
-		}
-
-		/**
 		 * API name: {@code versions}
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>versions</code>.
@@ -489,6 +506,9 @@ public class ClusterIndices implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics about analyzers and analyzer components used in selected
+		 * nodes.
+		 * <p>
 		 * API name: {@code versions}
 		 * <p>
 		 * Adds one or more values to <code>versions</code>.
@@ -499,6 +519,9 @@ public class ClusterIndices implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics about analyzers and analyzer components used in selected
+		 * nodes.
+		 * <p>
 		 * API name: {@code versions}
 		 * <p>
 		 * Adds a value to <code>versions</code> using a builder lambda.
@@ -535,6 +558,7 @@ public class ClusterIndices implements JsonpSerializable {
 
 	protected static void setupClusterIndicesDeserializer(ObjectDeserializer<ClusterIndices.Builder> op) {
 
+		op.add(Builder::analysis, CharFilterTypes._DESERIALIZER, "analysis");
 		op.add(Builder::completion, CompletionStats._DESERIALIZER, "completion");
 		op.add(Builder::count, JsonpDeserializer.longDeserializer(), "count");
 		op.add(Builder::docs, DocStats._DESERIALIZER, "docs");
@@ -544,7 +568,6 @@ public class ClusterIndices implements JsonpSerializable {
 		op.add(Builder::shards, ClusterIndicesShards._DESERIALIZER, "shards");
 		op.add(Builder::store, StoreStats._DESERIALIZER, "store");
 		op.add(Builder::mappings, FieldTypesMappings._DESERIALIZER, "mappings");
-		op.add(Builder::analysis, CharFilterTypes._DESERIALIZER, "analysis");
 		op.add(Builder::versions, JsonpDeserializer.arrayDeserializer(IndicesVersions._DESERIALIZER), "versions");
 
 	}

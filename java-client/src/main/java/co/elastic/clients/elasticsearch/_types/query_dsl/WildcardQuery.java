@@ -17,12 +17,14 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.query_dsl;
 
+import co.elastic.clients.elasticsearch.security.query_api_keys.ApiKeyQuery;
+import co.elastic.clients.elasticsearch.security.query_api_keys.ApiKeyQueryVariant;
+import co.elastic.clients.elasticsearch.security.query_role.RoleQuery;
+import co.elastic.clients.elasticsearch.security.query_role.RoleQueryVariant;
+import co.elastic.clients.elasticsearch.security.query_user.UserQuery;
+import co.elastic.clients.elasticsearch.security.query_user.UserQueryVariant;
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.JsonpMapper;
@@ -37,6 +39,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: _types.query_dsl.WildcardQuery
 
 /**
@@ -46,7 +63,12 @@ import javax.annotation.Nullable;
  *      specification</a>
  */
 @JsonpDeserializable
-public class WildcardQuery extends QueryBase implements QueryVariant {
+public class WildcardQuery extends QueryBase
+		implements
+			ApiKeyQueryVariant,
+			QueryVariant,
+			RoleQueryVariant,
+			UserQueryVariant {
 	// Single key dictionary
 	private final String field;
 
@@ -80,11 +102,35 @@ public class WildcardQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
+	 * ApiKeyQuery variant kind.
+	 */
+	@Override
+	public ApiKeyQuery.Kind _apiKeyQueryKind() {
+		return ApiKeyQuery.Kind.Wildcard;
+	}
+
+	/**
 	 * Query variant kind.
 	 */
 	@Override
 	public Query.Kind _queryKind() {
 		return Query.Kind.Wildcard;
+	}
+
+	/**
+	 * RoleQuery variant kind.
+	 */
+	@Override
+	public RoleQuery.Kind _roleQueryKind() {
+		return RoleQuery.Kind.Wildcard;
+	}
+
+	/**
+	 * UserQuery variant kind.
+	 */
+	@Override
+	public UserQuery.Kind _userQueryKind() {
+		return UserQuery.Kind.Wildcard;
 	}
 
 	/**
@@ -107,7 +153,7 @@ public class WildcardQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
-	 * Method used to rewrite the query
+	 * Method used to rewrite the query.
 	 * <p>
 	 * API name: {@code rewrite}
 	 */
@@ -209,7 +255,7 @@ public class WildcardQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
-		 * Method used to rewrite the query
+		 * Method used to rewrite the query.
 		 * <p>
 		 * API name: {@code rewrite}
 		 */

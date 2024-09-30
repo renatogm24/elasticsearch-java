@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cat;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -32,14 +28,33 @@ import co.elastic.clients.transport.Endpoint;
 import co.elastic.clients.transport.endpoints.SimpleEndpoint;
 import co.elastic.clients.util.ObjectBuilder;
 import jakarta.json.stream.JsonGenerator;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: cat.pending_tasks.Request
 
 /**
- * Returns a concise representation of the cluster pending tasks.
+ * Returns cluster-level changes that have not yet been executed. IMPORTANT: cat
+ * APIs are only intended for human consumption using the command line or Kibana
+ * console. They are not intended for use by applications. For application
+ * consumption, use the pending cluster tasks API.
  * 
  * @see <a href="../doc-files/api-spec.html#cat.pending_tasks.Request">API
  *      specification</a>
@@ -72,6 +87,11 @@ public class PendingTasksRequest extends CatRequestBase {
 			request -> {
 				return "/_cat/pending_tasks";
 
+			},
+
+			// Path parameters
+			request -> {
+				return Collections.emptyMap();
 			},
 
 			// Request parameters

@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -34,11 +30,26 @@ import co.elastic.clients.util.ApiTypeHelper;
 import co.elastic.clients.util.ObjectBuilder;
 import co.elastic.clients.util.WithJsonObjectBuilderBase;
 import jakarta.json.stream.JsonGenerator;
-import java.lang.Integer;
+import java.lang.Long;
 import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: _types.QueryCacheStats
 
@@ -49,22 +60,22 @@ import javax.annotation.Nullable;
  */
 @JsonpDeserializable
 public class QueryCacheStats implements JsonpSerializable {
-	private final int cacheCount;
+	private final long cacheCount;
 
-	private final int cacheSize;
+	private final long cacheSize;
 
-	private final int evictions;
+	private final long evictions;
 
-	private final int hitCount;
+	private final long hitCount;
 
 	@Nullable
 	private final String memorySize;
 
-	private final int memorySizeInBytes;
+	private final long memorySizeInBytes;
 
-	private final int missCount;
+	private final long missCount;
 
-	private final int totalCount;
+	private final long totalCount;
 
 	// ---------------------------------------------------------------------------------------------
 
@@ -86,34 +97,49 @@ public class QueryCacheStats implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code cache_count}
+	 * Required - Total number of entries added to the query cache across all shards
+	 * assigned to selected nodes. This number includes current and evicted entries.
+	 * <p>
+	 * API name: {@code cache_count}
 	 */
-	public final int cacheCount() {
+	public final long cacheCount() {
 		return this.cacheCount;
 	}
 
 	/**
-	 * Required - API name: {@code cache_size}
+	 * Required - Total number of entries currently in the query cache across all
+	 * shards assigned to selected nodes.
+	 * <p>
+	 * API name: {@code cache_size}
 	 */
-	public final int cacheSize() {
+	public final long cacheSize() {
 		return this.cacheSize;
 	}
 
 	/**
-	 * Required - API name: {@code evictions}
+	 * Required - Total number of query cache evictions across all shards assigned
+	 * to selected nodes.
+	 * <p>
+	 * API name: {@code evictions}
 	 */
-	public final int evictions() {
+	public final long evictions() {
 		return this.evictions;
 	}
 
 	/**
-	 * Required - API name: {@code hit_count}
+	 * Required - Total count of query cache hits across all shards assigned to
+	 * selected nodes.
+	 * <p>
+	 * API name: {@code hit_count}
 	 */
-	public final int hitCount() {
+	public final long hitCount() {
 		return this.hitCount;
 	}
 
 	/**
+	 * Total amount of memory used for the query cache across all shards assigned to
+	 * selected nodes.
+	 * <p>
 	 * API name: {@code memory_size}
 	 */
 	@Nullable
@@ -122,23 +148,32 @@ public class QueryCacheStats implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code memory_size_in_bytes}
+	 * Required - Total amount, in bytes, of memory used for the query cache across
+	 * all shards assigned to selected nodes.
+	 * <p>
+	 * API name: {@code memory_size_in_bytes}
 	 */
-	public final int memorySizeInBytes() {
+	public final long memorySizeInBytes() {
 		return this.memorySizeInBytes;
 	}
 
 	/**
-	 * Required - API name: {@code miss_count}
+	 * Required - Total count of query cache misses across all shards assigned to
+	 * selected nodes.
+	 * <p>
+	 * API name: {@code miss_count}
 	 */
-	public final int missCount() {
+	public final long missCount() {
 		return this.missCount;
 	}
 
 	/**
-	 * Required - API name: {@code total_count}
+	 * Required - Total count of hits and misses in the query cache across all
+	 * shards assigned to selected nodes.
+	 * <p>
+	 * API name: {@code total_count}
 	 */
-	public final int totalCount() {
+	public final long totalCount() {
 		return this.totalCount;
 	}
 
@@ -193,56 +228,71 @@ public class QueryCacheStats implements JsonpSerializable {
 	 */
 
 	public static class Builder extends WithJsonObjectBuilderBase<Builder> implements ObjectBuilder<QueryCacheStats> {
-		private Integer cacheCount;
+		private Long cacheCount;
 
-		private Integer cacheSize;
+		private Long cacheSize;
 
-		private Integer evictions;
+		private Long evictions;
 
-		private Integer hitCount;
+		private Long hitCount;
 
 		@Nullable
 		private String memorySize;
 
-		private Integer memorySizeInBytes;
+		private Long memorySizeInBytes;
 
-		private Integer missCount;
+		private Long missCount;
 
-		private Integer totalCount;
+		private Long totalCount;
 
 		/**
-		 * Required - API name: {@code cache_count}
+		 * Required - Total number of entries added to the query cache across all shards
+		 * assigned to selected nodes. This number includes current and evicted entries.
+		 * <p>
+		 * API name: {@code cache_count}
 		 */
-		public final Builder cacheCount(int value) {
+		public final Builder cacheCount(long value) {
 			this.cacheCount = value;
 			return this;
 		}
 
 		/**
-		 * Required - API name: {@code cache_size}
+		 * Required - Total number of entries currently in the query cache across all
+		 * shards assigned to selected nodes.
+		 * <p>
+		 * API name: {@code cache_size}
 		 */
-		public final Builder cacheSize(int value) {
+		public final Builder cacheSize(long value) {
 			this.cacheSize = value;
 			return this;
 		}
 
 		/**
-		 * Required - API name: {@code evictions}
+		 * Required - Total number of query cache evictions across all shards assigned
+		 * to selected nodes.
+		 * <p>
+		 * API name: {@code evictions}
 		 */
-		public final Builder evictions(int value) {
+		public final Builder evictions(long value) {
 			this.evictions = value;
 			return this;
 		}
 
 		/**
-		 * Required - API name: {@code hit_count}
+		 * Required - Total count of query cache hits across all shards assigned to
+		 * selected nodes.
+		 * <p>
+		 * API name: {@code hit_count}
 		 */
-		public final Builder hitCount(int value) {
+		public final Builder hitCount(long value) {
 			this.hitCount = value;
 			return this;
 		}
 
 		/**
+		 * Total amount of memory used for the query cache across all shards assigned to
+		 * selected nodes.
+		 * <p>
 		 * API name: {@code memory_size}
 		 */
 		public final Builder memorySize(@Nullable String value) {
@@ -251,25 +301,34 @@ public class QueryCacheStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code memory_size_in_bytes}
+		 * Required - Total amount, in bytes, of memory used for the query cache across
+		 * all shards assigned to selected nodes.
+		 * <p>
+		 * API name: {@code memory_size_in_bytes}
 		 */
-		public final Builder memorySizeInBytes(int value) {
+		public final Builder memorySizeInBytes(long value) {
 			this.memorySizeInBytes = value;
 			return this;
 		}
 
 		/**
-		 * Required - API name: {@code miss_count}
+		 * Required - Total count of query cache misses across all shards assigned to
+		 * selected nodes.
+		 * <p>
+		 * API name: {@code miss_count}
 		 */
-		public final Builder missCount(int value) {
+		public final Builder missCount(long value) {
 			this.missCount = value;
 			return this;
 		}
 
 		/**
-		 * Required - API name: {@code total_count}
+		 * Required - Total count of hits and misses in the query cache across all
+		 * shards assigned to selected nodes.
+		 * <p>
+		 * API name: {@code total_count}
 		 */
-		public final Builder totalCount(int value) {
+		public final Builder totalCount(long value) {
 			this.totalCount = value;
 			return this;
 		}
@@ -302,14 +361,14 @@ public class QueryCacheStats implements JsonpSerializable {
 
 	protected static void setupQueryCacheStatsDeserializer(ObjectDeserializer<QueryCacheStats.Builder> op) {
 
-		op.add(Builder::cacheCount, JsonpDeserializer.integerDeserializer(), "cache_count");
-		op.add(Builder::cacheSize, JsonpDeserializer.integerDeserializer(), "cache_size");
-		op.add(Builder::evictions, JsonpDeserializer.integerDeserializer(), "evictions");
-		op.add(Builder::hitCount, JsonpDeserializer.integerDeserializer(), "hit_count");
+		op.add(Builder::cacheCount, JsonpDeserializer.longDeserializer(), "cache_count");
+		op.add(Builder::cacheSize, JsonpDeserializer.longDeserializer(), "cache_size");
+		op.add(Builder::evictions, JsonpDeserializer.longDeserializer(), "evictions");
+		op.add(Builder::hitCount, JsonpDeserializer.longDeserializer(), "hit_count");
 		op.add(Builder::memorySize, JsonpDeserializer.stringDeserializer(), "memory_size");
-		op.add(Builder::memorySizeInBytes, JsonpDeserializer.integerDeserializer(), "memory_size_in_bytes");
-		op.add(Builder::missCount, JsonpDeserializer.integerDeserializer(), "miss_count");
-		op.add(Builder::totalCount, JsonpDeserializer.integerDeserializer(), "total_count");
+		op.add(Builder::memorySizeInBytes, JsonpDeserializer.longDeserializer(), "memory_size_in_bytes");
+		op.add(Builder::missCount, JsonpDeserializer.longDeserializer(), "miss_count");
+		op.add(Builder::totalCount, JsonpDeserializer.longDeserializer(), "total_count");
 
 	}
 

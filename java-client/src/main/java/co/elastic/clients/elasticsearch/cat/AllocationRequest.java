@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cat;
 
 import co.elastic.clients.elasticsearch._types.Bytes;
@@ -43,11 +39,28 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: cat.allocation.Request
 
 /**
- * Provides a snapshot of how many shards are allocated to each data node and
- * how much disk space they are using.
+ * Provides a snapshot of the number of shards allocated to each data node and
+ * their disk space. IMPORTANT: cat APIs are only intended for human consumption
+ * using the command line or Kibana console. They are not intended for use by
+ * applications.
  * 
  * @see <a href="../doc-files/api-spec.html#cat.allocation.Request">API
  *      specification</a>
@@ -73,7 +86,7 @@ public class AllocationRequest extends CatRequestBase {
 	}
 
 	/**
-	 * The unit in which to display byte values
+	 * The unit used to display byte values.
 	 * <p>
 	 * API name: {@code bytes}
 	 */
@@ -83,7 +96,8 @@ public class AllocationRequest extends CatRequestBase {
 	}
 
 	/**
-	 * A comma-separated list of node IDs or names to limit the returned information
+	 * Comma-separated list of node identifiers or names used to limit the returned
+	 * information.
 	 * <p>
 	 * API name: {@code node_id}
 	 */
@@ -107,7 +121,7 @@ public class AllocationRequest extends CatRequestBase {
 		private List<String> nodeId;
 
 		/**
-		 * The unit in which to display byte values
+		 * The unit used to display byte values.
 		 * <p>
 		 * API name: {@code bytes}
 		 */
@@ -117,7 +131,8 @@ public class AllocationRequest extends CatRequestBase {
 		}
 
 		/**
-		 * A comma-separated list of node IDs or names to limit the returned information
+		 * Comma-separated list of node identifiers or names used to limit the returned
+		 * information.
 		 * <p>
 		 * API name: {@code node_id}
 		 * <p>
@@ -129,7 +144,8 @@ public class AllocationRequest extends CatRequestBase {
 		}
 
 		/**
-		 * A comma-separated list of node IDs or names to limit the returned information
+		 * Comma-separated list of node identifiers or names used to limit the returned
+		 * information.
 		 * <p>
 		 * API name: {@code node_id}
 		 * <p>
@@ -198,6 +214,24 @@ public class AllocationRequest extends CatRequestBase {
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _nodeId = 1 << 0;
+
+				int propsSet = 0;
+
+				if (ApiTypeHelper.isDefined(request.nodeId()))
+					propsSet |= _nodeId;
+
+				if (propsSet == 0) {
+				}
+				if (propsSet == (_nodeId)) {
+					params.put("nodeId", request.nodeId.stream().map(v -> v).collect(Collectors.joining(",")));
+				}
+				return params;
 			},
 
 			// Request parameters

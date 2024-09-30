@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cat.shards;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -37,6 +33,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: cat.shards.ShardsRecord
 
@@ -64,6 +75,9 @@ public class ShardsRecord implements JsonpSerializable {
 
 	@Nullable
 	private final String store;
+
+	@Nullable
+	private final String dataset;
 
 	@Nullable
 	private final String ip;
@@ -285,6 +299,7 @@ public class ShardsRecord implements JsonpSerializable {
 		this.state = builder.state;
 		this.docs = builder.docs;
 		this.store = builder.store;
+		this.dataset = builder.dataset;
 		this.ip = builder.ip;
 		this.id = builder.id;
 		this.node = builder.node;
@@ -363,7 +378,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * index name
+	 * The index name.
 	 * <p>
 	 * API name: {@code index}
 	 */
@@ -373,7 +388,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * shard name
+	 * The shard name.
 	 * <p>
 	 * API name: {@code shard}
 	 */
@@ -383,7 +398,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * primary or replica
+	 * The shard type: <code>primary</code> or <code>replica</code>.
 	 * <p>
 	 * API name: {@code prirep}
 	 */
@@ -393,7 +408,10 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * shard state
+	 * The shard state. Returned values include: <code>INITIALIZING</code>: The
+	 * shard is recovering from a peer shard or gateway. <code>RELOCATING</code>:
+	 * The shard is relocating. <code>STARTED</code>: The shard has started.
+	 * <code>UNASSIGNED</code>: The shard is not assigned to any node.
 	 * <p>
 	 * API name: {@code state}
 	 */
@@ -403,7 +421,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of docs in shard
+	 * The number of documents in the shard.
 	 * <p>
 	 * API name: {@code docs}
 	 */
@@ -413,7 +431,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * store size of shard (how much disk it uses)
+	 * The disk space used by the shard.
 	 * <p>
 	 * API name: {@code store}
 	 */
@@ -423,7 +441,17 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * ip of node where it lives
+	 * total size of dataset (including the cache for partially mounted indices)
+	 * <p>
+	 * API name: {@code dataset}
+	 */
+	@Nullable
+	public final String dataset() {
+		return this.dataset;
+	}
+
+	/**
+	 * The IP address of the node.
 	 * <p>
 	 * API name: {@code ip}
 	 */
@@ -433,7 +461,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * unique id of node where it lives
+	 * The unique identifier for the node.
 	 * <p>
 	 * API name: {@code id}
 	 */
@@ -443,7 +471,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * name of node where it lives
+	 * The name of node.
 	 * <p>
 	 * API name: {@code node}
 	 */
@@ -453,7 +481,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * sync id
+	 * The sync identifier.
 	 * <p>
 	 * API name: {@code sync_id}
 	 */
@@ -463,7 +491,33 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * reason shard is unassigned
+	 * The reason for the last change to the state of an unassigned shard. It does
+	 * not explain why the shard is currently unassigned; use the cluster allocation
+	 * explain API for that information. Returned values include:
+	 * <code>ALLOCATION_FAILED</code>: Unassigned as a result of a failed allocation
+	 * of the shard. <code>CLUSTER_RECOVERED</code>: Unassigned as a result of a
+	 * full cluster recovery. <code>DANGLING_INDEX_IMPORTED</code>: Unassigned as a
+	 * result of importing a dangling index. <code>EXISTING_INDEX_RESTORED</code>:
+	 * Unassigned as a result of restoring into a closed index.
+	 * <code>FORCED_EMPTY_PRIMARY</code>: The shard’s allocation was last modified
+	 * by forcing an empty primary using the cluster reroute API.
+	 * <code>INDEX_CLOSED</code>: Unassigned because the index was closed.
+	 * <code>INDEX_CREATED</code>: Unassigned as a result of an API creation of an
+	 * index. <code>INDEX_REOPENED</code>: Unassigned as a result of opening a
+	 * closed index. <code>MANUAL_ALLOCATION</code>: The shard’s allocation was last
+	 * modified by the cluster reroute API. <code>NEW_INDEX_RESTORED</code>:
+	 * Unassigned as a result of restoring into a new index. <code>NODE_LEFT</code>:
+	 * Unassigned as a result of the node hosting it leaving the cluster.
+	 * <code>NODE_RESTARTING</code>: Similar to <code>NODE_LEFT</code>, except that
+	 * the node was registered as restarting using the node shutdown API.
+	 * <code>PRIMARY_FAILED</code>: The shard was initializing as a replica, but the
+	 * primary shard failed before the initialization completed.
+	 * <code>REALLOCATED_REPLICA</code>: A better replica location is identified and
+	 * causes the existing replica allocation to be cancelled.
+	 * <code>REINITIALIZED</code>: When a shard moves from started back to
+	 * initializing. <code>REPLICA_ADDED</code>: Unassigned as a result of explicit
+	 * addition of a replica. <code>REROUTE_CANCELLED</code>: Unassigned as a result
+	 * of explicit cancel reroute command.
 	 * <p>
 	 * API name: {@code unassigned.reason}
 	 */
@@ -473,7 +527,8 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time shard became unassigned (UTC)
+	 * The time at which the shard became unassigned in Coordinated Universal Time
+	 * (UTC).
 	 * <p>
 	 * API name: {@code unassigned.at}
 	 */
@@ -483,7 +538,8 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time has been unassigned
+	 * The time at which the shard was requested to be unassigned in Coordinated
+	 * Universal Time (UTC).
 	 * <p>
 	 * API name: {@code unassigned.for}
 	 */
@@ -493,7 +549,9 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * additional details as to why the shard became unassigned
+	 * Additional details as to why the shard became unassigned. It does not explain
+	 * why the shard is not assigned; use the cluster allocation explain API for
+	 * that information.
 	 * <p>
 	 * API name: {@code unassigned.details}
 	 */
@@ -503,7 +561,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * recovery source type
+	 * The type of recovery source.
 	 * <p>
 	 * API name: {@code recoverysource.type}
 	 */
@@ -513,7 +571,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * size of completion
+	 * The size of completion.
 	 * <p>
 	 * API name: {@code completion.size}
 	 */
@@ -523,7 +581,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * used fielddata cache
+	 * The used fielddata cache memory.
 	 * <p>
 	 * API name: {@code fielddata.memory_size}
 	 */
@@ -533,7 +591,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * fielddata evictions
+	 * The fielddata cache evictions.
 	 * <p>
 	 * API name: {@code fielddata.evictions}
 	 */
@@ -543,7 +601,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * used query cache
+	 * The used query cache memory.
 	 * <p>
 	 * API name: {@code query_cache.memory_size}
 	 */
@@ -553,7 +611,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * query cache evictions
+	 * The query cache evictions.
 	 * <p>
 	 * API name: {@code query_cache.evictions}
 	 */
@@ -563,7 +621,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of flushes
+	 * The number of flushes.
 	 * <p>
 	 * API name: {@code flush.total}
 	 */
@@ -573,7 +631,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in flush
+	 * The time spent in flush.
 	 * <p>
 	 * API name: {@code flush.total_time}
 	 */
@@ -583,7 +641,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of current get ops
+	 * The number of current get operations.
 	 * <p>
 	 * API name: {@code get.current}
 	 */
@@ -593,7 +651,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in get
+	 * The time spent in get operations.
 	 * <p>
 	 * API name: {@code get.time}
 	 */
@@ -603,7 +661,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of get ops
+	 * The number of get operations.
 	 * <p>
 	 * API name: {@code get.total}
 	 */
@@ -613,7 +671,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in successful gets
+	 * The time spent in successful get operations.
 	 * <p>
 	 * API name: {@code get.exists_time}
 	 */
@@ -623,7 +681,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of successful gets
+	 * The number of successful get operations.
 	 * <p>
 	 * API name: {@code get.exists_total}
 	 */
@@ -633,7 +691,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in failed gets
+	 * The time spent in failed get operations.
 	 * <p>
 	 * API name: {@code get.missing_time}
 	 */
@@ -643,7 +701,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of failed gets
+	 * The number of failed get operations.
 	 * <p>
 	 * API name: {@code get.missing_total}
 	 */
@@ -653,7 +711,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of current deletions
+	 * The number of current deletion operations.
 	 * <p>
 	 * API name: {@code indexing.delete_current}
 	 */
@@ -663,7 +721,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in deletions
+	 * The time spent in deletion operations.
 	 * <p>
 	 * API name: {@code indexing.delete_time}
 	 */
@@ -673,7 +731,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of delete ops
+	 * The number of delete operations.
 	 * <p>
 	 * API name: {@code indexing.delete_total}
 	 */
@@ -683,7 +741,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of current indexing ops
+	 * The number of current indexing operations.
 	 * <p>
 	 * API name: {@code indexing.index_current}
 	 */
@@ -693,7 +751,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in indexing
+	 * The time spent in indexing operations.
 	 * <p>
 	 * API name: {@code indexing.index_time}
 	 */
@@ -703,7 +761,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of indexing ops
+	 * The number of indexing operations.
 	 * <p>
 	 * API name: {@code indexing.index_total}
 	 */
@@ -713,7 +771,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of failed indexing ops
+	 * The number of failed indexing operations.
 	 * <p>
 	 * API name: {@code indexing.index_failed}
 	 */
@@ -723,7 +781,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of current merges
+	 * The number of current merge operations.
 	 * <p>
 	 * API name: {@code merges.current}
 	 */
@@ -733,7 +791,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of current merging docs
+	 * The number of current merging documents.
 	 * <p>
 	 * API name: {@code merges.current_docs}
 	 */
@@ -743,7 +801,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * size of current merges
+	 * The size of current merge operations.
 	 * <p>
 	 * API name: {@code merges.current_size}
 	 */
@@ -753,7 +811,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of completed merge ops
+	 * The number of completed merge operations.
 	 * <p>
 	 * API name: {@code merges.total}
 	 */
@@ -763,7 +821,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * docs merged
+	 * The nuber of merged documents.
 	 * <p>
 	 * API name: {@code merges.total_docs}
 	 */
@@ -773,7 +831,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * size merged
+	 * The size of current merges.
 	 * <p>
 	 * API name: {@code merges.total_size}
 	 */
@@ -783,7 +841,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in merges
+	 * The time spent merging documents.
 	 * <p>
 	 * API name: {@code merges.total_time}
 	 */
@@ -793,7 +851,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * total refreshes
+	 * The total number of refreshes.
 	 * <p>
 	 * API name: {@code refresh.total}
 	 */
@@ -803,7 +861,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in refreshes
+	 * The time spent in refreshes.
 	 * <p>
 	 * API name: {@code refresh.time}
 	 */
@@ -813,7 +871,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * total external refreshes
+	 * The total nunber of external refreshes.
 	 * <p>
 	 * API name: {@code refresh.external_total}
 	 */
@@ -823,7 +881,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in external refreshes
+	 * The time spent in external refreshes.
 	 * <p>
 	 * API name: {@code refresh.external_time}
 	 */
@@ -833,7 +891,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of pending refresh listeners
+	 * The number of pending refresh listeners.
 	 * <p>
 	 * API name: {@code refresh.listeners}
 	 */
@@ -843,7 +901,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * current fetch phase ops
+	 * The current fetch phase operations.
 	 * <p>
 	 * API name: {@code search.fetch_current}
 	 */
@@ -853,7 +911,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in fetch phase
+	 * The time spent in fetch phase.
 	 * <p>
 	 * API name: {@code search.fetch_time}
 	 */
@@ -863,7 +921,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * total fetch ops
+	 * The total number of fetch operations.
 	 * <p>
 	 * API name: {@code search.fetch_total}
 	 */
@@ -873,7 +931,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * open search contexts
+	 * The number of open search contexts.
 	 * <p>
 	 * API name: {@code search.open_contexts}
 	 */
@@ -883,7 +941,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * current query phase ops
+	 * The current query phase operations.
 	 * <p>
 	 * API name: {@code search.query_current}
 	 */
@@ -893,7 +951,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in query phase
+	 * The time spent in query phase.
 	 * <p>
 	 * API name: {@code search.query_time}
 	 */
@@ -903,7 +961,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * total query phase ops
+	 * The total number of query phase operations.
 	 * <p>
 	 * API name: {@code search.query_total}
 	 */
@@ -913,7 +971,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * open scroll contexts
+	 * The open scroll contexts.
 	 * <p>
 	 * API name: {@code search.scroll_current}
 	 */
@@ -923,7 +981,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time scroll contexts held open
+	 * The time scroll contexts were held open.
 	 * <p>
 	 * API name: {@code search.scroll_time}
 	 */
@@ -933,7 +991,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * completed scroll contexts
+	 * The number of completed scroll contexts.
 	 * <p>
 	 * API name: {@code search.scroll_total}
 	 */
@@ -943,7 +1001,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of segments
+	 * The number of segments.
 	 * <p>
 	 * API name: {@code segments.count}
 	 */
@@ -953,7 +1011,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * memory used by segments
+	 * The memory used by segments.
 	 * <p>
 	 * API name: {@code segments.memory}
 	 */
@@ -963,7 +1021,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * memory used by index writer
+	 * The memory used by the index writer.
 	 * <p>
 	 * API name: {@code segments.index_writer_memory}
 	 */
@@ -973,7 +1031,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * memory used by version map
+	 * The memory used by the version map.
 	 * <p>
 	 * API name: {@code segments.version_map_memory}
 	 */
@@ -983,8 +1041,8 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * memory used by fixed bit sets for nested object field types and export type
-	 * filters for types referred in _parent fields
+	 * The memory used by fixed bit sets for nested object field types and export
+	 * type filters for types referred in <code>_parent</code> fields.
 	 * <p>
 	 * API name: {@code segments.fixed_bitset_memory}
 	 */
@@ -994,7 +1052,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * max sequence number
+	 * The maximum sequence number.
 	 * <p>
 	 * API name: {@code seq_no.max}
 	 */
@@ -1004,7 +1062,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * local checkpoint
+	 * The local checkpoint.
 	 * <p>
 	 * API name: {@code seq_no.local_checkpoint}
 	 */
@@ -1014,7 +1072,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * global checkpoint
+	 * The global checkpoint.
 	 * <p>
 	 * API name: {@code seq_no.global_checkpoint}
 	 */
@@ -1024,7 +1082,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * current warmer ops
+	 * The number of current warmer operations.
 	 * <p>
 	 * API name: {@code warmer.current}
 	 */
@@ -1034,7 +1092,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * total warmer ops
+	 * The total number of warmer operations.
 	 * <p>
 	 * API name: {@code warmer.total}
 	 */
@@ -1044,7 +1102,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spent in warmers
+	 * The time spent in warmer operations.
 	 * <p>
 	 * API name: {@code warmer.total_time}
 	 */
@@ -1054,7 +1112,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * shard data path
+	 * The shard data path.
 	 * <p>
 	 * API name: {@code path.data}
 	 */
@@ -1064,7 +1122,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * shard state path
+	 * The shard state path.
 	 * <p>
 	 * API name: {@code path.state}
 	 */
@@ -1074,7 +1132,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of bulk shard ops
+	 * The number of bulk shard operations.
 	 * <p>
 	 * API name: {@code bulk.total_operations}
 	 */
@@ -1084,7 +1142,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * time spend in shard bulk
+	 * The time spent in shard bulk operations.
 	 * <p>
 	 * API name: {@code bulk.total_time}
 	 */
@@ -1094,7 +1152,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * total size in bytes of shard bulk
+	 * The total size in bytes of shard bulk operations.
 	 * <p>
 	 * API name: {@code bulk.total_size_in_bytes}
 	 */
@@ -1104,7 +1162,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * average time spend in shard bulk
+	 * The average time spent in shard bulk operations.
 	 * <p>
 	 * API name: {@code bulk.avg_time}
 	 */
@@ -1114,7 +1172,7 @@ public class ShardsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * avg size in bytes of shard bulk
+	 * The average size in bytes of shard bulk operations.
 	 * <p>
 	 * API name: {@code bulk.avg_size_in_bytes}
 	 */
@@ -1162,6 +1220,11 @@ public class ShardsRecord implements JsonpSerializable {
 		if (this.store != null) {
 			generator.writeKey("store");
 			generator.write(this.store);
+
+		}
+		if (this.dataset != null) {
+			generator.writeKey("dataset");
+			generator.write(this.dataset);
 
 		}
 		if (this.ip != null) {
@@ -1548,6 +1611,9 @@ public class ShardsRecord implements JsonpSerializable {
 		private String store;
 
 		@Nullable
+		private String dataset;
+
+		@Nullable
 		private String ip;
 
 		@Nullable
@@ -1758,7 +1824,7 @@ public class ShardsRecord implements JsonpSerializable {
 		private String bulkAvgSizeInBytes;
 
 		/**
-		 * index name
+		 * The index name.
 		 * <p>
 		 * API name: {@code index}
 		 */
@@ -1768,7 +1834,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * shard name
+		 * The shard name.
 		 * <p>
 		 * API name: {@code shard}
 		 */
@@ -1778,7 +1844,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * primary or replica
+		 * The shard type: <code>primary</code> or <code>replica</code>.
 		 * <p>
 		 * API name: {@code prirep}
 		 */
@@ -1788,7 +1854,10 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * shard state
+		 * The shard state. Returned values include: <code>INITIALIZING</code>: The
+		 * shard is recovering from a peer shard or gateway. <code>RELOCATING</code>:
+		 * The shard is relocating. <code>STARTED</code>: The shard has started.
+		 * <code>UNASSIGNED</code>: The shard is not assigned to any node.
 		 * <p>
 		 * API name: {@code state}
 		 */
@@ -1798,7 +1867,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of docs in shard
+		 * The number of documents in the shard.
 		 * <p>
 		 * API name: {@code docs}
 		 */
@@ -1808,7 +1877,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * store size of shard (how much disk it uses)
+		 * The disk space used by the shard.
 		 * <p>
 		 * API name: {@code store}
 		 */
@@ -1818,7 +1887,17 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * ip of node where it lives
+		 * total size of dataset (including the cache for partially mounted indices)
+		 * <p>
+		 * API name: {@code dataset}
+		 */
+		public final Builder dataset(@Nullable String value) {
+			this.dataset = value;
+			return this;
+		}
+
+		/**
+		 * The IP address of the node.
 		 * <p>
 		 * API name: {@code ip}
 		 */
@@ -1828,7 +1907,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * unique id of node where it lives
+		 * The unique identifier for the node.
 		 * <p>
 		 * API name: {@code id}
 		 */
@@ -1838,7 +1917,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * name of node where it lives
+		 * The name of node.
 		 * <p>
 		 * API name: {@code node}
 		 */
@@ -1848,7 +1927,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * sync id
+		 * The sync identifier.
 		 * <p>
 		 * API name: {@code sync_id}
 		 */
@@ -1858,7 +1937,33 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * reason shard is unassigned
+		 * The reason for the last change to the state of an unassigned shard. It does
+		 * not explain why the shard is currently unassigned; use the cluster allocation
+		 * explain API for that information. Returned values include:
+		 * <code>ALLOCATION_FAILED</code>: Unassigned as a result of a failed allocation
+		 * of the shard. <code>CLUSTER_RECOVERED</code>: Unassigned as a result of a
+		 * full cluster recovery. <code>DANGLING_INDEX_IMPORTED</code>: Unassigned as a
+		 * result of importing a dangling index. <code>EXISTING_INDEX_RESTORED</code>:
+		 * Unassigned as a result of restoring into a closed index.
+		 * <code>FORCED_EMPTY_PRIMARY</code>: The shard’s allocation was last modified
+		 * by forcing an empty primary using the cluster reroute API.
+		 * <code>INDEX_CLOSED</code>: Unassigned because the index was closed.
+		 * <code>INDEX_CREATED</code>: Unassigned as a result of an API creation of an
+		 * index. <code>INDEX_REOPENED</code>: Unassigned as a result of opening a
+		 * closed index. <code>MANUAL_ALLOCATION</code>: The shard’s allocation was last
+		 * modified by the cluster reroute API. <code>NEW_INDEX_RESTORED</code>:
+		 * Unassigned as a result of restoring into a new index. <code>NODE_LEFT</code>:
+		 * Unassigned as a result of the node hosting it leaving the cluster.
+		 * <code>NODE_RESTARTING</code>: Similar to <code>NODE_LEFT</code>, except that
+		 * the node was registered as restarting using the node shutdown API.
+		 * <code>PRIMARY_FAILED</code>: The shard was initializing as a replica, but the
+		 * primary shard failed before the initialization completed.
+		 * <code>REALLOCATED_REPLICA</code>: A better replica location is identified and
+		 * causes the existing replica allocation to be cancelled.
+		 * <code>REINITIALIZED</code>: When a shard moves from started back to
+		 * initializing. <code>REPLICA_ADDED</code>: Unassigned as a result of explicit
+		 * addition of a replica. <code>REROUTE_CANCELLED</code>: Unassigned as a result
+		 * of explicit cancel reroute command.
 		 * <p>
 		 * API name: {@code unassigned.reason}
 		 */
@@ -1868,7 +1973,8 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time shard became unassigned (UTC)
+		 * The time at which the shard became unassigned in Coordinated Universal Time
+		 * (UTC).
 		 * <p>
 		 * API name: {@code unassigned.at}
 		 */
@@ -1878,7 +1984,8 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time has been unassigned
+		 * The time at which the shard was requested to be unassigned in Coordinated
+		 * Universal Time (UTC).
 		 * <p>
 		 * API name: {@code unassigned.for}
 		 */
@@ -1888,7 +1995,9 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * additional details as to why the shard became unassigned
+		 * Additional details as to why the shard became unassigned. It does not explain
+		 * why the shard is not assigned; use the cluster allocation explain API for
+		 * that information.
 		 * <p>
 		 * API name: {@code unassigned.details}
 		 */
@@ -1898,7 +2007,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * recovery source type
+		 * The type of recovery source.
 		 * <p>
 		 * API name: {@code recoverysource.type}
 		 */
@@ -1908,7 +2017,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * size of completion
+		 * The size of completion.
 		 * <p>
 		 * API name: {@code completion.size}
 		 */
@@ -1918,7 +2027,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * used fielddata cache
+		 * The used fielddata cache memory.
 		 * <p>
 		 * API name: {@code fielddata.memory_size}
 		 */
@@ -1928,7 +2037,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * fielddata evictions
+		 * The fielddata cache evictions.
 		 * <p>
 		 * API name: {@code fielddata.evictions}
 		 */
@@ -1938,7 +2047,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * used query cache
+		 * The used query cache memory.
 		 * <p>
 		 * API name: {@code query_cache.memory_size}
 		 */
@@ -1948,7 +2057,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * query cache evictions
+		 * The query cache evictions.
 		 * <p>
 		 * API name: {@code query_cache.evictions}
 		 */
@@ -1958,7 +2067,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of flushes
+		 * The number of flushes.
 		 * <p>
 		 * API name: {@code flush.total}
 		 */
@@ -1968,7 +2077,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in flush
+		 * The time spent in flush.
 		 * <p>
 		 * API name: {@code flush.total_time}
 		 */
@@ -1978,7 +2087,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of current get ops
+		 * The number of current get operations.
 		 * <p>
 		 * API name: {@code get.current}
 		 */
@@ -1988,7 +2097,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in get
+		 * The time spent in get operations.
 		 * <p>
 		 * API name: {@code get.time}
 		 */
@@ -1998,7 +2107,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of get ops
+		 * The number of get operations.
 		 * <p>
 		 * API name: {@code get.total}
 		 */
@@ -2008,7 +2117,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in successful gets
+		 * The time spent in successful get operations.
 		 * <p>
 		 * API name: {@code get.exists_time}
 		 */
@@ -2018,7 +2127,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of successful gets
+		 * The number of successful get operations.
 		 * <p>
 		 * API name: {@code get.exists_total}
 		 */
@@ -2028,7 +2137,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in failed gets
+		 * The time spent in failed get operations.
 		 * <p>
 		 * API name: {@code get.missing_time}
 		 */
@@ -2038,7 +2147,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of failed gets
+		 * The number of failed get operations.
 		 * <p>
 		 * API name: {@code get.missing_total}
 		 */
@@ -2048,7 +2157,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of current deletions
+		 * The number of current deletion operations.
 		 * <p>
 		 * API name: {@code indexing.delete_current}
 		 */
@@ -2058,7 +2167,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in deletions
+		 * The time spent in deletion operations.
 		 * <p>
 		 * API name: {@code indexing.delete_time}
 		 */
@@ -2068,7 +2177,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of delete ops
+		 * The number of delete operations.
 		 * <p>
 		 * API name: {@code indexing.delete_total}
 		 */
@@ -2078,7 +2187,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of current indexing ops
+		 * The number of current indexing operations.
 		 * <p>
 		 * API name: {@code indexing.index_current}
 		 */
@@ -2088,7 +2197,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in indexing
+		 * The time spent in indexing operations.
 		 * <p>
 		 * API name: {@code indexing.index_time}
 		 */
@@ -2098,7 +2207,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of indexing ops
+		 * The number of indexing operations.
 		 * <p>
 		 * API name: {@code indexing.index_total}
 		 */
@@ -2108,7 +2217,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of failed indexing ops
+		 * The number of failed indexing operations.
 		 * <p>
 		 * API name: {@code indexing.index_failed}
 		 */
@@ -2118,7 +2227,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of current merges
+		 * The number of current merge operations.
 		 * <p>
 		 * API name: {@code merges.current}
 		 */
@@ -2128,7 +2237,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of current merging docs
+		 * The number of current merging documents.
 		 * <p>
 		 * API name: {@code merges.current_docs}
 		 */
@@ -2138,7 +2247,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * size of current merges
+		 * The size of current merge operations.
 		 * <p>
 		 * API name: {@code merges.current_size}
 		 */
@@ -2148,7 +2257,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of completed merge ops
+		 * The number of completed merge operations.
 		 * <p>
 		 * API name: {@code merges.total}
 		 */
@@ -2158,7 +2267,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * docs merged
+		 * The nuber of merged documents.
 		 * <p>
 		 * API name: {@code merges.total_docs}
 		 */
@@ -2168,7 +2277,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * size merged
+		 * The size of current merges.
 		 * <p>
 		 * API name: {@code merges.total_size}
 		 */
@@ -2178,7 +2287,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in merges
+		 * The time spent merging documents.
 		 * <p>
 		 * API name: {@code merges.total_time}
 		 */
@@ -2188,7 +2297,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * total refreshes
+		 * The total number of refreshes.
 		 * <p>
 		 * API name: {@code refresh.total}
 		 */
@@ -2198,7 +2307,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in refreshes
+		 * The time spent in refreshes.
 		 * <p>
 		 * API name: {@code refresh.time}
 		 */
@@ -2208,7 +2317,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * total external refreshes
+		 * The total nunber of external refreshes.
 		 * <p>
 		 * API name: {@code refresh.external_total}
 		 */
@@ -2218,7 +2327,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in external refreshes
+		 * The time spent in external refreshes.
 		 * <p>
 		 * API name: {@code refresh.external_time}
 		 */
@@ -2228,7 +2337,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of pending refresh listeners
+		 * The number of pending refresh listeners.
 		 * <p>
 		 * API name: {@code refresh.listeners}
 		 */
@@ -2238,7 +2347,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * current fetch phase ops
+		 * The current fetch phase operations.
 		 * <p>
 		 * API name: {@code search.fetch_current}
 		 */
@@ -2248,7 +2357,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in fetch phase
+		 * The time spent in fetch phase.
 		 * <p>
 		 * API name: {@code search.fetch_time}
 		 */
@@ -2258,7 +2367,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * total fetch ops
+		 * The total number of fetch operations.
 		 * <p>
 		 * API name: {@code search.fetch_total}
 		 */
@@ -2268,7 +2377,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * open search contexts
+		 * The number of open search contexts.
 		 * <p>
 		 * API name: {@code search.open_contexts}
 		 */
@@ -2278,7 +2387,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * current query phase ops
+		 * The current query phase operations.
 		 * <p>
 		 * API name: {@code search.query_current}
 		 */
@@ -2288,7 +2397,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in query phase
+		 * The time spent in query phase.
 		 * <p>
 		 * API name: {@code search.query_time}
 		 */
@@ -2298,7 +2407,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * total query phase ops
+		 * The total number of query phase operations.
 		 * <p>
 		 * API name: {@code search.query_total}
 		 */
@@ -2308,7 +2417,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * open scroll contexts
+		 * The open scroll contexts.
 		 * <p>
 		 * API name: {@code search.scroll_current}
 		 */
@@ -2318,7 +2427,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time scroll contexts held open
+		 * The time scroll contexts were held open.
 		 * <p>
 		 * API name: {@code search.scroll_time}
 		 */
@@ -2328,7 +2437,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * completed scroll contexts
+		 * The number of completed scroll contexts.
 		 * <p>
 		 * API name: {@code search.scroll_total}
 		 */
@@ -2338,7 +2447,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of segments
+		 * The number of segments.
 		 * <p>
 		 * API name: {@code segments.count}
 		 */
@@ -2348,7 +2457,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * memory used by segments
+		 * The memory used by segments.
 		 * <p>
 		 * API name: {@code segments.memory}
 		 */
@@ -2358,7 +2467,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * memory used by index writer
+		 * The memory used by the index writer.
 		 * <p>
 		 * API name: {@code segments.index_writer_memory}
 		 */
@@ -2368,7 +2477,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * memory used by version map
+		 * The memory used by the version map.
 		 * <p>
 		 * API name: {@code segments.version_map_memory}
 		 */
@@ -2378,8 +2487,8 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * memory used by fixed bit sets for nested object field types and export type
-		 * filters for types referred in _parent fields
+		 * The memory used by fixed bit sets for nested object field types and export
+		 * type filters for types referred in <code>_parent</code> fields.
 		 * <p>
 		 * API name: {@code segments.fixed_bitset_memory}
 		 */
@@ -2389,7 +2498,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * max sequence number
+		 * The maximum sequence number.
 		 * <p>
 		 * API name: {@code seq_no.max}
 		 */
@@ -2399,7 +2508,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * local checkpoint
+		 * The local checkpoint.
 		 * <p>
 		 * API name: {@code seq_no.local_checkpoint}
 		 */
@@ -2409,7 +2518,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * global checkpoint
+		 * The global checkpoint.
 		 * <p>
 		 * API name: {@code seq_no.global_checkpoint}
 		 */
@@ -2419,7 +2528,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * current warmer ops
+		 * The number of current warmer operations.
 		 * <p>
 		 * API name: {@code warmer.current}
 		 */
@@ -2429,7 +2538,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * total warmer ops
+		 * The total number of warmer operations.
 		 * <p>
 		 * API name: {@code warmer.total}
 		 */
@@ -2439,7 +2548,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spent in warmers
+		 * The time spent in warmer operations.
 		 * <p>
 		 * API name: {@code warmer.total_time}
 		 */
@@ -2449,7 +2558,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * shard data path
+		 * The shard data path.
 		 * <p>
 		 * API name: {@code path.data}
 		 */
@@ -2459,7 +2568,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * shard state path
+		 * The shard state path.
 		 * <p>
 		 * API name: {@code path.state}
 		 */
@@ -2469,7 +2578,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of bulk shard ops
+		 * The number of bulk shard operations.
 		 * <p>
 		 * API name: {@code bulk.total_operations}
 		 */
@@ -2479,7 +2588,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * time spend in shard bulk
+		 * The time spent in shard bulk operations.
 		 * <p>
 		 * API name: {@code bulk.total_time}
 		 */
@@ -2489,7 +2598,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * total size in bytes of shard bulk
+		 * The total size in bytes of shard bulk operations.
 		 * <p>
 		 * API name: {@code bulk.total_size_in_bytes}
 		 */
@@ -2499,7 +2608,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * average time spend in shard bulk
+		 * The average time spent in shard bulk operations.
 		 * <p>
 		 * API name: {@code bulk.avg_time}
 		 */
@@ -2509,7 +2618,7 @@ public class ShardsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * avg size in bytes of shard bulk
+		 * The average size in bytes of shard bulk operations.
 		 * <p>
 		 * API name: {@code bulk.avg_size_in_bytes}
 		 */
@@ -2552,6 +2661,7 @@ public class ShardsRecord implements JsonpSerializable {
 		op.add(Builder::state, JsonpDeserializer.stringDeserializer(), "state", "st");
 		op.add(Builder::docs, JsonpDeserializer.stringDeserializer(), "docs", "d", "dc");
 		op.add(Builder::store, JsonpDeserializer.stringDeserializer(), "store", "sto");
+		op.add(Builder::dataset, JsonpDeserializer.stringDeserializer(), "dataset");
 		op.add(Builder::ip, JsonpDeserializer.stringDeserializer(), "ip");
 		op.add(Builder::id, JsonpDeserializer.stringDeserializer(), "id");
 		op.add(Builder::node, JsonpDeserializer.stringDeserializer(), "node", "n");

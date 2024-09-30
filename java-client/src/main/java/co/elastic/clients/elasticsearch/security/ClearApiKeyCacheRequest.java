@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.security;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -36,16 +32,34 @@ import co.elastic.clients.util.ObjectBuilder;
 import jakarta.json.stream.JsonGenerator;
 import java.lang.String;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: security.clear_api_key_cache.Request
 
 /**
- * Clear a subset or all entries from the API key cache.
+ * Evicts a subset of all entries from the API key cache. The cache is also
+ * automatically cleared on state changes of the security index.
  * 
  * @see <a href=
  *      "../doc-files/api-spec.html#security.clear_api_key_cache.Request">API
@@ -68,7 +82,9 @@ public class ClearApiKeyCacheRequest extends RequestBase {
 	}
 
 	/**
-	 * Required - A comma-separated list of IDs of API keys to clear from the cache
+	 * Required - Comma-separated list of API key IDs to evict from the API key
+	 * cache. To evict all API keys, use <code>*</code>. Does not support other
+	 * wildcard patterns.
 	 * <p>
 	 * API name: {@code ids}
 	 */
@@ -88,7 +104,9 @@ public class ClearApiKeyCacheRequest extends RequestBase {
 		private List<String> ids;
 
 		/**
-		 * Required - A comma-separated list of IDs of API keys to clear from the cache
+		 * Required - Comma-separated list of API key IDs to evict from the API key
+		 * cache. To evict all API keys, use <code>*</code>. Does not support other
+		 * wildcard patterns.
 		 * <p>
 		 * API name: {@code ids}
 		 * <p>
@@ -100,7 +118,9 @@ public class ClearApiKeyCacheRequest extends RequestBase {
 		}
 
 		/**
-		 * Required - A comma-separated list of IDs of API keys to clear from the cache
+		 * Required - Comma-separated list of API key IDs to evict from the API key
+		 * cache. To evict all API keys, use <code>*</code>. Does not support other
+		 * wildcard patterns.
 		 * <p>
 		 * API name: {@code ids}
 		 * <p>
@@ -162,6 +182,21 @@ public class ClearApiKeyCacheRequest extends RequestBase {
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _ids = 1 << 0;
+
+				int propsSet = 0;
+
+				propsSet |= _ids;
+
+				if (propsSet == (_ids)) {
+					params.put("ids", request.ids.stream().map(v -> v).collect(Collectors.joining(",")));
+				}
+				return params;
 			},
 
 			// Request parameters

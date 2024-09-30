@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cluster;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -49,6 +45,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: cluster.health.Request
 
@@ -137,8 +148,9 @@ public class HealthRequest extends RequestBase {
 
 	/**
 	 * Comma-separated list of data streams, indices, and index aliases used to
-	 * limit the request. Wildcard expressions (*) are supported. To target all data
-	 * streams and indices in a cluster, omit this parameter or use _all or *.
+	 * limit the request. Wildcard expressions (<code>*</code>) are supported. To
+	 * target all data streams and indices in a cluster, omit this parameter or use
+	 * _all or <code>*</code>.
 	 * <p>
 	 * API name: {@code index}
 	 */
@@ -331,8 +343,9 @@ public class HealthRequest extends RequestBase {
 
 		/**
 		 * Comma-separated list of data streams, indices, and index aliases used to
-		 * limit the request. Wildcard expressions (*) are supported. To target all data
-		 * streams and indices in a cluster, omit this parameter or use _all or *.
+		 * limit the request. Wildcard expressions (<code>*</code>) are supported. To
+		 * target all data streams and indices in a cluster, omit this parameter or use
+		 * _all or <code>*</code>.
 		 * <p>
 		 * API name: {@code index}
 		 * <p>
@@ -345,8 +358,9 @@ public class HealthRequest extends RequestBase {
 
 		/**
 		 * Comma-separated list of data streams, indices, and index aliases used to
-		 * limit the request. Wildcard expressions (*) are supported. To target all data
-		 * streams and indices in a cluster, omit this parameter or use _all or *.
+		 * limit the request. Wildcard expressions (<code>*</code>) are supported. To
+		 * target all data streams and indices in a cluster, omit this parameter or use
+		 * _all or <code>*</code>.
 		 * <p>
 		 * API name: {@code index}
 		 * <p>
@@ -559,6 +573,24 @@ public class HealthRequest extends RequestBase {
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _index = 1 << 0;
+
+				int propsSet = 0;
+
+				if (ApiTypeHelper.isDefined(request.index()))
+					propsSet |= _index;
+
+				if (propsSet == 0) {
+				}
+				if (propsSet == (_index)) {
+					params.put("index", request.index.stream().map(v -> v).collect(Collectors.joining(",")));
+				}
+				return params;
 			},
 
 			// Request parameters

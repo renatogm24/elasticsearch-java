@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.ml;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -44,10 +40,25 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: ml.get_categories.Request
 
 /**
- * Retrieves anomaly detection job results for one or more categories.
+ * Get anomaly detection job results for categories.
  * 
  * @see <a href="../doc-files/api-spec.html#ml.get_categories.Request">API
  *      specification</a>
@@ -122,6 +133,9 @@ public class GetCategoriesRequest extends RequestBase implements JsonpSerializab
 	}
 
 	/**
+	 * Configures pagination. This parameter has the <code>from</code> and
+	 * <code>size</code> properties.
+	 * <p>
 	 * API name: {@code page}
 	 */
 	@Nullable
@@ -229,6 +243,9 @@ public class GetCategoriesRequest extends RequestBase implements JsonpSerializab
 		}
 
 		/**
+		 * Configures pagination. This parameter has the <code>from</code> and
+		 * <code>size</code> properties.
+		 * <p>
 		 * API name: {@code page}
 		 */
 		public final Builder page(@Nullable Page value) {
@@ -237,6 +254,9 @@ public class GetCategoriesRequest extends RequestBase implements JsonpSerializab
 		}
 
 		/**
+		 * Configures pagination. This parameter has the <code>from</code> and
+		 * <code>size</code> properties.
+		 * <p>
 		 * API name: {@code page}
 		 */
 		public final Builder page(Function<Page.Builder, ObjectBuilder<Page>> fn) {
@@ -344,6 +364,28 @@ public class GetCategoriesRequest extends RequestBase implements JsonpSerializab
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _categoryId = 1 << 0;
+				final int _jobId = 1 << 1;
+
+				int propsSet = 0;
+
+				if (request.categoryId() != null)
+					propsSet |= _categoryId;
+				propsSet |= _jobId;
+
+				if (propsSet == (_jobId | _categoryId)) {
+					params.put("jobId", request.jobId);
+					params.put("categoryId", request.categoryId);
+				}
+				if (propsSet == (_jobId)) {
+					params.put("jobId", request.jobId);
+				}
+				return params;
 			},
 
 			// Request parameters

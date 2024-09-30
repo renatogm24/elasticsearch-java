@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.ml;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -40,6 +36,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: ml._types.JobStats
 
@@ -96,6 +107,9 @@ public class JobStats implements JsonpSerializable {
 	}
 
 	/**
+	 * For open anomaly detection jobs only, contains messages relating to the
+	 * selection of a node to run the job.
+	 * <p>
 	 * API name: {@code assignment_explanation}
 	 */
 	@Nullable
@@ -104,34 +118,51 @@ public class JobStats implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code data_counts}
+	 * Required - An object that describes the quantity of input to the job and any
+	 * related error counts. The <code>data_count</code> values are cumulative for
+	 * the lifetime of a job. If a model snapshot is reverted or old results are
+	 * deleted, the job counts are not reset.
+	 * <p>
+	 * API name: {@code data_counts}
 	 */
 	public final DataCounts dataCounts() {
 		return this.dataCounts;
 	}
 
 	/**
-	 * Required - API name: {@code forecasts_stats}
+	 * Required - An object that provides statistical information about forecasts
+	 * belonging to this job. Some statistics are omitted if no forecasts have been
+	 * made.
+	 * <p>
+	 * API name: {@code forecasts_stats}
 	 */
 	public final JobForecastStatistics forecastsStats() {
 		return this.forecastsStats;
 	}
 
 	/**
-	 * Required - API name: {@code job_id}
+	 * Required - Identifier for the anomaly detection job.
+	 * <p>
+	 * API name: {@code job_id}
 	 */
 	public final String jobId() {
 		return this.jobId;
 	}
 
 	/**
-	 * Required - API name: {@code model_size_stats}
+	 * Required - An object that provides information about the size and contents of
+	 * the model.
+	 * <p>
+	 * API name: {@code model_size_stats}
 	 */
 	public final ModelSizeStats modelSizeStats() {
 		return this.modelSizeStats;
 	}
 
 	/**
+	 * Contains properties for the node that runs the job. This information is
+	 * available only for open jobs.
+	 * <p>
 	 * API name: {@code node}
 	 */
 	@Nullable
@@ -140,6 +171,8 @@ public class JobStats implements JsonpSerializable {
 	}
 
 	/**
+	 * For open jobs only, the elapsed time for which the job has been open.
+	 * <p>
 	 * API name: {@code open_time}
 	 */
 	@Nullable
@@ -148,20 +181,30 @@ public class JobStats implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code state}
+	 * Required - The status of the anomaly detection job, which can be one of the
+	 * following values: <code>closed</code>, <code>closing</code>,
+	 * <code>failed</code>, <code>opened</code>, <code>opening</code>.
+	 * <p>
+	 * API name: {@code state}
 	 */
 	public final JobState state() {
 		return this.state;
 	}
 
 	/**
-	 * Required - API name: {@code timing_stats}
+	 * Required - An object that provides statistical information about timing
+	 * aspect of this job.
+	 * <p>
+	 * API name: {@code timing_stats}
 	 */
 	public final JobTimingStats timingStats() {
 		return this.timingStats;
 	}
 
 	/**
+	 * Indicates that the process of deleting the job is in progress but not yet
+	 * completed. It is only reported when <code>true</code>.
+	 * <p>
 	 * API name: {@code deleting}
 	 */
 	@Nullable
@@ -256,6 +299,9 @@ public class JobStats implements JsonpSerializable {
 		private Boolean deleting;
 
 		/**
+		 * For open anomaly detection jobs only, contains messages relating to the
+		 * selection of a node to run the job.
+		 * <p>
 		 * API name: {@code assignment_explanation}
 		 */
 		public final Builder assignmentExplanation(@Nullable String value) {
@@ -264,7 +310,12 @@ public class JobStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code data_counts}
+		 * Required - An object that describes the quantity of input to the job and any
+		 * related error counts. The <code>data_count</code> values are cumulative for
+		 * the lifetime of a job. If a model snapshot is reverted or old results are
+		 * deleted, the job counts are not reset.
+		 * <p>
+		 * API name: {@code data_counts}
 		 */
 		public final Builder dataCounts(DataCounts value) {
 			this.dataCounts = value;
@@ -272,14 +323,23 @@ public class JobStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code data_counts}
+		 * Required - An object that describes the quantity of input to the job and any
+		 * related error counts. The <code>data_count</code> values are cumulative for
+		 * the lifetime of a job. If a model snapshot is reverted or old results are
+		 * deleted, the job counts are not reset.
+		 * <p>
+		 * API name: {@code data_counts}
 		 */
 		public final Builder dataCounts(Function<DataCounts.Builder, ObjectBuilder<DataCounts>> fn) {
 			return this.dataCounts(fn.apply(new DataCounts.Builder()).build());
 		}
 
 		/**
-		 * Required - API name: {@code forecasts_stats}
+		 * Required - An object that provides statistical information about forecasts
+		 * belonging to this job. Some statistics are omitted if no forecasts have been
+		 * made.
+		 * <p>
+		 * API name: {@code forecasts_stats}
 		 */
 		public final Builder forecastsStats(JobForecastStatistics value) {
 			this.forecastsStats = value;
@@ -287,7 +347,11 @@ public class JobStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code forecasts_stats}
+		 * Required - An object that provides statistical information about forecasts
+		 * belonging to this job. Some statistics are omitted if no forecasts have been
+		 * made.
+		 * <p>
+		 * API name: {@code forecasts_stats}
 		 */
 		public final Builder forecastsStats(
 				Function<JobForecastStatistics.Builder, ObjectBuilder<JobForecastStatistics>> fn) {
@@ -295,7 +359,9 @@ public class JobStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code job_id}
+		 * Required - Identifier for the anomaly detection job.
+		 * <p>
+		 * API name: {@code job_id}
 		 */
 		public final Builder jobId(String value) {
 			this.jobId = value;
@@ -303,7 +369,10 @@ public class JobStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code model_size_stats}
+		 * Required - An object that provides information about the size and contents of
+		 * the model.
+		 * <p>
+		 * API name: {@code model_size_stats}
 		 */
 		public final Builder modelSizeStats(ModelSizeStats value) {
 			this.modelSizeStats = value;
@@ -311,13 +380,19 @@ public class JobStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code model_size_stats}
+		 * Required - An object that provides information about the size and contents of
+		 * the model.
+		 * <p>
+		 * API name: {@code model_size_stats}
 		 */
 		public final Builder modelSizeStats(Function<ModelSizeStats.Builder, ObjectBuilder<ModelSizeStats>> fn) {
 			return this.modelSizeStats(fn.apply(new ModelSizeStats.Builder()).build());
 		}
 
 		/**
+		 * Contains properties for the node that runs the job. This information is
+		 * available only for open jobs.
+		 * <p>
 		 * API name: {@code node}
 		 */
 		public final Builder node(@Nullable DiscoveryNode value) {
@@ -326,6 +401,9 @@ public class JobStats implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains properties for the node that runs the job. This information is
+		 * available only for open jobs.
+		 * <p>
 		 * API name: {@code node}
 		 */
 		public final Builder node(Function<DiscoveryNode.Builder, ObjectBuilder<DiscoveryNode>> fn) {
@@ -333,6 +411,8 @@ public class JobStats implements JsonpSerializable {
 		}
 
 		/**
+		 * For open jobs only, the elapsed time for which the job has been open.
+		 * <p>
 		 * API name: {@code open_time}
 		 */
 		public final Builder openTime(@Nullable DateTime value) {
@@ -341,7 +421,11 @@ public class JobStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code state}
+		 * Required - The status of the anomaly detection job, which can be one of the
+		 * following values: <code>closed</code>, <code>closing</code>,
+		 * <code>failed</code>, <code>opened</code>, <code>opening</code>.
+		 * <p>
+		 * API name: {@code state}
 		 */
 		public final Builder state(JobState value) {
 			this.state = value;
@@ -349,7 +433,10 @@ public class JobStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code timing_stats}
+		 * Required - An object that provides statistical information about timing
+		 * aspect of this job.
+		 * <p>
+		 * API name: {@code timing_stats}
 		 */
 		public final Builder timingStats(JobTimingStats value) {
 			this.timingStats = value;
@@ -357,13 +444,19 @@ public class JobStats implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code timing_stats}
+		 * Required - An object that provides statistical information about timing
+		 * aspect of this job.
+		 * <p>
+		 * API name: {@code timing_stats}
 		 */
 		public final Builder timingStats(Function<JobTimingStats.Builder, ObjectBuilder<JobTimingStats>> fn) {
 			return this.timingStats(fn.apply(new JobTimingStats.Builder()).build());
 		}
 
 		/**
+		 * Indicates that the process of deleting the job is in progress but not yet
+		 * completed. It is only reported when <code>true</code>.
+		 * <p>
 		 * API name: {@code deleting}
 		 */
 		public final Builder deleting(@Nullable Boolean value) {

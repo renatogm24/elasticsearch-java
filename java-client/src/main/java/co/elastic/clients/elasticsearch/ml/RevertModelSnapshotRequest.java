@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.ml;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -39,15 +35,32 @@ import jakarta.json.stream.JsonGenerator;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: ml.revert_model_snapshot.Request
 
 /**
- * Reverts to a specific snapshot. The machine learning features react quickly
- * to anomalous input, learning new behaviors in data. Highly anomalous input
+ * Revert to a snapshot. The machine learning features react quickly to
+ * anomalous input, learning new behaviors in data. Highly anomalous input
  * increases the variance in the models whilst the system learns whether this is
  * a new step-change in behavior or a one-off event. In the case where this
  * anomalous input is known to be a one-off, then it might be appropriate to
@@ -253,6 +266,24 @@ public class RevertModelSnapshotRequest extends RequestBase implements JsonpSeri
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _snapshotId = 1 << 0;
+				final int _jobId = 1 << 1;
+
+				int propsSet = 0;
+
+				propsSet |= _snapshotId;
+				propsSet |= _jobId;
+
+				if (propsSet == (_jobId | _snapshotId)) {
+					params.put("jobId", request.jobId);
+					params.put("snapshotId", request.snapshotId);
+				}
+				return params;
 			},
 
 			// Request parameters

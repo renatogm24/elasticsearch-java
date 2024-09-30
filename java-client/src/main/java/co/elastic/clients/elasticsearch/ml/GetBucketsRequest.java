@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.ml;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -47,11 +43,26 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: ml.get_buckets.Request
 
 /**
- * Retrieves anomaly detection job results for one or more buckets. The API
- * presents a chronological view of the records, grouped by bucket.
+ * Get anomaly detection job results for buckets. The API presents a
+ * chronological view of the records, grouped by bucket.
  * 
  * @see <a href="../doc-files/api-spec.html#ml.get_buckets.Request">API
  *      specification</a>
@@ -546,6 +557,28 @@ public class GetBucketsRequest extends RequestBase implements JsonpSerializable 
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _jobId = 1 << 0;
+				final int _timestamp = 1 << 1;
+
+				int propsSet = 0;
+
+				propsSet |= _jobId;
+				if (request.timestamp() != null)
+					propsSet |= _timestamp;
+
+				if (propsSet == (_jobId | _timestamp)) {
+					params.put("jobId", request.jobId);
+					params.put("timestamp", request.timestamp.toString());
+				}
+				if (propsSet == (_jobId)) {
+					params.put("jobId", request.jobId);
+				}
+				return params;
 			},
 
 			// Request parameters

@@ -28,6 +28,7 @@ import co.elastic.clients.elasticsearch._types.query_dsl.QueryBuilders;
 import co.elastic.clients.elasticsearch.core.SearchRequest;
 import co.elastic.clients.elasticsearch.indices.GetMappingResponse;
 import co.elastic.clients.json.JsonData;
+import co.elastic.clients.testkit.ModelTestCase;
 import org.junit.jupiter.api.Test;
 
 import java.util.function.Consumer;
@@ -262,11 +263,12 @@ public class VariantsTest extends ModelTestCase {
                 .functions(f -> f
                     .weight(1.0)
                     .linear(l -> l
+                        .numeric(n -> n
                         .field("foo")
                         .placement(p -> p.decay(2.0))
                     )
                 )
-            );
+            ));
 
             String json = "{\"function_score\":{\"functions\":[{\"weight\":1.0,\"linear\":{\"foo\":{\"decay\":2.0}}}]," +
                 "\"query\":{\"term\":{\"foo\":{\"value\":\"bar\"}}}}}";
@@ -276,7 +278,7 @@ public class VariantsTest extends ModelTestCase {
 
             assertEquals(FunctionScore.Kind.Linear, fsq2.functionScore().functions().get(0)._kind());
             assertEquals(1.0, fsq2.functionScore().functions().get(0).weight(), 0.001);
-            assertEquals(2.0, fsq2.functionScore().functions().get(0).linear().placement().decay(), 0.001);
+            assertEquals(2.0, fsq2.functionScore().functions().get(0).linear().untyped().placement().decay(), 0.001);
         }
     }
 }

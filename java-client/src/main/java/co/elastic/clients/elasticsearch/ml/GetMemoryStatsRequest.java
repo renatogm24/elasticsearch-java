@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.ml;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -42,12 +38,27 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: ml.get_memory_stats.Request
 
 /**
- * Get information about how machine learning jobs and trained models are using
- * memory, on each node, both within the JVM heap, and natively, outside of the
- * JVM.
+ * Get machine learning memory usage info. Get information about how machine
+ * learning jobs and trained models are using memory, on each node, both within
+ * the JVM heap, and natively, outside of the JVM.
  * 
  * @see <a href="../doc-files/api-spec.html#ml.get_memory_stats.Request">API
  *      specification</a>
@@ -271,6 +282,24 @@ public class GetMemoryStatsRequest extends RequestBase {
 				}
 				throw SimpleEndpoint.noPathTemplateFound("path");
 
+			},
+
+			// Path parameters
+			request -> {
+				Map<String, String> params = new HashMap<>();
+				final int _nodeId = 1 << 0;
+
+				int propsSet = 0;
+
+				if (request.nodeId() != null)
+					propsSet |= _nodeId;
+
+				if (propsSet == 0) {
+				}
+				if (propsSet == (_nodeId)) {
+					params.put("nodeId", request.nodeId);
+				}
+				return params;
 			},
 
 			// Request parameters

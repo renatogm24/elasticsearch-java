@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -38,6 +34,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.GarbageCollectorTotal
 
@@ -73,6 +84,8 @@ public class GarbageCollectorTotal implements JsonpSerializable {
 	}
 
 	/**
+	 * Total number of JVM garbage collectors that collect objects.
+	 * <p>
 	 * API name: {@code collection_count}
 	 */
 	@Nullable
@@ -81,6 +94,8 @@ public class GarbageCollectorTotal implements JsonpSerializable {
 	}
 
 	/**
+	 * Total time spent by JVM collecting objects.
+	 * <p>
 	 * API name: {@code collection_time}
 	 */
 	@Nullable
@@ -89,6 +104,8 @@ public class GarbageCollectorTotal implements JsonpSerializable {
 	}
 
 	/**
+	 * Total time, in milliseconds, spent by JVM collecting objects.
+	 * <p>
 	 * API name: {@code collection_time_in_millis}
 	 */
 	@Nullable
@@ -149,6 +166,8 @@ public class GarbageCollectorTotal implements JsonpSerializable {
 		private Long collectionTimeInMillis;
 
 		/**
+		 * Total number of JVM garbage collectors that collect objects.
+		 * <p>
 		 * API name: {@code collection_count}
 		 */
 		public final Builder collectionCount(@Nullable Long value) {
@@ -157,6 +176,8 @@ public class GarbageCollectorTotal implements JsonpSerializable {
 		}
 
 		/**
+		 * Total time spent by JVM collecting objects.
+		 * <p>
 		 * API name: {@code collection_time}
 		 */
 		public final Builder collectionTime(@Nullable String value) {
@@ -165,6 +186,8 @@ public class GarbageCollectorTotal implements JsonpSerializable {
 		}
 
 		/**
+		 * Total time, in milliseconds, spent by JVM collecting objects.
+		 * <p>
 		 * API name: {@code collection_time_in_millis}
 		 */
 		public final Builder collectionTimeInMillis(@Nullable Long value) {

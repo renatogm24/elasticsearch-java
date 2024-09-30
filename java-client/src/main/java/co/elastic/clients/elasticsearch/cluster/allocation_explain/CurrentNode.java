@@ -17,12 +17,9 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cluster.allocation_explain;
 
+import co.elastic.clients.elasticsearch._types.NodeRole;
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.JsonpMapper;
@@ -36,10 +33,26 @@ import co.elastic.clients.util.WithJsonObjectBuilderBase;
 import jakarta.json.stream.JsonGenerator;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: cluster.allocation_explain.CurrentNode
 
@@ -55,6 +68,8 @@ public class CurrentNode implements JsonpSerializable {
 
 	private final String name;
 
+	private final List<NodeRole> roles;
+
 	private final Map<String, String> attributes;
 
 	private final String transportAddress;
@@ -67,6 +82,7 @@ public class CurrentNode implements JsonpSerializable {
 
 		this.id = ApiTypeHelper.requireNonNull(builder.id, this, "id");
 		this.name = ApiTypeHelper.requireNonNull(builder.name, this, "name");
+		this.roles = ApiTypeHelper.unmodifiableRequired(builder.roles, this, "roles");
 		this.attributes = ApiTypeHelper.unmodifiableRequired(builder.attributes, this, "attributes");
 		this.transportAddress = ApiTypeHelper.requireNonNull(builder.transportAddress, this, "transportAddress");
 		this.weightRanking = ApiTypeHelper.requireNonNull(builder.weightRanking, this, "weightRanking");
@@ -89,6 +105,13 @@ public class CurrentNode implements JsonpSerializable {
 	 */
 	public final String name() {
 		return this.name;
+	}
+
+	/**
+	 * Required - API name: {@code roles}
+	 */
+	public final List<NodeRole> roles() {
+		return this.roles;
 	}
 
 	/**
@@ -129,6 +152,15 @@ public class CurrentNode implements JsonpSerializable {
 		generator.writeKey("name");
 		generator.write(this.name);
 
+		if (ApiTypeHelper.isDefined(this.roles)) {
+			generator.writeKey("roles");
+			generator.writeStartArray();
+			for (NodeRole item0 : this.roles) {
+				item0.serialize(generator, mapper);
+			}
+			generator.writeEnd();
+
+		}
 		if (ApiTypeHelper.isDefined(this.attributes)) {
 			generator.writeKey("attributes");
 			generator.writeStartObject();
@@ -164,6 +196,8 @@ public class CurrentNode implements JsonpSerializable {
 
 		private String name;
 
+		private List<NodeRole> roles;
+
 		private Map<String, String> attributes;
 
 		private String transportAddress;
@@ -183,6 +217,26 @@ public class CurrentNode implements JsonpSerializable {
 		 */
 		public final Builder name(String value) {
 			this.name = value;
+			return this;
+		}
+
+		/**
+		 * Required - API name: {@code roles}
+		 * <p>
+		 * Adds all elements of <code>list</code> to <code>roles</code>.
+		 */
+		public final Builder roles(List<NodeRole> list) {
+			this.roles = _listAddAll(this.roles, list);
+			return this;
+		}
+
+		/**
+		 * Required - API name: {@code roles}
+		 * <p>
+		 * Adds one or more values to <code>roles</code>.
+		 */
+		public final Builder roles(NodeRole value, NodeRole... values) {
+			this.roles = _listAdd(this.roles, value, values);
 			return this;
 		}
 
@@ -252,6 +306,7 @@ public class CurrentNode implements JsonpSerializable {
 
 		op.add(Builder::id, JsonpDeserializer.stringDeserializer(), "id");
 		op.add(Builder::name, JsonpDeserializer.stringDeserializer(), "name");
+		op.add(Builder::roles, JsonpDeserializer.arrayDeserializer(NodeRole._DESERIALIZER), "roles");
 		op.add(Builder::attributes, JsonpDeserializer.stringMapDeserializer(JsonpDeserializer.stringDeserializer()),
 				"attributes");
 		op.add(Builder::transportAddress, JsonpDeserializer.stringDeserializer(), "transport_address");

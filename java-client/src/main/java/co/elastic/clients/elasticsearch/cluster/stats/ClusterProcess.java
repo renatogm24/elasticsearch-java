@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cluster.stats;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -37,6 +33,21 @@ import jakarta.json.stream.JsonGenerator;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: cluster.stats.ClusterProcess
 
@@ -66,14 +77,18 @@ public class ClusterProcess implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code cpu}
+	 * Required - Contains statistics about CPU used by selected nodes.
+	 * <p>
+	 * API name: {@code cpu}
 	 */
 	public final ClusterProcessCpu cpu() {
 		return this.cpu;
 	}
 
 	/**
-	 * Required - API name: {@code open_file_descriptors}
+	 * Required - Contains statistics about open file descriptors in selected nodes.
+	 * <p>
+	 * API name: {@code open_file_descriptors}
 	 */
 	public final ClusterProcessOpenFileDescriptors openFileDescriptors() {
 		return this.openFileDescriptors;
@@ -115,7 +130,9 @@ public class ClusterProcess implements JsonpSerializable {
 		private ClusterProcessOpenFileDescriptors openFileDescriptors;
 
 		/**
-		 * Required - API name: {@code cpu}
+		 * Required - Contains statistics about CPU used by selected nodes.
+		 * <p>
+		 * API name: {@code cpu}
 		 */
 		public final Builder cpu(ClusterProcessCpu value) {
 			this.cpu = value;
@@ -123,14 +140,18 @@ public class ClusterProcess implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code cpu}
+		 * Required - Contains statistics about CPU used by selected nodes.
+		 * <p>
+		 * API name: {@code cpu}
 		 */
 		public final Builder cpu(Function<ClusterProcessCpu.Builder, ObjectBuilder<ClusterProcessCpu>> fn) {
 			return this.cpu(fn.apply(new ClusterProcessCpu.Builder()).build());
 		}
 
 		/**
-		 * Required - API name: {@code open_file_descriptors}
+		 * Required - Contains statistics about open file descriptors in selected nodes.
+		 * <p>
+		 * API name: {@code open_file_descriptors}
 		 */
 		public final Builder openFileDescriptors(ClusterProcessOpenFileDescriptors value) {
 			this.openFileDescriptors = value;
@@ -138,7 +159,9 @@ public class ClusterProcess implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code open_file_descriptors}
+		 * Required - Contains statistics about open file descriptors in selected nodes.
+		 * <p>
+		 * API name: {@code open_file_descriptors}
 		 */
 		public final Builder openFileDescriptors(
 				Function<ClusterProcessOpenFileDescriptors.Builder, ObjectBuilder<ClusterProcessOpenFileDescriptors>> fn) {

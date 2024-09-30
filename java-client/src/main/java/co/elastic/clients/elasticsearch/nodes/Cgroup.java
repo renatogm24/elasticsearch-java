@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -36,6 +32,21 @@ import jakarta.json.stream.JsonGenerator;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.Cgroup
 
@@ -70,6 +81,8 @@ public class Cgroup implements JsonpSerializable {
 	}
 
 	/**
+	 * Contains statistics about <code>cpuacct</code> control group for the node.
+	 * <p>
 	 * API name: {@code cpuacct}
 	 */
 	@Nullable
@@ -78,6 +91,8 @@ public class Cgroup implements JsonpSerializable {
 	}
 
 	/**
+	 * Contains statistics about <code>cpu</code> control group for the node.
+	 * <p>
 	 * API name: {@code cpu}
 	 */
 	@Nullable
@@ -86,6 +101,8 @@ public class Cgroup implements JsonpSerializable {
 	}
 
 	/**
+	 * Contains statistics about the memory control group for the node.
+	 * <p>
 	 * API name: {@code memory}
 	 */
 	@Nullable
@@ -144,6 +161,8 @@ public class Cgroup implements JsonpSerializable {
 		private CgroupMemory memory;
 
 		/**
+		 * Contains statistics about <code>cpuacct</code> control group for the node.
+		 * <p>
 		 * API name: {@code cpuacct}
 		 */
 		public final Builder cpuacct(@Nullable CpuAcct value) {
@@ -152,6 +171,8 @@ public class Cgroup implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics about <code>cpuacct</code> control group for the node.
+		 * <p>
 		 * API name: {@code cpuacct}
 		 */
 		public final Builder cpuacct(Function<CpuAcct.Builder, ObjectBuilder<CpuAcct>> fn) {
@@ -159,6 +180,8 @@ public class Cgroup implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics about <code>cpu</code> control group for the node.
+		 * <p>
 		 * API name: {@code cpu}
 		 */
 		public final Builder cpu(@Nullable CgroupCpu value) {
@@ -167,6 +190,8 @@ public class Cgroup implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics about <code>cpu</code> control group for the node.
+		 * <p>
 		 * API name: {@code cpu}
 		 */
 		public final Builder cpu(Function<CgroupCpu.Builder, ObjectBuilder<CgroupCpu>> fn) {
@@ -174,6 +199,8 @@ public class Cgroup implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics about the memory control group for the node.
+		 * <p>
 		 * API name: {@code memory}
 		 */
 		public final Builder memory(@Nullable CgroupMemory value) {
@@ -182,6 +209,8 @@ public class Cgroup implements JsonpSerializable {
 		}
 
 		/**
+		 * Contains statistics about the memory control group for the node.
+		 * <p>
 		 * API name: {@code memory}
 		 */
 		public final Builder memory(Function<CgroupMemory.Builder, ObjectBuilder<CgroupMemory>> fn) {

@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -37,6 +33,21 @@ import java.lang.Long;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.CgroupCpuStat
 
@@ -71,6 +82,9 @@ public class CgroupCpuStat implements JsonpSerializable {
 	}
 
 	/**
+	 * The number of reporting periods (as specified by
+	 * <code>cfs_period_micros</code>) that have elapsed.
+	 * <p>
 	 * API name: {@code number_of_elapsed_periods}
 	 */
 	@Nullable
@@ -79,6 +93,9 @@ public class CgroupCpuStat implements JsonpSerializable {
 	}
 
 	/**
+	 * The number of times all tasks in the same cgroup as the Elasticsearch process
+	 * have been throttled.
+	 * <p>
 	 * API name: {@code number_of_times_throttled}
 	 */
 	@Nullable
@@ -87,6 +104,9 @@ public class CgroupCpuStat implements JsonpSerializable {
 	}
 
 	/**
+	 * The total amount of time, in nanoseconds, for which all tasks in the same
+	 * cgroup as the Elasticsearch process have been throttled.
+	 * <p>
 	 * API name: {@code time_throttled_nanos}
 	 */
 	@Nullable
@@ -145,6 +165,9 @@ public class CgroupCpuStat implements JsonpSerializable {
 		private Long timeThrottledNanos;
 
 		/**
+		 * The number of reporting periods (as specified by
+		 * <code>cfs_period_micros</code>) that have elapsed.
+		 * <p>
 		 * API name: {@code number_of_elapsed_periods}
 		 */
 		public final Builder numberOfElapsedPeriods(@Nullable Long value) {
@@ -153,6 +176,9 @@ public class CgroupCpuStat implements JsonpSerializable {
 		}
 
 		/**
+		 * The number of times all tasks in the same cgroup as the Elasticsearch process
+		 * have been throttled.
+		 * <p>
 		 * API name: {@code number_of_times_throttled}
 		 */
 		public final Builder numberOfTimesThrottled(@Nullable Long value) {
@@ -161,6 +187,9 @@ public class CgroupCpuStat implements JsonpSerializable {
 		}
 
 		/**
+		 * The total amount of time, in nanoseconds, for which all tasks in the same
+		 * cgroup as the Elasticsearch process have been throttled.
+		 * <p>
 		 * API name: {@code time_throttled_nanos}
 		 */
 		public final Builder timeThrottledNanos(@Nullable Long value) {

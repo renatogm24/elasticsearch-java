@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.security;
 
 import co.elastic.clients.json.JsonData;
@@ -41,6 +37,21 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: security._types.RoleDescriptorRead
 
@@ -65,7 +76,9 @@ public class RoleDescriptorRead implements JsonpSerializable {
 	private final List<String> runAs;
 
 	@Nullable
-	private final TransientMetadataConfig transientMetadata;
+	private final String description;
+
+	private final Map<String, JsonData> transientMetadata;
 
 	// ---------------------------------------------------------------------------------------------
 
@@ -77,7 +90,8 @@ public class RoleDescriptorRead implements JsonpSerializable {
 		this.applications = ApiTypeHelper.unmodifiable(builder.applications);
 		this.metadata = ApiTypeHelper.unmodifiable(builder.metadata);
 		this.runAs = ApiTypeHelper.unmodifiable(builder.runAs);
-		this.transientMetadata = builder.transientMetadata;
+		this.description = builder.description;
+		this.transientMetadata = ApiTypeHelper.unmodifiable(builder.transientMetadata);
 
 	}
 
@@ -86,20 +100,29 @@ public class RoleDescriptorRead implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code cluster}
+	 * Required - A list of cluster privileges. These privileges define the cluster
+	 * level actions that API keys are able to execute.
+	 * <p>
+	 * API name: {@code cluster}
 	 */
 	public final List<String> cluster() {
 		return this.cluster;
 	}
 
 	/**
-	 * Required - API name: {@code indices}
+	 * Required - A list of indices permissions entries.
+	 * <p>
+	 * API name: {@code indices}
 	 */
 	public final List<IndicesPrivileges> indices() {
 		return this.indices;
 	}
 
 	/**
+	 * An object defining global privileges. A global privilege is a form of cluster
+	 * privilege that is request-aware. Support for global privileges is currently
+	 * limited to the management of application privileges.
+	 * <p>
 	 * API name: {@code global}
 	 */
 	public final List<GlobalPrivilege> global() {
@@ -107,6 +130,8 @@ public class RoleDescriptorRead implements JsonpSerializable {
 	}
 
 	/**
+	 * A list of application privilege entries
+	 * <p>
 	 * API name: {@code applications}
 	 */
 	public final List<ApplicationPrivileges> applications() {
@@ -114,6 +139,9 @@ public class RoleDescriptorRead implements JsonpSerializable {
 	}
 
 	/**
+	 * Optional meta-data. Within the metadata object, keys that begin with
+	 * <code>_</code> are reserved for system usage.
+	 * <p>
 	 * API name: {@code metadata}
 	 */
 	public final Map<String, JsonData> metadata() {
@@ -121,6 +149,8 @@ public class RoleDescriptorRead implements JsonpSerializable {
 	}
 
 	/**
+	 * A list of users that the API keys can impersonate.
+	 * <p>
 	 * API name: {@code run_as}
 	 */
 	public final List<String> runAs() {
@@ -128,10 +158,19 @@ public class RoleDescriptorRead implements JsonpSerializable {
 	}
 
 	/**
-	 * API name: {@code transient_metadata}
+	 * Optional description of the role descriptor
+	 * <p>
+	 * API name: {@code description}
 	 */
 	@Nullable
-	public final TransientMetadataConfig transientMetadata() {
+	public final String description() {
+		return this.description;
+	}
+
+	/**
+	 * API name: {@code transient_metadata}
+	 */
+	public final Map<String, JsonData> transientMetadata() {
 		return this.transientMetadata;
 	}
 
@@ -207,9 +246,20 @@ public class RoleDescriptorRead implements JsonpSerializable {
 			generator.writeEnd();
 
 		}
-		if (this.transientMetadata != null) {
+		if (this.description != null) {
+			generator.writeKey("description");
+			generator.write(this.description);
+
+		}
+		if (ApiTypeHelper.isDefined(this.transientMetadata)) {
 			generator.writeKey("transient_metadata");
-			this.transientMetadata.serialize(generator, mapper);
+			generator.writeStartObject();
+			for (Map.Entry<String, JsonData> item0 : this.transientMetadata.entrySet()) {
+				generator.writeKey(item0.getKey());
+				item0.getValue().serialize(generator, mapper);
+
+			}
+			generator.writeEnd();
 
 		}
 
@@ -246,10 +296,16 @@ public class RoleDescriptorRead implements JsonpSerializable {
 		private List<String> runAs;
 
 		@Nullable
-		private TransientMetadataConfig transientMetadata;
+		private String description;
+
+		@Nullable
+		private Map<String, JsonData> transientMetadata;
 
 		/**
-		 * Required - API name: {@code cluster}
+		 * Required - A list of cluster privileges. These privileges define the cluster
+		 * level actions that API keys are able to execute.
+		 * <p>
+		 * API name: {@code cluster}
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>cluster</code>.
 		 */
@@ -259,7 +315,10 @@ public class RoleDescriptorRead implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code cluster}
+		 * Required - A list of cluster privileges. These privileges define the cluster
+		 * level actions that API keys are able to execute.
+		 * <p>
+		 * API name: {@code cluster}
 		 * <p>
 		 * Adds one or more values to <code>cluster</code>.
 		 */
@@ -269,7 +328,9 @@ public class RoleDescriptorRead implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code indices}
+		 * Required - A list of indices permissions entries.
+		 * <p>
+		 * API name: {@code indices}
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>indices</code>.
 		 */
@@ -279,7 +340,9 @@ public class RoleDescriptorRead implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code indices}
+		 * Required - A list of indices permissions entries.
+		 * <p>
+		 * API name: {@code indices}
 		 * <p>
 		 * Adds one or more values to <code>indices</code>.
 		 */
@@ -289,7 +352,9 @@ public class RoleDescriptorRead implements JsonpSerializable {
 		}
 
 		/**
-		 * Required - API name: {@code indices}
+		 * Required - A list of indices permissions entries.
+		 * <p>
+		 * API name: {@code indices}
 		 * <p>
 		 * Adds a value to <code>indices</code> using a builder lambda.
 		 */
@@ -298,6 +363,10 @@ public class RoleDescriptorRead implements JsonpSerializable {
 		}
 
 		/**
+		 * An object defining global privileges. A global privilege is a form of cluster
+		 * privilege that is request-aware. Support for global privileges is currently
+		 * limited to the management of application privileges.
+		 * <p>
 		 * API name: {@code global}
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>global</code>.
@@ -308,6 +377,10 @@ public class RoleDescriptorRead implements JsonpSerializable {
 		}
 
 		/**
+		 * An object defining global privileges. A global privilege is a form of cluster
+		 * privilege that is request-aware. Support for global privileges is currently
+		 * limited to the management of application privileges.
+		 * <p>
 		 * API name: {@code global}
 		 * <p>
 		 * Adds one or more values to <code>global</code>.
@@ -318,6 +391,10 @@ public class RoleDescriptorRead implements JsonpSerializable {
 		}
 
 		/**
+		 * An object defining global privileges. A global privilege is a form of cluster
+		 * privilege that is request-aware. Support for global privileges is currently
+		 * limited to the management of application privileges.
+		 * <p>
 		 * API name: {@code global}
 		 * <p>
 		 * Adds a value to <code>global</code> using a builder lambda.
@@ -327,6 +404,8 @@ public class RoleDescriptorRead implements JsonpSerializable {
 		}
 
 		/**
+		 * A list of application privilege entries
+		 * <p>
 		 * API name: {@code applications}
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>applications</code>.
@@ -337,6 +416,8 @@ public class RoleDescriptorRead implements JsonpSerializable {
 		}
 
 		/**
+		 * A list of application privilege entries
+		 * <p>
 		 * API name: {@code applications}
 		 * <p>
 		 * Adds one or more values to <code>applications</code>.
@@ -347,6 +428,8 @@ public class RoleDescriptorRead implements JsonpSerializable {
 		}
 
 		/**
+		 * A list of application privilege entries
+		 * <p>
 		 * API name: {@code applications}
 		 * <p>
 		 * Adds a value to <code>applications</code> using a builder lambda.
@@ -357,6 +440,9 @@ public class RoleDescriptorRead implements JsonpSerializable {
 		}
 
 		/**
+		 * Optional meta-data. Within the metadata object, keys that begin with
+		 * <code>_</code> are reserved for system usage.
+		 * <p>
 		 * API name: {@code metadata}
 		 * <p>
 		 * Adds all entries of <code>map</code> to <code>metadata</code>.
@@ -367,6 +453,9 @@ public class RoleDescriptorRead implements JsonpSerializable {
 		}
 
 		/**
+		 * Optional meta-data. Within the metadata object, keys that begin with
+		 * <code>_</code> are reserved for system usage.
+		 * <p>
 		 * API name: {@code metadata}
 		 * <p>
 		 * Adds an entry to <code>metadata</code>.
@@ -377,6 +466,8 @@ public class RoleDescriptorRead implements JsonpSerializable {
 		}
 
 		/**
+		 * A list of users that the API keys can impersonate.
+		 * <p>
 		 * API name: {@code run_as}
 		 * <p>
 		 * Adds all elements of <code>list</code> to <code>runAs</code>.
@@ -387,6 +478,8 @@ public class RoleDescriptorRead implements JsonpSerializable {
 		}
 
 		/**
+		 * A list of users that the API keys can impersonate.
+		 * <p>
 		 * API name: {@code run_as}
 		 * <p>
 		 * Adds one or more values to <code>runAs</code>.
@@ -397,19 +490,33 @@ public class RoleDescriptorRead implements JsonpSerializable {
 		}
 
 		/**
-		 * API name: {@code transient_metadata}
+		 * Optional description of the role descriptor
+		 * <p>
+		 * API name: {@code description}
 		 */
-		public final Builder transientMetadata(@Nullable TransientMetadataConfig value) {
-			this.transientMetadata = value;
+		public final Builder description(@Nullable String value) {
+			this.description = value;
 			return this;
 		}
 
 		/**
 		 * API name: {@code transient_metadata}
+		 * <p>
+		 * Adds all entries of <code>map</code> to <code>transientMetadata</code>.
 		 */
-		public final Builder transientMetadata(
-				Function<TransientMetadataConfig.Builder, ObjectBuilder<TransientMetadataConfig>> fn) {
-			return this.transientMetadata(fn.apply(new TransientMetadataConfig.Builder()).build());
+		public final Builder transientMetadata(Map<String, JsonData> map) {
+			this.transientMetadata = _mapPutAll(this.transientMetadata, map);
+			return this;
+		}
+
+		/**
+		 * API name: {@code transient_metadata}
+		 * <p>
+		 * Adds an entry to <code>transientMetadata</code>.
+		 */
+		public final Builder transientMetadata(String key, JsonData value) {
+			this.transientMetadata = _mapPut(this.transientMetadata, key, value);
+			return this;
 		}
 
 		@Override
@@ -449,7 +556,9 @@ public class RoleDescriptorRead implements JsonpSerializable {
 				"applications");
 		op.add(Builder::metadata, JsonpDeserializer.stringMapDeserializer(JsonData._DESERIALIZER), "metadata");
 		op.add(Builder::runAs, JsonpDeserializer.arrayDeserializer(JsonpDeserializer.stringDeserializer()), "run_as");
-		op.add(Builder::transientMetadata, TransientMetadataConfig._DESERIALIZER, "transient_metadata");
+		op.add(Builder::description, JsonpDeserializer.stringDeserializer(), "description");
+		op.add(Builder::transientMetadata, JsonpDeserializer.stringMapDeserializer(JsonData._DESERIALIZER),
+				"transient_metadata");
 
 	}
 

@@ -62,6 +62,25 @@ public class SearchingTest {
     );
 
     @Test
+    public void searchSimpleMatch() throws Exception {
+        transport.setResult(searchResponse);
+
+        //tag::search-getting-started
+        String searchText = "bike";
+
+        SearchResponse<Product> response = esClient.search(s -> s
+                .index("products")
+                .query(q -> q
+                    .match(t -> t
+                        .field("name")
+                        .query(searchText)
+                    )
+                ),
+            Product.class
+        );
+        //end::search-getting-started
+    }
+    @Test
     public void searchMatch() throws Exception {
 
         transport.setResult(searchResponse);
@@ -112,8 +131,9 @@ public class SearchingTest {
 
         // Search by max price
         Query byMaxPrice = RangeQuery.of(r -> r
+            .number(n -> n
             .field("price")
-            .gte(JsonData.of(maxPrice)) // <3>
+            .gte(maxPrice)) // <3>
         )._toQuery();
 
         // Combine name and price queries to search the product index

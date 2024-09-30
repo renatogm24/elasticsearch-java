@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.cat.snapshots;
 
 import co.elastic.clients.elasticsearch._types.Time;
@@ -40,6 +36,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: cat.snapshots.SnapshotsRecord
 
@@ -115,7 +126,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * unique snapshot
+	 * The unique identifier for the snapshot.
 	 * <p>
 	 * API name: {@code id}
 	 */
@@ -125,7 +136,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * repository name
+	 * The repository name.
 	 * <p>
 	 * API name: {@code repository}
 	 */
@@ -135,7 +146,12 @@ public class SnapshotsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * snapshot name
+	 * The state of the snapshot process. Returned values include:
+	 * <code>FAILED</code>: The snapshot process failed. <code>INCOMPATIBLE</code>:
+	 * The snapshot process is incompatible with the current cluster version.
+	 * <code>IN_PROGRESS</code>: The snapshot process started but has not completed.
+	 * <code>PARTIAL</code>: The snapshot process completed with a partial success.
+	 * <code>SUCCESS</code>: The snapshot process completed with a full success.
 	 * <p>
 	 * API name: {@code status}
 	 */
@@ -145,7 +161,8 @@ public class SnapshotsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * start time in seconds since 1970-01-01 00:00:00
+	 * The Unix epoch time (seconds since 1970-01-01 00:00:00) at which the snapshot
+	 * process started.
 	 * <p>
 	 * API name: {@code start_epoch}
 	 */
@@ -155,7 +172,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * start time in HH:MM:SS
+	 * The time (HH:MM:SS) at which the snapshot process started.
 	 * <p>
 	 * API name: {@code start_time}
 	 */
@@ -165,7 +182,8 @@ public class SnapshotsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * end time in seconds since 1970-01-01 00:00:00
+	 * The Unix epoch time (seconds since 1970-01-01 00:00:00) at which the snapshot
+	 * process ended.
 	 * <p>
 	 * API name: {@code end_epoch}
 	 */
@@ -175,7 +193,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * end time in HH:MM:SS
+	 * The time (HH:MM:SS) at which the snapshot process ended.
 	 * <p>
 	 * API name: {@code end_time}
 	 */
@@ -185,7 +203,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * duration
+	 * The time it took the snapshot process to complete, in time units.
 	 * <p>
 	 * API name: {@code duration}
 	 */
@@ -195,7 +213,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of indices
+	 * The number of indices in the snapshot.
 	 * <p>
 	 * API name: {@code indices}
 	 */
@@ -205,7 +223,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of successful shards
+	 * The number of successful shards in the snapshot.
 	 * <p>
 	 * API name: {@code successful_shards}
 	 */
@@ -215,7 +233,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of failed shards
+	 * The number of failed shards in the snapshot.
 	 * <p>
 	 * API name: {@code failed_shards}
 	 */
@@ -225,7 +243,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * number of total shards
+	 * The total number of shards in the snapshot.
 	 * <p>
 	 * API name: {@code total_shards}
 	 */
@@ -235,7 +253,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 	}
 
 	/**
-	 * reason for failures
+	 * The reason for any snapshot failures.
 	 * <p>
 	 * API name: {@code reason}
 	 */
@@ -375,7 +393,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 		private String reason;
 
 		/**
-		 * unique snapshot
+		 * The unique identifier for the snapshot.
 		 * <p>
 		 * API name: {@code id}
 		 */
@@ -385,7 +403,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * repository name
+		 * The repository name.
 		 * <p>
 		 * API name: {@code repository}
 		 */
@@ -395,7 +413,12 @@ public class SnapshotsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * snapshot name
+		 * The state of the snapshot process. Returned values include:
+		 * <code>FAILED</code>: The snapshot process failed. <code>INCOMPATIBLE</code>:
+		 * The snapshot process is incompatible with the current cluster version.
+		 * <code>IN_PROGRESS</code>: The snapshot process started but has not completed.
+		 * <code>PARTIAL</code>: The snapshot process completed with a partial success.
+		 * <code>SUCCESS</code>: The snapshot process completed with a full success.
 		 * <p>
 		 * API name: {@code status}
 		 */
@@ -405,7 +428,8 @@ public class SnapshotsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * start time in seconds since 1970-01-01 00:00:00
+		 * The Unix epoch time (seconds since 1970-01-01 00:00:00) at which the snapshot
+		 * process started.
 		 * <p>
 		 * API name: {@code start_epoch}
 		 */
@@ -415,7 +439,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * start time in HH:MM:SS
+		 * The time (HH:MM:SS) at which the snapshot process started.
 		 * <p>
 		 * API name: {@code start_time}
 		 */
@@ -425,7 +449,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * start time in HH:MM:SS
+		 * The time (HH:MM:SS) at which the snapshot process started.
 		 * <p>
 		 * API name: {@code start_time}
 		 */
@@ -434,7 +458,8 @@ public class SnapshotsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * end time in seconds since 1970-01-01 00:00:00
+		 * The Unix epoch time (seconds since 1970-01-01 00:00:00) at which the snapshot
+		 * process ended.
 		 * <p>
 		 * API name: {@code end_epoch}
 		 */
@@ -444,7 +469,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * end time in HH:MM:SS
+		 * The time (HH:MM:SS) at which the snapshot process ended.
 		 * <p>
 		 * API name: {@code end_time}
 		 */
@@ -454,7 +479,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * duration
+		 * The time it took the snapshot process to complete, in time units.
 		 * <p>
 		 * API name: {@code duration}
 		 */
@@ -464,7 +489,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * duration
+		 * The time it took the snapshot process to complete, in time units.
 		 * <p>
 		 * API name: {@code duration}
 		 */
@@ -473,7 +498,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of indices
+		 * The number of indices in the snapshot.
 		 * <p>
 		 * API name: {@code indices}
 		 */
@@ -483,7 +508,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of successful shards
+		 * The number of successful shards in the snapshot.
 		 * <p>
 		 * API name: {@code successful_shards}
 		 */
@@ -493,7 +518,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of failed shards
+		 * The number of failed shards in the snapshot.
 		 * <p>
 		 * API name: {@code failed_shards}
 		 */
@@ -503,7 +528,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * number of total shards
+		 * The total number of shards in the snapshot.
 		 * <p>
 		 * API name: {@code total_shards}
 		 */
@@ -513,7 +538,7 @@ public class SnapshotsRecord implements JsonpSerializable {
 		}
 
 		/**
-		 * reason for failures
+		 * The reason for any snapshot failures.
 		 * <p>
 		 * API name: {@code reason}
 		 */

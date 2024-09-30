@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -38,6 +34,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: nodes._types.MemoryStats
 
@@ -100,6 +111,11 @@ public class MemoryStats implements JsonpSerializable {
 	}
 
 	/**
+	 * If the amount of physical memory has been overridden using the
+	 * <code>es</code>.<code>total_memory_bytes</code> system property then this
+	 * reports the overridden value in bytes. Otherwise it reports the same value as
+	 * <code>total_in_bytes</code>.
+	 * <p>
 	 * API name: {@code adjusted_total_in_bytes}
 	 */
 	@Nullable
@@ -156,6 +172,8 @@ public class MemoryStats implements JsonpSerializable {
 	}
 
 	/**
+	 * Total amount of physical memory in bytes.
+	 * <p>
 	 * API name: {@code total_in_bytes}
 	 */
 	@Nullable
@@ -164,6 +182,8 @@ public class MemoryStats implements JsonpSerializable {
 	}
 
 	/**
+	 * Amount of free physical memory in bytes.
+	 * <p>
 	 * API name: {@code free_in_bytes}
 	 */
 	@Nullable
@@ -172,6 +192,8 @@ public class MemoryStats implements JsonpSerializable {
 	}
 
 	/**
+	 * Amount of used physical memory in bytes.
+	 * <p>
 	 * API name: {@code used_in_bytes}
 	 */
 	@Nullable
@@ -307,6 +329,11 @@ public class MemoryStats implements JsonpSerializable {
 		private Long usedInBytes;
 
 		/**
+		 * If the amount of physical memory has been overridden using the
+		 * <code>es</code>.<code>total_memory_bytes</code> system property then this
+		 * reports the overridden value in bytes. Otherwise it reports the same value as
+		 * <code>total_in_bytes</code>.
+		 * <p>
 		 * API name: {@code adjusted_total_in_bytes}
 		 */
 		public final BuilderT adjustedTotalInBytes(@Nullable Long value) {
@@ -363,6 +390,8 @@ public class MemoryStats implements JsonpSerializable {
 		}
 
 		/**
+		 * Total amount of physical memory in bytes.
+		 * <p>
 		 * API name: {@code total_in_bytes}
 		 */
 		public final BuilderT totalInBytes(@Nullable Long value) {
@@ -371,6 +400,8 @@ public class MemoryStats implements JsonpSerializable {
 		}
 
 		/**
+		 * Amount of free physical memory in bytes.
+		 * <p>
 		 * API name: {@code free_in_bytes}
 		 */
 		public final BuilderT freeInBytes(@Nullable Long value) {
@@ -379,6 +410,8 @@ public class MemoryStats implements JsonpSerializable {
 		}
 
 		/**
+		 * Amount of used physical memory in bytes.
+		 * <p>
 		 * API name: {@code used_in_bytes}
 		 */
 		public final BuilderT usedInBytes(@Nullable Long value) {
